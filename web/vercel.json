@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/landing.html" }
+    { "source": "/", "destination": "/landing.html" },
+    { "source": "/tipos-de-carrera", "destination": "/index_v2.html" },
+    { "source": "/carreras-por-institucion", "destination": "/instituciones_v2.html" }
   ]
 }
