@@ -6,7 +6,7 @@ Datos fuente: [SIES / MiFuturo.cl](https://mifuturo.cl) — Servicio de Informac
 
 ## Demo
 
-🚧 *Próximamente en carreraclara.cl*
+[carreraclara.cl](https://carreraclara.cl)
 
 ## Correr localmente
 
