@@ -1,0 +1,280 @@
+{
+  "slug": "ingenieria-en-recursos-renovables",
+  "nombre": "Ingeniería en Recursos Renovables",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I70S1C63J1V1",
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN RECURSOS NATURALES RENOVABLES",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SANTIAGO",
+      "arancel_anual_2026": "$ 6.922.900",
+      "vacantes_1er_semestre": 65.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I75S2C158J1V1",
+      "institucion": {
+        "codigo": 75,
+        "nombre": "Universidad del Bío-Bío",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN RECURSOS NATURALES",
+      "nivel_carrera": "Profesional",
+      "region": "Ñuble",
+      "jornada": "Diurna",
+      "sede": "SEDE CHILLAN",
+      "arancel_anual_2026": "$ 4.594.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I76S1C89J1V1",
+      "institucion": {
+        "codigo": 76,
+        "nombre": "Universidad de La Frontera",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN RECURSOS NATURALES",
+      "nivel_carrera": "Profesional",
+      "region": "La Araucanía",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (TEMUCO)",
+      "arancel_anual_2026": "$ 4.903.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 50.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I86S5C1294J1V1",
+      "institucion": {
+        "codigo": 86,
+        "nombre": "Pontificia Universidad Católica de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN RECURSOS NATURALES",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CAMPUS SAN JOAQUIN",
+      "arancel_anual_2026": "$ 8.000.000",
+      "vacantes_1er_semestre": 85.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 10.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I87S1C414J1V1",
+      "institucion": {
+        "codigo": 87,
+        "nombre": "Universidad de Concepción",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN CONSERVACION DE RECURSOS NATURALES",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 7.601.734",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 30.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I90S1C534J1V1",
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN CONSERVACION DE RECURSOS NATURALES - INGENIERIA FORESTAL",
+      "nivel_carrera": "Profesional",
+      "region": "Los Ríos",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 6.825.000",
+      "vacantes_1er_semestre": 60.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I92S2C350J1V1",
+      "institucion": {
+        "codigo": 92,
+        "nombre": "Universidad Católica del Maule",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN RECURSOS NATURALES",
+      "nivel_carrera": "Profesional",
+      "region": "Maule",
+      "jornada": "Diurna",
+      "sede": "SEDE CURICO",
+      "arancel_anual_2026": "$ 6.631.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I94S1C91J1V1",
+      "institucion": {
+        "codigo": 94,
+        "nombre": "Universidad Católica de Temuco",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN RECURSOS NATURALES RENOVABLES",
+      "nivel_carrera": "Profesional",
+      "region": "La Araucanía",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (TEMUCO)",
+      "arancel_anual_2026": "$ 6.490.000",
+      "vacantes_1er_semestre": 25.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 50.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Conservación de Recursos Naturales",
+      "empleabilidad_1er_anio": 0.5913978494623656,
+      "empleabilidad_2do_anio": 0.7529411764705882,
+      "retencion_1er_anio": 0.7435897435897436,
+      "continuidad_estudios_pct": 0.06363636363636363,
+      "duracion_real_semestres": 13.349999999999998,
+      "ingreso_banda_texto": "De $1 millón 200 mil a $1 millón 300 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Recursos Naturales Renovables",
+      "empleabilidad_1er_anio": 0.8879310344827587,
+      "empleabilidad_2do_anio": 0.9183673469387755,
+      "retencion_1er_anio": 0.935064935064935,
+      "continuidad_estudios_pct": 0.007462686567164179,
+      "duracion_real_semestres": 16.9464285714286,
+      "ingreso_banda_texto": "De $1 millón 700 mil a $1 millón 800 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 87,
+        "nombre": "Universidad de Concepción",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Conservación de Recursos Naturales",
+      "empleabilidad_1er_anio": 0.6153846153846154,
+      "empleabilidad_2do_anio": 0.75,
+      "retencion_1er_anio": 0.8666666666666667,
+      "continuidad_estudios_pct": 0.09090909090909091,
+      "duracion_real_semestres": 14.0862068965517,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 76,
+        "nombre": "Universidad de La Frontera",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Recursos Naturales",
+      "empleabilidad_1er_anio": 0.5897435897435898,
+      "empleabilidad_2do_anio": 0.696969696969697,
+      "retencion_1er_anio": 0.8055555555555556,
+      "continuidad_estudios_pct": 0.2222222222222222,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

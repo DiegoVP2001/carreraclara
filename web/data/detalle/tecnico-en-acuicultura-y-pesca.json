@@ -1,0 +1,154 @@
+{
+  "slug": "tecnico-en-acuicultura-y-pesca",
+  "nombre": "Técnico en Acuicultura y Pesca",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I77S1C219J2V1",
+      "institucion": {
+        "codigo": 77,
+        "nombre": "Universidad de Magallanes",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO DE NIVEL SUPERIOR EN ACUICULTURA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Magallanes",
+      "jornada": "Vespertina",
+      "sede": "CASA CENTRAL (PUNTA ARENAS)",
+      "arancel_anual_2026": "$ 2.131.000",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I260S37C102J1V1",
+      "institucion": {
+        "codigo": 260,
+        "nombre": "Centro de Formación Técnica Santo Tomás",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN PRODUCCION ACUICOLA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Los Lagos",
+      "jornada": "Diurna",
+      "sede": "SEDE PUERTO MONTT",
+      "arancel_anual_2026": "$ 2.395.000",
+      "vacantes_1er_semestre": 80.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I260S37C102J2V1",
+      "institucion": {
+        "codigo": 260,
+        "nombre": "Centro de Formación Técnica Santo Tomás",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN PRODUCCION ACUICOLA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Los Lagos",
+      "jornada": "Vespertina",
+      "sede": "SEDE PUERTO MONTT",
+      "arancel_anual_2026": "$ 2.395.000",
+      "vacantes_1er_semestre": 45.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I919S1C10J2V1",
+      "institucion": {
+        "codigo": 919,
+        "nombre": "Centro de Formación Técnica de la Región de Aysén del General Carlos Ibáñez del Campo ",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Bajo tutela",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO DE NIVEL SUPERIOR EN PROCESOS ACUICOLAS",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Aysén",
+      "jornada": "Vespertina",
+      "sede": "SEDE AYSEN",
+      "arancel_anual_2026": "$ 2.100.000",
+      "vacantes_1er_semestre": 35.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I920S1C4J2V1",
+      "institucion": {
+        "codigo": 920,
+        "nombre": "Centro de Formación Técnica de la Región de Magallanes y Antártica",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Bajo tutela",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO DE NIVEL SUPERIOR EN MANTENCION DE SISTEMAS ACUICOLAS",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Magallanes",
+      "jornada": "Vespertina",
+      "sede": "SEDE PORVENIR",
+      "arancel_anual_2026": "$ 2.085.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 260,
+        "nombre": "Centro de Formación Técnica Santo Tomás",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico en Producción Acuícola",
+      "empleabilidad_1er_anio": 0.8103448275862069,
+      "empleabilidad_2do_anio": 0.8518518518518519,
+      "retencion_1er_anio": 0.7959183673469388,
+      "continuidad_estudios_pct": 0.04375,
+      "duracion_real_semestres": 6.584615384615384,
+      "ingreso_banda_texto": "De $1 millón 300 mil a $1 millón 400 mil"
+    }
+  ]
+}

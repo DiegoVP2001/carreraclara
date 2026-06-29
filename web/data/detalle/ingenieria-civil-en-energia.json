@@ -1,0 +1,76 @@
+{
+  "slug": "ingenieria-civil-en-energia",
+  "nombre": "Ingeniería Civil en Energía",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I91S1C568J1V1",
+      "institucion": {
+        "codigo": 91,
+        "nombre": "Universidad Católica del Norte",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA CIVIL EN ENERGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Antofagasta",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 5.934.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 30.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I896S1C32J1V1",
+      "institucion": {
+        "codigo": 896,
+        "nombre": "Universidad de Aysén",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA CIVIL EN ENERGIAS RENOVABLES",
+      "nivel_carrera": "Profesional",
+      "region": "Aysén",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 4.108.000",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 23,
+        "nombre": "Universidad Adolfo Ibáñez",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería Civil en Energía y Medio Ambiente",
+      "empleabilidad_1er_anio": 0.7966101694915254,
+      "empleabilidad_2do_anio": 0.828125,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.0,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "diseno-industrial",
+  "nombre": "Diseño Industrial",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I71S1C851J1V1",
+      "institucion": {
+        "codigo": 71,
+        "nombre": "Universidad de Santiago de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 4.989.000",
+      "vacantes_1er_semestre": 50.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I75S1C6J1V2",
+      "institucion": {
+        "codigo": 75,
+        "nombre": "Universidad del Bío-Bío",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (CONCEPCION)",
+      "arancel_anual_2026": "$ 4.434.000",
+      "vacantes_1er_semestre": 55.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I85S1C55J1V1",
+      "institucion": {
+        "codigo": 85,
+        "nombre": "Universidad Tecnológica Metropolitana",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 4.891.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 25.0,
+      "ponderacion_ranking": 35.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S10C548J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL E INNOVACION EN PRODUCTOS",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE PLAZA OESTE",
+      "arancel_anual_2026": "$ 3.320.000",
+      "vacantes_1er_semestre": 60.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S22C548J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL E INNOVACION EN PRODUCTOS",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE PADRE ALONSO DE OVALLE",
+      "arancel_anual_2026": "$ 3.320.000",
+      "vacantes_1er_semestre": 60.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S3C548J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL E INNOVACION EN PRODUCTOS",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Diurna",
+      "sede": "SEDE CONCEPCION",
+      "arancel_anual_2026": "$ 3.070.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S4C548J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL E INNOVACION EN PRODUCTOS",
+      "nivel_carrera": "Profesional",
+      "region": "Valparaíso",
+      "jornada": "Diurna",
+      "sede": "SEDE VIÑA DEL MAR",
+      "arancel_anual_2026": "$ 3.090.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S6C548J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO INDUSTRIAL E INNOVACION EN PRODUCTOS",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE SAN CARLOS DE APOQUINDO",
+      "arancel_anual_2026": "$ 3.320.000",
+      "vacantes_1er_semestre": 46.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Diseño Industrial",
+      "empleabilidad_1er_anio": 0.4765625,
+      "empleabilidad_2do_anio": 0.6192307692307693,
+      "retencion_1er_anio": 0.7877094972067039,
+      "continuidad_estudios_pct": 0.025210084033613446,
+      "duracion_real_semestres": 9.475247524752472,
+      "ingreso_banda_texto": "De $1 millón a $1 millón 100 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 71,
+        "nombre": "Universidad de Santiago de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Tecnología en Diseño Industrial y Diseño Industrial",
+      "empleabilidad_1er_anio": 0.647887323943662,
+      "empleabilidad_2do_anio": 0.6451612903225806,
+      "retencion_1er_anio": 0.8636363636363636,
+      "continuidad_estudios_pct": 0.06382978723404255,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 75,
+        "nombre": "Universidad del Bío-Bío",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Diseño Industrial",
+      "empleabilidad_1er_anio": 0.45901639344262296,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": 0.8813559322033898,
+      "continuidad_estudios_pct": 0.08888888888888889,
+      "duracion_real_semestres": 13.838709677419354,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 85,
+        "nombre": "Universidad Tecnológica Metropolitana",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Diseño Industrial",
+      "empleabilidad_1er_anio": 0.5901639344262295,
+      "empleabilidad_2do_anio": 0.734375,
+      "retencion_1er_anio": 0.803921568627451,
+      "continuidad_estudios_pct": 0.0,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

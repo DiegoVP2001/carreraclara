@@ -1,0 +1,380 @@
+{
+  "slug": "antropologia",
+  "nombre": "Antropología",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I3S1C539J1V1",
+      "institucion": {
+        "codigo": 3,
+        "nombre": "Universidad Diego Portales",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 6.736.000",
+      "vacantes_1er_semestre": 35.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 25.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I11S2C4J1V1",
+      "institucion": {
+        "codigo": 11,
+        "nombre": "Universidad Academia de Humanismo Cristiano",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CAMPUS REPUBLICA",
+      "arancel_anual_2026": "$ 4.621.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 35.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I69S1C260J1V1",
+      "institucion": {
+        "codigo": 69,
+        "nombre": "Universidad Alberto Hurtado",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 5.151.321",
+      "vacantes_1er_semestre": 55.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 35.0,
+      "ponderacion_lenguaje": 25.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I70S1C2J1V1",
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA-ARQUEOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SANTIAGO",
+      "arancel_anual_2026": "$ 5.442.500",
+      "vacantes_1er_semestre": 100.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 20.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 25.0,
+      "ponderacion_ciencias": 25.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I80S1C63J1V1",
+      "institucion": {
+        "codigo": 80,
+        "nombre": "Universidad de Tarapacá",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Arica y Parinacota",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (ARICA)",
+      "arancel_anual_2026": "$ 5.020.000",
+      "vacantes_1er_semestre": 35.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I84S1C440J1V1",
+      "institucion": {
+        "codigo": 84,
+        "nombre": "Universidad de Los Lagos",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Los Lagos",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (OSORNO)",
+      "arancel_anual_2026": "$ 5.078.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 50.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I86S5C638J1V1",
+      "institucion": {
+        "codigo": 86,
+        "nombre": "Pontificia Universidad Católica de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA-ARQUEOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CAMPUS SAN JOAQUIN",
+      "arancel_anual_2026": "$ 7.500.000",
+      "vacantes_1er_semestre": 70.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I87S1C240J1V1",
+      "institucion": {
+        "codigo": 87,
+        "nombre": "Universidad de Concepción",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 6.411.909",
+      "vacantes_1er_semestre": 66.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I90S1C4J1V1",
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Los Ríos",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 4.630.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 25.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I94S1C11J1V1",
+      "institucion": {
+        "codigo": 94,
+        "nombre": "Universidad Católica de Temuco",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ANTROPOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "La Araucanía",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (TEMUCO)",
+      "arancel_anual_2026": "$ 4.622.000",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 50.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 86,
+        "nombre": "Pontificia Universidad Católica de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Antropología",
+      "empleabilidad_1er_anio": 0.6634615384615384,
+      "empleabilidad_2do_anio": 0.75,
+      "retencion_1er_anio": 0.9382716049382716,
+      "continuidad_estudios_pct": 0.10526315789473684,
+      "duracion_real_semestres": 11.137254901960798,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 11,
+        "nombre": "Universidad Academia de Humanismo Cristiano",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Antropología",
+      "empleabilidad_1er_anio": 0.5106382978723404,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.045454545454545456,
+      "duracion_real_semestres": 13.8076923076923,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 69,
+        "nombre": "Universidad Alberto Hurtado",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Antropología",
+      "empleabilidad_1er_anio": 0.5108695652173914,
+      "empleabilidad_2do_anio": 0.6166666666666667,
+      "retencion_1er_anio": 0.8113207547169812,
+      "continuidad_estudios_pct": 0.0625,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Antropología",
+      "empleabilidad_1er_anio": 0.48214285714285715,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": 0.7647058823529411,
+      "continuidad_estudios_pct": 0.09333333333333334,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Antropología Arqueología",
+      "empleabilidad_1er_anio": 0.7962962962962963,
+      "empleabilidad_2do_anio": 0.918918918918919,
+      "retencion_1er_anio": 0.9568965517241379,
+      "continuidad_estudios_pct": 0.1259259259259259,
+      "duracion_real_semestres": 16.828125,
+      "ingreso_banda_texto": "De $1 millón 800 mil a $1 millón 900 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 87,
+        "nombre": "Universidad de Concepción",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Antropología",
+      "empleabilidad_1er_anio": 0.6,
+      "empleabilidad_2do_anio": 0.8554216867469879,
+      "retencion_1er_anio": 0.8103448275862069,
+      "continuidad_estudios_pct": 0.08823529411764706,
+      "duracion_real_semestres": 13.789473684210499,
+      "ingreso_banda_texto": "De $1 millón 400 mil a $1 millón 500 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 80,
+        "nombre": "Universidad de Tarapacá",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Antropología",
+      "empleabilidad_1er_anio": 0.575,
+      "empleabilidad_2do_anio": 0.7560975609756098,
+      "retencion_1er_anio": 0.9,
+      "continuidad_estudios_pct": 0.10606060606060606,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

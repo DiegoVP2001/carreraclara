@@ -1,0 +1,154 @@
+{
+  "slug": "diseno-de-ambientes-e-interiores",
+  "nombre": "Diseño de Ambientes e Interiores",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I26S1C199J3V2",
+      "institucion": {
+        "codigo": 26,
+        "nombre": "Universidad de Artes, Ciencias y Comunicación UNIACC",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO DE INTERIORES Y AMBIENTES",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Semipresencial",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 4.030.000",
+      "vacantes_1er_semestre": 60.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S10C10J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO DE AMBIENTES",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE PLAZA OESTE",
+      "arancel_anual_2026": "$ 3.340.000",
+      "vacantes_1er_semestre": 90.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S22C10J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO DE AMBIENTES",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE PADRE ALONSO DE OVALLE",
+      "arancel_anual_2026": "$ 3.340.000",
+      "vacantes_1er_semestre": 90.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S4C10J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO DE AMBIENTES",
+      "nivel_carrera": "Profesional",
+      "region": "Valparaíso",
+      "jornada": "Diurna",
+      "sede": "SEDE VIÑA DEL MAR",
+      "arancel_anual_2026": "$ 3.100.000",
+      "vacantes_1er_semestre": 90.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S6C10J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "DISEÑO DE AMBIENTES",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE SAN CARLOS DE APOQUINDO",
+      "arancel_anual_2026": "$ 3.290.000",
+      "vacantes_1er_semestre": 90.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Diseño de Ambientes",
+      "empleabilidad_1er_anio": 0.44106463878326996,
+      "empleabilidad_2do_anio": 0.5296610169491526,
+      "retencion_1er_anio": 0.7789855072463768,
+      "continuidad_estudios_pct": 0.020527859237536656,
+      "duracion_real_semestres": 9.737588652482284,
+      "ingreso_banda_texto": "De $900 mil a $1 millón"
+    }
+  ]
+}

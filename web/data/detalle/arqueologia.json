@@ -1,0 +1,128 @@
+{
+  "slug": "arqueologia",
+  "nombre": "Arqueología",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I11S1C331J2V1",
+      "institucion": {
+        "codigo": 11,
+        "nombre": "Universidad Academia de Humanismo Cristiano",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PROGRAMA DE SEGUNDA TITULACION EN ARQUEOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Vespertina",
+      "sede": "CASA CENTRAL (CONDELL)",
+      "arancel_anual_2026": "$ 4.815.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I69S1C314J1V1",
+      "institucion": {
+        "codigo": 69,
+        "nombre": "Universidad Alberto Hurtado",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ARQUEOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 5.986.612",
+      "vacantes_1er_semestre": 90.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 35.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I90S2C613J1V1",
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ARQUEOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Los Lagos",
+      "jornada": "Diurna",
+      "sede": "SEDE PUERTO MONTT",
+      "arancel_anual_2026": "$ 6.345.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 35.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I94S1C242J1V1",
+      "institucion": {
+        "codigo": 94,
+        "nombre": "Universidad Católica de Temuco",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "ARQUEOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "La Araucanía",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (TEMUCO)",
+      "arancel_anual_2026": "$ 5.824.000",
+      "vacantes_1er_semestre": 25.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 50.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 69,
+        "nombre": "Universidad Alberto Hurtado",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Arqueología",
+      "empleabilidad_1er_anio": 1.0,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": 0.859375,
+      "continuidad_estudios_pct": 0.041666666666666664,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

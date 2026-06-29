@@ -1,0 +1,2710 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrera Clara — Carreras por institución</title>
+<link rel="icon" type="image/png" href="logo_png_azul-removebg-preview.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="logo_png_azul-removebg-preview.png">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #f5f6f4;
+    --color-bg-alt: #f4f5f7;
+    --color-surface: #ffffff;
+    --color-header-bg: #0f2e45;
+    --color-text: #1c2b36;
+    --color-text-muted: #6b7a86;
+    --color-primary: #1a7f64;
+    --color-primary-contrast: #ffffff;
+    --color-primary-light: #e6f4f0;
+    --color-accent: #e8960a;
+    --color-danger: #c0392b;
+    --color-border: #dde1e7;
+    --color-badge-warning-bg: #fff8e6;
+    --color-badge-warning-text: #92600a;
+    --color-badge-missing-bg: #fde8e8;
+    --color-badge-missing-text: #8b1a1a;
+    --color-chart-1: #1a7f64;
+    --color-chart-2: #e8960a;
+    --color-chart-3: #3b82f6;
+    --font-base: 16px;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Figtree', system-ui, sans-serif;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --radius: 0.5rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 { font-family: var(--font-display); }
+
+  /* --- Selector en 2 pasos + boton Agregar --- */
+  .selector-pasos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .selector-paso {
+    flex: 1 1 280px;
+    min-width: 240px;
+  }
+
+  .selector-paso label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .selector-wrap { position: relative; }
+
+  .selector-wrap input[type="text"] {
+    width: 100%;
+    font-size: var(--font-base);
+    padding: var(--space-1) 2.25rem var(--space-1) var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .selector-wrap input[type="text"]:disabled {
+    background: var(--color-bg-alt);
+    cursor: not-allowed;
+  }
+
+  button.combo-arrow {
+    position: absolute;
+    right: 0.4rem;
+    top: 0.45rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
+  button.combo-arrow:disabled { cursor: not-allowed; opacity: 0.5; }
+
+  ul.autocomplete-list {
+    list-style: none;
+    margin: var(--space-1) 0 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  ul.autocomplete-list li {
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+
+  ul.autocomplete-list li:hover,
+  ul.autocomplete-list li:focus { background: var(--color-bg-alt); }
+
+  ul.autocomplete-list li .meta {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .chip-elegido {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
+
+  .chip-elegido button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+  }
+
+  .selector-paso-agregar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 1.8rem;
+  }
+
+  button#btn-agregar {
+    font-size: var(--font-base);
+    font-weight: 600;
+    padding: 0.55rem 1.2rem;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  button#btn-agregar:disabled {
+    background: var(--color-border);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+
+  p.selector-help {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin: var(--space-2) 0 0;
+  }
+
+  /* ─── Filtros del selector ───────────────────────────────────────────── */
+  .selector-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+    align-items: center;
+  }
+
+  .selector-filters label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .selector-filters select {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  /* ─── Filtros con slider ─────────────────────────────────────────────── */
+  .filtros-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.2rem;
+    width: 100%;
+  }
+
+  .filtros-row + .filtros-row { margin-top: 0.5rem; }
+
+  .filtro-slider-group {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .filtro-valor {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    min-width: 5.5rem;
+    text-align: right;
+  }
+
+  input[type="range"].filtro-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 110px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--color-border);
+    outline: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  input[type="range"].filtro-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+  }
+
+  input[type="range"].filtro-range:focus::-webkit-slider-thumb,
+  input[type="range"].filtro-range:hover::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px rgba(26, 127, 100, 0.22);
+  }
+
+  input[type="range"].filtro-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: none;
+  }
+
+  /* --- Tarjetas de combos seleccionados --- */
+  ul#selected-list {
+    list-style: none;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-1);
+  }
+
+  @media (max-width: 1023px) {
+    ul#selected-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 639px) {
+    ul#selected-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  li.combo-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 0.6rem var(--space-2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    min-width: 0;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+  li.combo-card.is-entering {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  li.combo-card.is-removing {
+    opacity: 0;
+    transform: scale(0.93);
+    pointer-events: none;
+  }
+
+  .combo-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-1);
+  }
+
+  .combo-card-nombre {
+    font-weight: 600;
+    overflow-wrap: break-word;
+    flex: 1;
+    min-width: 0;
+  }
+  .combo-card-meta {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+  }
+
+  li.combo-card button.remove {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  /* --- Fila de íconos (Tarea 11) --- */
+  .card-icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+  }
+
+  .card-icon-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    padding: 0.1rem 0.5rem;
+    white-space: nowrap;
+  }
+
+  .card-icon-label {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  /* --- Métricas titulares (Tarea 11) --- */
+  .card-metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: 0.5rem;
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card-metric {
+    text-align: center;
+    min-width: 64px;
+  }
+
+  .card-metric-valor {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+  }
+
+  .card-metric-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-top: 0.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* --- Aviso de usabilidad (backlog item 7) --- */
+  .aviso-usabilidad {
+    background: var(--color-primary-light);
+    color: #0d5c47;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 0.45rem var(--space-2);
+    font-size: 0.88rem;
+    margin-top: var(--space-1);
+  }
+
+  /* ensure [hidden] is never overridden by display properties in this file */
+  [hidden] { display: none !important; }
+
+  /* ─── Share bar ─────────────────────────────────────────────────────── */
+  .share-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: #eef7f4;
+    border: 1px solid #b6ddd4;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+  .share-bar span { flex: 1; }
+  .btn-compartir {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-compartir:hover { opacity: 0.88; }
+
+  #share-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(0.75rem);
+    background: #1c2b36;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 9999;
+  }
+  #share-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ─── T19b: fade-in transitions ──────────────────────────────────────── */
+  .share-bar,
+  .aviso-usabilidad { transition: opacity 0.22s ease; }
+
+  #seccion-vacia,
+  #seccion-charts,
+  #seccion-panel-institucion { transition: opacity 0.28s ease; }
+
+  ul.autocomplete-list { transition: opacity 0.13s ease, transform 0.13s ease; }
+
+  .is-fade-entering { opacity: 0; }
+  ul.autocomplete-list.is-fade-entering { transform: translateY(-5px); }
+
+  .chip-elegido { transition: opacity 0.18s ease; }
+  .chip-elegido.is-fade-entering { opacity: 0; }
+
+  .panel-institucion-card { transition: opacity 0.2s ease; }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-3);
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+
+  .empty-state svg { opacity: 0.35; }
+  .empty-state h2 { font-family: var(--font-display); color: var(--color-text); margin: 0; }
+  .empty-state p { margin: 0; font-size: 0.95rem; }
+
+  /* --- Badges de estado explicito --- */
+  .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+  }
+
+  .badge.badge-warning { background: var(--color-badge-warning-bg); color: var(--color-badge-warning-text); }
+  .badge.badge-missing { background: var(--color-badge-missing-bg); color: var(--color-badge-missing-text); }
+
+  /* --- Ponderaciones PAES: mini barra apilada en tarjeta de combo --- */
+  .pond-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 80px;
+    max-width: 220px;
+    background: var(--color-border);
+  }
+
+  .pond-seg { display: inline-block; height: 100%; }
+  .pond-nem      { background: #3b82f6; }
+  .pond-ranking  { background: #22c55e; }
+  .pond-lenguaje { background: #f59e0b; }
+  .pond-mat      { background: #ef4444; }
+  .pond-mat2     { background: #a78bfa; }
+  .pond-historia { background: #e879a0; }
+  .pond-ciencias { background: #e879a0; }
+  .pond-otros    { background: #94a3b8; }
+
+  .pond-label { font-size: 0.78rem; color: var(--color-text-muted); overflow-wrap: break-word; }
+  .badge-sin-paes {
+    display: inline-block;
+    font-size: 0.72rem;
+    background: var(--color-bg-alt);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  .pond-combo-row {
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  /* --- Tooltip inline simple (ícono ℹ junto a nombres de métricas) --- */
+  .tooltip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    background: none;
+    color: var(--color-primary);
+    font-size: 0.82rem;
+    cursor: help;
+    border-radius: 50%;
+    padding: 0;
+    vertical-align: middle;
+    margin-left: 0.2em;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .tooltip-btn:hover,
+  .tooltip-btn:focus-visible {
+    background: rgba(26, 127, 100, 0.12);
+    outline: none;
+  }
+  #tooltip-popup {
+    position: fixed;
+    z-index: 500;
+    max-width: 240px;
+    background: #1f2937;
+    color: #f9fafb;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.45;
+    padding: 0.45rem 0.65rem;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  #tooltip-popup.visible { opacity: 1; }
+  #tooltip-popup.arrow-below::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: #1f2937;
+    transform: rotate(45deg);
+  }
+  #tooltip-popup.arrow-above::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: #1f2937;
+    transform: rotate(45deg);
+  }
+
+  /* --- Graficos --- */
+  p.chart-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (max-width: 900px) {
+    .charts-grid { grid-template-columns: 1fr; }
+  }
+
+  figure.chart-card {
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: var(--space-2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    background: var(--color-surface);
+  }
+
+  figure.chart-card figcaption { font-weight: 600; margin-bottom: var(--space-1); }
+  figure.chart-card figcaption .figcaption-sub {
+    display: block;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .chart-canvas-wrap { position: relative; width: 100%; }
+
+  /* --- Panel de info general de institucion --- */
+  .panel-instituciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-2);
+  }
+
+  .panel-institucion-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-2);
+    background: var(--color-bg-alt);
+  }
+
+  .panel-institucion-card h3 {
+    margin: 0 0 var(--space-1);
+    font-size: 1.05rem;
+  }
+
+  .panel-institucion-card dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2rem var(--space-1);
+  }
+
+  .panel-institucion-card dt {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .panel-institucion-card dd {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .panel-institucion-card dd a { color: var(--color-primary); }
+
+  /* Leyenda dot-range del gráfico de arancel */
+  .arancel-leyenda {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-1);
+    font-size: 0.82rem;
+    flex-wrap: wrap;
+  }
+
+  .leyenda-exacto { color: var(--color-text); font-weight: 500; }
+  .leyenda-rango { color: var(--color-text-muted); }
+  .leyenda-tipo { font-weight: 600; }
+  .leyenda-promedio { color: rgba(220, 38, 38, 0.9); font-weight: 600; }
+  .leyenda-sep { color: var(--color-text-muted); padding: 0 0.15rem; }
+
+  /* === CARRERA CLARA BRAND === */
+  /* ─── Header ─────────────────────────────────────────────────────────── */
+  header.app-header {
+    background: linear-gradient(155deg, #091d2c 0%, #0f2e45 65%);
+    padding: var(--space-3) var(--space-3) var(--space-2);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .header-logo {
+    height: 70px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .header-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .header-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .header-brand-slogan {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--font-family);
+  }
+
+  nav.tabs {
+    display: flex;
+    gap: var(--space-2);
+    font-size: 0.95rem;
+  }
+
+  nav.tabs a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius);
+    transition: background 0.15s, color 0.15s;
+  }
+
+  nav.tabs a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  nav.tabs a.activo {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 600;
+    font-family: var(--font-display);
+  }
+
+  /* ─── Main ───────────────────────────────────────────────────────────── */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-3);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-3);
+    align-items: start;
+  }
+
+  .main-content { min-width: 0; }
+
+  /* ─── Panel lateral de filtros ───────────────────────────────────────── */
+  .panel-filtros {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: var(--space-2);
+    position: sticky;
+    top: var(--space-3);
+  }
+
+  .panel-filtros-titulo {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin: 0 0 0.35rem;
+  }
+
+  .panel-filtros-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+    line-height: 1.45;
+  }
+
+  .filtro-group { margin-bottom: var(--space-2); }
+  .filtro-group:last-child { margin-bottom: 0; }
+
+  .filtro-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.3rem;
+  }
+
+  .filtro-select-full {
+    width: 100%;
+    font-size: 0.88rem;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  /* ─── Custom Select animado ─────────────────────────────────────── */
+  .custom-select { position: relative; width: 100%; }
+
+  .custom-select-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.88rem;
+    font-family: inherit;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    color: var(--color-text);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s;
+  }
+  .custom-select-btn:hover,
+  .custom-select-btn[aria-expanded="true"] { border-color: var(--color-primary); outline: none; }
+
+  .custom-select-value { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .custom-select-chevron {
+    display: flex; align-items: center;
+    color: var(--color-text-muted);
+    transition: transform 0.18s ease;
+    flex-shrink: 0;
+  }
+  .custom-select-chevron.open { transform: rotate(180deg); }
+
+  .custom-select-list {
+    position: absolute;
+    top: calc(100% + 4px); left: 0; right: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    z-index: 200;
+    list-style: none; margin: 0; padding: 0.25rem 0;
+    max-height: 220px; overflow-y: auto;
+    transition: opacity 0.13s ease, transform 0.13s ease;
+  }
+  .custom-select-list.is-fade-entering { opacity: 0; transform: translateY(-5px); }
+
+  .custom-select-list li {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.88rem;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: background 0.1s;
+  }
+  .custom-select-list li:hover { background: var(--color-primary-light); color: var(--color-primary); }
+  .custom-select-list li.cs-selected { font-weight: 600; color: var(--color-primary); }
+
+  .filtro-valor-sidebar {
+    display: block;
+    text-align: right;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 0.2rem;
+  }
+
+  input[type="range"].filtro-range-full {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--color-border);
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"].filtro-range-full::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+  }
+
+  input[type="range"].filtro-range-full:focus::-webkit-slider-thumb,
+  input[type="range"].filtro-range-full:hover::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px rgba(26, 127, 100, 0.22);
+  }
+
+  input[type="range"].filtro-range-full::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    cursor: pointer;
+    border: none;
+  }
+
+  hr.filtro-separator {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: var(--space-2) 0;
+  }
+
+  @media (max-width: 800px) {
+    main { grid-template-columns: 1fr; }
+    .panel-filtros { position: static; }
+  }
+
+  section { margin-bottom: var(--space-4); }
+  section > h2 { font-size: 1.25rem; margin-bottom: var(--space-2); }
+
+  /* ─── Footer ─────────────────────────────────────────────────────────── */
+  footer.app-footer {
+    background: var(--color-header-bg);
+    padding: var(--space-4) var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+
+  .footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .footer-logo {
+    height: 48px;
+    width: auto;
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .footer-col p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.62);
+    margin: 0 0 var(--space-2);
+    line-height: 1.6;
+  }
+
+  .footer-attribution {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 var(--space-2);
+    line-height: 1.5;
+  }
+
+  .footer-attribution a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+
+  .footer-attribution a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-copyright {
+    font-size: 0.82rem !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-top: var(--space-2) !important;
+  }
+
+  .footer-copyright a {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-copyright a:hover {
+    color: #ffffff;
+  }
+
+  .footer-col h3 {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 var(--space-2);
+  }
+
+  ul.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ul.footer-links li a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  ul.footer-links li a:hover {
+    color: #ffffff;
+  }
+
+  @media (max-width: 600px) {
+    .header-logo { height: 42px; }
+    .header-brand-name { font-size: 1.45rem; }
+    .header-brand-slogan { font-size: 0.82rem; }
+  }
+
+  /* ─── T20: Optimización móvil ───────────────────────────────────────── */
+
+  /* Panel filtros colapsable en móvil */
+  .panel-filtros-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.35rem;
+  }
+  .panel-filtros-header .panel-filtros-titulo { margin: 0; }
+
+  .panel-filtros-toggle { display: none; }
+
+  @media (max-width: 800px) {
+    nav.tabs { flex-wrap: wrap; }
+
+    .panel-filtros-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 0.35rem 0.65rem;
+      font-size: 0.82rem;
+      font-family: inherit;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      min-height: 36px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .panel-filtros-toggle:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .panel-filtros.is-open .panel-filtros-toggle { color: var(--color-primary); border-color: var(--color-primary); }
+
+    .panel-filtros-body { display: none; }
+    .panel-filtros.is-open .panel-filtros-body { display: block; }
+  }
+
+  /* Desktop: siempre visible, sin importar clases JS */
+  @media (min-width: 801px) {
+    .panel-filtros-body { display: block !important; }
+    .panel-filtros-toggle { display: none !important; }
+  }
+
+  @media (max-width: 600px) {
+    /* Touch targets — WCAG 2.5.5 mínimo 44×44px */
+    button.remove {
+      min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    button.combo-arrow { width: 2.75rem; height: 2.75rem; }
+    .selector-wrap input[type="text"] { min-height: 44px; }
+    button#btn-agregar { min-height: 44px; padding: 0 1.2rem; }
+    nav.tabs a { min-height: 44px; display: inline-flex; align-items: center; }
+    ul.autocomplete-list li { padding: 0.75rem var(--space-2); }
+    .chip-elegido button { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+
+    /* Share bar: wrap cuando no cabe en línea */
+    .share-bar { flex-wrap: wrap; gap: 0.5rem; }
+    .btn-compartir { width: 100%; justify-content: center; }
+
+    /* Canvas: alto mínimo para legibilidad */
+    .chart-canvas-wrap canvas { min-height: 200px; }
+
+    /* Dropdowns: max-height reducido para no salirse del viewport */
+    .custom-select-list { max-height: 160px; }
+    ul.autocomplete-list { max-height: 180px; }
+  }
+
+  /* ─── T19c: hover/focus-visible animations ──────────────────────────── */
+
+  /* combo-card: lift sutil + sombra pronunciada */
+  li.combo-card {
+    transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.18s ease;
+  }
+  li.combo-card:not(.is-entering):not(.is-removing):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  /* botón × de quitar combo */
+  li.combo-card button.remove {
+    transition: color 0.12s, transform 0.12s;
+  }
+  li.combo-card button.remove:hover,
+  li.combo-card button.remove:focus-visible {
+    color: var(--color-danger);
+    transform: scale(1.18);
+    outline: none;
+  }
+
+  /* botón Agregar */
+  button#btn-agregar {
+    transition: filter 0.15s, transform 0.12s, box-shadow 0.15s;
+  }
+  button#btn-agregar:not(:disabled):hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+    box-shadow: 0 4px 14px rgba(26, 127, 100, 0.3);
+  }
+  button#btn-agregar:not(:disabled):active {
+    transform: scale(0.97);
+  }
+  button#btn-agregar:focus-visible {
+    outline: 3px solid rgba(26, 127, 100, 0.45);
+    outline-offset: 2px;
+  }
+
+  /* ítems del autocomplete de institución y carrera */
+  ul.autocomplete-list li {
+    transition: background 0.12s, color 0.12s;
+  }
+  ul.autocomplete-list li:hover,
+  ul.autocomplete-list li[aria-selected="true"] {
+    background: rgba(15, 46, 69, 0.08);
+    color: #0f2e45;
+  }
+
+  /* chip elegido × */
+  .chip-elegido button {
+    transition: color 0.12s, transform 0.12s;
+  }
+  .chip-elegido button:hover,
+  .chip-elegido button:focus-visible {
+    color: var(--color-danger);
+    transform: scale(1.18);
+    outline: none;
+  }
+
+  /* botón Compartir */
+  .btn-compartir {
+    transition: opacity 0.15s, transform 0.12s;
+  }
+  .btn-compartir:not(:disabled):active {
+    transform: scale(0.97);
+  }
+  .btn-compartir:focus-visible {
+    outline: 3px solid rgba(26, 127, 100, 0.45);
+    outline-offset: 2px;
+  }
+
+  /* combo-arrow */
+  button.combo-arrow {
+    transition: color 0.12s;
+  }
+  button.combo-arrow:not(:disabled):hover,
+  button.combo-arrow:not(:disabled):focus-visible {
+    color: var(--color-text);
+    outline: none;
+  }
+
+  /* custom-select list items → azul header (pedido explícito) */
+  .custom-select-list li:hover {
+    background: rgba(15, 46, 69, 0.08);
+    color: #0f2e45;
+  }
+  .custom-select-list li.cs-selected {
+    color: #0f2e45;
+    background: rgba(15, 46, 69, 0.05);
+  }
+
+  /* sliders: ya tienen ring en hover/focus — reforzamos el thumb */
+  input[type="range"].filtro-range-full::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 5px rgba(26, 127, 100, 0.28);
+  }
+
+  /* inputs de texto: ring visible al enfocar */
+  .selector-wrap input[type="text"]:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 127, 100, 0.22);
+  }
+
+  /* tooltip-btn: agregar transition */
+  .tooltip-btn {
+    transition: background 0.12s;
+  }
+
+  /* links en panel de institución */
+  .panel-institucion-card dd a {
+    transition: color 0.15s;
+  }
+  .panel-institucion-card dd a:hover,
+  .panel-institucion-card dd a:focus-visible {
+    color: #0d5c47;
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <img src="assets/logo-carrera-clara-blanco.png" alt="Logo Carrera Clara" class="header-logo">
+      <div class="header-brand-text">
+        <span class="header-brand-name">Carrera Clara</span>
+        <span class="header-brand-slogan">Elige con datos. Decide con claridad.</span>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="landing.html">Inicio</a>
+      <a href="index_v2.html">Tipos de carrera</a>
+      <a href="instituciones_v2.html" class="activo" aria-current="page">Carreras por institución</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <aside class="panel-filtros" aria-label="Filtros de búsqueda">
+    <div class="panel-filtros-header">
+      <p class="panel-filtros-titulo">Filtrar</p>
+      <button class="panel-filtros-toggle" aria-expanded="false" aria-controls="panel-filtros-body">▾ Filtros</button>
+    </div>
+
+    <div id="panel-filtros-body" class="panel-filtros-body">
+      <p class="panel-filtros-desc">Solo aparecen instituciones que cumplen los filtros activos.</p>
+
+      <div class="filtro-group">
+        <label for="filtro-tipo" class="filtro-label">Tipo de institución</label>
+        <select id="filtro-tipo" class="filtro-select-full"><option value="">Todos</option></select>
+      </div>
+
+      <div class="filtro-group">
+        <label for="filtro-area" class="filtro-label">Área</label>
+        <select id="filtro-area" class="filtro-select-full"><option value="">Todas</option></select>
+      </div>
+
+      <hr class="filtro-separator">
+
+      <div class="filtro-group">
+        <span class="filtro-label">Acreditación mín.</span>
+        <input type="range" id="filtro-acred" class="filtro-range-full" min="0" max="10" step="1" value="0">
+        <span id="val-acred" class="filtro-valor-sidebar">Cualquiera</span>
+      </div>
+
+      <div class="filtro-group">
+        <span class="filtro-label">Empleabilidad mín.</span>
+        <input type="range" id="filtro-emp" class="filtro-range-full" min="0" max="100" step="5" value="0">
+        <span id="val-emp" class="filtro-valor-sidebar">Cualquiera</span>
+      </div>
+
+      <div class="filtro-group">
+        <span class="filtro-label">Arancel máx.</span>
+        <input type="range" id="filtro-arancel" class="filtro-range-full" min="0" max="10000000" step="100000" value="10000000">
+        <span id="val-arancel" class="filtro-valor-sidebar">Sin límite</span>
+      </div>
+
+      <div class="filtro-group">
+        <span class="filtro-label">Duración máx.</span>
+        <input type="range" id="filtro-duracion" class="filtro-range-full" min="4" max="20" step="1" value="20">
+        <span id="val-duracion" class="filtro-valor-sidebar">Sin límite</span>
+      </div>
+    </div>
+  </aside>
+
+  <div class="main-content">
+
+  <section id="seccion-selector" aria-labelledby="selector-heading">
+    <h2 id="selector-heading">Institución + carrera a comparar</h2>
+    <div class="selector-pasos">
+      <div class="selector-paso">
+        <label for="institucion-input">1. Institución</label>
+        <div class="selector-wrap">
+          <input type="text" id="institucion-input" autocomplete="off" placeholder="Escribe el nombre de una institución">
+          <button type="button" class="combo-arrow" id="institucion-arrow" aria-label="Mostrar todas las instituciones">▾</button>
+          <ul class="autocomplete-list" id="institucion-list" hidden role="listbox"></ul>
+        </div>
+        <div id="institucion-chip"></div>
+      </div>
+      <div class="selector-paso">
+        <label for="carrera-input">2. Carrera que imparte</label>
+        <div class="selector-wrap">
+          <input type="text" id="carrera-input" autocomplete="off" placeholder="Primero elige una institución…" disabled>
+          <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar todas las carreras de esa institución" disabled>▾</button>
+          <ul class="autocomplete-list" id="carrera-list" hidden role="listbox"></ul>
+        </div>
+        <div id="carrera-chip"></div>
+      </div>
+      <div class="selector-paso-agregar">
+        <button type="button" id="btn-agregar" disabled>Agregar</button>
+      </div>
+    </div>
+    <p class="selector-help" id="selector-help">Agrega al menos 2 combinaciones para comparar.</p>
+    <ul id="selected-list"></ul>
+    <div id="aviso-usabilidad" class="aviso-usabilidad" hidden></div>
+    <div id="share-bar" class="share-bar" hidden>
+      <span>Comparte esta comparación</span>
+      <button type="button" id="btn-compartir" class="btn-compartir">🔗 Copiar enlace</button>
+    </div>
+  </section>
+  <div id="share-toast"></div>
+
+  <div id="seccion-vacia">
+    <div class="empty-state">
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        <line x1="12" y1="7" x2="12" y2="7"/>
+      </svg>
+      <h2>Compara institución por institución</h2>
+      <p>Elige una institución y una carrera arriba para empezar.</p>
+    </div>
+  </div>
+
+  <section id="seccion-charts" hidden aria-labelledby="charts-heading">
+    <h2 id="charts-heading">Gráficos comparativos</h2>
+    <p class="chart-note" id="nota-charts">Indicadores propios de cada institución para esa carrera (título) — no es el benchmark nacional de "Tipos de carrera".</p>
+    <div class="charts-grid">
+      <figure class="chart-card">
+        <figcaption>Empleabilidad 1er y 2do año <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de titulados que trabajaron formalmente al 1er y 2do año después de egresar, según datos del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-empleabilidad"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Retención 1er año <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de estudiantes que continuaron inscritos en la carrera al 2do año." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-retencion"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Duración real (semestres) <button type="button" class="tooltip-btn" data-tooltip="Semestres promedio que tardaron los titulados en completar la carrera. Puede ser mayor que la duración formal del plan." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-duracion"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Banda de ingreso al 4° año de titulado <button type="button" class="tooltip-btn" data-tooltip="Tramo de ingresos al 4° año de titulado reportado por SIES. Es un rango (ej. De $900 mil a $1 millón), no un valor exacto." aria-label="Información" tabindex="0">ℹ</button><span class="figcaption-sub" id="nota-ingreso">Rango reportado (mínimo–máximo), no un promedio.</span></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-ingreso"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Arancel anual 2026 <button type="button" class="tooltip-btn" data-tooltip="Costo anual según datos SIES 2026. Barras ordenadas de menor a mayor. Color = tipo de institución. Línea punteada roja = promedio. Barra delgada = valor exacto; barra ancha = rango entre sedes/jornadas." aria-label="Información" tabindex="0">ℹ</button><span class="figcaption-sub" id="nota-arancel">Ordenadas de menor a mayor arancel.</span></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-arancel"></canvas></div>
+        <div class="arancel-leyenda">
+          <span class="leyenda-exacto">● Valor exacto</span>
+          <span class="leyenda-rango">▬ Estimado (rango entre sedes/jornadas)</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="seccion-panel-institucion" hidden aria-labelledby="panel-inst-heading">
+    <h2 id="panel-inst-heading">Información general de las instituciones</h2>
+    <p class="chart-note">Una tarjeta por institución única presente en la comparación actual.</p>
+    <div class="panel-instituciones-grid" id="panel-instituciones-grid"></div>
+  </section>
+
+  </div><!-- /.main-content -->
+
+</main>
+
+<footer class="app-footer">
+  <div class="footer-grid">
+
+    <!-- Col 1: Identidad -->
+    <div class="footer-col footer-col-brand">
+      <div class="footer-logo-row">
+        <img src="assets/logo-carrera-clara-blanco.png" alt="Carrera Clara" class="footer-logo">
+        <span class="footer-brand-name">Carrera Clara</span>
+      </div>
+      <p>Herramienta independiente de visualización y análisis comparativo para explorar opciones de educación superior en Chile.</p>
+      <p class="footer-attribution">
+        Datos: <a href="https://www.mifuturo.cl" target="_blank" rel="noopener">SIES / MiFuturo.cl</a> — Ministerio de Educación de Chile
+      </p>
+      <p class="footer-copyright">
+        © 2026 Carrera Clara. Todos los derechos reservados.<br>
+        Desarrollado por <a href="https://www.linkedin.com/in/diegovp2001/" target="_blank" rel="noopener">Diego Vargas Palominos</a>.
+      </p>
+    </div>
+
+    <!-- Col 2: Bases de datos -->
+    <div class="footer-col">
+      <h3>Bases de datos</h3>
+      <ul class="footer-links">
+        <li><a href="https://www.mifuturo.cl/bases-de-datos-de-matriculados/#" target="_blank" rel="noopener">Bases de datos oficiales SIES</a></li>
+        <li><a href="https://www.mifuturo.cl/" target="_blank" rel="noopener">Mi Futuro</a></li>
+        <li><a href="https://educacionsuperior.mineduc.cl/" target="_blank" rel="noopener">Mineduc</a></li>
+        <li><a href="https://demre.cl/" target="_blank" rel="noopener">DEMRE</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Explorar -->
+    <div class="footer-col">
+      <h3>Explorar</h3>
+      <ul class="footer-links">
+        <li><a href="landing.html">Inicio</a></li>
+        <li><a href="index_v2.html">Tipos de carrera</a></li>
+        <li><a href="instituciones_v2.html">Carreras por institución</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Elemento oculto para compatibilidad con el JS (renderDiagnostico) -->
+<ul id="diagnostico-list" hidden></ul>
+
+<script>
+(function () {
+  "use strict";
+
+  // -------------------------------------------------------------------
+  // normalizar: identico a index.html (mismo contrato NFKD para que el
+  // filtro sin tildes funcione igual en ambas pestañas).
+  // -------------------------------------------------------------------
+  function normalizar(texto) {
+    return texto.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  const MIN_COMBOS = 2; // sin tope maximo: el layout (cards + graficos) ya escala con la cantidad
+  const ANCHO_BANDA_ABIERTA = 500000; // ancho visual asignado a la banda sin techo, ver nota en el chart
+
+  let data = null; // instituciones.json completo
+  let selected = []; // combos seleccionados, en orden de agregado
+  let _renderedIds = new Set();
+  let institucionElegida = null; // paso 1: {codigo, nombre, tipo, tiene_ficha}
+  let carreraElegida = null; // paso 2: combo completo de data.combos
+  const chartInstances = {};
+  let MAX_ARANCEL_DATA = 10000000;
+  let MAX_DURACION_DATA = 20;
+
+  const el = {
+    institucionInput: document.getElementById("institucion-input"),
+    institucionArrow: document.getElementById("institucion-arrow"),
+    institucionList: document.getElementById("institucion-list"),
+    institucionChip: document.getElementById("institucion-chip"),
+    carreraInput: document.getElementById("carrera-input"),
+    carreraArrow: document.getElementById("carrera-arrow"),
+    carreraList: document.getElementById("carrera-list"),
+    carreraChip: document.getElementById("carrera-chip"),
+    filtroTipo: document.getElementById("filtro-tipo"),
+    filtroArea: document.getElementById("filtro-area"),
+    filtroAcred: document.getElementById("filtro-acred"),
+    filtroEmp: document.getElementById("filtro-emp"),
+    filtroArancel: document.getElementById("filtro-arancel"),
+    filtroDuracion: document.getElementById("filtro-duracion"),
+    valAcred: document.getElementById("val-acred"),
+    valEmp: document.getElementById("val-emp"),
+    valArancel: document.getElementById("val-arancel"),
+    valDuracion: document.getElementById("val-duracion"),
+    btnAgregar: document.getElementById("btn-agregar"),
+    selectedList: document.getElementById("selected-list"),
+    selectorHelp: document.getElementById("selector-help"),
+    seccionVacia: document.getElementById("seccion-vacia"),
+    seccionCharts: document.getElementById("seccion-charts"),
+    seccionPanelInstitucion: document.getElementById("seccion-panel-institucion"),
+    panelInstitucionGrid: document.getElementById("panel-instituciones-grid"),
+    diagnosticoList: document.getElementById("diagnostico-list"),
+    avisoUsabilidad: document.getElementById("aviso-usabilidad"),
+    shareBar: document.getElementById("share-bar"),
+    btnCompartir: document.getElementById("btn-compartir"),
+  };
+
+  async function init() {
+    const resp = await fetch("data/instituciones.json");
+    data = await resp.json();
+    renderDiagnostico(data.diagnostico);
+    const tipos = [...new Set(data.combos.map((c) => c.institucion.tipo).filter(Boolean))].sort();
+    tipos.forEach((t) => {
+      const opt = document.createElement("option");
+      opt.value = t;
+      opt.textContent = t;
+      el.filtroTipo.appendChild(opt);
+    });
+    const areas = [...new Set(data.combos.map((c) => c.area).filter(Boolean))].sort();
+    areas.forEach((a) => {
+      const opt = document.createElement("option");
+      opt.value = a;
+      opt.textContent = a;
+      el.filtroArea.appendChild(opt);
+    });
+    const arancelVals = data.combos
+      .flatMap((c) => [c.arancel_min, c.arancel_max, c.arancel_exacto])
+      .filter((v) => v != null && typeof v === "number");
+    if (arancelVals.length) {
+      MAX_ARANCEL_DATA = Math.ceil(Math.max(...arancelVals) / 100000) * 100000;
+      el.filtroArancel.max = MAX_ARANCEL_DATA;
+      el.filtroArancel.value = MAX_ARANCEL_DATA;
+    }
+    const durVals = data.combos.map((c) => c.duracion_real_semestres).filter((v) => v != null);
+    if (durVals.length) {
+      MAX_DURACION_DATA = Math.ceil(Math.max(...durVals));
+      el.filtroDuracion.min = Math.floor(Math.min(...durVals));
+      el.filtroDuracion.max = MAX_DURACION_DATA;
+      el.filtroDuracion.value = MAX_DURACION_DATA;
+    }
+    const acredVals = data.combos.map((c) => c.institucion.anios_acreditacion).filter((v) => v != null);
+    if (acredVals.length) el.filtroAcred.max = Math.ceil(Math.max(...acredVals));
+    buildCustomSelect(el.filtroTipo);
+    buildCustomSelect(el.filtroArea);
+    restoreFromURL();
+    renderSelected();
+    renderEmptyState();
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+    }[c]));
+  }
+
+  function formatArancelLabel(valor) {
+    if (valor >= 1000000) return `≤ $${(valor / 1000000).toLocaleString("es-CL", { maximumFractionDigits: 1 })} M`;
+    return `≤ $${Math.round(valor / 1000).toLocaleString("es-CL")} mil`;
+  }
+
+  function updateSliderDisplays() {
+    const acred = parseInt(el.filtroAcred.value, 10);
+    el.valAcred.textContent = acred === 0 ? "Cualquiera" : `≥ ${acred} año${acred !== 1 ? "s" : ""}`;
+
+    const emp = parseInt(el.filtroEmp.value, 10);
+    el.valEmp.textContent = emp === 0 ? "Cualquiera" : `≥ ${emp}%`;
+
+    const ar = parseInt(el.filtroArancel.value, 10);
+    el.valArancel.textContent = ar >= MAX_ARANCEL_DATA ? "Sin límite" : formatArancelLabel(ar);
+
+    const dur = parseInt(el.filtroDuracion.value, 10);
+    el.valDuracion.textContent = dur >= MAX_DURACION_DATA ? "Sin límite" : `≤ ${dur} sem.`;
+  }
+
+  function comboPassesFiltros(combo) {
+    const area = el.filtroArea.value;
+    if (area !== "" && combo.area !== area) return false;
+    const minEmp = parseInt(el.filtroEmp.value, 10) / 100;
+    if (minEmp > 0 && (combo.empleabilidad_1er_anio === null || combo.empleabilidad_1er_anio < minEmp)) return false;
+    const maxArancel = parseInt(el.filtroArancel.value, 10);
+    if (maxArancel < MAX_ARANCEL_DATA && combo.arancel_min !== null && combo.arancel_moneda === "CLP" && combo.arancel_min > maxArancel) return false;
+    const maxDuracion = parseInt(el.filtroDuracion.value, 10);
+    if (maxDuracion < MAX_DURACION_DATA && combo.duracion_real_semestres !== null && combo.duracion_real_semestres > maxDuracion) return false;
+    return true;
+  }
+
+  function institucionPassesFiltros(institucion) {
+    if (el.filtroTipo.value !== "" && institucion.tipo !== el.filtroTipo.value) return false;
+    const minAcred = parseInt(el.filtroAcred.value, 10);
+    if (minAcred > 0 && (institucion.anios_acreditacion === null || institucion.anios_acreditacion < minAcred)) return false;
+    return data.combos.some((c) => c.institucion.codigo === institucion.codigo && comboPassesFiltros(c));
+  }
+
+  function infoIcon(texto) {
+    return `<button type="button" class="tooltip-btn" data-tooltip="${escapeHtml(texto)}" aria-label="Información" tabindex="0">ℹ</button>`;
+  }
+
+  function renderDiagnostico(d) {
+    el.diagnosticoList.innerHTML = `
+      <li>${d.total_combos} combinaciones institución + carrera-título en total</li>
+      <li>${d.combos_institucion_sin_ficha} con institución sin ficha</li>
+      <li>${d.combos_sin_banda_ingreso} sin banda de ingreso reportada</li>
+      <li>${d.combos_banda_ingreso_abierta} con banda de ingreso abierta (sin techo reportado)</li>
+      <li>${d.combos_arancel_exacto} con arancel exacto</li>
+      <li>${d.combos_arancel_aproximado} con arancel aproximado (rango entre sedes/jornadas)</li>
+      <li>${d.combos_sin_arancel} sin dato de arancel</li>
+    `;
+  }
+
+  // ---------------------------------------------------------------------
+  // Etiqueta de institución: "sin ficha" no tiene nombre propio, se
+  // identifica por código (FK colgante real, no fila vacía - ver
+  // export_instituciones.py). El texto incluye el código para que
+  // buscar "165" tambien la encuentre.
+  // ---------------------------------------------------------------------
+  function etiquetaInstitucion(institucion) {
+    if (institucion.tiene_ficha) return institucion.nombre;
+    return `Institución sin ficha (código ${institucion.codigo ?? "?"})`;
+  }
+
+  const POND_COMPS = [
+    { key: "ponderacion_nem",           clase: "pond-nem",      etiqueta: "NEM" },
+    { key: "ponderacion_ranking",       clase: "pond-ranking",  etiqueta: "Ranking" },
+    { key: "ponderacion_lenguaje",      clase: "pond-lenguaje", etiqueta: "C. Lectora" },
+    { key: "ponderacion_matematicas",   clase: "pond-mat",      etiqueta: "M1" },
+    { key: "ponderacion_matematicas_2", clase: "pond-mat2",     etiqueta: "M2" },
+    { key: "ponderacion_historia",      clase: "pond-historia", etiqueta: "Hist." },
+    { key: "ponderacion_ciencias",      clase: "pond-ciencias", etiqueta: "Ciencias" },
+    { key: "ponderacion_otros",         clase: "pond-otros",    etiqueta: "Otros" },
+  ];
+
+  function renderPonderacionBar(combo) {
+    const sinPaesHtml = `<div class="pond-combo-row"><span class="badge-sin-paes">Sin ponderación PAES</span>${infoIcon("Esta combinación no reporta ponderaciones PAES. Común en IPs y CFTs con admisión especial sin PAES.")}</div>`;
+    if (!combo.tiene_ponderacion_paes) {
+      return sinPaesHtml;
+    }
+    const suma = POND_COMPS.reduce((acc, c) => acc + (combo[c.key] || 0), 0);
+    if (suma === 0) return sinPaesHtml;
+
+    const segs = POND_COMPS
+      .filter((c) => (combo[c.key] || 0) > 0)
+      .map((c) => {
+        const pct = ((combo[c.key] || 0) / suma * 100).toFixed(1);
+        return `<span class="pond-seg ${c.clase}" style="width:${pct}%" title="${c.etiqueta} ${combo[c.key]}%"></span>`;
+      }).join("");
+
+    const partes = [];
+    const indiv = ["ponderacion_nem","ponderacion_ranking","ponderacion_lenguaje",
+                   "ponderacion_matematicas","ponderacion_matematicas_2","ponderacion_otros"];
+    POND_COMPS.filter((c) => indiv.includes(c.key) && (combo[c.key] || 0) > 0)
+              .forEach((c) => partes.push(`${c.etiqueta} ${combo[c.key]}%`));
+    const hist = combo.ponderacion_historia || 0;
+    const cien = combo.ponderacion_ciencias || 0;
+    if (hist > 0 && cien > 0) {
+      partes.push(hist === cien ? `Hist./Ciencias ${hist}%` : `Hist./Ciencias ${hist}%/${cien}%`);
+    } else if (hist > 0) {
+      partes.push(`Hist. ${hist}%`);
+    } else if (cien > 0) {
+      partes.push(`Ciencias ${cien}%`);
+    }
+
+    const texto = partes.join(" · ");
+    const variaAviso = combo.ponderacion_varia
+      ? ` <span class="badge badge-warning">varía por sede/jornada</span>${infoIcon("Las ponderaciones PAES difieren entre las distintas sedes o jornadas de esta carrera en esta institución.")}` : "";
+    return `<div class="pond-combo-row">
+      <div class="pond-bar" title="${texto}">${segs}</div>
+      <span class="pond-label">${texto}${variaAviso}</span>
+    </div>`;
+  }
+
+  function badgeInstitucion(institucion) {
+    if (institucion.tiene_ficha) return escapeHtml(institucion.nombre);
+    return `<span class="badge badge-missing">institución sin ficha</span> (código ${institucion.codigo ?? "?"})`;
+  }
+
+  // ---------------------------------------------------------------------
+  // Paso 1: instituciones unicas (dedupe por codigo, ~105 sobre el dataset
+  // real) - lista chica, se muestra completa sin tope ni paginacion.
+  // ---------------------------------------------------------------------
+  function institucionesUnicas() {
+    const vistas = new Map();
+    data.combos.forEach((c) => {
+      const codigo = c.institucion.codigo;
+      if (!vistas.has(codigo)) vistas.set(codigo, c.institucion);
+    });
+    return [...vistas.values()].sort((a, b) =>
+      etiquetaInstitucion(a).localeCompare(etiquetaInstitucion(b), "es")
+    );
+  }
+
+  function textoBusquedaInstitucion(institucion) {
+    return normalizar(`${etiquetaInstitucion(institucion)} ${institucion.codigo}`);
+  }
+
+  function mostrarListaInstituciones(filtro) {
+    const q = normalizar(filtro || "");
+    const resultados = institucionesUnicas().filter(
+      (i) => (q === "" || textoBusquedaInstitucion(i).includes(q)) &&
+             institucionPassesFiltros(i)
+    );
+    const wasHidden = el.institucionList.hidden;
+    if (resultados.length === 0) {
+      el.institucionList.innerHTML = '<li class="meta">Sin resultados.</li>';
+      if (wasHidden) fadeIn(el.institucionList);
+      return;
+    }
+    el.institucionList.innerHTML = resultados
+      .map(
+        (i) => `<li role="option" data-codigo="${i.codigo}">${badgeInstitucion(i)}
+          <span class="meta">${escapeHtml(i.tipo || "Tipo sin clasificar")}</span>
+        </li>`
+      )
+      .join("");
+    if (wasHidden) fadeIn(el.institucionList);
+  }
+
+  function ocultarListaInstituciones() { el.institucionList.hidden = true; }
+
+  [el.filtroTipo, el.filtroArea].forEach((sel) =>
+    sel.addEventListener("change", () => {
+      el.institucionList.hidden = true;
+      mostrarListaInstituciones(el.institucionInput.value);
+    })
+  );
+  [el.filtroAcred, el.filtroEmp, el.filtroArancel, el.filtroDuracion].forEach((rng) =>
+    rng.addEventListener("input", () => {
+      updateSliderDisplays();
+      if (!el.institucionList.hidden) mostrarListaInstituciones(el.institucionInput.value);
+    })
+  );
+  el.institucionInput.addEventListener("input", () => mostrarListaInstituciones(el.institucionInput.value));
+  el.institucionInput.addEventListener("focus", () => mostrarListaInstituciones(el.institucionInput.value));
+  el.institucionInput.addEventListener("keydown", (ev) => { if (ev.key === "Escape") ocultarListaInstituciones(); });
+
+  el.institucionArrow.addEventListener("click", () => {
+    if (el.institucionList.hidden) {
+      mostrarListaInstituciones(el.institucionInput.value);
+      el.institucionInput.focus();
+    } else {
+      ocultarListaInstituciones();
+    }
+  });
+
+  el.institucionList.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li[data-codigo]");
+    if (!li) return;
+    const codigo = Number(li.dataset.codigo);
+    const institucion = institucionesUnicas().find((i) => i.codigo === codigo);
+    if (institucion) elegirInstitucion(institucion);
+    el.institucionInput.value = "";
+    ocultarListaInstituciones();
+  });
+
+  document.addEventListener("click", (ev) => {
+    customSelects.forEach(cs => cs.close());
+    if (!el.institucionList.contains(ev.target) && ev.target !== el.institucionInput && ev.target !== el.institucionArrow) {
+      ocultarListaInstituciones();
+    }
+    if (!el.carreraList.contains(ev.target) && ev.target !== el.carreraInput && ev.target !== el.carreraArrow) {
+      ocultarListaCarreras();
+    }
+  });
+
+  function elegirInstitucion(institucion) {
+    institucionElegida = institucion;
+    carreraElegida = null;
+    renderPaso1();
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function limpiarInstitucion() {
+    institucionElegida = null;
+    carreraElegida = null;
+    renderPaso1();
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function renderPaso1() {
+    if (institucionElegida) {
+      el.institucionInput.value = "";
+      el.institucionInput.disabled = true;
+      el.institucionArrow.disabled = true;
+      el.institucionChip.innerHTML = `<span class="chip-elegido is-fade-entering">${badgeInstitucion(institucionElegida)}
+        <button type="button" id="btn-cambiar-institucion" aria-label="Cambiar institución">×</button></span>`;
+      document.getElementById("btn-cambiar-institucion").addEventListener("click", limpiarInstitucion);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const chip = el.institucionChip.querySelector('.chip-elegido');
+        if (chip) chip.classList.remove('is-fade-entering');
+      }));
+    } else {
+      el.institucionInput.disabled = false;
+      el.institucionArrow.disabled = false;
+      el.institucionChip.innerHTML = "";
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Paso 2: carreras de la institucion elegida (subconjunto chico, no
+  // necesita tope) - solo se habilita una vez elegida la institucion.
+  // ---------------------------------------------------------------------
+  function combosDeInstitucionElegida() {
+    if (!institucionElegida) return [];
+    const yaSeleccionados = new Set(selected.map((c) => c.id));
+    return data.combos.filter(
+      (c) => c.institucion.codigo === institucionElegida.codigo && !yaSeleccionados.has(c.id) && comboPassesFiltros(c)
+    );
+  }
+
+  function mostrarListaCarreras(filtro) {
+    const q = normalizar(filtro || "");
+    const resultados = combosDeInstitucionElegida().filter(
+      (c) => q === "" || normalizar(`${c.carrera_titulo || ""} ${c.carrera_generica || ""} ${c.area || ""}`).includes(q)
+    );
+    const wasHidden = el.carreraList.hidden;
+    if (resultados.length === 0) {
+      el.carreraList.innerHTML = '<li class="meta">Sin resultados (o ya agregaste todas las carreras disponibles de esta institución).</li>';
+      if (wasHidden) fadeIn(el.carreraList);
+      return;
+    }
+    el.carreraList.innerHTML = resultados
+      .map(
+        (c) => `<li role="option" data-id="${escapeHtml(c.id)}">${escapeHtml(c.carrera_titulo || "—")}
+          <span class="meta">${escapeHtml(c.area || "Área sin clasificar")}</span>
+        </li>`
+      )
+      .join("");
+    if (wasHidden) fadeIn(el.carreraList);
+  }
+
+  function ocultarListaCarreras() { el.carreraList.hidden = true; }
+
+  el.carreraInput.addEventListener("input", () => mostrarListaCarreras(el.carreraInput.value));
+  el.carreraInput.addEventListener("focus", () => { if (institucionElegida) mostrarListaCarreras(el.carreraInput.value); });
+  el.carreraInput.addEventListener("keydown", (ev) => { if (ev.key === "Escape") ocultarListaCarreras(); });
+
+  el.carreraArrow.addEventListener("click", () => {
+    if (!institucionElegida) return;
+    if (el.carreraList.hidden) {
+      mostrarListaCarreras(el.carreraInput.value);
+      el.carreraInput.focus();
+    } else {
+      ocultarListaCarreras();
+    }
+  });
+
+  el.carreraList.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li[data-id]");
+    if (!li) return;
+    const combo = data.combos.find((c) => c.id === li.dataset.id);
+    if (combo) elegirCarrera(combo);
+    el.carreraInput.value = "";
+    ocultarListaCarreras();
+  });
+
+  function elegirCarrera(combo) {
+    carreraElegida = combo;
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function limpiarCarrera() {
+    carreraElegida = null;
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function renderPaso2() {
+    if (!institucionElegida) {
+      el.carreraInput.disabled = true;
+      el.carreraArrow.disabled = true;
+      el.carreraInput.value = "";
+      el.carreraInput.placeholder = "Primero elige una institución…";
+      el.carreraChip.innerHTML = "";
+      return;
+    }
+    if (carreraElegida) {
+      el.carreraInput.value = "";
+      el.carreraInput.disabled = true;
+      el.carreraArrow.disabled = true;
+      el.carreraChip.innerHTML = `<span class="chip-elegido is-fade-entering">${escapeHtml(carreraElegida.carrera_titulo || "—")}
+        <button type="button" id="btn-cambiar-carrera" aria-label="Cambiar carrera">×</button></span>`;
+      document.getElementById("btn-cambiar-carrera").addEventListener("click", limpiarCarrera);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const chip = el.carreraChip.querySelector('.chip-elegido');
+        if (chip) chip.classList.remove('is-fade-entering');
+      }));
+    } else {
+      el.carreraInput.disabled = false;
+      el.carreraArrow.disabled = false;
+      el.carreraInput.placeholder = "Escribe una carrera";
+      el.carreraChip.innerHTML = "";
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Boton Agregar: confirma la combinacion y resetea ambos pasos para
+  // que el siguiente agregado empiece de cero (mas predecible que dejar
+  // la institucion fija, segun feedback de Diego sobre lo dificil que
+  // era buscar con el combobox unico de la v1).
+  // ---------------------------------------------------------------------
+  function renderBotonAgregar() {
+    el.btnAgregar.disabled = !(institucionElegida && carreraElegida);
+  }
+
+  el.btnAgregar.addEventListener("click", () => {
+    if (!carreraElegida) return;
+    addCombo(carreraElegida);
+    institucionElegida = null;
+    carreraElegida = null;
+    renderPaso1();
+    renderPaso2();
+    renderBotonAgregar();
+  });
+
+  function addCombo(combo) {
+    if (selected.some((c) => c.id === combo.id)) return;
+    selected.push(combo);
+    afterSelectionChange();
+  }
+
+  function removeCombo(id) {
+    selected = selected.filter((c) => c.id !== id);
+    afterSelectionChange();
+  }
+
+  function afterSelectionChange() {
+    renderSelected();
+    renderEmptyState();
+    renderCharts();
+    renderPanelInstituciones();
+    renderBotonAgregar();
+    updateURL();
+  }
+
+  function updateURL() {
+    if (selected.length === 0) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } else {
+      history.replaceState(null, "", "#i=" + selected.map((c) => encodeURIComponent(c.id)).join(","));
+    }
+  }
+
+  function restoreFromURL() {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const params = new URLSearchParams(hash);
+    const idList = params.get("i");
+    if (!idList) return;
+    idList.split(",").forEach((rawId) => {
+      const id = decodeURIComponent(rawId);
+      const combo = data.combos.find((c) => c.id === id);
+      if (combo) addCombo(combo);
+    });
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById("share-toast");
+    toast.textContent = msg;
+    toast.classList.add("visible");
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove("visible"), 2200);
+  }
+
+  el.btnCompartir.addEventListener("click", () => {
+    const url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(() => showToast("¡Enlace copiado!"));
+    } else {
+      const inp = document.createElement("input");
+      inp.value = url;
+      document.body.appendChild(inp);
+      inp.select();
+      document.execCommand("copy");
+      document.body.removeChild(inp);
+      showToast("¡Enlace copiado!");
+    }
+  });
+
+  // ---------------------------------------------------------------------
+  // Tarea 11 — Íconos, métricas titulares y aviso de usabilidad
+  // ---------------------------------------------------------------------
+  const TIPO_EMOJI_INST = {
+    "Universidad": "🏛",
+    "Universidades": "🏛",
+    "Instituto Profesional": "🏢",
+    "Institutos Profesionales": "🏢",
+    "Centro de Formación Técnica": "🏫",
+    "Centros de Formación Técnica": "🏫",
+  };
+
+  const AVISO_UMBRAL = 7;
+
+  function iconChip(emoji, etiqueta, tooltipTexto) {
+    const btn = tooltipTexto ? " " + infoIcon(tooltipTexto) : "";
+    return `<span class="card-icon-chip">${emoji} ${escapeHtml(String(etiqueta || "—"))}${btn}</span>`;
+  }
+
+  function iconRowCombo(combo) {
+    const chips = [];
+    const tipo = combo.institucion.tipo;
+    if (tipo) chips.push(iconChip(TIPO_EMOJI_INST[tipo] || "🏢", tipo, "Tipo de institución según clasificación SIES."));
+    if (combo.institucion.acreditacion) {
+      const acred = combo.institucion.acreditacion;
+      const anios = combo.institucion.anios_acreditacion;
+      const tooltip = anios != null ? "Acreditación: " + acred + " (" + anios + " años)" : "Acreditación: " + acred;
+      chips.push(iconChip("⭐", acred, tooltip));
+    }
+    if (combo.area) chips.push(iconChip("🎓", combo.area, "Área de conocimiento según clasificación SIES."));
+    return chips.length ? `<div class="card-icon-row">${chips.join("")}</div>` : "";
+  }
+
+  function headlineMetricsCombo(combo) {
+    const metricas = [];
+    if (combo.empleabilidad_1er_anio !== null) {
+      const pct = Math.round(combo.empleabilidad_1er_anio * 100) + "%";
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor">${pct}</span>` +
+        `<span class="card-metric-label">Emp. 1er año ` +
+        infoIcon("Porcentaje de titulados que trabajaron formalmente al 1er año de egresar (SII).") +
+        `</span></div>`
+      );
+    }
+    if (combo.ingreso_banda_texto) {
+      const banda = combo.ingreso_banda_texto.replace(/^De\s+/i, "").replace(/\s+a\s+/i, "–");
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor" style="font-size:0.95rem">${escapeHtml(banda)}</span>` +
+        `<span class="card-metric-label">Ingreso 4° año ` +
+        infoIcon("Tramo de ingreso al 4° año de titulado (SIES). Fuente: registros SII.") +
+        `</span></div>`
+      );
+    }
+    if (metricas.length === 0) return "";
+    return `<div class="card-metrics-row">${metricas.join("")}</div>`;
+  }
+
+  function actualizarAvisoUsabilidad() {
+    const n = selected.length;
+    if (n >= AVISO_UMBRAL) {
+      el.avisoUsabilidad.textContent = `Estás comparando ${n} combinaciones — con muchas tarjetas la lectura puede ser más difícil.`;
+      if (el.avisoUsabilidad.hidden) fadeIn(el.avisoUsabilidad);
+    } else {
+      el.avisoUsabilidad.hidden = true;
+    }
+  }
+
+  // Campos de la tarjeta que pueden venir nulos (ver auditoria de Tarea 4 /
+  // export_instituciones.py): empleabilidad_2do_anio (10.5%), retencion_1er_anio
+  // (16.5%), duracion_real_semestres (23.3%). Mismo criterio que index.html:
+  // avisar explicitamente en vez de dejar el hueco silencioso en el grafico.
+  const CAMPOS_COMBO = [
+    ["empleabilidad_2do_anio", "sin empleabilidad 2do año"],
+    ["retencion_1er_anio", "sin retención 1er año"],
+    ["duracion_real_semestres", "sin duración real"],
+  ];
+
+  function badgesFaltantesCombo(combo) {
+    return CAMPOS_COMBO.filter(([campo]) => combo[campo] === null)
+      .map(([, etiqueta]) => `<span class="badge badge-warning">${etiqueta}</span>`);
+  }
+
+  function renderSelected() {
+    const prevIds = new Set(_renderedIds);
+    _renderedIds = new Set(selected.map((c) => c.id));
+
+    el.selectedList.innerHTML = selected
+      .map((c) => {
+        const metaPartes = [];
+        if (c.area) metaPartes.push(escapeHtml(c.area));
+        if (c.institucion.tipo) metaPartes.push(escapeHtml(c.institucion.tipo));
+        if (!c.ingreso_banda_texto) metaPartes.push(`<span class="badge badge-warning">sin banda de ingreso</span>${infoIcon("SIES no reportó tramo de ingresos para esta carrera en esta institución.")}`);
+        else if (c.ingreso_banda_abierta) metaPartes.push(`<span class="badge badge-warning">banda de ingreso abierta</span>${infoIcon("El tramo reportado no tiene techo (ej. Sobre $3.500.000) — el máximo real no está en los datos SIES.")}`);
+        if (c.arancel_moneda === null) metaPartes.push(`<span class="badge badge-missing">sin dato de arancel</span>${infoIcon("No se encontró información de arancel para esta combinación en los datos SIES.")}`);
+        else if (c.arancel_moneda === "UF") metaPartes.push(`<span class="badge badge-warning">arancel en UF</span>${infoIcon("El arancel está en UF, no en pesos. No se grafica junto a valores en CLP para no mezclar unidades.")}`);
+        else if (c.arancel_aproximado) metaPartes.push(`<span class="badge badge-warning">arancel aproximado (rango)</span>${infoIcon("Hay variación de arancel entre distintas sedes o jornadas de esta carrera en esta institución. Se muestra el mínimo y el máximo.")}`);
+        metaPartes.push(...badgesFaltantesCombo(c));
+
+        return `<li class="combo-card" data-id="${escapeHtml(c.id)}">
+          <div class="combo-card-header">
+            <span class="combo-card-nombre">${badgeInstitucion(c.institucion)} — ${escapeHtml(c.carrera_titulo || "—")}</span>
+            <button type="button" class="remove" aria-label="Quitar" data-id="${escapeHtml(c.id)}">×</button>
+          </div>
+          ${iconRowCombo(c)}
+          ${headlineMetricsCombo(c)}
+          <div class="combo-card-meta">${metaPartes.join(" · ")}</div>
+          ${renderPonderacionBar(c)}
+        </li>`;
+      })
+      .join("");
+
+    el.selectedList.querySelectorAll("li.combo-card").forEach((li) => {
+      if (!prevIds.has(li.dataset.id)) {
+        li.classList.add("is-entering");
+        requestAnimationFrame(() => requestAnimationFrame(() => li.classList.remove("is-entering")));
+      }
+    });
+
+    el.selectedList.querySelectorAll("button.remove").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const li = btn.closest("li.combo-card");
+        if (!li || li.classList.contains("is-removing")) return;
+        li.classList.add("is-removing");
+        li.addEventListener("transitionend", () => removeCombo(btn.dataset.id), { once: true });
+      });
+    });
+
+    el.selectorHelp.textContent = selected.length < MIN_COMBOS
+      ? `Agrega al menos 2 combinaciones para comparar (llevas ${selected.length}).`
+      : `Comparando ${selected.length} combinación(es).`;
+
+    if (selected.length >= MIN_COMBOS && el.shareBar.hidden) fadeIn(el.shareBar);
+    else if (selected.length < MIN_COMBOS) el.shareBar.hidden = true;
+
+    actualizarAvisoUsabilidad();
+  }
+
+  function renderEmptyState() {
+    const mostrarVacio = selected.length < MIN_COMBOS;
+    if (mostrarVacio) {
+      if (el.seccionVacia.hidden) fadeIn(el.seccionVacia);
+      el.seccionCharts.hidden = true;
+      el.seccionPanelInstitucion.hidden = true;
+    } else {
+      el.seccionVacia.hidden = true;
+      if (el.seccionCharts.hidden) fadeIn(el.seccionCharts);
+      if (el.seccionPanelInstitucion.hidden) fadeIn(el.seccionPanelInstitucion);
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Panel de info general de institucion (Tarea 7, Iteracion 4): una
+  // tarjeta por institucion UNICA presente en la comparacion actual
+  // (dedupe por codigo sobre `selected`, no sobre data.combos completo -
+  // a diferencia de institucionesUnicas() que alimenta el selector).
+  // ---------------------------------------------------------------------
+  function institucionesUnicasEnSeleccion() {
+    const vistas = new Map();
+    selected.forEach((c) => {
+      const codigo = c.institucion.codigo;
+      if (!vistas.has(codigo)) vistas.set(codigo, c.institucion);
+    });
+    return [...vistas.values()];
+  }
+
+  function urlInstitucion(paginaWeb) {
+    if (!paginaWeb) return null;
+    return /^https?:\/\//i.test(paginaWeb) ? paginaWeb : `https://${paginaWeb}`;
+  }
+
+  function campoPanel(etiqueta, valor) {
+    return `<dt>${etiqueta}</dt><dd>${valor ?? "—"}</dd>`;
+  }
+
+  function renderPanelInstituciones() {
+    const instituciones = institucionesUnicasEnSeleccion();
+    el.panelInstitucionGrid.innerHTML = instituciones
+      .map((i) => {
+        if (!i.tiene_ficha) {
+          return `<article class="panel-institucion-card">
+            <h3><span class="badge badge-missing">institución sin ficha</span></h3>
+            <p class="combo-card-meta">Código ${i.codigo ?? "?"} — sin datos de acreditación, sociedad ni contacto disponibles en <code>dim_institucion</code>.</p>
+          </article>`;
+        }
+        const url = urlInstitucion(i.pagina_web);
+        const web = url
+          ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(i.pagina_web)}</a>`
+          : "—";
+        return `<article class="panel-institucion-card">
+          <h3>${escapeHtml(i.nombre)}</h3>
+          <dl>
+            ${campoPanel(`Acreditación ${infoIcon("Evaluación de calidad de la institución realizada por la CNA (Comisión Nacional de Acreditación).")}`, escapeHtml(i.acreditacion ?? "—"))}
+            ${campoPanel(`Años de acreditación ${infoIcon("Cantidad de años por los que la institución mantiene su acreditación vigente.")}`, i.anios_acreditacion != null ? `${i.anios_acreditacion} años` : "—")}
+            ${campoPanel("Vigencia", escapeHtml(i.vigencia_acreditacion ?? "—"))}
+            ${campoPanel("Áreas acreditadas", escapeHtml(i.areas_acreditadas ?? "—"))}
+            ${campoPanel("Tipo de sociedad", escapeHtml(i.tipo_sociedad ?? "—"))}
+            ${campoPanel("Dirección sede central", escapeHtml(i.direccion_sede_central ?? "—"))}
+            ${campoPanel("Página web", web)}
+          </dl>
+        </article>`;
+      })
+      .join("");
+    el.panelInstitucionGrid.querySelectorAll('.panel-institucion-card').forEach((card, i) => {
+      card.classList.add('is-fade-entering');
+      card.style.transitionDelay = `${i * 60}ms`;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        card.classList.remove('is-fade-entering');
+        card.addEventListener('transitionend', () => { card.style.transitionDelay = ''; }, { once: true });
+      }));
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Graficos Chart.js v4
+  // ---------------------------------------------------------------------
+  function truncar(texto, max) {
+    return texto.length > max ? `${texto.slice(0, max - 1)}…` : texto;
+  }
+
+  function etiquetaEjeCorta(combo) {
+    const inst = combo.institucion.tiene_ficha ? combo.institucion.nombre : `Sin ficha (${combo.institucion.codigo})`;
+    return truncar(`${truncar(inst, 16)} — ${truncar(combo.carrera_titulo || "—", 16)}`, 34);
+  }
+
+  function destruirChart(id) {
+    if (chartInstances[id]) {
+      chartInstances[id].destroy();
+      delete chartInstances[id];
+    }
+  }
+
+  function altoCanvasHorizontal(nFilas) {
+    return Math.max(180, nFilas * 36 + 70);
+  }
+
+  function opcionesEjeYHorizontal() {
+    return {
+      autoSkip: false,
+      callback: (value, index) => etiquetaEjeCorta(selected[index]),
+    };
+  }
+
+  function dibujarChartHorizontal(id, config) {
+    destruirChart(id);
+    const canvas = document.getElementById(id);
+    canvas.parentElement.style.height = `${altoCanvasHorizontal(selected.length)}px`;
+    const ctx = canvas.getContext("2d");
+    chartInstances[id] = new Chart(ctx, config);
+  }
+
+  function labelsCombos() {
+    return selected.map((c) => `${etiquetaInstitucion(c.institucion)} — ${c.carrera_titulo || "—"}`);
+  }
+
+  function formatCLP(valor) {
+    return valor === null || valor === undefined ? "—" : `$${valor.toLocaleString("es-CL")}`;
+  }
+
+  // Eje de valor del grafico de ingreso (eje X, ya que el grafico es
+  // horizontal con las combinaciones en el eje Y): los datos siguen en
+  // pesos completos (CLP) internamente - solo la ETIQUETA del eje se
+  // muestra en miles (200, 400, 600...) para que sea legible, con el
+  // titulo del eje aclarando la unidad.
+  function formatMilesCLP(valorEnPesos) {
+    return Math.round(valorEnPesos / 1000).toLocaleString("es-CL");
+  }
+
+  function renderCharts() {
+    if (selected.length < MIN_COMBOS) return;
+    const ejeY = { ticks: opcionesEjeYHorizontal() };
+    const labels = labelsCombos();
+
+    // 1. Empleabilidad 1er/2do año
+    dibujarChartHorizontal("chart-empleabilidad", {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          { label: "1er año", backgroundColor: "#1a7f64", data: selected.map((c) => c.empleabilidad_1er_anio) },
+          { label: "2do año", backgroundColor: "#a7d9cd", data: selected.map((c) => c.empleabilidad_2do_anio) },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    // 2. Retencion 1er año (sola - continuidad de estudios se quito de
+    // esta pestaña por feedback de Diego: no es relevante para un
+    // estudiante que esta postulando).
+    dibujarChartHorizontal("chart-retencion", {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          { label: "Retención 1er año", backgroundColor: "#e8960a", data: selected.map((c) => c.retencion_1er_anio) },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    // 3. Duracion real (semestres)
+    dibujarChartHorizontal("chart-duracion", {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          { label: "Semestres", backgroundColor: "#3b82f6", data: selected.map((c) => c.duracion_real_semestres) },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, title: { display: true, text: "Semestres" } }, y: ejeY },
+      },
+    });
+
+    renderChartIngreso();
+    renderChartArancel();
+  }
+
+  // ---------------------------------------------------------------------
+  // Banda de ingreso como rango numerico ("floating bar"): cada combo es
+  // una barra horizontal que va de ingreso_banda_min a ingreso_banda_max
+  // (Chart.js soporta datasets `[min, max]` por punto en un bar chart
+  // normal - no es un boxplot real, solo se muestran los extremos, como
+  // pidio Diego). Mismo patron de eje que los otros 3 graficos de esta
+  // pestaña: eje Y = combinaciones (categoria), eje X = sueldo (CLP,
+  // lineal, en miles para legibilidad).
+  //
+  // La banda abierta ("Sobre $3.500.000") no tiene techo reportado por
+  // SIES - se dibuja con un ancho visual fijo (ANCHO_BANDA_ABIERTA) solo
+  // para que la barra sea visible, pero el tooltip aclara que es abierta
+  // y nunca se inventa un numero en los datos exportados (ver
+  // export_instituciones.py).
+  // ---------------------------------------------------------------------
+  function renderChartIngreso() {
+    const sinBanda = selected.filter((c) => c.ingreso_banda_min === null);
+    document.getElementById("nota-ingreso").textContent = sinBanda.length
+      ? `Rango reportado (mínimo–máximo). ${sinBanda.length} combinación(es) sin banda de ingreso reportada: ${sinBanda.map((c) => c.carrera_titulo).join(", ")}.`
+      : "Rango reportado (mínimo–máximo), no un promedio.";
+
+    const ejeY = { ticks: opcionesEjeYHorizontal() };
+    const valores = selected.map((c) => {
+      if (c.ingreso_banda_min === null) return null;
+      const max = c.ingreso_banda_abierta ? c.ingreso_banda_min + ANCHO_BANDA_ABIERTA : c.ingreso_banda_max;
+      return [c.ingreso_banda_min, max];
+    });
+
+    dibujarChartHorizontal("chart-ingreso", {
+      type: "bar",
+      data: {
+        labels: labelsCombos(),
+        datasets: [{ label: "Banda de ingreso", backgroundColor: "#7c3aed", data: valores }],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx2) => {
+                const combo = selected[ctx2.dataIndex];
+                if (!combo.ingreso_banda_texto) return "Sin banda de ingreso reportada";
+                const sufijo = combo.ingreso_banda_abierta ? " (banda abierta, sin techo reportado)" : "";
+                return `${combo.ingreso_banda_texto}${sufijo}`;
+              },
+            },
+          },
+        },
+        scales: {
+          x: { beginAtZero: true, title: { display: true, text: "Miles de $" }, ticks: { callback: (v) => formatMilesCLP(v) } },
+          y: ejeY,
+        },
+      },
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Arancel (T18 rediseño): sorted ascending, colored by tipo, average line.
+  // Exact values use floating bar [exacto-DELTA, exacto+DELTA] + thin barThickness.
+  // Range values use [min, max] floating bar + wider barThickness.
+  // UF and null aranceles are excluded from the chart (shown in footer note).
+  // ---------------------------------------------------------------------
+  const DELTA_EXACTO_ARANCEL = 40000; // visual band width for exact value marker — not a real range
+  const ARANCEL_TIPO_COLORS = {
+    Universidades: { solid: "rgba(31, 96, 196, 0.9)", soft: "rgba(31, 96, 196, 0.38)" },
+    "Institutos Profesionales": { solid: "rgba(210, 100, 0, 0.9)", soft: "rgba(210, 100, 0, 0.38)" },
+    "Centros de Formación Técnica": { solid: "rgba(22, 160, 133, 0.9)", soft: "rgba(22, 160, 133, 0.38)" },
+  };
+  const ARANCEL_COLOR_FALLBACK = { solid: "rgba(90, 90, 90, 0.85)", soft: "rgba(90, 90, 90, 0.35)" };
+
+  function renderChartArancel() {
+    function midpoint(c) {
+      if (c.arancel_moneda !== "CLP") return null;
+      if (!c.arancel_aproximado && c.arancel_exacto !== null) return c.arancel_exacto;
+      if (c.arancel_min !== null && c.arancel_max !== null) return (c.arancel_min + c.arancel_max) / 2;
+      return null;
+    }
+
+    const sortedCombos = [...selected].sort((a, b) => {
+      const va = midpoint(a);
+      const vb = midpoint(b);
+      if (va === null && vb === null) return 0;
+      if (va === null) return 1;
+      if (vb === null) return -1;
+      return va - vb;
+    });
+
+    const sinDato = sortedCombos.filter((c) => c.arancel_moneda === null);
+    const enUf = sortedCombos.filter((c) => c.arancel_moneda === "UF");
+    const notaPartes = [];
+    if (enUf.length) notaPartes.push(`${enUf.length} con arancel en UF (no graficada).`);
+    if (sinDato.length) notaPartes.push(`${sinDato.length} sin dato de arancel.`);
+    document.getElementById("nota-arancel").textContent =
+      notaPartes.length ? notaPartes.join(" ") : "Ordenadas de menor a mayor arancel.";
+
+    const tipoColor = (tipo, shade) => (ARANCEL_TIPO_COLORS[tipo] || ARANCEL_COLOR_FALLBACK)[shade];
+
+    const valoresExactos = sortedCombos.map((c) => {
+      if (c.arancel_moneda !== "CLP" || c.arancel_exacto === null || c.arancel_aproximado) return null;
+      return [Math.max(0, c.arancel_exacto - DELTA_EXACTO_ARANCEL), c.arancel_exacto + DELTA_EXACTO_ARANCEL];
+    });
+    const valoresRango = sortedCombos.map((c) => {
+      if (c.arancel_moneda !== "CLP" || !c.arancel_aproximado) return null;
+      return [c.arancel_min, c.arancel_max];
+    });
+    const coloresExacto = sortedCombos.map((c) => tipoColor(c.institucion.tipo, "solid"));
+    const coloresRango = sortedCombos.map((c) => tipoColor(c.institucion.tipo, "soft"));
+
+    const validMids = sortedCombos.map(midpoint).filter((v) => v !== null);
+    const avgArancel = validMids.length > 1
+      ? validMids.reduce((s, v) => s + v, 0) / validMids.length
+      : null;
+
+    const ejeY = {
+      ticks: {
+        autoSkip: false,
+        callback: (value, index) => etiquetaEjeCorta(sortedCombos[index]),
+      },
+    };
+
+    const datasets = [
+      { label: "Valor exacto", data: valoresExactos, backgroundColor: coloresExacto, barThickness: 10 },
+      { label: "Rango estimado", data: valoresRango, backgroundColor: coloresRango, barThickness: 22 },
+    ];
+    if (avgArancel !== null) {
+      datasets.push({
+        type: "line",
+        label: "Promedio",
+        data: sortedCombos.map(() => avgArancel),
+        borderColor: "rgba(220, 38, 38, 0.85)",
+        borderWidth: 2,
+        borderDash: [5, 4],
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        fill: false,
+      });
+    }
+
+    dibujarChartHorizontal("chart-arancel", {
+      type: "bar",
+      data: {
+        labels: sortedCombos.map((c) => `${etiquetaInstitucion(c.institucion)} — ${c.carrera_titulo || "—"}`),
+        datasets,
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx2) => {
+                if (ctx2.dataset.type === "line") return `Promedio: $${Math.round(avgArancel).toLocaleString("es-CL")}`;
+                const combo = sortedCombos[ctx2.dataIndex];
+                if (!combo) return "";
+                if (combo.arancel_moneda === "UF") return "UF — no comparable en $ sin tasa del día";
+                if (combo.arancel_moneda === null) return "Sin dato de arancel";
+                if (combo.arancel_aproximado)
+                  return `Estimado: $${combo.arancel_min.toLocaleString("es-CL")} – $${combo.arancel_max.toLocaleString("es-CL")} (varias sedes/jornadas)`;
+                return `$${combo.arancel_exacto.toLocaleString("es-CL")} (valor exacto)`;
+              },
+            },
+          },
+        },
+        scales: {
+          x: { beginAtZero: true, title: { display: true, text: "Miles de $" }, ticks: { callback: (v) => formatMilesCLP(v) } },
+          y: ejeY,
+        },
+      },
+    });
+
+    // Render tipo + shape legend below chart
+    const leyendaEl = document.querySelector(".arancel-leyenda");
+    if (leyendaEl) {
+      const tiposPresentes = [...new Set(sortedCombos.map((c) => c.institucion.tipo))].filter(Boolean);
+      const TIPO_ABREV = { Universidades: "Universidades", "Institutos Profesionales": "IP", "Centros de Formación Técnica": "CFT" };
+      const tipoHtml = tiposPresentes.map((tipo) => {
+        const col = tipoColor(tipo, "solid");
+        return `<span class="leyenda-tipo" style="color:${col}">● ${TIPO_ABREV[tipo] || tipo}</span>`;
+      }).join("");
+      leyendaEl.innerHTML =
+        `<span class="leyenda-exacto">─ Valor exacto</span>` +
+        `<span class="leyenda-rango">▬ Estimado (rango)</span>` +
+        (avgArancel !== null ? `<span class="leyenda-promedio">╌ Promedio</span>` : "") +
+        (tiposPresentes.length > 0 ? `<span class="leyenda-sep">·</span>${tipoHtml}` : "");
+    }
+  }
+
+  // Componente tooltip: mismo bloque que index.html (no hay CSS/JS externo
+  // compartido porque la Sesión 3 de Tarea 6 repintará ambos archivos a la vez).
+  function initTooltip() {
+    const popup = document.createElement("div");
+    popup.id = "tooltip-popup";
+    popup.setAttribute("role", "tooltip");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.appendChild(popup);
+
+    let hideTimer = null;
+    let activeTrigger = null;
+
+    function show(trigger) {
+      clearTimeout(hideTimer);
+      const texto = trigger.dataset.tooltip || "";
+      if (!texto) return;
+      activeTrigger = trigger;
+      popup.textContent = texto;
+      popup.classList.remove("visible", "arrow-above", "arrow-below");
+      popup.style.left = "-9999px";
+      popup.style.top = "-9999px";
+      popup.classList.add("visible");
+      popup.removeAttribute("aria-hidden");
+      trigger.setAttribute("aria-describedby", "tooltip-popup");
+
+      const rect = trigger.getBoundingClientRect();
+      const pw = popup.offsetWidth;
+      const ph = popup.offsetHeight;
+      const margin = 8;
+      const vw = window.innerWidth;
+
+      let left = rect.left + rect.width / 2 - pw / 2;
+      left = Math.max(margin, Math.min(vw - pw - margin, left));
+      const arrowLeft = rect.left + rect.width / 2 - left;
+      popup.style.setProperty("--tp-arrow-left", `${Math.max(8, Math.min(pw - 16, arrowLeft))}px`);
+
+      let top;
+      if (rect.top - ph - 6 >= margin) {
+        top = rect.top - ph - 6;
+        popup.classList.add("arrow-below");
+      } else {
+        top = rect.bottom + 6;
+        popup.classList.add("arrow-above");
+      }
+      popup.style.left = `${left}px`;
+      popup.style.top = `${top}px`;
+    }
+
+    function hide(trigger) {
+      hideTimer = setTimeout(() => {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        if (trigger) trigger.removeAttribute("aria-describedby");
+        activeTrigger = null;
+      }, 80);
+    }
+
+    document.addEventListener("mouseover", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("mouseout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t && !t.contains(ev.relatedTarget)) hide(t);
+    });
+    document.addEventListener("focusin", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("focusout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) hide(t);
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && activeTrigger) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+    document.addEventListener("click", (ev) => {
+      if (activeTrigger && !ev.target.closest("[data-tooltip]")) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+  }
+
+  const customSelects = [];
+
+  function buildCustomSelect(nativeSelect) {
+    nativeSelect.hidden = true;
+    const wrap = document.createElement('div');
+    wrap.className = 'custom-select';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'custom-select-btn';
+    btn.setAttribute('aria-haspopup', 'listbox');
+    btn.setAttribute('aria-expanded', 'false');
+
+    const valueLabel = document.createElement('span');
+    valueLabel.className = 'custom-select-value';
+    valueLabel.textContent = nativeSelect.options[0]?.textContent || '';
+
+    const chevron = document.createElement('span');
+    chevron.className = 'custom-select-chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    btn.append(valueLabel, chevron);
+
+    const list = document.createElement('ul');
+    list.className = 'custom-select-list';
+    list.setAttribute('role', 'listbox');
+    list.hidden = true;
+
+    wrap.append(btn, list);
+    nativeSelect.parentNode.insertBefore(wrap, nativeSelect.nextSibling);
+
+    function openList() {
+      list.innerHTML = '';
+      Array.from(nativeSelect.options).forEach(opt => {
+        const li = document.createElement('li');
+        li.setAttribute('role', 'option');
+        li.dataset.value = opt.value;
+        li.textContent = opt.textContent;
+        if (opt.value === nativeSelect.value) li.classList.add('cs-selected');
+        li.addEventListener('click', e => {
+          e.stopPropagation();
+          nativeSelect.value = opt.value;
+          valueLabel.textContent = opt.textContent;
+          nativeSelect.dispatchEvent(new Event('change'));
+          closeList();
+        });
+        list.appendChild(li);
+      });
+      fadeIn(list);
+      btn.setAttribute('aria-expanded', 'true');
+      chevron.classList.add('open');
+    }
+
+    function closeList() {
+      list.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      chevron.classList.remove('open');
+    }
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      list.hidden ? openList() : closeList();
+    });
+
+    customSelects.push({ close: closeList });
+  }
+
+  function fadeIn(el) {
+    el.hidden = false;
+    el.classList.add('is-fade-entering');
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('is-fade-entering')));
+  }
+
+  initTooltip();
+  init();
+
+  // T20: Panel filtros colapsable en móvil
+  const filterPanel = document.querySelector('.panel-filtros');
+  const filterToggle = document.querySelector('.panel-filtros-toggle');
+  if (filterToggle && filterPanel) {
+    filterToggle.addEventListener('click', () => {
+      const isOpen = filterPanel.classList.toggle('is-open');
+      filterToggle.setAttribute('aria-expanded', String(isOpen));
+      filterToggle.textContent = isOpen ? '▴ Filtros' : '▾ Filtros';
+    });
+  }
+})();
+</script>
+<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
+
+</body>
+</html>

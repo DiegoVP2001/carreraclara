@@ -1,0 +1,50 @@
+{
+  "slug": "ingenieria-naval",
+  "nombre": "Ingeniería Naval",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I90S1C50J1V2",
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA NAVAL",
+      "nivel_carrera": "Profesional",
+      "region": "Los Ríos",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 5.586.000",
+      "vacantes_1er_semestre": 55.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 35.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería Naval",
+      "empleabilidad_1er_anio": 0.875,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": 0.8297872340425532,
+      "continuidad_estudios_pct": 0.0625,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# ── Datos SIES originales ─────────────────────────────
+mifuturo/
+matricula/
+oferta/
+titulados/
+personal/
+
+# ── Archivos de trabajo del proyecto ──────────────────
+PLAN.md
+PLAN_HISTORIAL.md
+TAREA_*.md
+old/
+CLAUDE.md
+MANUAL_MARCA_CARRERA_CLARA.md
+tarea_8b_exploracion/
+_db_check_out.txt
+
+# ── Imágenes de debugging y logos en raíz ─────────────
+*.png
+*.jpg
+
+# ── Archivos de sistema Claude / agentes ──────────────
+.remember/
+.agents/
+.codex/
+
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.log
+
+# ── OS ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

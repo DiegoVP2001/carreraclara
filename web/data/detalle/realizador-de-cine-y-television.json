@@ -1,0 +1,312 @@
+{
+  "slug": "realizador-de-cine-y-television",
+  "nombre": "Realizador de Cine y Televisión",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I3S1C538J1V1",
+      "institucion": {
+        "codigo": 3,
+        "nombre": "Universidad Diego Portales",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE Y REALIZACION AUDIOVISUAL",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 7.377.000",
+      "vacantes_1er_semestre": 65.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 40.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I3S1C711J1V1",
+      "institucion": {
+        "codigo": 3,
+        "nombre": "Universidad Diego Portales",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE DE ANIMACION",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 7.377.000",
+      "vacantes_1er_semestre": 45.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 40.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I10S5C186J1V1",
+      "institucion": {
+        "codigo": 10,
+        "nombre": "Universidad Mayor",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE DEL CLAUSTRO",
+      "arancel_anual_2026": "$ 7.071.714",
+      "vacantes_1er_semestre": 50.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 30.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I11S2C155J1V2",
+      "institucion": {
+        "codigo": 11,
+        "nombre": "Universidad Academia de Humanismo Cristiano",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE Y ARTES AUDIOVISUALES",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CAMPUS REPUBLICA",
+      "arancel_anual_2026": "$ 5.224.000",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 30.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I22S1C108J3V2",
+      "institucion": {
+        "codigo": 22,
+        "nombre": "Universidad de Viña del Mar",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE Y COMUNICACION AUDIOVISUAL",
+      "nivel_carrera": "Profesional",
+      "region": "Valparaíso",
+      "jornada": "Semipresencial",
+      "sede": "CASA CENTRAL (VIÑA DEL MAR)",
+      "arancel_anual_2026": "$ 4.535.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 50.0,
+      "ponderacion_matematicas": 50.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I45S4C97J1V2",
+      "institucion": {
+        "codigo": 45,
+        "nombre": "Universidad del Desarrollo",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE Y COMUNICACION AUDIOVISUAL",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE SANTIAGO (S.C. APOQUINDO)",
+      "arancel_anual_2026": "UF 245",
+      "vacantes_1er_semestre": 90.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 25.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 30.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I70S1C455J1V1",
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE Y TELEVISION",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SANTIAGO",
+      "arancel_anual_2026": "$ 6.781.200",
+      "vacantes_1er_semestre": 69.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 25.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I72S1C113J1V1",
+      "institucion": {
+        "codigo": 72,
+        "nombre": "Universidad de Valparaíso",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "CINE",
+      "nivel_carrera": "Profesional",
+      "region": "Valparaíso",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (VALPARAISO)",
+      "arancel_anual_2026": "$ 6.389.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 30.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 144,
+        "nombre": "Instituto Profesional ARCOS",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "No Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Cine",
+      "empleabilidad_1er_anio": 0.11594202898550725,
+      "empleabilidad_2do_anio": 0.39215686274509803,
+      "retencion_1er_anio": 0.6338028169014085,
+      "continuidad_estudios_pct": 0.042105263157894736,
+      "duracion_real_semestres": 8.44444444444444,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 11,
+        "nombre": "Universidad Academia de Humanismo Cristiano",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Cine y Artes Visuales",
+      "empleabilidad_1er_anio": 0.5128205128205128,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": 0.84,
+      "continuidad_estudios_pct": 0.05333333333333334,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Cine y Televisión",
+      "empleabilidad_1er_anio": 0.42777777777777776,
+      "empleabilidad_2do_anio": 0.5109489051094891,
+      "retencion_1er_anio": 0.9125,
+      "continuidad_estudios_pct": 0.03398058252427184,
+      "duracion_real_semestres": 12.0,
+      "ingreso_banda_texto": "De $1 millón a $1 millón 100 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 72,
+        "nombre": "Universidad de Valparaíso",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Cine",
+      "empleabilidad_1er_anio": 0.40384615384615385,
+      "empleabilidad_2do_anio": 0.391304347826087,
+      "retencion_1er_anio": 0.88,
+      "continuidad_estudios_pct": 0.02666666666666667,
+      "duracion_real_semestres": 10.6666666666667,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 45,
+        "nombre": "Universidad del Desarrollo",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Cine",
+      "empleabilidad_1er_anio": 0.5432098765432098,
+      "empleabilidad_2do_anio": 0.6792452830188679,
+      "retencion_1er_anio": 0.8888888888888888,
+      "continuidad_estudios_pct": 0.044444444444444446,
+      "duracion_real_semestres": 11.5833333333333,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 10,
+        "nombre": "Universidad Mayor",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Cine",
+      "empleabilidad_1er_anio": 0.5483870967741935,
+      "empleabilidad_2do_anio": 0.6530612244897959,
+      "retencion_1er_anio": 0.9,
+      "continuidad_estudios_pct": 0.012345679012345678,
+      "duracion_real_semestres": 14.651162790697684,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

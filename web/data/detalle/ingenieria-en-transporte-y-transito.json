@@ -1,0 +1,23 @@
+{
+  "slug": "ingenieria-en-transporte-y-transito",
+  "nombre": "Ingeniería en Transporte y Tránsito",
+  "ofertas": [],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 89,
+        "nombre": "Pontificia Universidad Católica de Valparaíso",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Transporte y Tránsito",
+      "empleabilidad_1er_anio": 0.8775510204081632,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.05357142857142857,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

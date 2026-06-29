@@ -1,0 +1,102 @@
+{
+  "slug": "biotecnologia",
+  "nombre": "Biotecnología",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I10S6C11J1V1",
+      "institucion": {
+        "codigo": 10,
+        "nombre": "Universidad Mayor",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOTECNOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE HUECHURABA",
+      "arancel_anual_2026": "$ 7.460.216",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 10.0,
+      "ponderacion_lenguaje": 25.0,
+      "ponderacion_matematicas": 35.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I13S1C38J1V1",
+      "institucion": {
+        "codigo": 13,
+        "nombre": "Universidad Santo Tomás",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOTECNOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 5.429.000",
+      "vacantes_1er_semestre": 35.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I76S1C88J1V1",
+      "institucion": {
+        "codigo": 76,
+        "nombre": "Universidad de La Frontera",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOTECNOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "La Araucanía",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (TEMUCO)",
+      "arancel_anual_2026": "$ 5.434.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 50.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 10,
+        "nombre": "Universidad Mayor",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Biotecnología ",
+      "empleabilidad_1er_anio": 0.6,
+      "empleabilidad_2do_anio": 0.5757575757575758,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.2153846153846154,
+      "duracion_real_semestres": 14.8928571428571,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

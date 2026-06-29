@@ -1,0 +1,180 @@
+{
+  "slug": "ingenieria-en-refrigeracion-y-climatizacion",
+  "nombre": "Ingeniería en Refrigeración y Climatización",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I71S1C35J1V1",
+      "institucion": {
+        "codigo": 71,
+        "nombre": "Universidad de Santiago de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA DE EJECUCION EN CLIMATIZACION (CALEFACCION, REFRIGERACION Y AIRE ACONDICIONADO)",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 5.760.000",
+      "vacantes_1er_semestre": 25.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 25.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 10.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I71S1C411J2V2",
+      "institucion": {
+        "codigo": 71,
+        "nombre": "Universidad de Santiago de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PLAN ESPECIAL INGENIERIA DE EJECUCION EN CLIMATIZACION",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Vespertina",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 5.760.000",
+      "vacantes_1er_semestre": 50.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I100S31C325J1V1",
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN CLIMATIZACION Y REFRIGERACION",
+      "nivel_carrera": "Profesional",
+      "region": "Ñuble",
+      "jornada": "Diurna",
+      "sede": "SEDE CHILLAN",
+      "arancel_anual_2026": "$ 3.737.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I100S35C325J2V1",
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN CLIMATIZACION Y REFRIGERACION",
+      "nivel_carrera": "Profesional",
+      "region": "Maule",
+      "jornada": "Vespertina",
+      "sede": "SEDE CURICO",
+      "arancel_anual_2026": "$ 3.737.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I100S38C325J1V1",
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN CLIMATIZACION Y REFRIGERACION",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE SANTIAGO SUR",
+      "arancel_anual_2026": "$ 3.737.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I100S38C325J2V1",
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN CLIMATIZACION Y REFRIGERACION",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Vespertina",
+      "sede": "SEDE SANTIAGO SUR",
+      "arancel_anual_2026": "$ 3.737.000",
+      "vacantes_1er_semestre": 44.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Refrigeración y en Climatización",
+      "empleabilidad_1er_anio": 0.7932960893854749,
+      "empleabilidad_2do_anio": 0.8507462686567164,
+      "retencion_1er_anio": 0.8809523809523809,
+      "continuidad_estudios_pct": 0.03515625,
+      "duracion_real_semestres": 11.437500000000007,
+      "ingreso_banda_texto": "De $1 millón 300 mil a $1 millón 400 mil"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "tecnico-en-geologia",
+  "nombre": "Técnico en Geología",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I79S3C176J1V1",
+      "institucion": {
+        "codigo": 79,
+        "nombre": "Universidad de Atacama",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO UNIVERSITARIO EN ASISTENTE DE GEOLOGIA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Atacama",
+      "jornada": "Diurna",
+      "sede": "SEDE VALLENAR",
+      "arancel_anual_2026": "$ 2.444.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I111S12C420J1V1",
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN GEOLOGIA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE PUENTE ALTO",
+      "arancel_anual_2026": "$ 3.060.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 902,
+        "nombre": "Centro de Formación Técnica de la Región de Arica y Parinacota",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Bajo tutela",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico de Nivel Superior en Geología",
+      "empleabilidad_1er_anio": 0.525,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.10909090909090909,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 111,
+        "nombre": "Instituto Profesional Duoc UC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico en Geología y Control en Sondaje",
+      "empleabilidad_1er_anio": 0.5714285714285714,
+      "empleabilidad_2do_anio": 0.6148148148148148,
+      "retencion_1er_anio": 0.8153846153846154,
+      "continuidad_estudios_pct": 0.11229946524064172,
+      "duracion_real_semestres": 7.090909090909091,
+      "ingreso_banda_texto": "De $900 mil a $1 millón"
+    }
+  ]
+}

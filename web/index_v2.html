@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrera Clara — Tipos de carrera</title>
+<link rel="icon" type="image/png" href="logo_png_azul-removebg-preview.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="logo_png_azul-removebg-preview.png">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ─── Variables ──────────────────────────────────────────────────────── */
+  :root {
+    --color-bg: #f5f6f4;
+    --color-bg-alt: #f4f5f7;
+    --color-surface: #ffffff;
+    --color-header-bg: #0f2e45;
+    --color-text: #1c2b36;
+    --color-text-muted: #6b7a86;
+    --color-primary: #1a7f64;
+    --color-primary-contrast: #ffffff;
+    --color-primary-light: #e6f4f0;
+    --color-accent: #e8960a;
+    --color-danger: #c0392b;
+    --color-border: #dde1e7;
+    --color-badge-warning-bg: #fff8e6;
+    --color-badge-warning-text: #92600a;
+    --color-badge-missing-bg: #fde8e8;
+    --color-badge-missing-text: #8b1a1a;
+    --color-chart-1: #1a7f64;
+    --color-chart-2: #e8960a;
+    --color-chart-3: #3b82f6;
+    --font-base: 16px;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Figtree', system-ui, sans-serif;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --radius: 0.5rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 { font-family: var(--font-display); }
+
+  /* ─── Header ─────────────────────────────────────────────────────────── */
+  header.app-header {
+    background: linear-gradient(155deg, #091d2c 0%, #0f2e45 65%);
+    padding: var(--space-3) var(--space-3) var(--space-2);
+  }
+
+  .header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .header-logo {
+    height: 70px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .header-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .header-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .header-brand-slogan {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--font-family);
+  }
+
+  nav.tabs {
+    display: flex;
+    gap: var(--space-2);
+    font-size: 0.95rem;
+  }
+
+  nav.tabs a {
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius);
+    transition: background 0.15s, color 0.15s;
+  }
+
+  nav.tabs a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  nav.tabs a.activo {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 600;
+    font-family: var(--font-display);
+  }
+
+  /* ─── Main ───────────────────────────────────────────────────────────── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-3);
+  }
+
+  section {
+    margin-bottom: var(--space-4);
+  }
+
+  section > h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+  }
+
+  /* ─── Selector / combobox ────────────────────────────────────────────── */
+  .selector-wrap {
+    position: relative;
+    max-width: 480px;
+  }
+
+  #carrera-input {
+    width: 100%;
+    font-size: var(--font-base);
+    padding: var(--space-1) 2.25rem var(--space-1) var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  #carrera-input:disabled {
+    background: var(--color-bg-alt);
+    cursor: not-allowed;
+  }
+
+  button.combo-arrow {
+    position: absolute;
+    right: 0.4rem;
+    top: 1.85rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
+  button.combo-arrow:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  ul#autocomplete-list {
+    list-style: none;
+    margin: var(--space-1) 0 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-height: 280px;
+    overflow-y: auto;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  ul#autocomplete-list li {
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+
+  ul#autocomplete-list li:hover,
+  ul#autocomplete-list li:focus {
+    background: var(--color-bg-alt);
+  }
+
+  ul#autocomplete-list li .meta {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  p.selector-help {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin: var(--space-1) 0 0;
+  }
+
+  /* ─── Filtros del selector ───────────────────────────────────────────── */
+  .selector-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+    align-items: center;
+  }
+
+  .selector-filters label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .selector-filters select {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  /* ─── Custom Select animado ─────────────────────────────────────── */
+  .custom-select { position: relative; }
+
+  .custom-select-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s;
+    white-space: nowrap;
+  }
+  .custom-select-btn:hover,
+  .custom-select-btn[aria-expanded="true"] { border-color: var(--color-primary); outline: none; }
+
+  .custom-select-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 180px; }
+
+  .custom-select-chevron {
+    display: flex; align-items: center;
+    color: var(--color-text-muted);
+    transition: transform 0.18s ease;
+    flex-shrink: 0;
+  }
+  .custom-select-chevron.open { transform: rotate(180deg); }
+
+  .custom-select-list {
+    position: absolute;
+    top: calc(100% + 4px); left: 0;
+    min-width: 100%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    z-index: 200;
+    list-style: none; margin: 0; padding: 0.25rem 0;
+    max-height: 260px; overflow-y: auto;
+    transition: opacity 0.13s ease, transform 0.13s ease;
+  }
+  .custom-select-list.is-fade-entering { opacity: 0; transform: translateY(-5px); }
+
+  .custom-select-list li {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: background 0.1s;
+    white-space: nowrap;
+  }
+  .custom-select-list li:hover { background: var(--color-primary-light); color: var(--color-primary); }
+  .custom-select-list li.cs-selected { font-weight: 600; color: var(--color-primary); }
+
+  /* ─── Tarjetas de carreras seleccionadas ────────────────────────────── */
+  ul#selected-list {
+    list-style: none;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-1);
+  }
+
+  @media (max-width: 1023px) {
+    ul#selected-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 639px) {
+    ul#selected-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  li.carrera-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 0.6rem var(--space-2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    min-width: 0;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+  }
+  li.carrera-card.is-entering {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  li.carrera-card.is-removing {
+    opacity: 0;
+    transform: scale(0.93);
+    pointer-events: none;
+  }
+
+  .carrera-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-1);
+  }
+
+  .carrera-card-nombre {
+    font-weight: 600;
+    overflow-wrap: break-word;
+    flex: 1;
+    min-width: 0;
+  }
+
+  li.carrera-card button.remove {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+
+  .tipo-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .tipo-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+  }
+
+  /* ─── Fila de íconos ─────────────────────────────────────────────────── */
+  .card-icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+  }
+
+  .card-icon-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    padding: 0.1rem 0.5rem;
+    white-space: nowrap;
+  }
+
+  .card-icon-label {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  /* ─── Métricas titulares ────────────────────────────────────────────── */
+  .card-metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: 0.5rem;
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card-metric {
+    text-align: center;
+    min-width: 64px;
+  }
+
+  .card-metric-valor {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+  }
+
+  .card-metric-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-top: 0.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── Aviso de usabilidad ────────────────────────────────────────────── */
+  .aviso-usabilidad {
+    background: var(--color-primary-light);
+    color: #0d5c47;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 0.45rem var(--space-2);
+    font-size: 0.88rem;
+    margin-top: var(--space-1);
+  }
+
+  /* ensure [hidden] is never overridden by display properties in this file */
+  [hidden] { display: none !important; }
+
+  /* ─── Share bar ─────────────────────────────────────────────────────── */
+  .share-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: #eef7f4;
+    border: 1px solid #b6ddd4;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+  .share-bar span { flex: 1; }
+  .btn-compartir {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-compartir:hover { opacity: 0.88; }
+
+  #share-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(0.75rem);
+    background: #1c2b36;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    z-index: 9999;
+  }
+  #share-toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ─── T19b: fade-in transitions ──────────────────────────────────────── */
+  .share-bar,
+  .aviso-usabilidad { transition: opacity 0.22s ease; }
+
+  #seccion-vacia,
+  #seccion-charts,
+  #seccion-detalle { transition: opacity 0.28s ease; }
+
+  ul#autocomplete-list { transition: opacity 0.13s ease, transform 0.13s ease; }
+
+  .is-fade-entering { opacity: 0; }
+  ul#autocomplete-list.is-fade-entering { transform: translateY(-5px); }
+
+  /* ─── T19d: accordion open/close animations ─────────────────────────── */
+  @keyframes detalle-body-open  { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes detalle-body-close { from { opacity: 1; transform: translateY(0); }    to { opacity: 0; transform: translateY(-6px); } }
+
+  details.detalle-carrera[open] .detalle-body:not(.is-closing) {
+    animation: detalle-body-open 0.22s ease forwards;
+  }
+  .detalle-body.is-closing {
+    animation: detalle-body-close 0.18s ease forwards;
+  }
+
+  /* ─── Empty state ────────────────────────────────────────────────────── */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-3);
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+
+  .empty-state svg { opacity: 0.35; }
+  .empty-state h2 { font-family: var(--font-display); color: var(--color-text); margin: 0; }
+  .empty-state p { margin: 0; font-size: 0.95rem; }
+
+  /* ─── Badges ──────────────────────────────────────────────────────────── */
+  .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+  }
+
+  .badge.badge-warning {
+    background: var(--color-badge-warning-bg);
+    color: var(--color-badge-warning-text);
+  }
+
+  .badge.badge-missing {
+    background: var(--color-badge-missing-bg);
+    color: var(--color-badge-missing-text);
+  }
+
+  /* ─── Gráficos ────────────────────────────────────────────────────────── */
+  p.chart-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (max-width: 900px) {
+    .charts-grid { grid-template-columns: 1fr; }
+  }
+
+  figure.chart-card {
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: var(--space-2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    background: var(--color-surface);
+  }
+
+  figure.chart-card figcaption {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+
+  .chart-canvas-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  /* ─── Panel "donde se imparte" ────────────────────────────────────────── */
+  details.detalle-carrera {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+  }
+
+  details.detalle-carrera summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  details.detalle-carrera summary::-webkit-details-marker { display: none; }
+
+  .detalle-arrow {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.45rem;
+    color: var(--color-text-muted);
+    font-size: 0.85em;
+    transition: transform 0.22s ease, color 0.12s;
+    flex-shrink: 0;
+  }
+  details.detalle-carrera[open] > summary .detalle-arrow {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+  }
+
+  .detalle-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-2) 0;
+    font-size: 0.9rem;
+  }
+
+  .detalle-filtros select {
+    margin-left: 0.3rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  details.institucion-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.5rem 0.75rem;
+    margin-bottom: var(--space-1);
+    background: var(--color-bg);
+  }
+
+  details.institucion-card summary {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    list-style: none;
+  }
+  details.institucion-card summary::-webkit-details-marker { display: none; }
+
+  .inst-arrow {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    font-size: 0.8em;
+    transition: transform 0.2s ease, color 0.12s;
+    align-self: center;
+  }
+  details.institucion-card[open] > summary .inst-arrow {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+  }
+
+  /* inst-card body animations */
+  @keyframes inst-card-open  { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes inst-card-close { from { opacity: 1; transform: translateY(0); }    to { opacity: 0; transform: translateY(-4px); } }
+
+  details.institucion-card[open] .inst-card-body:not(.is-closing) {
+    animation: inst-card-open 0.18s ease forwards;
+  }
+  .inst-card-body.is-closing {
+    animation: inst-card-close 0.15s ease forwards;
+  }
+
+  .institucion-nombre { font-weight: 600; }
+
+  .institucion-resumen {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  table.detalle-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-2);
+    font-size: 0.85rem;
+  }
+
+  table.detalle-table caption {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+
+  table.detalle-table th,
+  table.detalle-table td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.35rem 0.5rem;
+    text-align: left;
+  }
+  table.detalle-table th {
+    white-space: nowrap;
+    position: sticky;
+    top: 0;
+    background: var(--color-surface);
+    z-index: 1;
+    box-shadow: 0 1px 0 var(--color-border);
+  }
+
+  table.detalle-table tbody tr:nth-child(even) {
+    background: rgba(26, 127, 100, 0.04);
+  }
+
+  table.detalle-table tbody tr:hover {
+    background: rgba(26, 127, 100, 0.1);
+  }
+
+  .detalle-loading,
+  .detalle-empty {
+    color: var(--color-text-muted);
+    padding: var(--space-1) 0;
+  }
+
+  /* ─── Ponderaciones PAES ─────────────────────────────────────────────── */
+  .pond-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 80px;
+    background: var(--color-border);
+  }
+
+  .pond-seg { display: inline-block; height: 100%; }
+  .pond-nem      { background: #3b82f6; }
+  .pond-ranking  { background: #22c55e; }
+  .pond-lenguaje { background: #f59e0b; }
+  .pond-mat      { background: #ef4444; }
+  .pond-mat2     { background: #a78bfa; }
+  .pond-historia { background: #e879a0; }
+  .pond-ciencias { background: #e879a0; }
+  .pond-otros    { background: #94a3b8; }
+
+  .pond-label { font-size: 0.78rem; color: var(--color-text-muted); overflow-wrap: break-word; }
+
+  .badge-sin-paes {
+    display: inline-block;
+    font-size: 0.72rem;
+    background: var(--color-bg-alt);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  .pond-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: var(--space-1) 0 var(--space-2);
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .pond-leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .pond-leyenda-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ─── T17: mejoras "Dónde se imparte" ─────────────────────────────────── */
+  .detalle-stats-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.65rem 1rem;
+    margin-bottom: var(--space-2);
+  }
+  .detalle-stat-val {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: block;
+  }
+  .detalle-stat-label {
+    font-size: 0.73rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .inst-tipo-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    vertical-align: middle;
+  }
+  .inst-tipo-univ  { background: #dbeafe; color: #1d4ed8; border-color: #93c5fd; }
+  .inst-tipo-ip    { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+  .inst-tipo-cft   { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+  .acred-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    vertical-align: middle;
+  }
+  .acred-si        { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+  .acred-extendida { background: #dbeafe; color: #1d4ed8; border-color: #93c5fd; }
+  .acred-no        { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+  .detalle-count {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-1);
+    min-height: 1.2em;
+  }
+  .detalle-sort {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-left: auto;
+  }
+  @media (max-width: 600px) { .detalle-sort { margin-left: 0; } }
+
+  /* ─── Tooltip ────────────────────────────────────────────────────────── */
+  .tooltip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    background: none;
+    color: var(--color-primary);
+    font-size: 0.82rem;
+    cursor: help;
+    border-radius: 50%;
+    padding: 0;
+    vertical-align: middle;
+    margin-left: 0.2em;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .tooltip-btn:hover,
+  .tooltip-btn:focus-visible {
+    background: rgba(26, 127, 100, 0.12);
+    outline: none;
+  }
+  #tooltip-popup {
+    position: fixed;
+    z-index: 500;
+    max-width: 240px;
+    background: #1f2937;
+    color: #f9fafb;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.45;
+    padding: 0.45rem 0.65rem;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  #tooltip-popup.visible { opacity: 1; }
+  #tooltip-popup.arrow-below::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: #1f2937;
+    transform: rotate(45deg);
+  }
+  #tooltip-popup.arrow-above::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: #1f2937;
+    transform: rotate(45deg);
+  }
+
+  /* ─── Footer ─────────────────────────────────────────────────────────── */
+  footer.app-footer {
+    background: var(--color-header-bg);
+    padding: var(--space-4) var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+
+  .footer-col-brand { }
+
+  .footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .footer-logo {
+    height: 48px;
+    width: auto;
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .footer-col p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.62);
+    margin: 0 0 var(--space-2);
+    line-height: 1.6;
+  }
+
+  .footer-attribution {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 var(--space-2);
+    line-height: 1.5;
+  }
+
+  .footer-attribution a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+
+  .footer-attribution a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-copyright {
+    font-size: 0.82rem !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-top: var(--space-2) !important;
+  }
+
+  .footer-copyright a {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-copyright a:hover {
+    color: #ffffff;
+  }
+
+  .footer-col h3 {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 var(--space-2);
+  }
+
+  ul.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ul.footer-links li a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  ul.footer-links li a:hover {
+    color: #ffffff;
+  }
+
+  @media (max-width: 600px) {
+    .header-logo { height: 42px; }
+    .header-brand-name { font-size: 1.45rem; }
+    .header-brand-slogan { font-size: 0.82rem; }
+  }
+
+  /* ─── T20: Optimización móvil ───────────────────────────────────────── */
+  .detalle-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (max-width: 800px) {
+    nav.tabs { flex-wrap: wrap; }
+  }
+
+  @media (max-width: 600px) {
+    /* Touch targets — WCAG 2.5.5 mínimo 44×44px */
+    button.remove {
+      min-width: 44px; min-height: 44px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    button.combo-arrow { width: 2.75rem; height: 2.75rem; }
+    #carrera-input { min-height: 44px; }
+    nav.tabs a { min-height: 44px; display: inline-flex; align-items: center; }
+    ul#autocomplete-list li { padding: 0.75rem var(--space-2); }
+
+    /* Share bar: wrap cuando no cabe en línea */
+    .share-bar { flex-wrap: wrap; gap: 0.5rem; }
+    .btn-compartir { width: 100%; justify-content: center; }
+
+    /* Canvas: alto mínimo para legibilidad */
+    .chart-canvas-wrap canvas { min-height: 200px; }
+
+    /* Dropdowns: max-height reducido para no salirse del viewport */
+    .custom-select-list { max-height: 160px; }
+    ul#autocomplete-list { max-height: 180px; }
+  }
+
+  /* ─── T19c: hover/focus-visible animations ──────────────────────────── */
+
+  /* carrera-card: lift sutil + sombra pronunciada */
+  li.carrera-card {
+    transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.18s ease;
+  }
+  li.carrera-card:not(.is-entering):not(.is-removing):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  }
+
+  /* botón × de quitar carrera */
+  li.carrera-card button.remove {
+    transition: color 0.12s, transform 0.12s;
+  }
+  li.carrera-card button.remove:hover,
+  li.carrera-card button.remove:focus-visible {
+    color: var(--color-danger);
+    transform: scale(1.18);
+    outline: none;
+  }
+
+  /* combo-arrow (▾) */
+  button.combo-arrow {
+    transition: color 0.12s;
+  }
+  button.combo-arrow:not(:disabled):hover,
+  button.combo-arrow:not(:disabled):focus-visible {
+    color: var(--color-text);
+    outline: none;
+  }
+
+  /* labels de checkbox de tipo (Uni / IP / CFT) */
+  label.tipo-check {
+    transition: background 0.12s;
+    border-radius: 0.3rem;
+    padding: 0.1rem 0.3rem;
+    margin: -0.1rem -0.3rem;
+  }
+  label.tipo-check:hover {
+    background: var(--color-primary-light);
+  }
+
+  /* botón Compartir */
+  .btn-compartir {
+    transition: opacity 0.15s, transform 0.12s;
+  }
+  .btn-compartir:not(:disabled):active {
+    transform: scale(0.97);
+  }
+  .btn-compartir:focus-visible {
+    outline: 3px solid rgba(26, 127, 100, 0.45);
+    outline-offset: 2px;
+  }
+
+  /* ítems del autocomplete de carrera */
+  ul#autocomplete-list li {
+    transition: background 0.12s, color 0.12s;
+  }
+  ul#autocomplete-list li:hover,
+  ul#autocomplete-list li[aria-selected="true"] {
+    background: rgba(15, 46, 69, 0.08);
+    color: #0f2e45;
+  }
+
+  /* custom-select list (filtro Área) → azul header */
+  .selector-filters .custom-select-list li:hover {
+    background: rgba(15, 46, 69, 0.08);
+    color: #0f2e45;
+  }
+  .selector-filters .custom-select-list li.cs-selected {
+    color: #0f2e45;
+    background: rgba(15, 46, 69, 0.05);
+  }
+
+  /* input de búsqueda de carrera: ring al enfocar */
+  #carrera-input:focus-visible {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 127, 100, 0.22);
+  }
+
+  /* summary de "Dónde se imparte" */
+  details.detalle-carrera > summary {
+    transition: color 0.12s;
+    gap: 0;
+  }
+  details.detalle-carrera > summary:hover {
+    color: var(--color-primary);
+  }
+  details.detalle-carrera > summary:hover .detalle-arrow {
+    color: var(--color-primary);
+  }
+
+  /* summary de cada institución dentro del detalle */
+  details.institucion-card > summary {
+    transition: background 0.12s;
+    border-radius: calc(var(--radius) - 2px);
+    padding: 0.15rem 0.25rem;
+    margin: -0.15rem -0.25rem;
+  }
+  details.institucion-card > summary:hover {
+    background: var(--color-primary-light);
+  }
+  details.institucion-card > summary:hover .inst-arrow {
+    color: var(--color-primary);
+  }
+
+  /* filas de la tabla de detalle */
+  table.detalle-table tbody tr {
+    transition: background 0.12s;
+  }
+
+  /* tooltip-btn: agregar transition */
+  .tooltip-btn {
+    transition: background 0.12s;
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <img src="assets/logo-carrera-clara-blanco.png" alt="Logo Carrera Clara" class="header-logo">
+      <div class="header-brand-text">
+        <span class="header-brand-name">Carrera Clara</span>
+        <span class="header-brand-slogan">Elige con datos. Decide con claridad.</span>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a href="landing.html">Inicio</a>
+      <a href="index_v2.html" class="activo" aria-current="page">Tipos de carrera</a>
+      <a href="instituciones_v2.html">Carreras por institución</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="seccion-selector" aria-labelledby="selector-heading">
+    <h2 id="selector-heading">Carreras a comparar</h2>
+    <div class="selector-filters">
+      <label for="filtro-area">Área: <select id="filtro-area"><option value="">Todas las áreas</option></select></label>
+    </div>
+    <div class="selector-wrap">
+      <label for="carrera-input">Agregar carrera (2 a 4)</label>
+      <input type="text" id="carrera-input" autocomplete="off" placeholder="Escribe el nombre de una carrera genérica… (sin tilde también sirve)">
+      <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar todas las carreras">▾</button>
+      <ul id="autocomplete-list" hidden role="listbox"></ul>
+    </div>
+    <p class="selector-help" id="selector-help">Agrega al menos 2 carreras para comparar.</p>
+    <ul id="selected-list"></ul>
+    <div id="aviso-usabilidad" class="aviso-usabilidad" hidden></div>
+    <div id="share-bar" class="share-bar" hidden>
+      <span>Comparte esta comparación</span>
+      <button type="button" id="btn-compartir" class="btn-compartir">🔗 Copiar enlace</button>
+    </div>
+  </section>
+  <div id="share-toast"></div>
+
+  <div id="seccion-vacia">
+    <div class="empty-state">
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
+        <path d="M7 8h2"/><path d="M7 12h5"/><path d="M15 8h2"/><path d="M15 12h2"/>
+      </svg>
+      <h2>Compara carreras lado a lado</h2>
+      <p>Busca una carrera arriba para empezar — puedes comparar las que quieras.</p>
+    </div>
+  </div>
+
+  <section id="seccion-charts" hidden aria-labelledby="charts-heading">
+    <h2 id="charts-heading">Gráficos comparativos</h2>
+    <p class="chart-note" id="nota-charts">Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.</p>
+    <div class="charts-grid">
+      <figure class="chart-card">
+        <figcaption>Ingreso al 4° año (2024) <button type="button" class="tooltip-btn" data-tooltip="Sueldo bruto promedio de los titulados a los 4 años de haber egresado, según registros del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-ingreso"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Empleabilidad 1er y 2do año (2024) <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de titulados que trabajaron formalmente al 1er y 2do año después de egresar, según datos del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-empleabilidad"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Retención 1er y 2do año <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de estudiantes que continuaron inscritos en la carrera al 2do y 3er año, respectivamente." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-retencion"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Distribución de ingreso al 5° año (percentiles 10/50/90) <button type="button" class="tooltip-btn" data-tooltip="El percentil 10 es el sueldo que supera solo el 10% más bajo; el percentil 50 es la mediana; el percentil 90 es el que solo supera el 10% más alto. Dato al 5° año post-título." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-distribucion"></canvas></div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="seccion-detalle" hidden aria-labelledby="detalle-heading">
+    <h2 id="detalle-heading">Dónde se imparte</h2>
+    <div id="detalle-container"></div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <div class="footer-grid">
+
+    <!-- Col 1: Identidad -->
+    <div class="footer-col footer-col-brand">
+      <div class="footer-logo-row">
+        <img src="assets/logo-carrera-clara-blanco.png" alt="Carrera Clara" class="footer-logo">
+        <span class="footer-brand-name">Carrera Clara</span>
+      </div>
+      <p>Herramienta independiente de visualización y análisis comparativo para explorar opciones de educación superior en Chile.</p>
+      <p class="footer-attribution">
+        Datos: <a href="https://www.mifuturo.cl" target="_blank" rel="noopener">SIES / MiFuturo.cl</a> — Ministerio de Educación de Chile
+      </p>
+      <p class="footer-copyright">
+        © 2026 Carrera Clara. Todos los derechos reservados.<br>
+        Desarrollado por <a href="https://www.linkedin.com/in/diegovp2001/" target="_blank" rel="noopener">Diego Vargas Palominos</a>.
+      </p>
+    </div>
+
+    <!-- Col 2: Bases de datos -->
+    <div class="footer-col">
+      <h3>Bases de datos</h3>
+      <ul class="footer-links">
+        <li><a href="https://www.mifuturo.cl/bases-de-datos-de-matriculados/#" target="_blank" rel="noopener">Bases de datos oficiales SIES</a></li>
+        <li><a href="https://www.mifuturo.cl/" target="_blank" rel="noopener">Mi Futuro</a></li>
+        <li><a href="https://educacionsuperior.mineduc.cl/" target="_blank" rel="noopener">Mineduc</a></li>
+        <li><a href="https://demre.cl/" target="_blank" rel="noopener">DEMRE</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Explorar -->
+    <div class="footer-col">
+      <h3>Explorar</h3>
+      <ul class="footer-links">
+        <li><a href="landing.html">Inicio</a></li>
+        <li><a href="index_v2.html">Tipos de carrera</a></li>
+        <li><a href="instituciones_v2.html">Carreras por institución</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Elemento oculto para compatibilidad con el JS (renderDiagnostico) -->
+<ul id="diagnostico-list" hidden></ul>
+
+<script>
+(function () {
+  "use strict";
+
+  function normalizar(texto) {
+    return texto.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  function slugify(nombre) {
+    return normalizar(nombre)
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  const ORDEN_TIPOS = ["Universidades", "Institutos Profesionales", "Centros de Formación Técnica"];
+  const TIPO_CORTO = {
+    "Universidades": "Uni",
+    "Institutos Profesionales": "IP",
+    "Centros de Formación Técnica": "CFT",
+  };
+  const MIN_CARRERAS = 2;
+
+  let coreData = null;
+  let selected = [];
+  let _renderedSlugs = new Set();
+  const tiposActivosPorCarrera = new Map();
+  const detalleCache = {};
+  const chartInstances = {};
+
+  const el = {
+    input: document.getElementById("carrera-input"),
+    arrow: document.getElementById("carrera-arrow"),
+    autocompleteList: document.getElementById("autocomplete-list"),
+    selectedList: document.getElementById("selected-list"),
+    filtroArea: document.getElementById("filtro-area"),
+    selectorHelp: document.getElementById("selector-help"),
+    seccionVacia: document.getElementById("seccion-vacia"),
+    seccionCharts: document.getElementById("seccion-charts"),
+    seccionDetalle: document.getElementById("seccion-detalle"),
+    detalleContainer: document.getElementById("detalle-container"),
+    diagnosticoList: document.getElementById("diagnostico-list"),
+    notaCharts: document.getElementById("nota-charts"),
+    avisoUsabilidad: document.getElementById("aviso-usabilidad"),
+    shareBar: document.getElementById("share-bar"),
+    btnCompartir: document.getElementById("btn-compartir"),
+  };
+
+  async function init() {
+    const resp = await fetch("data/core.json");
+    coreData = await resp.json();
+
+    renderDiagnostico(coreData.diagnostico_cobertura);
+    const areas = [...new Set(coreData.carreras.map((c) => c.area).filter(Boolean))].sort();
+    areas.forEach((a) => {
+      const opt = document.createElement("option");
+      opt.value = a;
+      opt.textContent = a;
+      el.filtroArea.appendChild(opt);
+    });
+    buildCustomSelect(el.filtroArea);
+    restoreFromURL();
+    renderSelected();
+    renderEmptyState();
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+    }[c]));
+  }
+
+  function infoIcon(texto) {
+    return `<button type="button" class="tooltip-btn" data-tooltip="${escapeHtml(texto)}" aria-label="Información" tabindex="0">ℹ</button>`;
+  }
+
+  function renderDiagnostico(d) {
+    el.diagnosticoList.innerHTML = `
+      <li>${d.total_carreras_genericas} carreras genéricas en total</li>
+      <li>${d.carreras_sin_benchmark_nacional} sin comparación nacional</li>
+      <li>${d.filas_oferta_sin_carrera_generica} / ${d.total_filas_oferta} filas de oferta sin carrera genérica asociada</li>
+      <li>${d.filas_indicadores_con_institucion_colgante} / ${d.total_filas_indicadores} filas de indicadores con institución sin ficha</li>
+    `;
+  }
+
+  function carrerasDisponibles(filtro) {
+    const yaSeleccionadas = new Set(selected.map((c) => c.slug));
+    const q = normalizar(filtro || "");
+    const areaFiltro = el.filtroArea.value;
+    return coreData.carreras.filter(
+      (c) => !yaSeleccionadas.has(c.slug) &&
+             (q === "" || normalizar(c.nombre).includes(q)) &&
+             (areaFiltro === "" || c.area === areaFiltro)
+    );
+  }
+
+  function mostrarLista(filtro) {
+    const resultados = carrerasDisponibles(filtro);
+    const wasHidden = el.autocompleteList.hidden;
+    if (resultados.length === 0) {
+      el.autocompleteList.innerHTML = '<li class="meta">Sin resultados (o ya agregaste todas las que coinciden).</li>';
+      if (wasHidden) fadeIn(el.autocompleteList);
+      return;
+    }
+    el.autocompleteList.innerHTML = resultados
+      .map(
+        (c) => `<li role="option" data-slug="${c.slug}">${escapeHtml(c.nombre)}
+          <span class="meta">${escapeHtml(c.area || "Área sin clasificar")}${c.tiene_benchmark_nacional ? "" : " · sin comparación nacional"}</span>
+        </li>`
+      )
+      .join("");
+    if (wasHidden) fadeIn(el.autocompleteList);
+  }
+
+  function ocultarLista() {
+    el.autocompleteList.hidden = true;
+  }
+
+  el.filtroArea.addEventListener("change", () => { el.autocompleteList.hidden = true; mostrarLista(el.input.value); });
+  el.input.addEventListener("input", () => mostrarLista(el.input.value));
+  el.input.addEventListener("focus", () => mostrarLista(el.input.value));
+  el.input.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") ocultarLista();
+  });
+
+  el.arrow.addEventListener("click", () => {
+    if (el.autocompleteList.hidden) {
+      mostrarLista(el.input.value);
+      el.input.focus();
+    } else {
+      ocultarLista();
+    }
+  });
+
+  el.autocompleteList.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li[data-slug]");
+    if (!li) return;
+    const carrera = coreData.carreras.find((c) => c.slug === li.dataset.slug);
+    if (carrera) addCarrera(carrera);
+    el.input.value = "";
+    ocultarLista();
+  });
+
+  document.addEventListener("click", (ev) => {
+    customSelects.forEach(cs => cs.close());
+    if (!el.autocompleteList.contains(ev.target) && ev.target !== el.input && ev.target !== el.arrow) {
+      ocultarLista();
+    }
+  });
+
+  function addCarrera(carrera) {
+    if (selected.some((c) => c.slug === carrera.slug)) return;
+    selected.push(carrera);
+    tiposActivosPorCarrera.set(carrera.slug, new Set(carrera.benchmarks.map((b) => b.tipo_institucion)));
+    afterSelectionChange();
+  }
+
+  function removeCarrera(slug) {
+    selected = selected.filter((c) => c.slug !== slug);
+    tiposActivosPorCarrera.delete(slug);
+    afterSelectionChange();
+  }
+
+  function afterSelectionChange() {
+    renderSelected();
+    renderEmptyState();
+    renderCharts();
+    renderDetallePanels();
+    updateURL();
+  }
+
+  function updateURL() {
+    if (selected.length === 0) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } else {
+      history.replaceState(null, "", "#c=" + selected.map((c) => c.slug).join(","));
+    }
+  }
+
+  function restoreFromURL() {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const params = new URLSearchParams(hash);
+    const slugList = params.get("c");
+    if (!slugList) return;
+    slugList.split(",").forEach((slug) => {
+      const carrera = coreData.carreras.find((c) => c.slug === slug);
+      if (carrera) addCarrera(carrera);
+    });
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById("share-toast");
+    toast.textContent = msg;
+    toast.classList.add("visible");
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove("visible"), 2200);
+  }
+
+  el.btnCompartir.addEventListener("click", () => {
+    const url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(() => showToast("¡Enlace copiado!"));
+    } else {
+      const inp = document.createElement("input");
+      inp.value = url;
+      document.body.appendChild(inp);
+      inp.select();
+      document.execCommand("copy");
+      document.body.removeChild(inp);
+      showToast("¡Enlace copiado!");
+    }
+  });
+
+  const CAMPOS_BENCHMARK = [
+    ["ingreso_4to_anio_2024", "sin ingreso 4° año"],
+    ["empleabilidad_1er_anio_2024", "sin empleabilidad 1er año"],
+    ["empleabilidad_2do_anio_2024", "sin empleabilidad 2do año"],
+    ["retencion_1er_anio", "sin retención 1er año"],
+    ["retencion_2do_anio", "sin retención 2do año"],
+  ];
+
+  function badgesFaltantesBenchmark(b) {
+    return CAMPOS_BENCHMARK.filter(([campo]) => b[campo] === null)
+      .map(([, etiqueta]) => `<span class="badge badge-warning">${etiqueta}</span>`)
+      .join(" ");
+  }
+
+  const TIPO_EMOJI = {
+    "Universidades": "🏛",
+    "Institutos Profesionales": "🏢",
+    "Centros de Formación Técnica": "🏫",
+  };
+
+  const AVISO_UMBRAL = 7;
+
+  function iconChip(emoji, etiqueta, tooltipTexto) {
+    const btn = tooltipTexto ? " " + infoIcon(tooltipTexto) : "";
+    return `<span class="card-icon-chip">${emoji} ${escapeHtml(String(etiqueta || "—"))}${btn}</span>`;
+  }
+
+  function headlineMetricsCarrera(carrera) {
+    const ref = ORDEN_TIPOS
+      .map((t) => carrera.benchmarks.find((b) => b.tipo_institucion === t))
+      .find(Boolean);
+    if (!ref) return "";
+    const tipoLabel = TIPO_CORTO[ref.tipo_institucion] || ref.tipo_institucion;
+    const emp = ref.empleabilidad_1er_anio_2024;
+    const ing = ref.ingreso_4to_anio_2024;
+    if (emp === null && ing === null) return "";
+    const metricas = [];
+    if (emp !== null) {
+      const pct = Math.round(emp * 100) + "%";
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor">${pct}</span>` +
+        `<span class="card-metric-label">Emp. 1er año ` +
+        infoIcon("Empleabilidad al 1er año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
+        `</span></div>`
+      );
+    }
+    if (ing !== null) {
+      const ingStr = ing >= 1000000
+        ? "$" + (ing / 1000000).toFixed(1) + "M"
+        : "$" + Math.round(ing / 1000) + "k";
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor">${ingStr}</span>` +
+        `<span class="card-metric-label">Ingreso 4° año ` +
+        infoIcon("Ingreso promedio al 4° año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
+        `</span></div>`
+      );
+    }
+    return `<div class="card-metrics-row">${metricas.join("")}</div>`;
+  }
+
+  function iconRowCarrera(carrera) {
+    const partes = [];
+    if (carrera.area) partes.push(iconChip("🎓", carrera.area, "Área de conocimiento según clasificación SIES."));
+    const tiposDisponibles = ORDEN_TIPOS.filter((t) => carrera.benchmarks.some((b) => b.tipo_institucion === t));
+    if (tiposDisponibles.length) {
+      const tipoChips = tiposDisponibles.map((t) => iconChip(TIPO_EMOJI[t], TIPO_CORTO[t], t)).join("");
+      partes.push(`<span class="card-icon-label">Dónde se imparte:</span>${tipoChips}`);
+    }
+    if (!carrera.tiene_benchmark_nacional) partes.push(iconChip("📊", "sin benchmark", "Esta carrera no tiene datos de comparación nacional en SIES."));
+    return partes.length ? `<div class="card-icon-row">${partes.join("")}</div>` : "";
+  }
+
+  function actualizarAvisoUsabilidad() {
+    const n = selected.length;
+    if (n >= AVISO_UMBRAL) {
+      el.avisoUsabilidad.textContent = `Estás comparando ${n} carreras — con muchas tarjetas la lectura puede ser más difícil.`;
+      if (el.avisoUsabilidad.hidden) fadeIn(el.avisoUsabilidad);
+    } else {
+      el.avisoUsabilidad.hidden = true;
+    }
+  }
+
+  function renderSelected() {
+    const prevSlugs = new Set(_renderedSlugs);
+    _renderedSlugs = new Set(selected.map((c) => c.slug));
+
+    el.selectedList.innerHTML = selected
+      .map((c) => {
+        const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
+        const tiposDisponibles = ORDEN_TIPOS.filter((t) => c.benchmarks.some((b) => b.tipo_institucion === t));
+        const checkboxes = tiposDisponibles.length
+          ? `<div class="tipo-checks"><span class="card-icon-label">Dónde se imparte:</span>${tiposDisponibles
+              .map((t) => {
+                const benchmark = c.benchmarks.find((b) => b.tipo_institucion === t);
+                const faltantes = badgesFaltantesBenchmark(benchmark);
+                return `<label class="tipo-check">
+                  <input type="checkbox" data-slug="${c.slug}" data-tipo="${escapeHtml(t)}" ${activos.has(t) ? "checked" : ""}>
+                  ${escapeHtml(TIPO_CORTO[t] || t)}
+                </label>${faltantes}`;
+              })
+              .join("")}</div>`
+          : `<div class="tipo-checks"><span class="badge badge-warning">sin comparación nacional</span>${infoIcon("Esta carrera no tiene datos de benchmark nacional en SIES. Solo 26 de 190 carreras genéricas están en este estado.")}</div>`;
+
+        return `<li class="carrera-card" data-slug="${c.slug}">
+          <div class="carrera-card-header">
+            <span class="carrera-card-nombre">${escapeHtml(c.nombre)}</span>
+            <button type="button" class="remove" aria-label="Quitar ${escapeHtml(c.nombre)}" data-slug="${c.slug}">×</button>
+          </div>
+          ${iconRowCarrera(c)}
+          ${headlineMetricsCarrera(c)}
+          ${checkboxes}
+        </li>`;
+      })
+      .join("");
+
+    el.selectedList.querySelectorAll("li.carrera-card").forEach((li) => {
+      if (!prevSlugs.has(li.dataset.slug)) {
+        li.classList.add("is-entering");
+        requestAnimationFrame(() => requestAnimationFrame(() => li.classList.remove("is-entering")));
+      }
+    });
+
+    el.selectedList.querySelectorAll("button.remove").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const li = btn.closest("li.carrera-card");
+        if (!li || li.classList.contains("is-removing")) return;
+        li.classList.add("is-removing");
+        li.addEventListener("transitionend", () => removeCarrera(btn.dataset.slug), { once: true });
+      });
+    });
+
+    el.selectedList.querySelectorAll('input[type="checkbox"]').forEach((chk) => {
+      chk.addEventListener("change", () => {
+        const set = tiposActivosPorCarrera.get(chk.dataset.slug);
+        if (!set) return;
+        if (chk.checked) set.add(chk.dataset.tipo);
+        else set.delete(chk.dataset.tipo);
+        renderCharts();
+      });
+    });
+
+    actualizarAvisoUsabilidad();
+
+    const puedeCompartir = selected.length >= MIN_CARRERAS;
+    if (puedeCompartir && el.shareBar.hidden) fadeIn(el.shareBar);
+    else if (!puedeCompartir) el.shareBar.hidden = true;
+
+    el.selectorHelp.textContent = selected.length < MIN_CARRERAS
+      ? `Agrega al menos 2 carreras para comparar (llevas ${selected.length}).`
+      : `Comparando ${selected.length} carrera(s).`;
+  }
+
+  function renderEmptyState() {
+    const mostrarVacio = selected.length < MIN_CARRERAS;
+    if (mostrarVacio) {
+      if (el.seccionVacia.hidden) fadeIn(el.seccionVacia);
+      el.seccionCharts.hidden = true;
+      el.seccionDetalle.hidden = true;
+    } else {
+      el.seccionVacia.hidden = true;
+      if (el.seccionCharts.hidden) fadeIn(el.seccionCharts);
+      if (el.seccionDetalle.hidden) fadeIn(el.seccionDetalle);
+    }
+  }
+
+  const COLORES_TIPO = {
+    "Universidades": "#1a7f64",
+    "Institutos Profesionales": "#e8960a",
+    "Centros de Formación Técnica": "#3b82f6",
+  };
+
+  const ABREVIATURAS = [
+    [/Ingeniería/gi, "Ing."],
+    [/Tecnología/gi, "Tec."],
+    [/Tecnólogo/gi, "Tec."],
+    [/Administración/gi, "Adm."],
+    [/Licenciatura/gi, "Lic."],
+    [/Pedagogía/gi, "Ped."],
+  ];
+
+  function abreviarNombre(nombre) {
+    return ABREVIATURAS.reduce((acc, [re, rep]) => acc.replace(re, rep), nombre);
+  }
+
+  function truncar(texto, max) {
+    return texto.length > max ? `${texto.slice(0, max - 1)}…` : texto;
+  }
+
+  function etiquetaEjeCorta(carrera, tipo) {
+    return truncar(`${abreviarNombre(carrera.nombre)} (${TIPO_CORTO[tipo] || tipo})`, 26);
+  }
+
+  function entradasActuales() {
+    const entradas = [];
+    selected.forEach((c) => {
+      const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
+      ORDEN_TIPOS.forEach((tipo) => {
+        if (!activos.has(tipo)) return;
+        const b = c.benchmarks.find((bb) => bb.tipo_institucion === tipo);
+        if (b) entradas.push({ carrera: c, tipo, benchmark: b });
+      });
+    });
+    return entradas;
+  }
+
+  function destruirChart(id) {
+    if (chartInstances[id]) {
+      chartInstances[id].destroy();
+      delete chartInstances[id];
+    }
+  }
+
+  function altoCanvas(nFilas) {
+    return Math.max(180, nFilas * 36 + 70);
+  }
+
+  function opcionesEjeY(entradas) {
+    return {
+      autoSkip: false,
+      callback: (value, index) => etiquetaEjeCorta(entradas[index].carrera, entradas[index].tipo),
+    };
+  }
+
+  function dibujarChart(id, entradas, config) {
+    destruirChart(id);
+    const canvas = document.getElementById(id);
+    canvas.parentElement.style.height = `${altoCanvas(entradas.length)}px`;
+    const ctx = canvas.getContext("2d");
+    chartInstances[id] = new Chart(ctx, config);
+  }
+
+  function datasetUnaMetrica(entradas, extractor) {
+    return {
+      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+      datasets: [
+        {
+          label: "Valor",
+          backgroundColor: entradas.map((e) => COLORES_TIPO[e.tipo] || "#999"),
+          data: entradas.map((e) => extractor(e.benchmark)),
+        },
+      ],
+    };
+  }
+
+  function datasetDosMetricas(entradas, extractor1, etiqueta1, color1, extractor2, etiqueta2, color2) {
+    return {
+      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+      datasets: [
+        { label: etiqueta1, backgroundColor: color1, data: entradas.map((e) => extractor1(e.benchmark)) },
+        { label: etiqueta2, backgroundColor: color2, data: entradas.map((e) => extractor2(e.benchmark)) },
+      ],
+    };
+  }
+
+  function renderCharts() {
+    if (selected.length < MIN_CARRERAS) return;
+    const entradas = entradasActuales();
+
+    const carrerasSinBarra = selected.filter((c) => !entradas.some((e) => e.carrera.slug === c.slug));
+    el.notaCharts.textContent = carrerasSinBarra.length
+      ? `${carrerasSinBarra.length} carrera(s) sin ninguna barra en estos gráficos (sin comparación nacional o sin tipo marcado): ${carrerasSinBarra.map((c) => c.nombre).join(", ")}.`
+      : "Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.";
+
+    if (entradas.length === 0) {
+      ["chart-ingreso", "chart-empleabilidad", "chart-retencion", "chart-distribucion"].forEach((id) => {
+        destruirChart(id);
+        document.getElementById(id).parentElement.style.height = "80px";
+      });
+      return;
+    }
+
+    const ejeY = { ticks: opcionesEjeY(entradas) };
+
+    dibujarChart("chart-ingreso", entradas, {
+      type: "bar",
+      data: datasetUnaMetrica(entradas, (b) => b.ingreso_4to_anio_2024),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, title: { display: true, text: "CLP" } }, y: ejeY },
+      },
+    });
+
+    dibujarChart("chart-empleabilidad", entradas, {
+      type: "bar",
+      data: datasetDosMetricas(
+        entradas,
+        (b) => b.empleabilidad_1er_anio_2024, "1er año", "#1a7f64",
+        (b) => b.empleabilidad_2do_anio_2024, "2do año", "#a7d9cd"
+      ),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    dibujarChart("chart-retencion", entradas, {
+      type: "bar",
+      data: datasetDosMetricas(
+        entradas,
+        (b) => b.retencion_1er_anio, "1er año", "#e8960a",
+        (b) => b.retencion_2do_anio, "2do año", "#fcd28c"
+      ),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    dibujarChart("chart-distribucion", entradas, {
+      type: "bar",
+      data: {
+        labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+        datasets: [
+          { label: "Percentil 10", backgroundColor: "#fca5a5", data: entradas.map((e) => e.benchmark.percentil_10_5to_anio) },
+          { label: "Percentil 50 (mediana)", backgroundColor: "#1a7f64", data: entradas.map((e) => e.benchmark.percentil_50_5to_anio) },
+          { label: "Percentil 90", backgroundColor: "#3b82f6", data: entradas.map((e) => e.benchmark.percentil_90_5to_anio) },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, title: { display: true, text: "CLP" } }, y: ejeY },
+      },
+    });
+  }
+
+  function renderDetallePanels() {
+    el.detalleContainer.innerHTML = selected
+      .map(
+        (c) => `<details class="detalle-carrera" data-slug="${c.slug}">
+          <summary><span class="detalle-arrow" aria-hidden="true">▾</span>${escapeHtml(c.nombre)}</summary>
+          <div class="detalle-body" data-slug="${c.slug}"><p class="detalle-loading">Abre para cargar la oferta…</p></div>
+        </details>`
+      )
+      .join("");
+
+    el.detalleContainer.querySelectorAll("details.detalle-carrera").forEach((details) => {
+      const summary = details.querySelector("summary");
+      const body = details.querySelector(".detalle-body");
+
+      // animated close: intercept click while open to run exit animation first
+      summary.addEventListener("click", (e) => {
+        if (!details.open) return;
+        if (body.classList.contains("is-closing")) return;
+        e.preventDefault();
+        body.classList.add("is-closing");
+        body.addEventListener("animationend", () => {
+          details.removeAttribute("open");
+          body.classList.remove("is-closing");
+        }, { once: true });
+      });
+
+      // data loading: fires on native toggle (opening only)
+      details.addEventListener("toggle", async () => {
+        if (!details.open) return;
+        const slug = details.dataset.slug;
+        if (detalleCache[slug]) {
+          renderDetalleBody(body, detalleCache[slug]);
+          return;
+        }
+        body.innerHTML = '<p class="detalle-loading">Cargando…</p>';
+        try {
+          const resp = await fetch(`data/detalle/${slug}.json`);
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const detalle = await resp.json();
+          detalleCache[slug] = detalle;
+          renderDetalleBody(body, detalle);
+        } catch (err) {
+          body.innerHTML = `<p class="detalle-empty">No se pudo cargar el detalle (${escapeHtml(err.message)}).</p>`;
+        }
+      });
+    });
+  }
+
+  function badgeInstitucion(institucion) {
+    if (institucion.tiene_ficha) return escapeHtml(institucion.nombre);
+    return `<span class="badge badge-missing">institución sin ficha</span> (código ${institucion.codigo ?? "?"})`;
+  }
+
+  function formatPct(v) {
+    return v === null || v === undefined ? "—" : `${Math.round(v * 100)}%`;
+  }
+
+  function parseArancel(texto) {
+    if (!texto) return null;
+    const digitos = texto.replace(/[^\d]/g, "");
+    return digitos ? parseInt(digitos, 10) : null;
+  }
+
+  function formatCLP(valor) {
+    return valor === null ? "—" : `$${valor.toLocaleString("es-CL")}`;
+  }
+
+  function rangoArancel(ofertas) {
+    const valores = ofertas.map((o) => parseArancel(o.arancel_anual_2026)).filter((v) => v !== null);
+    if (!valores.length) return "—";
+    const min = Math.min(...valores);
+    const max = Math.max(...valores);
+    return min === max ? formatCLP(min) : `${formatCLP(min)} – ${formatCLP(max)}`;
+  }
+
+  const POND_COMPS = [
+    { key: "ponderacion_nem",           clase: "pond-nem",      etiqueta: "NEM" },
+    { key: "ponderacion_ranking",       clase: "pond-ranking",  etiqueta: "Ranking" },
+    { key: "ponderacion_lenguaje",      clase: "pond-lenguaje", etiqueta: "C. Lectora" },
+    { key: "ponderacion_matematicas",   clase: "pond-mat",      etiqueta: "M1" },
+    { key: "ponderacion_matematicas_2", clase: "pond-mat2",     etiqueta: "M2" },
+    { key: "ponderacion_historia",      clase: "pond-historia", etiqueta: "Hist." },
+    { key: "ponderacion_ciencias",      clase: "pond-ciencias", etiqueta: "Ciencias" },
+    { key: "ponderacion_otros",         clase: "pond-otros",    etiqueta: "Otros" },
+  ];
+
+  function renderPonderacionBar(oferta) {
+    const sinPaesHtml = `<span class="badge-sin-paes">Sin ponderación PAES</span>${infoIcon("Esta sede/jornada no reporta ponderaciones PAES. Común en IPs y CFTs con admisión especial sin PAES.")}`;
+    if (!oferta.tiene_ponderacion_paes) return sinPaesHtml;
+    const suma = POND_COMPS.reduce((acc, c) => acc + (oferta[c.key] || 0), 0);
+    if (suma === 0) return sinPaesHtml;
+
+    const segs = POND_COMPS
+      .filter((c) => (oferta[c.key] || 0) > 0)
+      .map((c) => {
+        const pct = ((oferta[c.key] || 0) / suma * 100).toFixed(1);
+        return `<span class="pond-seg ${c.clase}" style="width:${pct}%" title="${c.etiqueta} ${oferta[c.key]}%"></span>`;
+      })
+      .join("");
+
+    const partes = [];
+    const indiv = ["ponderacion_nem","ponderacion_ranking","ponderacion_lenguaje",
+                   "ponderacion_matematicas","ponderacion_matematicas_2","ponderacion_otros"];
+    POND_COMPS.filter((c) => indiv.includes(c.key) && (oferta[c.key] || 0) > 0)
+              .forEach((c) => partes.push(`${c.etiqueta} ${oferta[c.key]}%`));
+    const hist = oferta.ponderacion_historia || 0;
+    const cien = oferta.ponderacion_ciencias || 0;
+    if (hist > 0 && cien > 0) {
+      partes.push(hist === cien ? `Hist./Ciencias ${hist}%` : `Hist./Ciencias ${hist}%/${cien}%`);
+    } else if (hist > 0) {
+      partes.push(`Hist. ${hist}%`);
+    } else if (cien > 0) {
+      partes.push(`Ciencias ${cien}%`);
+    }
+
+    const texto = partes.join(" · ");
+    return `<div class="pond-bar" title="${texto}">${segs}</div>
+            <span class="pond-label">${texto}</span>`;
+  }
+
+  function opcionesSelect(valores, todasLabel) {
+    return `<option value="">${escapeHtml(todasLabel)}</option>${valores
+      .map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`)
+      .join("")}`;
+  }
+
+  function filtrosDisponibles(detalle) {
+    const regiones = new Set();
+    const jornadas = new Set();
+    const tipos = new Set();
+    detalle.ofertas.forEach((o) => {
+      if (o.region) regiones.add(o.region);
+      if (o.jornada) jornadas.add(o.jornada);
+      if (o.institucion.tipo) tipos.add(o.institucion.tipo);
+    });
+    return { regiones: [...regiones].sort(), jornadas: [...jornadas].sort(), tipos: [...tipos].sort() };
+  }
+
+  function agruparPorInstitucion(detalle, filtros) {
+    const grupos = new Map();
+    const claveDe = (institucion) => institucion.codigo ?? `sin-codigo-${institucion.nombre || "?"}`;
+
+    detalle.ofertas.forEach((o) => {
+      if (filtros.region && o.region !== filtros.region) return;
+      if (filtros.jornada && o.jornada !== filtros.jornada) return;
+      if (filtros.tipo && o.institucion.tipo !== filtros.tipo) return;
+      const key = claveDe(o.institucion);
+      if (!grupos.has(key)) grupos.set(key, { institucion: o.institucion, ofertas: [], indicadores: [] });
+      grupos.get(key).ofertas.push(o);
+    });
+
+    detalle.indicadores.forEach((ind) => {
+      if (filtros.tipo && ind.institucion.tipo !== filtros.tipo) return;
+      const key = claveDe(ind.institucion);
+      if (!grupos.has(key)) {
+        if (filtros.region || filtros.jornada) return;
+        grupos.set(key, { institucion: ind.institucion, ofertas: [], indicadores: [] });
+      }
+      grupos.get(key).indicadores.push(ind);
+    });
+
+    return [...grupos.values()].sort((a, b) => b.ofertas.length - a.ofertas.length);
+  }
+
+  function tipoBadge(tipo) {
+    if (!tipo) return "";
+    const t = tipo.toLowerCase();
+    const cls = t.includes("universidad") ? "inst-tipo-univ"
+              : (t.includes("instituto") || t === "ips") ? "inst-tipo-ip"
+              : "inst-tipo-cft";
+    return `<span class="inst-tipo-badge ${cls}">${escapeHtml(tipo)}</span>`;
+  }
+
+  function acredBadge(acred) {
+    if (!acred) return "";
+    const cls = acred.includes("Extendida") ? "acred-extendida"
+              : acred === "Acreditada" ? "acred-si"
+              : "acred-no";
+    return `<span class="acred-badge ${cls}">${escapeHtml(acred)}</span>`;
+  }
+
+  function minArancel(ofertas) {
+    const vals = ofertas.map(o => parseArancel(o.arancel_anual_2026)).filter(v => v !== null);
+    return vals.length ? Math.min(...vals) : null;
+  }
+
+  function totalVacantes(ofertas) {
+    return ofertas.reduce((acc, o) => acc + (o.vacantes_1er_semestre || 0), 0);
+  }
+
+  function sortGrupos(grupos, sortBy) {
+    const copy = [...grupos];
+    switch (sortBy) {
+      case "arancel-asc":
+        return copy.sort((a, b) => {
+          const av = minArancel(a.ofertas), bv = minArancel(b.ofertas);
+          if (av === null) return 1; if (bv === null) return -1;
+          return av - bv;
+        });
+      case "arancel-desc":
+        return copy.sort((a, b) => {
+          const av = minArancel(a.ofertas), bv = minArancel(b.ofertas);
+          if (av === null) return 1; if (bv === null) return -1;
+          return bv - av;
+        });
+      case "vacantes-desc":
+        return copy.sort((a, b) => totalVacantes(b.ofertas) - totalVacantes(a.ofertas));
+      default:
+        return copy;
+    }
+  }
+
+  function buildStatsBar(grupos) {
+    const regiones = new Set();
+    const aranceles = [];
+    grupos.forEach(g => {
+      g.ofertas.forEach(o => {
+        if (o.region) regiones.add(o.region);
+        const v = parseArancel(o.arancel_anual_2026);
+        if (v) aranceles.push(v);
+      });
+    });
+    const minA = aranceles.length ? Math.min(...aranceles) : null;
+    const maxA = aranceles.length ? Math.max(...aranceles) : null;
+    const arancelHtml = minA === null ? "—"
+      : minA === maxA ? formatCLP(minA)
+      : `${formatCLP(minA)} – ${formatCLP(maxA)}`;
+    return `<div class="detalle-stats-bar">
+      <div><span class="detalle-stat-val">${grupos.length}</span><span class="detalle-stat-label">instituciones</span></div>
+      <div><span class="detalle-stat-val">${regiones.size}</span><span class="detalle-stat-label">regiones</span></div>
+      ${minA !== null ? `<div><span class="detalle-stat-val">${arancelHtml}</span><span class="detalle-stat-label">rango arancel</span></div>` : ""}
+    </div>`;
+  }
+
+  function renderGrupoInstitucion(grupo) {
+    const regiones = [...new Set(grupo.ofertas.map((o) => o.region).filter(Boolean))];
+    const filasOferta = grupo.ofertas
+      .map(
+        (o) => `<tr>
+          <td>${escapeHtml(o.jornada || "—")}</td>
+          <td>${escapeHtml(o.sede || "—")}</td>
+          <td>${escapeHtml(o.region || "—")}</td>
+          <td>${escapeHtml(o.nivel_carrera || "—")}</td>
+          <td>${escapeHtml(o.arancel_anual_2026 || "—")}</td>
+          <td>${o.vacantes_1er_semestre ?? "—"}</td>
+          <td class="pond-cell">${renderPonderacionBar(o)}</td>
+        </tr>`
+      )
+      .join("");
+    const filasIndicadores = grupo.indicadores
+      .map(
+        (i) => `<tr>
+          <td>${escapeHtml(i.nombre_carrera_titulo || "—")}</td>
+          <td>${formatPct(i.empleabilidad_1er_anio)}</td>
+          <td>${formatPct(i.empleabilidad_2do_anio)}</td>
+          <td>${formatPct(i.retencion_1er_anio)}</td>
+          <td>${formatPct(i.continuidad_estudios_pct)}</td>
+          <td>${i.duracion_real_semestres != null ? Number(i.duracion_real_semestres).toFixed(1) : "—"}</td>
+          <td>${escapeHtml(i.ingreso_banda_texto || "—")}</td>
+        </tr>`
+      )
+      .join("");
+
+    const resumenPartes = [];
+    if (grupo.ofertas.length) resumenPartes.push(`${grupo.ofertas.length} ${grupo.ofertas.length === 1 ? "sede" : "sedes"}`);
+    if (regiones.length <= 3) resumenPartes.push(escapeHtml(regiones.join(", ")));
+    else resumenPartes.push(`${regiones.length} regiones`);
+    if (grupo.ofertas.length) resumenPartes.push(`arancel ${rangoArancel(grupo.ofertas)}`);
+    const ind0 = grupo.indicadores[0];
+    if (ind0 && ind0.empleabilidad_1er_anio != null) {
+      resumenPartes.push(`emp. 1er año ${formatPct(ind0.empleabilidad_1er_anio)}`);
+    }
+
+    return `<details class="institucion-card">
+      <summary>
+        <span class="inst-arrow" aria-hidden="true">▾</span>
+        <span class="institucion-nombre">${badgeInstitucion(grupo.institucion)}</span>
+        ${tipoBadge(grupo.institucion.tipo)}
+        ${acredBadge(grupo.institucion.acreditacion)}
+        <span class="institucion-resumen">${resumenPartes.join(" · ")}</span>
+      </summary>
+      <div class="inst-card-body">
+        ${grupo.ofertas.length ? `<div class="detalle-table-wrap"><table class="detalle-table">
+          <caption>Sedes / jornadas (${grupo.ofertas.length})</caption>
+          <thead><tr><th>Jornada</th><th>Sede</th><th>Región</th><th>Nivel</th><th>Arancel 2026 ${infoIcon("Costo anual de la carrera en esta sede/jornada, según datos oficiales SIES 2026.")}</th><th>Vacantes 1er sem. ${infoIcon("Cupos disponibles para primer año en el primer semestre, según SIES.")}</th><th>Ponderaciones PAES ${infoIcon("Pesos asignados a cada prueba al calcular el puntaje ponderado de postulación (NEM, Ranking, Lenguaje, Matemáticas, etc.).")}</th></tr></thead>
+          <tbody>${filasOferta}</tbody>
+        </table></div>` : ""}
+        ${grupo.indicadores.length ? `<div class="detalle-table-wrap"><table class="detalle-table">
+          <caption>Indicadores propios por título (${grupo.indicadores.length})</caption>
+          <thead><tr><th>Carrera (título)</th><th>Empleab. 1° ${infoIcon("% de titulados que trabajaron formalmente al 1er año post-título, según el SII.")}</th><th>Empleab. 2° ${infoIcon("% de titulados que trabajaron formalmente al 2do año post-título.")}</th><th>Retención 1° ${infoIcon("% de estudiantes que continuaron inscritos en la carrera al 2do año.")}</th><th>Continuidad ${infoIcon("% de titulados que siguieron estudiando otra carrera o posgrado después de titularse.")}</th><th>Duración real (sem.) ${infoIcon("Semestres que tardaron realmente los titulados en completar la carrera. Puede ser mayor que la duración formal del plan.")}</th><th>Banda de ingreso ${infoIcon("Tramo de ingresos al 4° año de titulado reportado por SIES (rango de texto, no valor exacto).")}</th></tr></thead>
+          <tbody>${filasIndicadores}</tbody>
+        </table></div>` : ""}
+      </div>
+    </details>`;
+  }
+
+  function renderDetalleBody(body, detalle) {
+    const filtros = filtrosDisponibles(detalle);
+    const estado = { region: "", jornada: "", tipo: "" };
+    const totalInst = agruparPorInstitucion(detalle, {}).length;
+
+    function dibujarInstituciones() {
+      const grupos = agruparPorInstitucion(detalle, estado);
+      const statsWrap = body.querySelector(".detalle-stats-wrap");
+      const countEl = body.querySelector(".detalle-count");
+      const listaEl = body.querySelector(".instituciones-lista");
+
+      statsWrap.innerHTML = grupos.length ? buildStatsBar(grupos) : "";
+      const filtrando = estado.region || estado.jornada || estado.tipo;
+      countEl.textContent = filtrando ? `Mostrando ${grupos.length} de ${totalInst} instituciones` : "";
+
+      listaEl.innerHTML = grupos.length
+        ? grupos.map(renderGrupoInstitucion).join("")
+        : '<p class="detalle-empty">Ninguna institución calza con estos filtros.</p>';
+
+      listaEl.querySelectorAll("details.institucion-card").forEach((card) => {
+        const sum = card.querySelector("summary");
+        const cardBody = card.querySelector(".inst-card-body");
+        sum.addEventListener("click", (e) => {
+          if (!card.open) return;
+          if (cardBody.classList.contains("is-closing")) return;
+          e.preventDefault();
+          cardBody.classList.add("is-closing");
+          cardBody.addEventListener("animationend", () => {
+            card.removeAttribute("open");
+            cardBody.classList.remove("is-closing");
+          }, { once: true });
+        });
+      });
+    }
+
+    const leyendaPAES = POND_COMPS.map((c) => {
+      return `<span class="pond-leyenda-item">
+        <span class="pond-leyenda-dot ${c.clase}"></span>${c.etiqueta}
+      </span>`;
+    }).join("");
+    body.innerHTML = `
+      <div class="detalle-filtros">
+        <label>Región <select class="filtro-region">${opcionesSelect(filtros.regiones, "Todas")}</select></label>
+        <label>Jornada <select class="filtro-jornada">${opcionesSelect(filtros.jornadas, "Todas")}</select></label>
+        <label>Tipo de institución <select class="filtro-tipo-inst">${opcionesSelect(filtros.tipos, "Todos")}</select></label>
+      </div>
+      <div class="pond-leyenda">${leyendaPAES}</div>
+      <div class="detalle-stats-wrap"></div>
+      <p class="detalle-count"></p>
+      <div class="instituciones-lista"></div>
+    `;
+    const selRegion = body.querySelector(".filtro-region");
+    const selJornada = body.querySelector(".filtro-jornada");
+    const selTipo = body.querySelector(".filtro-tipo-inst");
+
+    selRegion.addEventListener("change", (e) => { estado.region = e.target.value; dibujarInstituciones(); });
+    selJornada.addEventListener("change", (e) => { estado.jornada = e.target.value; dibujarInstituciones(); });
+    selTipo.addEventListener("change", (e) => { estado.tipo = e.target.value; dibujarInstituciones(); });
+
+    buildCustomSelect(selRegion);
+    buildCustomSelect(selJornada);
+    buildCustomSelect(selTipo);
+
+    dibujarInstituciones();
+  }
+
+  function initTooltip() {
+    const popup = document.createElement("div");
+    popup.id = "tooltip-popup";
+    popup.setAttribute("role", "tooltip");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.appendChild(popup);
+
+    let hideTimer = null;
+    let activeTrigger = null;
+
+    function show(trigger) {
+      clearTimeout(hideTimer);
+      const texto = trigger.dataset.tooltip || "";
+      if (!texto) return;
+      activeTrigger = trigger;
+      popup.textContent = texto;
+      popup.classList.remove("visible", "arrow-above", "arrow-below");
+      popup.style.left = "-9999px";
+      popup.style.top = "-9999px";
+      popup.classList.add("visible");
+      popup.removeAttribute("aria-hidden");
+      trigger.setAttribute("aria-describedby", "tooltip-popup");
+
+      const rect = trigger.getBoundingClientRect();
+      const pw = popup.offsetWidth;
+      const ph = popup.offsetHeight;
+      const margin = 8;
+      const vw = window.innerWidth;
+
+      let left = rect.left + rect.width / 2 - pw / 2;
+      left = Math.max(margin, Math.min(vw - pw - margin, left));
+      const arrowLeft = rect.left + rect.width / 2 - left;
+      popup.style.setProperty("--tp-arrow-left", `${Math.max(8, Math.min(pw - 16, arrowLeft))}px`);
+
+      let top;
+      if (rect.top - ph - 6 >= margin) {
+        top = rect.top - ph - 6;
+        popup.classList.add("arrow-below");
+      } else {
+        top = rect.bottom + 6;
+        popup.classList.add("arrow-above");
+      }
+      popup.style.left = `${left}px`;
+      popup.style.top = `${top}px`;
+    }
+
+    function hide(trigger) {
+      hideTimer = setTimeout(() => {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        if (trigger) trigger.removeAttribute("aria-describedby");
+        activeTrigger = null;
+      }, 80);
+    }
+
+    document.addEventListener("mouseover", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("mouseout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t && !t.contains(ev.relatedTarget)) hide(t);
+    });
+    document.addEventListener("focusin", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("focusout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) hide(t);
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && activeTrigger) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+    document.addEventListener("click", (ev) => {
+      if (activeTrigger && !ev.target.closest("[data-tooltip]")) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+  }
+
+  const customSelects = [];
+
+  function buildCustomSelect(nativeSelect) {
+    nativeSelect.hidden = true;
+    const wrap = document.createElement('div');
+    wrap.className = 'custom-select';
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'custom-select-btn';
+    btn.setAttribute('aria-haspopup', 'listbox');
+    btn.setAttribute('aria-expanded', 'false');
+
+    const valueLabel = document.createElement('span');
+    valueLabel.className = 'custom-select-value';
+    valueLabel.textContent = nativeSelect.options[0]?.textContent || '';
+
+    const chevron = document.createElement('span');
+    chevron.className = 'custom-select-chevron';
+    chevron.setAttribute('aria-hidden', 'true');
+    chevron.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    btn.append(valueLabel, chevron);
+
+    const list = document.createElement('ul');
+    list.className = 'custom-select-list';
+    list.setAttribute('role', 'listbox');
+    list.hidden = true;
+
+    wrap.append(btn, list);
+    nativeSelect.parentNode.insertBefore(wrap, nativeSelect.nextSibling);
+
+    function openList() {
+      list.innerHTML = '';
+      Array.from(nativeSelect.options).forEach(opt => {
+        const li = document.createElement('li');
+        li.setAttribute('role', 'option');
+        li.dataset.value = opt.value;
+        li.textContent = opt.textContent;
+        if (opt.value === nativeSelect.value) li.classList.add('cs-selected');
+        li.addEventListener('click', e => {
+          e.stopPropagation();
+          nativeSelect.value = opt.value;
+          valueLabel.textContent = opt.textContent;
+          nativeSelect.dispatchEvent(new Event('change'));
+          closeList();
+        });
+        list.appendChild(li);
+      });
+      fadeIn(list);
+      btn.setAttribute('aria-expanded', 'true');
+      chevron.classList.add('open');
+    }
+
+    function closeList() {
+      list.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+      chevron.classList.remove('open');
+    }
+
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      list.hidden ? openList() : closeList();
+    });
+
+    customSelects.push({ close: closeList });
+  }
+
+  function fadeIn(el) {
+    el.hidden = false;
+    el.classList.add('is-fade-entering');
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('is-fade-entering')));
+  }
+
+  initTooltip();
+  init();
+})();
+</script>
+<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
+
+</body>
+</html>

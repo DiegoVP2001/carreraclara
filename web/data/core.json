@@ -1,0 +1,4462 @@
+{
+  "carreras": [
+    {
+      "slug": "actuacion-y-teatro",
+      "nombre": "Actuación y Teatro",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.7292817679558011,
+          "retencion_2do_anio": 0.6353591160220995,
+          "percentil_10_5to_anio": 601075.2604166666,
+          "percentil_50_5to_anio": 914794.6320833332,
+          "percentil_90_5to_anio": 1293080.00375
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.2742857142857143,
+          "empleabilidad_2do_anio_2024": 0.34057971014492755,
+          "retencion_1er_anio": 0.808955223880597,
+          "retencion_2do_anio": 0.7194029850746269,
+          "percentil_10_5to_anio": 566399.4325,
+          "percentil_50_5to_anio": 789403.3983333333,
+          "percentil_90_5to_anio": 1798025.4225
+        }
+      ]
+    },
+    {
+      "slug": "administracion-gastronomica",
+      "nombre": "Administración Gastronómica",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 968037.1003063467,
+          "empleabilidad_1er_anio_2024": 0.47576099210823,
+          "empleabilidad_2do_anio_2024": 0.5672990063233966,
+          "retencion_1er_anio": 0.847255369928401,
+          "retencion_2do_anio": 0.7345345345345345,
+          "percentil_10_5to_anio": 563981.0208333334,
+          "percentil_50_5to_anio": 806389.4258333333,
+          "percentil_90_5to_anio": 1542821.45
+        }
+      ]
+    },
+    {
+      "slug": "administracion-publica",
+      "nombre": "Administración Pública",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 2166083.099532539,
+          "empleabilidad_1er_anio_2024": 0.9807073954983923,
+          "empleabilidad_2do_anio_2024": 0.9817184643510055,
+          "retencion_1er_anio": 0.7490942028985508,
+          "retencion_2do_anio": 0.6158645276292335,
+          "percentil_10_5to_anio": 1295023.05,
+          "percentil_50_5to_anio": 2053074.3979166665,
+          "percentil_90_5to_anio": 2853524.70125
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1853783.0230830063,
+          "empleabilidad_1er_anio_2024": 0.7539882451721243,
+          "empleabilidad_2do_anio_2024": 0.8585005279831045,
+          "retencion_1er_anio": 0.8259162303664922,
+          "retencion_2do_anio": 0.7657068062827225,
+          "percentil_10_5to_anio": 1006043.7799999999,
+          "percentil_50_5to_anio": 1899910.20125,
+          "percentil_90_5to_anio": 2847768.7091666665
+        }
+      ]
+    },
+    {
+      "slug": "administracion-turistica-y-hotelera",
+      "nombre": "Administración Turística y Hotelera",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1061425.303160195,
+          "empleabilidad_1er_anio_2024": 0.4753521126760563,
+          "empleabilidad_2do_anio_2024": 0.5641025641025641,
+          "retencion_1er_anio": 0.8198874296435272,
+          "retencion_2do_anio": 0.7150943396226415,
+          "percentil_10_5to_anio": 567950.4583333334,
+          "percentil_50_5to_anio": 931999.7479166667,
+          "percentil_90_5to_anio": 1648119.6812499997
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1041165.3436119221,
+          "empleabilidad_1er_anio_2024": 0.43556701030927836,
+          "empleabilidad_2do_anio_2024": 0.5797872340425532,
+          "retencion_1er_anio": 0.7967032967032966,
+          "retencion_2do_anio": 0.6904761904761905,
+          "percentil_10_5to_anio": 621708.9504166666,
+          "percentil_50_5to_anio": 1003008.1933333332,
+          "percentil_90_5to_anio": 1970908.8879166665
+        }
+      ]
+    },
+    {
+      "slug": "administracion-de-empresas-e-ing-asociadas",
+      "nombre": "Administración de Empresas e Ing. Asociadas",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1575611.8666334215,
+          "empleabilidad_1er_anio_2024": 0.8034499514091351,
+          "empleabilidad_2do_anio_2024": 0.8266187050359712,
+          "retencion_1er_anio": 0.7115602568945977,
+          "retencion_2do_anio": 0.5612781954887218,
+          "percentil_10_5to_anio": 736592.0764583332,
+          "percentil_50_5to_anio": 1377976.5131249998,
+          "percentil_90_5to_anio": 2626144.419583333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1725478.1883491266,
+          "empleabilidad_1er_anio_2024": 0.7667005764665988,
+          "empleabilidad_2do_anio_2024": 0.809437386569873,
+          "retencion_1er_anio": 0.7507204610951008,
+          "retencion_2do_anio": 0.6642754662840746,
+          "percentil_10_5to_anio": 727578.4641666667,
+          "percentil_50_5to_anio": 1480514.6885416666,
+          "percentil_90_5to_anio": 2992524.028333333
+        }
+      ]
+    },
+    {
+      "slug": "agronomia",
+      "nombre": "Agronomía",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1732205.071546698,
+          "empleabilidad_1er_anio_2024": 0.656140350877193,
+          "empleabilidad_2do_anio_2024": 0.7328519855595668,
+          "retencion_1er_anio": 0.8087557603686636,
+          "retencion_2do_anio": 0.7307692307692307,
+          "percentil_10_5to_anio": 712799.2329166667,
+          "percentil_50_5to_anio": 1672313.2049999998,
+          "percentil_90_5to_anio": 3344150.2533333334
+        }
+      ]
+    },
+    {
+      "slug": "analista-quimico",
+      "nombre": "Analista Químico",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "animacion-digital",
+      "nombre": "Animación Digital",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.33636363636363636,
+          "empleabilidad_2do_anio_2024": 0.34513274336283184,
+          "retencion_1er_anio": 0.8522072936660269,
+          "retencion_2do_anio": 0.6852207293666027,
+          "percentil_10_5to_anio": 640352.7345833333,
+          "percentil_50_5to_anio": 912775.845625,
+          "percentil_90_5to_anio": 1848049.1266666667
+        }
+      ]
+    },
+    {
+      "slug": "antropologia",
+      "nombre": "Antropología",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1689714.3809143913,
+          "empleabilidad_1er_anio_2024": 0.5905172413793104,
+          "empleabilidad_2do_anio_2024": 0.7080745341614907,
+          "retencion_1er_anio": 0.8568181818181818,
+          "retencion_2do_anio": 0.8,
+          "percentil_10_5to_anio": 743070.0841666666,
+          "percentil_50_5to_anio": 1504462.5291666666,
+          "percentil_90_5to_anio": 3368936.9947916665
+        }
+      ]
+    },
+    {
+      "slug": "arqueologia",
+      "nombre": "Arqueología",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "arquitectura",
+      "nombre": "Arquitectura",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1491467.7625361027,
+          "empleabilidad_1er_anio_2024": 0.5701394585726005,
+          "empleabilidad_2do_anio_2024": 0.7278334618350039,
+          "retencion_1er_anio": 0.8188163037409268,
+          "retencion_2do_anio": 0.7467187936330634,
+          "percentil_10_5to_anio": 790948.8854166666,
+          "percentil_50_5to_anio": 1446963.1829166666,
+          "percentil_90_5to_anio": 2422022.6679166663
+        }
+      ]
+    },
+    {
+      "slug": "artes-y-licenciatura-en-artes",
+      "nombre": "Artes y Licenciatura en Artes",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1026537.3213142616,
+          "empleabilidad_1er_anio_2024": 0.260233918128655,
+          "empleabilidad_2do_anio_2024": 0.48257372654155495,
+          "retencion_1er_anio": 0.8312138728323699,
+          "retencion_2do_anio": 0.7494226327944573,
+          "percentil_10_5to_anio": 582603.6170833333,
+          "percentil_50_5to_anio": 977491.0841666666,
+          "percentil_90_5to_anio": 1677752.777007575
+        }
+      ]
+    },
+    {
+      "slug": "bibliotecologia",
+      "nombre": "Bibliotecología",
+      "area": "Humanidades",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.7538461538461538,
+          "retencion_2do_anio": 0.7384615384615385,
+          "percentil_10_5to_anio": 797177.78125,
+          "percentil_50_5to_anio": 1335758.1824999999,
+          "percentil_90_5to_anio": 2184394.555833333
+        }
+      ]
+    },
+    {
+      "slug": "biologia",
+      "nombre": "Biología",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1539914.7129219482,
+          "empleabilidad_1er_anio_2024": 0.4797297297297297,
+          "empleabilidad_2do_anio_2024": 0.6630434782608695,
+          "retencion_1er_anio": 0.8188405797101449,
+          "retencion_2do_anio": 0.6630434782608695,
+          "percentil_10_5to_anio": 773496.5479166666,
+          "percentil_50_5to_anio": 1331464.9479166665,
+          "percentil_90_5to_anio": 2107154.4891666663
+        }
+      ]
+    },
+    {
+      "slug": "biologia-marina-y-ecologia-marina",
+      "nombre": "Biología Marina y Ecología Marina",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1415141.686918921,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.8063725490196079,
+          "retencion_2do_anio": 0.7083333333333334,
+          "percentil_10_5to_anio": 691031.6017424242,
+          "percentil_50_5to_anio": 1429893.590625,
+          "percentil_90_5to_anio": 2218121.4991666665
+        }
+      ]
+    },
+    {
+      "slug": "bioquimica",
+      "nombre": "Bioquímica",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1266670.9887804044,
+          "empleabilidad_1er_anio_2024": 0.5617021276595745,
+          "empleabilidad_2do_anio_2024": 0.6549707602339181,
+          "retencion_1er_anio": 0.7906137184115524,
+          "retencion_2do_anio": 0.703971119133574,
+          "percentil_10_5to_anio": 650436.2487499999,
+          "percentil_50_5to_anio": 1363713.4845833334,
+          "percentil_90_5to_anio": 2645706.493333333
+        }
+      ]
+    },
+    {
+      "slug": "biotecnologia",
+      "nombre": "Biotecnología",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ciencias-politicas",
+      "nombre": "Ciencias Políticas",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1534923.1667266751,
+          "empleabilidad_1er_anio_2024": 0.538135593220339,
+          "empleabilidad_2do_anio_2024": 0.7556818181818182,
+          "retencion_1er_anio": 0.812987012987013,
+          "retencion_2do_anio": 0.7662337662337663,
+          "percentil_10_5to_anio": 825935.235,
+          "percentil_50_5to_anio": 1502836.5983333334,
+          "percentil_90_5to_anio": 2840612.340454541
+        }
+      ]
+    },
+    {
+      "slug": "comunicacion-audiovisual-y-o-multimedia",
+      "nombre": "Comunicación Audiovisual y/o Multimedia",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1043880.5455272663,
+          "empleabilidad_1er_anio_2024": 0.3787465940054496,
+          "empleabilidad_2do_anio_2024": 0.5705521472392638,
+          "retencion_1er_anio": 0.820054945054945,
+          "retencion_2do_anio": 0.7317744154057771,
+          "percentil_10_5to_anio": 621312.71,
+          "percentil_50_5to_anio": 988306.5285605997,
+          "percentil_90_5to_anio": 1748469.2591666665
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1007944.0329300357,
+          "empleabilidad_1er_anio_2024": 0.391304347826087,
+          "empleabilidad_2do_anio_2024": 0.47101449275362317,
+          "retencion_1er_anio": 0.8316498316498316,
+          "retencion_2do_anio": 0.7516778523489933,
+          "percentil_10_5to_anio": 601560.0329166666,
+          "percentil_50_5to_anio": 1188619.70625,
+          "percentil_90_5to_anio": 2376733.452083333
+        }
+      ]
+    },
+    {
+      "slug": "construccion-civil",
+      "nombre": "Construcción Civil",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1549485.9853364432,
+          "empleabilidad_1er_anio_2024": 0.7102502017756255,
+          "empleabilidad_2do_anio_2024": 0.7592087312414734,
+          "retencion_1er_anio": 0.6804040404040405,
+          "retencion_2do_anio": 0.5507128309572301,
+          "percentil_10_5to_anio": 698391.9770833333,
+          "percentil_50_5to_anio": 1443468.2316666665,
+          "percentil_90_5to_anio": 2783483.9545833333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1778659.299065104,
+          "empleabilidad_1er_anio_2024": 0.7760416666666666,
+          "empleabilidad_2do_anio_2024": 0.8766756032171582,
+          "retencion_1er_anio": 0.8384146341463414,
+          "retencion_2do_anio": 0.7492354740061162,
+          "percentil_10_5to_anio": 995239.8766666666,
+          "percentil_50_5to_anio": 1946267.8683333332,
+          "percentil_90_5to_anio": 3208411.14
+        }
+      ]
+    },
+    {
+      "slug": "contador-auditor",
+      "nombre": "Contador Auditor",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1484242.2456875965,
+          "empleabilidad_1er_anio_2024": 0.8214101904271744,
+          "empleabilidad_2do_anio_2024": 0.8582427536231884,
+          "retencion_1er_anio": 0.748133061778683,
+          "retencion_2do_anio": 0.6263550135501355,
+          "percentil_10_5to_anio": 761612.94,
+          "percentil_50_5to_anio": 1432589.555208333,
+          "percentil_90_5to_anio": 2638966.098333333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1662338.0977613695,
+          "empleabilidad_1er_anio_2024": 0.8285198555956679,
+          "empleabilidad_2do_anio_2024": 0.8910614525139665,
+          "retencion_1er_anio": 0.838535164377861,
+          "retencion_2do_anio": 0.7529118136439268,
+          "percentil_10_5to_anio": 828141.50375,
+          "percentil_50_5to_anio": 1576091.270625,
+          "percentil_90_5to_anio": 2961185.9566666665
+        }
+      ]
+    },
+    {
+      "slug": "derecho",
+      "nombre": "Derecho",
+      "area": "Derecho",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2206370.435478102,
+          "empleabilidad_1er_anio_2024": 0.7260621433100825,
+          "empleabilidad_2do_anio_2024": 0.8213672277567846,
+          "retencion_1er_anio": 0.8319464176983966,
+          "retencion_2do_anio": 0.7567978896103896,
+          "percentil_10_5to_anio": 936691.5966666667,
+          "percentil_50_5to_anio": 2057320.860833333,
+          "percentil_90_5to_anio": 4261475.039166667
+        }
+      ]
+    },
+    {
+      "slug": "diseno",
+      "nombre": "Diseño",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1444638.5703060052,
+          "empleabilidad_1er_anio_2024": 0.5027624309392266,
+          "empleabilidad_2do_anio_2024": 0.7001675041876047,
+          "retencion_1er_anio": 0.8850746268656716,
+          "retencion_2do_anio": 0.8223880597014925,
+          "percentil_10_5to_anio": 705677.4554166667,
+          "percentil_50_5to_anio": 1309591.3691666666,
+          "percentil_90_5to_anio": 2609167.799166667
+        }
+      ]
+    },
+    {
+      "slug": "diseno-grafico",
+      "nombre": "Diseño Gráfico",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 983923.5688082622,
+          "empleabilidad_1er_anio_2024": 0.36752136752136755,
+          "empleabilidad_2do_anio_2024": 0.5273311897106109,
+          "retencion_1er_anio": 0.7945917836713469,
+          "retencion_2do_anio": 0.6652806652806653,
+          "percentil_10_5to_anio": 566582.2112499999,
+          "percentil_50_5to_anio": 897877.6191666666,
+          "percentil_90_5to_anio": 1716204.6257575748
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1115132.1354263453,
+          "empleabilidad_1er_anio_2024": 0.449438202247191,
+          "empleabilidad_2do_anio_2024": 0.4965986394557823,
+          "retencion_1er_anio": 0.8359073359073359,
+          "retencion_2do_anio": 0.750965250965251,
+          "percentil_10_5to_anio": 566377.2775,
+          "percentil_50_5to_anio": 1027278.5562499999,
+          "percentil_90_5to_anio": 2192294.48375
+        }
+      ]
+    },
+    {
+      "slug": "diseno-industrial",
+      "nombre": "Diseño Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1109885.9923839413,
+          "empleabilidad_1er_anio_2024": 0.43333333333333335,
+          "empleabilidad_2do_anio_2024": 0.5978260869565217,
+          "retencion_1er_anio": 0.852017937219731,
+          "retencion_2do_anio": 0.726457399103139,
+          "percentil_10_5to_anio": 651792.2754166666,
+          "percentil_50_5to_anio": 945842.05125,
+          "percentil_90_5to_anio": 1691241.7432575747
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1106408.35591873,
+          "empleabilidad_1er_anio_2024": 0.5909090909090909,
+          "empleabilidad_2do_anio_2024": 0.5922330097087378,
+          "retencion_1er_anio": 0.8244274809160306,
+          "retencion_2do_anio": 0.7404580152671756,
+          "percentil_10_5to_anio": 652688.8495833332,
+          "percentil_50_5to_anio": 1060363.1804166667,
+          "percentil_90_5to_anio": 2432645.1991666663
+        }
+      ]
+    },
+    {
+      "slug": "diseno-de-ambientes-e-interiores",
+      "nombre": "Diseño de Ambientes e Interiores",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 932913.2686148599,
+          "empleabilidad_1er_anio_2024": 0.49473684210526314,
+          "empleabilidad_2do_anio_2024": 0.43902439024390244,
+          "retencion_1er_anio": 0.8448979591836735,
+          "retencion_2do_anio": 0.7560975609756098,
+          "percentil_10_5to_anio": 575993.6024999999,
+          "percentil_50_5to_anio": 966879.8941666665,
+          "percentil_90_5to_anio": 1898691.5883333331
+        }
+      ]
+    },
+    {
+      "slug": "diseno-de-vestuario",
+      "nombre": "Diseño de Vestuario",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1066098.8104671722,
+          "empleabilidad_1er_anio_2024": 0.38,
+          "empleabilidad_2do_anio_2024": 0.4375,
+          "retencion_1er_anio": 0.7573221757322176,
+          "retencion_2do_anio": 0.6666666666666666,
+          "percentil_10_5to_anio": 659942.4141666667,
+          "percentil_50_5to_anio": 920683.2464583333,
+          "percentil_90_5to_anio": 1733643.4760416665
+        }
+      ]
+    },
+    {
+      "slug": "enfermeria",
+      "nombre": "Enfermería",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1850417.2740237126,
+          "empleabilidad_1er_anio_2024": 0.6473684210526316,
+          "empleabilidad_2do_anio_2024": 0.8325072886297377,
+          "retencion_1er_anio": 0.877020474137931,
+          "retencion_2do_anio": 0.8271172748081325,
+          "percentil_10_5to_anio": 1017889.2320833333,
+          "percentil_50_5to_anio": 1826429.8908333331,
+          "percentil_90_5to_anio": 2648020.8116666665
+        }
+      ]
+    },
+    {
+      "slug": "fonoaudiologia",
+      "nombre": "Fonoaudiología",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.6282722513089005,
+          "retencion_2do_anio": 0.5392670157068062,
+          "percentil_10_5to_anio": 596541.1341666667,
+          "percentil_50_5to_anio": 906512.9699999999,
+          "percentil_90_5to_anio": 1501553.814242416
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1112634.2501482305,
+          "empleabilidad_1er_anio_2024": 0.3618470855412566,
+          "empleabilidad_2do_anio_2024": 0.5875160875160875,
+          "retencion_1er_anio": 0.7943645083932853,
+          "retencion_2do_anio": 0.7291791491911325,
+          "percentil_10_5to_anio": 657129.300625,
+          "percentil_50_5to_anio": 1083626.4579166665,
+          "percentil_90_5to_anio": 1708107.4208333332
+        }
+      ]
+    },
+    {
+      "slug": "fotografia",
+      "nombre": "Fotografía",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "geografia",
+      "nombre": "Geografía",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1504952.9938268012,
+          "empleabilidad_1er_anio_2024": 0.6275510204081632,
+          "empleabilidad_2do_anio_2024": 0.8130841121495327,
+          "retencion_1er_anio": 0.8483606557377049,
+          "retencion_2do_anio": 0.7459016393442623,
+          "percentil_10_5to_anio": 813949.11625,
+          "percentil_50_5to_anio": 1547098.0683333334,
+          "percentil_90_5to_anio": 2297371.1649999996
+        }
+      ]
+    },
+    {
+      "slug": "geologia",
+      "nombre": "Geología",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2762677.2990811253,
+          "empleabilidad_1er_anio_2024": 0.6650717703349283,
+          "empleabilidad_2do_anio_2024": 0.8040201005025126,
+          "retencion_1er_anio": 0.8235294117647058,
+          "retencion_2do_anio": 0.7454100367197063,
+          "percentil_10_5to_anio": 1185781.1408333334,
+          "percentil_50_5to_anio": 2592260.8966666665,
+          "percentil_90_5to_anio": 5965510.863333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-agroindustrial",
+      "nombre": "Ingeniería Agroindustrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ingenieria-agricola",
+      "nombre": "Ingeniería Agrícola",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1173390.9327415822,
+          "empleabilidad_1er_anio_2024": 0.5645604395604396,
+          "empleabilidad_2do_anio_2024": 0.670196671709531,
+          "retencion_1er_anio": 0.8134777376654633,
+          "retencion_2do_anio": 0.7181044957472661,
+          "percentil_10_5to_anio": 624185.5629166666,
+          "percentil_50_5to_anio": 1038667.28125,
+          "percentil_90_5to_anio": 1955949.5154166666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-ambiental",
+      "nombre": "Ingeniería Civil Ambiental",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.7436974789915967,
+          "retencion_2do_anio": 0.5588235294117647,
+          "percentil_10_5to_anio": 1232924.5191666665,
+          "percentil_50_5to_anio": 2187968.368333333,
+          "percentil_90_5to_anio": 3341858.8812499996
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-bioquimica",
+      "nombre": "Ingeniería Civil Bioquímica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.8372093023255814,
+          "retencion_2do_anio": 0.6511627906976745,
+          "percentil_10_5to_anio": 748155.8875000001,
+          "percentil_50_5to_anio": 1383270.766875,
+          "percentil_90_5to_anio": 2125524.3249999997
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-electronica",
+      "nombre": "Ingeniería Civil Electrónica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2954198.7626393917,
+          "empleabilidad_1er_anio_2024": 0.7891891891891892,
+          "empleabilidad_2do_anio_2024": 0.944954128440367,
+          "retencion_1er_anio": 0.7802469135802469,
+          "retencion_2do_anio": 0.6567901234567901,
+          "percentil_10_5to_anio": 1024660.1021969664,
+          "percentil_50_5to_anio": 2247305.085,
+          "percentil_90_5to_anio": 4634445.540624999
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-electrica",
+      "nombre": "Ingeniería Civil Eléctrica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2764338.3458651123,
+          "empleabilidad_1er_anio_2024": 0.8942115768463074,
+          "empleabilidad_2do_anio_2024": 0.9481641468682506,
+          "retencion_1er_anio": 0.7844611528822055,
+          "retencion_2do_anio": 0.6290726817042607,
+          "percentil_10_5to_anio": 1396015.3307196912,
+          "percentil_50_5to_anio": 2870420.0866666664,
+          "percentil_90_5to_anio": 6017549.6175
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-industrial",
+      "nombre": "Ingeniería Civil Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2774395.1752937315,
+          "empleabilidad_1er_anio_2024": 0.8872340425531915,
+          "empleabilidad_2do_anio_2024": 0.9290506200447245,
+          "retencion_1er_anio": 0.8509615384615384,
+          "retencion_2do_anio": 0.7631515733845784,
+          "percentil_10_5to_anio": 1205626.1304166666,
+          "percentil_50_5to_anio": 2466537.6016666666,
+          "percentil_90_5to_anio": 4921345.361666666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-matematica-y-estadistica",
+      "nombre": "Ingeniería Civil Matemática y Estadística",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ingenieria-civil-mecanica",
+      "nombre": "Ingeniería Civil Mecánica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2916532.524466421,
+          "empleabilidad_1er_anio_2024": 0.814625850340136,
+          "empleabilidad_2do_anio_2024": 0.9129554655870445,
+          "retencion_1er_anio": 0.7597315436241611,
+          "retencion_2do_anio": 0.610738255033557,
+          "percentil_10_5to_anio": 1225842.8316666665,
+          "percentil_50_5to_anio": 2512975.3608333333,
+          "percentil_90_5to_anio": 6390293.953333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-metalurgica",
+      "nombre": "Ingeniería Civil Metalúrgica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 3847606.9215496345,
+          "empleabilidad_1er_anio_2024": 0.7891891891891892,
+          "empleabilidad_2do_anio_2024": 0.9175824175824175,
+          "retencion_1er_anio": 0.7352941176470589,
+          "retencion_2do_anio": 0.5588235294117647,
+          "percentil_10_5to_anio": 1085342.4154166665,
+          "percentil_50_5to_anio": 2803433.565,
+          "percentil_90_5to_anio": 7882792.606666666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-quimica",
+      "nombre": "Ingeniería Civil Química",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2330576.370871208,
+          "empleabilidad_1er_anio_2024": 0.7922437673130194,
+          "empleabilidad_2do_anio_2024": 0.9009584664536742,
+          "retencion_1er_anio": 0.8048780487804879,
+          "retencion_2do_anio": 0.6711111111111111,
+          "percentil_10_5to_anio": 1202718.19875,
+          "percentil_50_5to_anio": 2442337.308333333,
+          "percentil_90_5to_anio": 5816633.483333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-en-biomedica",
+      "nombre": "Ingeniería Civil en Biomédica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1882141.3750940806,
+          "empleabilidad_1er_anio_2024": 0.9130434782608695,
+          "empleabilidad_2do_anio_2024": 0.8793103448275862,
+          "retencion_1er_anio": 0.7073170731707317,
+          "retencion_2do_anio": 0.5951219512195122,
+          "percentil_10_5to_anio": 906736.1024999999,
+          "percentil_50_5to_anio": 1747392.01625,
+          "percentil_90_5to_anio": 2499422.303333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-en-biotecnologia-y-o-bioingenieria",
+      "nombre": "Ingeniería Civil en Biotecnología y/o Bioingeniería",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ingenieria-civil-en-computacion-e-informatica",
+      "nombre": "Ingeniería Civil en Computación e Informática",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2592682.5323565193,
+          "empleabilidad_1er_anio_2024": 0.8517805582290664,
+          "empleabilidad_2do_anio_2024": 0.9309895833333334,
+          "retencion_1er_anio": 0.842255125284738,
+          "retencion_2do_anio": 0.7373363688104724,
+          "percentil_10_5to_anio": 1294660.4816666667,
+          "percentil_50_5to_anio": 2601025.1653030245,
+          "percentil_90_5to_anio": 4680337.996666666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-en-energia",
+      "nombre": "Ingeniería Civil en Energía",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ingenieria-civil-en-minas",
+      "nombre": "Ingeniería Civil en Minas",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 3178733.1663060244,
+          "empleabilidad_1er_anio_2024": 0.8136882129277566,
+          "empleabilidad_2do_anio_2024": 0.8934579439252337,
+          "retencion_1er_anio": 0.7692967409948542,
+          "retencion_2do_anio": 0.6472602739726028,
+          "percentil_10_5to_anio": 1305668.0879166666,
+          "percentil_50_5to_anio": 2816808.2395833335,
+          "percentil_90_5to_anio": 7605400.753333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-en-obras-civiles",
+      "nombre": "Ingeniería Civil en Obras Civiles",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2089394.7829766131,
+          "empleabilidad_1er_anio_2024": 0.8067632850241546,
+          "empleabilidad_2do_anio_2024": 0.8861111111111111,
+          "retencion_1er_anio": 0.7660818713450293,
+          "retencion_2do_anio": 0.6686159844054581,
+          "percentil_10_5to_anio": 988230.0170833333,
+          "percentil_50_5to_anio": 2066422.038125,
+          "percentil_90_5to_anio": 3240642.0054166666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-civil-en-telematica",
+      "nombre": "Ingeniería Civil en Telemática",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ingenieria-civil-plan-comun-y-licenciatura-en-ciencias-de-la-ingenieria",
+      "nombre": "Ingeniería Civil, plan común y licenciatura en Ciencias de la Ingeniería",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2204708.780121066,
+          "empleabilidad_1er_anio_2024": 0.8086522462562395,
+          "empleabilidad_2do_anio_2024": 0.8976377952755905,
+          "retencion_1er_anio": 0.8732590529247911,
+          "retencion_2do_anio": 0.7937282229965157,
+          "percentil_10_5to_anio": 1176349.4408333332,
+          "percentil_50_5to_anio": 2235764.7916666665,
+          "percentil_90_5to_anio": 3672555.400833333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-comercial",
+      "nombre": "Ingeniería Comercial",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2175493.8983438425,
+          "empleabilidad_1er_anio_2024": 0.7928338762214984,
+          "empleabilidad_2do_anio_2024": 0.8646877924856264,
+          "retencion_1er_anio": 0.8275822799225601,
+          "retencion_2do_anio": 0.7470963334092462,
+          "percentil_10_5to_anio": 881695.5895833332,
+          "percentil_50_5to_anio": 2008881.2391666665,
+          "percentil_90_5to_anio": 4049238.0516666663
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-forestal",
+      "nombre": "Ingeniería Forestal",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.8441558441558441,
+          "empleabilidad_2do_anio_2024": 0.8555555555555555,
+          "retencion_1er_anio": 0.7952755905511811,
+          "retencion_2do_anio": 0.6377952755905512,
+          "percentil_10_5to_anio": 937560.1254166666,
+          "percentil_50_5to_anio": 1453460.6361931746,
+          "percentil_90_5to_anio": 2364178.3366666664
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-industrial",
+      "nombre": "Ingeniería Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 3242901.9037850755,
+          "empleabilidad_1er_anio_2024": 0.9596510359869138,
+          "empleabilidad_2do_anio_2024": 0.9470588235294117,
+          "retencion_1er_anio": 0.6809477442388835,
+          "retencion_2do_anio": 0.5436241610738255,
+          "percentil_10_5to_anio": 910323.5260984832,
+          "percentil_50_5to_anio": 2590733.96,
+          "percentil_90_5to_anio": 6356985.493333333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2310626.9020553487,
+          "empleabilidad_1er_anio_2024": 0.8818407960199005,
+          "empleabilidad_2do_anio_2024": 0.9019006744328633,
+          "retencion_1er_anio": 0.6769596199524941,
+          "retencion_2do_anio": 0.5534441805225653,
+          "percentil_10_5to_anio": 902913.9254166665,
+          "percentil_50_5to_anio": 1955378.4966666664,
+          "percentil_90_5to_anio": 4686248.106666666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-marina-y-maritimo-portuaria",
+      "nombre": "Ingeniería Marina y Marítimo Portuaria",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2652274.789534224,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.8394160583941606,
+          "retencion_2do_anio": 0.7299270072992701,
+          "percentil_10_5to_anio": 1080585.0687499999,
+          "percentil_50_5to_anio": 2682979.4675,
+          "percentil_90_5to_anio": 4586226.37
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-mecanica",
+      "nombre": "Ingeniería Mecánica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1879452.302953095,
+          "empleabilidad_1er_anio_2024": 0.8398950131233596,
+          "empleabilidad_2do_anio_2024": 0.9040284360189573,
+          "retencion_1er_anio": 0.8333333333333334,
+          "retencion_2do_anio": 0.7777777777777778,
+          "percentil_10_5to_anio": 828473.6848863632,
+          "percentil_50_5to_anio": 1664460.4883333333,
+          "percentil_90_5to_anio": 3627667.436666666
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1945904.9025100938,
+          "empleabilidad_1er_anio_2024": 0.7883817427385892,
+          "empleabilidad_2do_anio_2024": 0.8831168831168831,
+          "retencion_1er_anio": 0.5900621118012422,
+          "retencion_2do_anio": 0.422360248447205,
+          "percentil_10_5to_anio": 904850.8174999999,
+          "percentil_50_5to_anio": 1850190.3370833332,
+          "percentil_90_5to_anio": 3985053.61
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-naval",
+      "nombre": "Ingeniería Naval",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ingenieria-en-alimentos",
+      "nombre": "Ingeniería en Alimentos",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1489462.2772872343,
+          "empleabilidad_1er_anio_2024": 0.6915887850467289,
+          "empleabilidad_2do_anio_2024": 0.7532467532467533,
+          "retencion_1er_anio": 0.717391304347826,
+          "retencion_2do_anio": 0.5912408759124088,
+          "percentil_10_5to_anio": 855831.7370833332,
+          "percentil_50_5to_anio": 1483281.6458333333,
+          "percentil_90_5to_anio": 2609172.7224999997
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-automatizacion-instrumentacion-y-control",
+      "nombre": "Ingeniería en Automatización, Instrumentación y Control",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.9128630705394191,
+          "empleabilidad_2do_anio_2024": 0.9024390243902439,
+          "retencion_1er_anio": 0.7211221122112211,
+          "retencion_2do_anio": 0.5798387096774194,
+          "percentil_10_5to_anio": 1133006.9637499999,
+          "percentil_50_5to_anio": 2635085.808333333,
+          "percentil_90_5to_anio": 4864249.816666666
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2330826.2342167734,
+          "empleabilidad_1er_anio_2024": 0.89375,
+          "empleabilidad_2do_anio_2024": 0.9172259507829977,
+          "retencion_1er_anio": 0.8333333333333334,
+          "retencion_2do_anio": 0.7456140350877193,
+          "percentil_10_5to_anio": 1036535.7856249999,
+          "percentil_50_5to_anio": 2019729.9799999997,
+          "percentil_90_5to_anio": 4557175.3625
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-biotecnologia-y-bioingenieria",
+      "nombre": "Ingeniería en Biotecnología y Bioingeniería",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1380330.9703262937,
+          "empleabilidad_1er_anio_2024": 0.5560165975103735,
+          "empleabilidad_2do_anio_2024": 0.675531914893617,
+          "retencion_1er_anio": 0.8325892857142857,
+          "retencion_2do_anio": 0.755011135857461,
+          "percentil_10_5to_anio": 801436.0249999999,
+          "percentil_50_5to_anio": 1247506.2016666667,
+          "percentil_90_5to_anio": 2345017.7783333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-comercio-exterior",
+      "nombre": "Ingeniería en Comercio Exterior",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1453448.6881309648,
+          "empleabilidad_1er_anio_2024": 0.7770700636942676,
+          "empleabilidad_2do_anio_2024": 0.8318777292576419,
+          "retencion_1er_anio": 0.8065326633165829,
+          "retencion_2do_anio": 0.6666666666666666,
+          "percentil_10_5to_anio": 768229.1966666667,
+          "percentil_50_5to_anio": 1382665.0210416666,
+          "percentil_90_5to_anio": 2633156.2133333334
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1602796.358897661,
+          "empleabilidad_1er_anio_2024": 0.7528735632183908,
+          "empleabilidad_2do_anio_2024": 0.8296296296296296,
+          "retencion_1er_anio": 0.7972027972027972,
+          "retencion_2do_anio": 0.6993006993006993,
+          "percentil_10_5to_anio": 707108.0913636358,
+          "percentil_50_5to_anio": 1515913.0595833333,
+          "percentil_90_5to_anio": 3266292.6599999997
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-computacion-e-informatica",
+      "nombre": "Ingeniería en Computación e Informática",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1966677.6129376963,
+          "empleabilidad_1er_anio_2024": 0.7646763672854993,
+          "empleabilidad_2do_anio_2024": 0.8723290598290598,
+          "retencion_1er_anio": 0.7780149413020278,
+          "retencion_2do_anio": 0.6647345942647956,
+          "percentil_10_5to_anio": 914978.4658333333,
+          "percentil_50_5to_anio": 1888732.2124999997,
+          "percentil_90_5to_anio": 3535841.907083333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2147332.118746373,
+          "empleabilidad_1er_anio_2024": 0.7936363636363636,
+          "empleabilidad_2do_anio_2024": 0.8556451612903225,
+          "retencion_1er_anio": 0.790516206482593,
+          "retencion_2do_anio": 0.6860395446375075,
+          "percentil_10_5to_anio": 957954.4183333333,
+          "percentil_50_5to_anio": 2022361.7654166666,
+          "percentil_90_5to_anio": 3902252.9899999998
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-conectividad-y-redes",
+      "nombre": "Ingeniería en Conectividad y Redes",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1720903.1231080184,
+          "empleabilidad_1er_anio_2024": 0.84399375975039,
+          "empleabilidad_2do_anio_2024": 0.9090909090909091,
+          "retencion_1er_anio": 0.7097505668934241,
+          "retencion_2do_anio": 0.6048448145344436,
+          "percentil_10_5to_anio": 816616.7716666666,
+          "percentil_50_5to_anio": 1582229.4804166667,
+          "percentil_90_5to_anio": 2900725.4891666663
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-construccion",
+      "nombre": "Ingeniería en Construcción",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1412341.1141582718,
+          "empleabilidad_1er_anio_2024": 0.6305147058823529,
+          "empleabilidad_2do_anio_2024": 0.7136485280999108,
+          "retencion_1er_anio": 0.7686980609418282,
+          "retencion_2do_anio": 0.657202216066482,
+          "percentil_10_5to_anio": 681365.4199999999,
+          "percentil_50_5to_anio": 1373917.1808333334,
+          "percentil_90_5to_anio": 2395826.93
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1652665.19911177,
+          "empleabilidad_1er_anio_2024": 0.7658168083097262,
+          "empleabilidad_2do_anio_2024": 0.815068493150685,
+          "retencion_1er_anio": 0.7707253886010362,
+          "retencion_2do_anio": 0.6360103626943006,
+          "percentil_10_5to_anio": 780110.6945833332,
+          "percentil_50_5to_anio": 1547859.7783333333,
+          "percentil_90_5to_anio": 2650797.571666667
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-control-de-gestion",
+      "nombre": "Ingeniería en Control de Gestión",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1929791.6407466664,
+          "empleabilidad_1er_anio_2024": 0.8455414012738853,
+          "empleabilidad_2do_anio_2024": 0.8878143133462283,
+          "retencion_1er_anio": 0.8313253012048193,
+          "retencion_2do_anio": 0.7364457831325302,
+          "percentil_10_5to_anio": 1025981.96125,
+          "percentil_50_5to_anio": 1921255.5766666664,
+          "percentil_90_5to_anio": 3426253.518333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-electricidad",
+      "nombre": "Ingeniería en Electricidad",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1846953.7128723087,
+          "empleabilidad_1er_anio_2024": 0.8520286396181385,
+          "empleabilidad_2do_anio_2024": 0.8760563380281691,
+          "retencion_1er_anio": 0.780614132445431,
+          "retencion_2do_anio": 0.6569615528182158,
+          "percentil_10_5to_anio": 921703.8270833333,
+          "percentil_50_5to_anio": 1682097.402878783,
+          "percentil_90_5to_anio": 3410880.058333333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2068426.2424052998,
+          "empleabilidad_1er_anio_2024": 0.8656987295825771,
+          "empleabilidad_2do_anio_2024": 0.8957264957264958,
+          "retencion_1er_anio": 0.6149732620320856,
+          "retencion_2do_anio": 0.5187165775401069,
+          "percentil_10_5to_anio": 939723.5387878747,
+          "percentil_50_5to_anio": 1882079.778125,
+          "percentil_90_5to_anio": 3803651.9866666663
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-electronica",
+      "nombre": "Ingeniería en Electrónica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1838331.033536752,
+          "empleabilidad_1er_anio_2024": 0.7671232876712328,
+          "empleabilidad_2do_anio_2024": 0.8850574712643678,
+          "retencion_1er_anio": 0.5416666666666666,
+          "retencion_2do_anio": 0.4791666666666667,
+          "percentil_10_5to_anio": 957047.0304166666,
+          "percentil_50_5to_anio": 1923964.6408333331,
+          "percentil_90_5to_anio": 4231432.595416666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-energia",
+      "nombre": "Ingeniería en Energía",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "ingenieria-en-finanzas",
+      "nombre": "Ingeniería en Finanzas",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1650742.9336567854,
+          "empleabilidad_1er_anio_2024": 0.7530364372469636,
+          "empleabilidad_2do_anio_2024": 0.8033980582524272,
+          "retencion_1er_anio": 0.7746031746031746,
+          "retencion_2do_anio": 0.6727416798732171,
+          "percentil_10_5to_anio": 791250.0,
+          "percentil_50_5to_anio": 1659672.2829166667,
+          "percentil_90_5to_anio": 2501315.500833333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-geomensura-y-cartografia",
+      "nombre": "Ingeniería en Geomensura y Cartografía",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.8152610441767069,
+          "empleabilidad_2do_anio_2024": 0.819672131147541,
+          "retencion_1er_anio": 0.6416666666666667,
+          "retencion_2do_anio": 0.4351464435146444,
+          "percentil_10_5to_anio": 788532.9354166667,
+          "percentil_50_5to_anio": 1578617.2483333333,
+          "percentil_90_5to_anio": 2551063.1466666665
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1844329.2588743635,
+          "empleabilidad_1er_anio_2024": 0.8918918918918919,
+          "empleabilidad_2do_anio_2024": 0.8970588235294118,
+          "retencion_1er_anio": 0.7368421052631579,
+          "retencion_2do_anio": 0.6578947368421053,
+          "percentil_10_5to_anio": 1057596.9704166667,
+          "percentil_50_5to_anio": 1899408.8125,
+          "percentil_90_5to_anio": 2728892.8916666666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-gestion-publica",
+      "nombre": "Ingeniería en Gestión Pública",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1766759.420969384,
+          "empleabilidad_1er_anio_2024": 0.8983050847457628,
+          "empleabilidad_2do_anio_2024": 0.9070422535211268,
+          "retencion_1er_anio": 0.6230769230769231,
+          "retencion_2do_anio": 0.46923076923076923,
+          "percentil_10_5to_anio": 897340.9758333332,
+          "percentil_50_5to_anio": 1611284.1804166667,
+          "percentil_90_5to_anio": 2781496.2466666666
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2127232.4286111053,
+          "empleabilidad_1er_anio_2024": 0.9367088607594937,
+          "empleabilidad_2do_anio_2024": 0.9818181818181818,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": 0.6470588235294118,
+          "percentil_10_5to_anio": 854199.6520833332,
+          "percentil_50_5to_anio": 1725198.1570833332,
+          "percentil_90_5to_anio": 2724129.3029166665
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-logistica",
+      "nombre": "Ingeniería en Logística",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1851412.1254803345,
+          "empleabilidad_1er_anio_2024": 0.8071428571428572,
+          "empleabilidad_2do_anio_2024": 0.8680124223602484,
+          "retencion_1er_anio": 0.7853658536585366,
+          "retencion_2do_anio": 0.6684231860559384,
+          "percentil_10_5to_anio": 862079.0075,
+          "percentil_50_5to_anio": 1610583.7483333333,
+          "percentil_90_5to_anio": 2969420.5833333335
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1804671.6867234835,
+          "empleabilidad_1er_anio_2024": 0.9690721649484536,
+          "empleabilidad_2do_anio_2024": 0.9375,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": 0.36363636363636365,
+          "percentil_10_5to_anio": 939644.2779166666,
+          "percentil_50_5to_anio": 1762114.8929166666,
+          "percentil_90_5to_anio": 2959426.5683333334
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-marketing",
+      "nombre": "Ingeniería en Marketing",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1358733.791412758,
+          "empleabilidad_1er_anio_2024": 0.577962577962578,
+          "empleabilidad_2do_anio_2024": 0.691358024691358,
+          "retencion_1er_anio": 0.7791199309749784,
+          "retencion_2do_anio": 0.6302665520206363,
+          "percentil_10_5to_anio": 659810.0995833332,
+          "percentil_50_5to_anio": 1194608.5016666667,
+          "percentil_90_5to_anio": 2474365.5697916667
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-matematica-y-estadistica",
+      "nombre": "Ingeniería en Matemática y Estadística",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.6737588652482269,
+          "retencion_2do_anio": 0.524822695035461,
+          "percentil_10_5to_anio": 936869.1004166667,
+          "percentil_50_5to_anio": 2358115.6472916664,
+          "percentil_90_5to_anio": 3276632.715
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-mecanica-automotriz",
+      "nombre": "Ingeniería en Mecánica Automotriz",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1528656.089991468,
+          "empleabilidad_1er_anio_2024": 0.7728531855955678,
+          "empleabilidad_2do_anio_2024": 0.8280119199659429,
+          "retencion_1er_anio": 0.8304153094462541,
+          "retencion_2do_anio": 0.714022894521668,
+          "percentil_10_5to_anio": 704120.5391666666,
+          "percentil_50_5to_anio": 1354409.4395833332,
+          "percentil_90_5to_anio": 2447794.5595833333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-medio-ambiente",
+      "nombre": "Ingeniería en Medio Ambiente",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1364017.0029834018,
+          "empleabilidad_1er_anio_2024": 0.5508474576271186,
+          "empleabilidad_2do_anio_2024": 0.7307692307692307,
+          "retencion_1er_anio": 0.8,
+          "retencion_2do_anio": 0.7198275862068966,
+          "percentil_10_5to_anio": 696820.4666666667,
+          "percentil_50_5to_anio": 1244361.15875,
+          "percentil_90_5to_anio": 2165575.6416666666
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1639896.084749554,
+          "empleabilidad_1er_anio_2024": 0.6623376623376623,
+          "empleabilidad_2do_anio_2024": 0.8424657534246576,
+          "retencion_1er_anio": 0.8421052631578947,
+          "retencion_2do_anio": 0.7324561403508771,
+          "percentil_10_5to_anio": 951043.7287499999,
+          "percentil_50_5to_anio": 1701632.97375,
+          "percentil_90_5to_anio": 2553134.111666667
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-metalurgia",
+      "nombre": "Ingeniería en Metalurgia",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.7727272727272727,
+          "empleabilidad_2do_anio_2024": 0.9009009009009009,
+          "retencion_1er_anio": 0.7440476190476191,
+          "retencion_2do_anio": 0.6459627329192547,
+          "percentil_10_5to_anio": 840629.4508333333,
+          "percentil_50_5to_anio": 1755674.82125,
+          "percentil_90_5to_anio": 3983503.463333333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2173043.8514102506,
+          "empleabilidad_1er_anio_2024": 0.7931034482758621,
+          "empleabilidad_2do_anio_2024": 0.8529411764705882,
+          "retencion_1er_anio": 0.5833333333333334,
+          "retencion_2do_anio": 0.4375,
+          "percentil_10_5to_anio": 795332.0827272724,
+          "percentil_50_5to_anio": 1905979.7920833332,
+          "percentil_90_5to_anio": 4506895.645
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-minas",
+      "nombre": "Ingeniería en Minas",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 2202975.404072816,
+          "empleabilidad_1er_anio_2024": 0.780241935483871,
+          "empleabilidad_2do_anio_2024": 0.8041431261770244,
+          "retencion_1er_anio": 0.6895910780669146,
+          "retencion_2do_anio": 0.5576923076923077,
+          "percentil_10_5to_anio": 817207.3958333334,
+          "percentil_50_5to_anio": 1755692.0529166665,
+          "percentil_90_5to_anio": 4223717.819999999
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2550415.4054964758,
+          "empleabilidad_1er_anio_2024": 0.8455598455598455,
+          "empleabilidad_2do_anio_2024": 0.8401826484018264,
+          "retencion_1er_anio": 0.6691176470588235,
+          "retencion_2do_anio": 0.5220588235294118,
+          "percentil_10_5to_anio": 1076954.9016666666,
+          "percentil_50_5to_anio": 2270126.3175,
+          "percentil_90_5to_anio": 6094274.316666666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-prevencion-de-riesgos",
+      "nombre": "Ingeniería en Prevención de Riesgos",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1583338.4963578852,
+          "empleabilidad_1er_anio_2024": 0.8411214953271028,
+          "empleabilidad_2do_anio_2024": 0.8462671905697446,
+          "retencion_1er_anio": 0.6990400903444381,
+          "retencion_2do_anio": 0.4524324324324324,
+          "percentil_10_5to_anio": 703861.44875,
+          "percentil_50_5to_anio": 1339220.95625,
+          "percentil_90_5to_anio": 2489659.069583333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1839312.123284559,
+          "empleabilidad_1er_anio_2024": 0.8853503184713376,
+          "empleabilidad_2do_anio_2024": 0.8928571428571429,
+          "retencion_1er_anio": 0.7142857142857143,
+          "retencion_2do_anio": 0.5844155844155844,
+          "percentil_10_5to_anio": 803084.2866666666,
+          "percentil_50_5to_anio": 1626069.5658333332,
+          "percentil_90_5to_anio": 2960400.685
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-quimica",
+      "nombre": "Ingeniería en Química",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1512671.9939864492,
+          "empleabilidad_1er_anio_2024": 0.8195488721804511,
+          "empleabilidad_2do_anio_2024": 0.8018867924528302,
+          "retencion_1er_anio": 0.7868852459016393,
+          "retencion_2do_anio": 0.6885245901639344,
+          "percentil_10_5to_anio": 860150.6433333332,
+          "percentil_50_5to_anio": 1433615.1470833335,
+          "percentil_90_5to_anio": 2163341.6791666667
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1718103.2894097192,
+          "empleabilidad_1er_anio_2024": 0.845360824742268,
+          "empleabilidad_2do_anio_2024": 0.9433962264150944,
+          "retencion_1er_anio": 0.6530612244897959,
+          "retencion_2do_anio": 0.5102040816326531,
+          "percentil_10_5to_anio": 975044.1875,
+          "percentil_50_5to_anio": 1517667.085,
+          "percentil_90_5to_anio": 2521334.565416666
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-recursos-humanos",
+      "nombre": "Ingeniería en Recursos Humanos",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1485003.9751961818,
+          "empleabilidad_1er_anio_2024": 0.7698465643762509,
+          "empleabilidad_2do_anio_2024": 0.8136482939632546,
+          "retencion_1er_anio": 0.756786102062975,
+          "retencion_2do_anio": 0.6330818965517241,
+          "percentil_10_5to_anio": 722278.2320833333,
+          "percentil_50_5to_anio": 1338431.6484090828,
+          "percentil_90_5to_anio": 2361295.725
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.7777777777777778,
+          "retencion_2do_anio": 0.6296296296296297,
+          "percentil_10_5to_anio": 715635.6883333334,
+          "percentil_50_5to_anio": 1293235.61625,
+          "percentil_90_5to_anio": 2969065.7516666665
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-recursos-renovables",
+      "nombre": "Ingeniería en Recursos Renovables",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1542047.273228604,
+          "empleabilidad_1er_anio_2024": 0.627906976744186,
+          "empleabilidad_2do_anio_2024": 0.773972602739726,
+          "retencion_1er_anio": 0.8524590163934426,
+          "retencion_2do_anio": 0.7622950819672131,
+          "percentil_10_5to_anio": 692938.0666666667,
+          "percentil_50_5to_anio": 1486445.4309848414,
+          "percentil_90_5to_anio": 2795956.8679166664
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-refrigeracion-y-climatizacion",
+      "nombre": "Ingeniería en Refrigeración y Climatización",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1598108.6060824133,
+          "empleabilidad_1er_anio_2024": 0.872093023255814,
+          "empleabilidad_2do_anio_2024": 0.8470588235294118,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 868029.8229166666,
+          "percentil_50_5to_anio": 1393318.0154166666,
+          "percentil_90_5to_anio": 1936592.02375
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-seguridad-privada",
+      "nombre": "Ingeniería en Seguridad Privada",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.9933774834437086,
+          "empleabilidad_2do_anio_2024": 0.987987987987988,
+          "retencion_1er_anio": 0.8549222797927462,
+          "retencion_2do_anio": 0.7085492227979274,
+          "percentil_10_5to_anio": 1643522.9583333333,
+          "percentil_50_5to_anio": 1851402.5320833332,
+          "percentil_90_5to_anio": 2664053.998333333
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-sonido",
+      "nombre": "Ingeniería en Sonido",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1063560.4370141048,
+          "empleabilidad_1er_anio_2024": 0.40476190476190477,
+          "empleabilidad_2do_anio_2024": 0.5864661654135338,
+          "retencion_1er_anio": 0.7887563884156729,
+          "retencion_2do_anio": 0.6989795918367347,
+          "percentil_10_5to_anio": 676151.9856439391,
+          "percentil_50_5to_anio": 918245.5370833332,
+          "percentil_90_5to_anio": 1429162.7833333332
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-telecomunicaciones",
+      "nombre": "Ingeniería en Telecomunicaciones",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1805325.321004494,
+          "empleabilidad_1er_anio_2024": 0.8504983388704319,
+          "empleabilidad_2do_anio_2024": 0.8600583090379009,
+          "retencion_1er_anio": 0.7966101694915254,
+          "retencion_2do_anio": 0.6862068965517242,
+          "percentil_10_5to_anio": 928883.2779166666,
+          "percentil_50_5to_anio": 1661607.0649999997,
+          "percentil_90_5to_anio": 2838488.7533333334
+        }
+      ]
+    },
+    {
+      "slug": "ingenieria-en-transporte-y-transito",
+      "nombre": "Ingeniería en Transporte y Tránsito",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "kinesiologia",
+      "nombre": "Kinesiología",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.29310344827586204,
+          "empleabilidad_2do_anio_2024": 0.4879032258064516,
+          "retencion_1er_anio": 0.7774566473988439,
+          "retencion_2do_anio": 0.7023121387283237,
+          "percentil_10_5to_anio": 593088.4708333333,
+          "percentil_50_5to_anio": 1105869.7702083334,
+          "percentil_90_5to_anio": 1828989.2329166664
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1345677.8487043784,
+          "empleabilidad_1er_anio_2024": 0.40272217774219377,
+          "empleabilidad_2do_anio_2024": 0.6435054773082942,
+          "retencion_1er_anio": 0.8452566096423018,
+          "retencion_2do_anio": 0.7870190439176059,
+          "percentil_10_5to_anio": 697952.2898484841,
+          "percentil_50_5to_anio": 1396783.9102083333,
+          "percentil_90_5to_anio": 2235429.9170833332
+        }
+      ]
+    },
+    {
+      "slug": "licenciatura-en-letras-y-literatura",
+      "nombre": "Licenciatura en Letras y Literatura",
+      "area": "Humanidades",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1206674.933332345,
+          "empleabilidad_1er_anio_2024": 0.3023255813953488,
+          "empleabilidad_2do_anio_2024": 0.5709876543209876,
+          "retencion_1er_anio": 0.8444846292947559,
+          "retencion_2do_anio": 0.7725631768953068,
+          "percentil_10_5to_anio": 692967.6945833333,
+          "percentil_50_5to_anio": 1174798.5029166664,
+          "percentil_90_5to_anio": 1773582.8308333333
+        }
+      ]
+    },
+    {
+      "slug": "medicina",
+      "nombre": "Medicina",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 3295855.5799168306,
+          "empleabilidad_1er_anio_2024": 0.8920770877944325,
+          "empleabilidad_2do_anio_2024": 0.9042128603104213,
+          "retencion_1er_anio": 0.9554946935980828,
+          "retencion_2do_anio": 0.9373716632443532,
+          "percentil_10_5to_anio": 2126547.675,
+          "percentil_50_5to_anio": 4121740.9765151497,
+          "percentil_90_5to_anio": 6701042.444999999
+        }
+      ]
+    },
+    {
+      "slug": "medicina-veterinaria",
+      "nombre": "Medicina Veterinaria",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1342248.1231538875,
+          "empleabilidad_1er_anio_2024": 0.588703261734288,
+          "empleabilidad_2do_anio_2024": 0.7457627118644068,
+          "retencion_1er_anio": 0.8586487781504551,
+          "retencion_2do_anio": 0.7939626257786296,
+          "percentil_10_5to_anio": 729570.3401325749,
+          "percentil_50_5to_anio": 1271317.2,
+          "percentil_90_5to_anio": 2393437.4429166666
+        }
+      ]
+    },
+    {
+      "slug": "musica-canto-o-danza",
+      "nombre": "Música, Canto o Danza",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1205099.977362157,
+          "empleabilidad_1er_anio_2024": 0.33125,
+          "empleabilidad_2do_anio_2024": 0.4027777777777778,
+          "retencion_1er_anio": 0.7206611570247934,
+          "retencion_2do_anio": 0.5131578947368421,
+          "percentil_10_5to_anio": 568045.2325,
+          "percentil_50_5to_anio": 978591.8008333333,
+          "percentil_90_5to_anio": 1725481.1608333334
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1021665.9674022204,
+          "empleabilidad_1er_anio_2024": 0.41596638655462187,
+          "empleabilidad_2do_anio_2024": 0.5596330275229358,
+          "retencion_1er_anio": 0.7954545454545454,
+          "retencion_2do_anio": 0.6883509833585476,
+          "percentil_10_5to_anio": 664873.5720833333,
+          "percentil_50_5to_anio": 1186362.4618181745,
+          "percentil_90_5to_anio": 2293769.9225
+        }
+      ]
+    },
+    {
+      "slug": "nutricion-y-dietetica",
+      "nombre": "Nutrición y Dietética",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.39603960396039606,
+          "empleabilidad_2do_anio_2024": 0.46923076923076923,
+          "retencion_1er_anio": 0.6157407407407407,
+          "retencion_2do_anio": 0.5,
+          "percentil_10_5to_anio": 653064.9570833333,
+          "percentil_50_5to_anio": 952923.2991666667,
+          "percentil_90_5to_anio": 1732594.945909083
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1153883.6890627353,
+          "empleabilidad_1er_anio_2024": 0.40389016018306634,
+          "empleabilidad_2do_anio_2024": 0.5934115523465704,
+          "retencion_1er_anio": 0.7953160089829965,
+          "retencion_2do_anio": 0.7202438241899262,
+          "percentil_10_5to_anio": 641182.31625,
+          "percentil_50_5to_anio": 1166751.7621590828,
+          "percentil_90_5to_anio": 1972366.4583333333
+        }
+      ]
+    },
+    {
+      "slug": "obstetricia-y-puericultura",
+      "nombre": "Obstetricia y Puericultura",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1591555.497818849,
+          "empleabilidad_1er_anio_2024": 0.5465872156013001,
+          "empleabilidad_2do_anio_2024": 0.8200138985406532,
+          "retencion_1er_anio": 0.9059613769941226,
+          "retencion_2do_anio": 0.8573227024758707,
+          "percentil_10_5to_anio": 1052381.49,
+          "percentil_50_5to_anio": 1715193.3283333331,
+          "percentil_90_5to_anio": 2409629.143333333
+        }
+      ]
+    },
+    {
+      "slug": "odontologia",
+      "nombre": "Odontología",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1884263.8076269815,
+          "empleabilidad_1er_anio_2024": 0.4896238651102464,
+          "empleabilidad_2do_anio_2024": 0.6994594594594594,
+          "retencion_1er_anio": 0.8816050854191498,
+          "retencion_2do_anio": 0.8412068281063915,
+          "percentil_10_5to_anio": 706177.7012499999,
+          "percentil_50_5to_anio": 1582599.7854166664,
+          "percentil_90_5to_anio": 3091390.5399999996
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-artes-y-musica",
+      "nombre": "Pedagogía en Artes y Música",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1100634.9055355291,
+          "empleabilidad_1er_anio_2024": 0.7152317880794702,
+          "empleabilidad_2do_anio_2024": 0.8121019108280255,
+          "retencion_1er_anio": 0.8221343873517787,
+          "retencion_2do_anio": 0.741106719367589,
+          "percentil_10_5to_anio": 681280.4045833333,
+          "percentil_50_5to_anio": 1123112.2066666665,
+          "percentil_90_5to_anio": 1456874.9079166667
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-ciencias",
+      "nombre": "Pedagogía en Ciencias",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1284575.489103004,
+          "empleabilidad_1er_anio_2024": 0.8905579399141631,
+          "empleabilidad_2do_anio_2024": 0.9156327543424317,
+          "retencion_1er_anio": 0.7954110898661568,
+          "retencion_2do_anio": 0.6883365200764818,
+          "percentil_10_5to_anio": 879733.2016666667,
+          "percentil_50_5to_anio": 1328733.0254166666,
+          "percentil_90_5to_anio": 1749936.9399999997
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-educacion-basica",
+      "nombre": "Pedagogía en Educación Básica",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1221516.533700985,
+          "empleabilidad_1er_anio_2024": 0.9029567854435178,
+          "empleabilidad_2do_anio_2024": 0.9217081850533808,
+          "retencion_1er_anio": 0.8889541715628673,
+          "retencion_2do_anio": 0.8337250293772033,
+          "percentil_10_5to_anio": 865573.4312499999,
+          "percentil_50_5to_anio": 1221324.9260416667,
+          "percentil_90_5to_anio": 1587561.1866666665
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-educacion-diferencial",
+      "nombre": "Pedagogía en Educación Diferencial",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1225424.5000304116,
+          "empleabilidad_1er_anio_2024": 0.9138418079096046,
+          "empleabilidad_2do_anio_2024": 0.9284984678243106,
+          "retencion_1er_anio": 0.8950471698113207,
+          "retencion_2do_anio": 0.8413915094339622,
+          "percentil_10_5to_anio": 922700.0507954495,
+          "percentil_50_5to_anio": 1253615.5747916666,
+          "percentil_90_5to_anio": 1635321.0366666664
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-educacion-fisica",
+      "nombre": "Pedagogía en Educación Física",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1121504.0508707694,
+          "empleabilidad_1er_anio_2024": 0.5453287197231834,
+          "empleabilidad_2do_anio_2024": 0.6638115631691649,
+          "retencion_1er_anio": 0.8710601719197708,
+          "retencion_2do_anio": 0.8068767908309455,
+          "percentil_10_5to_anio": 651994.3278977267,
+          "percentil_50_5to_anio": 1124959.9952083332,
+          "percentil_90_5to_anio": 1738191.2293749999
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-educacion-media",
+      "nombre": "Pedagogía en Educación Media",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1273507.5544311504,
+          "empleabilidad_1er_anio_2024": 0.7674418604651163,
+          "empleabilidad_2do_anio_2024": 0.8571428571428571,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 742694.8558333333,
+          "percentil_50_5to_anio": 1284646.1579166667,
+          "percentil_90_5to_anio": 1733847.6784848412
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-educacion-de-parvulos",
+      "nombre": "Pedagogía en Educación de Párvulos",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1058559.028677557,
+          "empleabilidad_1er_anio_2024": 0.6588957055214724,
+          "empleabilidad_2do_anio_2024": 0.7492897727272727,
+          "retencion_1er_anio": 0.8869710467706013,
+          "retencion_2do_anio": 0.8293363078639152,
+          "percentil_10_5to_anio": 692339.1783333333,
+          "percentil_50_5to_anio": 1123662.3012499998,
+          "percentil_90_5to_anio": 1468144.5617802998
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-filosofia-y-religion",
+      "nombre": "Pedagogía en Filosofía y Religión",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.7710843373493976,
+          "empleabilidad_2do_anio_2024": 0.7692307692307693,
+          "retencion_1er_anio": 0.75,
+          "retencion_2do_anio": 0.6850393700787402,
+          "percentil_10_5to_anio": 994326.7741666666,
+          "percentil_50_5to_anio": 1217394.9191666667,
+          "percentil_90_5to_anio": 1608754.5541666665
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-historia-geografia-y-ciencias-sociales",
+      "nombre": "Pedagogía en Historia, Geografía y Ciencias Sociales",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1158299.807198316,
+          "empleabilidad_1er_anio_2024": 0.7239488117001828,
+          "empleabilidad_2do_anio_2024": 0.8225190839694656,
+          "retencion_1er_anio": 0.8520408163265306,
+          "retencion_2do_anio": 0.7704081632653061,
+          "percentil_10_5to_anio": 697023.3783333333,
+          "percentil_50_5to_anio": 1200491.8490340828,
+          "percentil_90_5to_anio": 1607508.0716666665
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-idiomas",
+      "nombre": "Pedagogía en Idiomas",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1109242.339550225,
+          "empleabilidad_1er_anio_2024": 0.5774499473129611,
+          "empleabilidad_2do_anio_2024": 0.7178649237472767,
+          "retencion_1er_anio": 0.8395560040363269,
+          "retencion_2do_anio": 0.7542885973763875,
+          "percentil_10_5to_anio": 652885.8708333332,
+          "percentil_50_5to_anio": 1105102.0379166666,
+          "percentil_90_5to_anio": 1563402.39
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-lenguaje-comunicacion-y-o-castellano",
+      "nombre": "Pedagogía en Lenguaje, Comunicación y/o Castellano",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1201774.4013086895,
+          "empleabilidad_1er_anio_2024": 0.7942446043165468,
+          "empleabilidad_2do_anio_2024": 0.8676923076923077,
+          "retencion_1er_anio": 0.8662175168431184,
+          "retencion_2do_anio": 0.7786333012512031,
+          "percentil_10_5to_anio": 806922.9041666667,
+          "percentil_50_5to_anio": 1255271.44125,
+          "percentil_90_5to_anio": 1574729.5733333332
+        }
+      ]
+    },
+    {
+      "slug": "pedagogia-en-matematicas-y-computacion",
+      "nombre": "Pedagogía en Matemáticas y Computación",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1309993.066464032,
+          "empleabilidad_1er_anio_2024": 0.9009345794392524,
+          "empleabilidad_2do_anio_2024": 0.9402298850574713,
+          "retencion_1er_anio": 0.8273809523809523,
+          "retencion_2do_anio": 0.7221396731054978,
+          "percentil_10_5to_anio": 950538.12,
+          "percentil_50_5to_anio": 1331950.028125,
+          "percentil_90_5to_anio": 1772475.96
+        }
+      ]
+    },
+    {
+      "slug": "periodismo",
+      "nombre": "Periodismo",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1450561.7605281367,
+          "empleabilidad_1er_anio_2024": 0.6252465483234714,
+          "empleabilidad_2do_anio_2024": 0.7470489038785835,
+          "retencion_1er_anio": 0.8744131455399061,
+          "retencion_2do_anio": 0.8189300411522634,
+          "percentil_10_5to_anio": 790723.6748863632,
+          "percentil_50_5to_anio": 1375090.3847916666,
+          "percentil_90_5to_anio": 2279027.3524999996
+        }
+      ]
+    },
+    {
+      "slug": "programas-de-formacion-pedagogica",
+      "nombre": "Programas de Formación Pedagógica",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1474099.076459789,
+          "empleabilidad_1er_anio_2024": 0.8514150943396226,
+          "empleabilidad_2do_anio_2024": 0.8571428571428571,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 767346.9529166665,
+          "percentil_50_5to_anio": 1315985.1966666665,
+          "percentil_90_5to_anio": 2059799.4074999997
+        }
+      ]
+    },
+    {
+      "slug": "psicologia",
+      "nombre": "Psicología",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1281634.6876145315,
+          "empleabilidad_1er_anio_2024": 0.5617883456128601,
+          "empleabilidad_2do_anio_2024": 0.766360006943239,
+          "retencion_1er_anio": 0.8700969290696621,
+          "retencion_2do_anio": 0.8201992753623188,
+          "percentil_10_5to_anio": 754017.3795833333,
+          "percentil_50_5to_anio": 1220000.68125,
+          "percentil_90_5to_anio": 2066010.3683333332
+        }
+      ]
+    },
+    {
+      "slug": "psicopedagogia",
+      "nombre": "Psicopedagogía",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1011729.5012118816,
+          "empleabilidad_1er_anio_2024": 0.6078014184397164,
+          "empleabilidad_2do_anio_2024": 0.6818862275449101,
+          "retencion_1er_anio": 0.7152288732394366,
+          "retencion_2do_anio": 0.5803766973280771,
+          "percentil_10_5to_anio": 620621.0695833333,
+          "percentil_50_5to_anio": 1008579.8241666666,
+          "percentil_90_5to_anio": 1487565.0337499997
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 997885.3126430452,
+          "empleabilidad_1er_anio_2024": 0.6223175965665236,
+          "empleabilidad_2do_anio_2024": 0.7300884955752213,
+          "retencion_1er_anio": 0.7333333333333333,
+          "retencion_2do_anio": 0.64,
+          "percentil_10_5to_anio": 624905.5125,
+          "percentil_50_5to_anio": 999964.87,
+          "percentil_90_5to_anio": 1357998.9891666665
+        }
+      ]
+    },
+    {
+      "slug": "publicidad",
+      "nombre": "Publicidad",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1049788.2329865934,
+          "empleabilidad_1er_anio_2024": 0.4915254237288136,
+          "empleabilidad_2do_anio_2024": 0.6355140186915887,
+          "retencion_1er_anio": 0.7813121272365805,
+          "retencion_2do_anio": 0.6719681908548708,
+          "percentil_10_5to_anio": 600964.3975,
+          "percentil_50_5to_anio": 966247.9052083333,
+          "percentil_90_5to_anio": 1757944.4779166665
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1478464.071418214,
+          "empleabilidad_1er_anio_2024": 0.6651884700665188,
+          "empleabilidad_2do_anio_2024": 0.830423940149626,
+          "retencion_1er_anio": 0.8873456790123457,
+          "retencion_2do_anio": 0.8564814814814815,
+          "percentil_10_5to_anio": 817773.6670833332,
+          "percentil_50_5to_anio": 1402993.991875,
+          "percentil_90_5to_anio": 2510106.64
+        }
+      ]
+    },
+    {
+      "slug": "quimica-industrial",
+      "nombre": "Química Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "quimica-y-farmacia",
+      "nombre": "Química y Farmacia",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2407808.3223903715,
+          "empleabilidad_1er_anio_2024": 0.9810901001112347,
+          "empleabilidad_2do_anio_2024": 0.9791376912378303,
+          "retencion_1er_anio": 0.884634266077565,
+          "retencion_2do_anio": 0.8296514482081493,
+          "percentil_10_5to_anio": 1588981.5683333334,
+          "percentil_50_5to_anio": 2351271.3787499997,
+          "percentil_90_5to_anio": 3270968.42
+        }
+      ]
+    },
+    {
+      "slug": "quimica-licenciado-en-quimica",
+      "nombre": "Química, Licenciado en Química",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.766497461928934,
+          "retencion_2do_anio": 0.6446700507614214,
+          "percentil_10_5to_anio": 547413.9162499999,
+          "percentil_50_5to_anio": 1378155.1597916665,
+          "percentil_90_5to_anio": 2405001.21
+        }
+      ]
+    },
+    {
+      "slug": "realizador-de-cine-y-television",
+      "nombre": "Realizador de Cine y Televisión",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.43333333333333335,
+          "empleabilidad_2do_anio_2024": 0.559322033898305,
+          "retencion_1er_anio": 0.8882521489971347,
+          "retencion_2do_anio": 0.8252148997134671,
+          "percentil_10_5to_anio": 675004.2095833333,
+          "percentil_50_5to_anio": 1107159.0241666667,
+          "percentil_90_5to_anio": 1784641.2089583334
+        }
+      ]
+    },
+    {
+      "slug": "relaciones-publicas",
+      "nombre": "Relaciones Públicas",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1200507.1256966987,
+          "empleabilidad_1er_anio_2024": 0.4267515923566879,
+          "empleabilidad_2do_anio_2024": 0.6438356164383562,
+          "retencion_1er_anio": 0.7844827586206896,
+          "retencion_2do_anio": 0.6837606837606838,
+          "percentil_10_5to_anio": 681541.7808333333,
+          "percentil_50_5to_anio": 1075473.06625,
+          "percentil_90_5to_anio": 1783324.173333333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1460206.5307802996,
+          "empleabilidad_1er_anio_2024": 0.6129032258064516,
+          "empleabilidad_2do_anio_2024": 0.625,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": 0.6111111111111112,
+          "percentil_10_5to_anio": 635145.60625,
+          "percentil_50_5to_anio": 1120948.4895833333,
+          "percentil_90_5to_anio": 1911376.7325
+        }
+      ]
+    },
+    {
+      "slug": "secretariado-bilingue",
+      "nombre": "Secretariado Bilingüe",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1223329.631513572,
+          "empleabilidad_1er_anio_2024": 0.5945945945945946,
+          "empleabilidad_2do_anio_2024": 0.6774193548387096,
+          "retencion_1er_anio": 0.6375,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 642466.9545833332,
+          "percentil_50_5to_anio": 1000901.5341666667,
+          "percentil_90_5to_anio": 1979601.20875
+        }
+      ]
+    },
+    {
+      "slug": "sociologia",
+      "nombre": "Sociología",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1425350.2791020318,
+          "empleabilidad_1er_anio_2024": 0.5833333333333334,
+          "empleabilidad_2do_anio_2024": 0.7301927194860813,
+          "retencion_1er_anio": 0.743202416918429,
+          "retencion_2do_anio": 0.6616314199395771,
+          "percentil_10_5to_anio": 727900.15125,
+          "percentil_50_5to_anio": 1365715.4349999998,
+          "percentil_90_5to_anio": 2472635.2379166665
+        }
+      ]
+    },
+    {
+      "slug": "tecnologia-medica",
+      "nombre": "Tecnología Médica",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1732891.784939958,
+          "empleabilidad_1er_anio_2024": 0.567143516382095,
+          "empleabilidad_2do_anio_2024": 0.8011049723756906,
+          "retencion_1er_anio": 0.8554627050448778,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 982751.22625,
+          "percentil_50_5to_anio": 1720266.1199999999,
+          "percentil_90_5to_anio": 2577122.7016666667
+        }
+      ]
+    },
+    {
+      "slug": "terapia-ocupacional",
+      "nombre": "Terapia Ocupacional",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 935320.3320625833,
+          "empleabilidad_1er_anio_2024": 0.3729508196721312,
+          "empleabilidad_2do_anio_2024": 0.6,
+          "retencion_1er_anio": 0.8166666666666667,
+          "retencion_2do_anio": 0.7133333333333334,
+          "percentil_10_5to_anio": 646119.5404166667,
+          "percentil_50_5to_anio": 1107360.0895833333,
+          "percentil_90_5to_anio": 1804700.9349999998
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1210672.0256023193,
+          "empleabilidad_1er_anio_2024": 0.4302600472813239,
+          "empleabilidad_2do_anio_2024": 0.6883002207505519,
+          "retencion_1er_anio": 0.8406216118539935,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 701884.6425,
+          "percentil_50_5to_anio": 1283239.6670833332,
+          "percentil_90_5to_anio": 1933735.3035416666
+        }
+      ]
+    },
+    {
+      "slug": "trabajo-social",
+      "nombre": "Trabajo Social",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1225725.2208689835,
+          "empleabilidad_1er_anio_2024": 0.6515580736543909,
+          "empleabilidad_2do_anio_2024": 0.7451856946354883,
+          "retencion_1er_anio": 0.7256433823529411,
+          "retencion_2do_anio": 0.6201692202149555,
+          "percentil_10_5to_anio": 658528.2266287875,
+          "percentil_50_5to_anio": 1164513.351875,
+          "percentil_90_5to_anio": 2112053.03
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1203413.7401290576,
+          "empleabilidad_1er_anio_2024": 0.6410088437602358,
+          "empleabilidad_2do_anio_2024": 0.7747440273037542,
+          "retencion_1er_anio": 0.8228294402820626,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 725234.7337121208,
+          "percentil_50_5to_anio": 1200360.0459659083,
+          "percentil_90_5to_anio": 1920028.6116666666
+        }
+      ]
+    },
+    {
+      "slug": "traduccion-e-interpretacion",
+      "nombre": "Traducción e Interpretación",
+      "area": "Humanidades",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1033382.9746680855,
+          "empleabilidad_1er_anio_2024": 0.3877551020408163,
+          "empleabilidad_2do_anio_2024": 0.4847457627118644,
+          "retencion_1er_anio": 0.8173803526448362,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 594494.6979166666,
+          "percentil_50_5to_anio": 872548.6516666667,
+          "percentil_90_5to_anio": 1494917.4166666667
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-agropecuario",
+      "nombre": "Técnico Agropecuario",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1054268.0200394446,
+          "empleabilidad_1er_anio_2024": 0.5094152626362736,
+          "empleabilidad_2do_anio_2024": 0.5376196990424077,
+          "retencion_1er_anio": 0.6649006622516557,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 578708.8208333333,
+          "percentil_50_5to_anio": 907310.645909083,
+          "percentil_90_5to_anio": 1630050.0808333333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1068044.3478430873,
+          "empleabilidad_1er_anio_2024": 0.5226130653266332,
+          "empleabilidad_2do_anio_2024": 0.5578231292517006,
+          "retencion_1er_anio": 0.73992673992674,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 626630.5254166666,
+          "percentil_50_5to_anio": 939090.315,
+          "percentil_90_5to_anio": 1443771.1925
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.48,
+          "empleabilidad_2do_anio_2024": 0.5952380952380952,
+          "retencion_1er_anio": 0.7184466019417476,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 601030.335,
+          "percentil_50_5to_anio": 951406.5608333332,
+          "percentil_90_5to_anio": 1701864.6341666665
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-asistente-del-educador-diferencial",
+      "nombre": "Técnico Asistente del Educador Diferencial",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 686904.6353204056,
+          "empleabilidad_1er_anio_2024": 0.2864963503649635,
+          "empleabilidad_2do_anio_2024": 0.46567717996289426,
+          "retencion_1er_anio": 0.7418032786885246,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 535403.1808333333,
+          "percentil_50_5to_anio": 647272.4795833334,
+          "percentil_90_5to_anio": 955081.1258333334
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 724999.5342173213,
+          "empleabilidad_1er_anio_2024": 0.42998027613412226,
+          "empleabilidad_2do_anio_2024": 0.5218554861730598,
+          "retencion_1er_anio": 0.6749098402885111,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 547428.2466666667,
+          "percentil_50_5to_anio": 658497.5916666667,
+          "percentil_90_5to_anio": 1022523.4954166665
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-asistente-del-educador-de-parvulos",
+      "nombre": "Técnico Asistente del Educador de Párvulos",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 712168.3965542101,
+          "empleabilidad_1er_anio_2024": 0.30255057167985927,
+          "empleabilidad_2do_anio_2024": 0.44086021505376344,
+          "retencion_1er_anio": 0.7254034357105674,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 536429.8716666667,
+          "percentil_50_5to_anio": 686243.2125,
+          "percentil_90_5to_anio": 929580.4570833333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 752524.0123513291,
+          "empleabilidad_1er_anio_2024": 0.4423076923076923,
+          "empleabilidad_2do_anio_2024": 0.5461095100864554,
+          "retencion_1er_anio": 0.7042184832967568,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 551808.5187499999,
+          "percentil_50_5to_anio": 736994.1633333332,
+          "percentil_90_5to_anio": 920757.31625
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 731456.8768896653,
+          "empleabilidad_1er_anio_2024": 0.2222222222222222,
+          "empleabilidad_2do_anio_2024": 0.3752310536044362,
+          "retencion_1er_anio": 0.7368421052631579,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 559264.8191666666,
+          "percentil_50_5to_anio": 709584.6479166667,
+          "percentil_90_5to_anio": 1014501.8908333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-dental-y-asistente-de-odontologia",
+      "nombre": "Técnico Dental y Asistente de Odontología",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 781638.7518673613,
+          "empleabilidad_1er_anio_2024": 0.4548238897396631,
+          "empleabilidad_2do_anio_2024": 0.5868613138686132,
+          "retencion_1er_anio": 0.7209302325581395,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 546146.6214772725,
+          "percentil_50_5to_anio": 740414.7370833332,
+          "percentil_90_5to_anio": 1027053.7533333333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 779677.120691102,
+          "empleabilidad_1er_anio_2024": 0.5297092288242731,
+          "empleabilidad_2do_anio_2024": 0.5620998719590269,
+          "retencion_1er_anio": 0.7793640493186242,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 576799.9741666666,
+          "percentil_50_5to_anio": 764421.4379166666,
+          "percentil_90_5to_anio": 1069594.8699999999
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-juridico",
+      "nombre": "Técnico Jurídico",
+      "area": "Derecho",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 945112.5053673337,
+          "empleabilidad_1er_anio_2024": 0.5,
+          "empleabilidad_2do_anio_2024": 0.5897435897435898,
+          "retencion_1er_anio": 0.6875,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 581588.9708333333,
+          "percentil_50_5to_anio": 955617.5933333333,
+          "percentil_90_5to_anio": 1475472.36
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1282407.2926147673,
+          "empleabilidad_1er_anio_2024": 0.6739562624254473,
+          "empleabilidad_2do_anio_2024": 0.6944444444444444,
+          "retencion_1er_anio": 0.5658482142857143,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 591207.1420833332,
+          "percentil_50_5to_anio": 922154.8475757496,
+          "percentil_90_5to_anio": 1566078.5733333332
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-laboratorista-dental",
+      "nombre": "Técnico Laboratorista Dental",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.29838709677419356,
+          "empleabilidad_2do_anio_2024": 0.5585585585585585,
+          "retencion_1er_anio": 0.8148148148148148,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 536937.5904166667,
+          "percentil_50_5to_anio": 757906.3293749999,
+          "percentil_90_5to_anio": 1223139.4820833332
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.514018691588785,
+          "empleabilidad_2do_anio_2024": 0.6575342465753424,
+          "retencion_1er_anio": 0.7970479704797048,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 571656.5694318174,
+          "percentil_50_5to_anio": 861143.7939583333,
+          "percentil_90_5to_anio": 1199492.53625
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-veterinario",
+      "nombre": "Técnico Veterinario",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 791405.1189678024,
+          "empleabilidad_1er_anio_2024": 0.3837429111531191,
+          "empleabilidad_2do_anio_2024": 0.4928774928774929,
+          "retencion_1er_anio": 0.7927927927927928,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 537058.03625,
+          "percentil_50_5to_anio": 771503.3452083333,
+          "percentil_90_5to_anio": 1165615.7829166667
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 790706.4518781562,
+          "empleabilidad_1er_anio_2024": 0.4236453201970443,
+          "empleabilidad_2do_anio_2024": 0.4418604651162791,
+          "retencion_1er_anio": 0.8505338078291815,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 541247.1775,
+          "percentil_50_5to_anio": 746588.289375,
+          "percentil_90_5to_anio": 1077424.1129166665
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-acuicultura-y-pesca",
+      "nombre": "Técnico en Acuicultura y Pesca",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.8369565217391305,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 781243.6766666666,
+          "percentil_50_5to_anio": 1399105.3937499998,
+          "percentil_90_5to_anio": 1940236.4333333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-administracion-financiera-y-finanzas",
+      "nombre": "Técnico en Administración Financiera y Finanzas",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.5632183908045977,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 591189.1191666666,
+          "percentil_50_5to_anio": 1048509.4202083332,
+          "percentil_90_5to_anio": 1752210.3770833332
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1359103.4516069738,
+          "empleabilidad_1er_anio_2024": 0.7100213219616205,
+          "empleabilidad_2do_anio_2024": 0.7309562398703403,
+          "retencion_1er_anio": 0.7857142857142857,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 690867.6291666667,
+          "percentil_50_5to_anio": 1235779.173333333,
+          "percentil_90_5to_anio": 2418068.615833333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-administracion-publica-o-municipal",
+      "nombre": "Técnico en Administración Pública o Municipal",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1234719.7300933201,
+          "empleabilidad_1er_anio_2024": 0.7677053824362606,
+          "empleabilidad_2do_anio_2024": 0.8117647058823529,
+          "retencion_1er_anio": 0.6449579831932774,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 718208.4816666666,
+          "percentil_50_5to_anio": 1171553.7625,
+          "percentil_90_5to_anio": 2056502.5324999997
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1468247.7285351169,
+          "empleabilidad_1er_anio_2024": 0.825136612021858,
+          "empleabilidad_2do_anio_2024": 0.8260869565217391,
+          "retencion_1er_anio": 0.6486161251504212,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 833116.2683333332,
+          "percentil_50_5to_anio": 1314717.0866666667,
+          "percentil_90_5to_anio": 1995338.9074999997
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-administracion-de-empresas",
+      "nombre": "Técnico en Administración de Empresas",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1199365.78053418,
+          "empleabilidad_1er_anio_2024": 0.6044137022397892,
+          "empleabilidad_2do_anio_2024": 0.6654654654654655,
+          "retencion_1er_anio": 0.673721340388007,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 627221.1495833333,
+          "percentil_50_5to_anio": 1062349.6575,
+          "percentil_90_5to_anio": 2062575.5520833333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1353295.6522113646,
+          "empleabilidad_1er_anio_2024": 0.7841422972565572,
+          "empleabilidad_2do_anio_2024": 0.7647058823529411,
+          "retencion_1er_anio": 0.6705358870187658,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 649597.0841666666,
+          "percentil_50_5to_anio": 1122751.8802083333,
+          "percentil_90_5to_anio": 2290099.4016666664
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1278568.8003761747,
+          "empleabilidad_1er_anio_2024": 0.6518595041322314,
+          "empleabilidad_2do_anio_2024": 0.7125813449023861,
+          "retencion_1er_anio": 0.6926040061633282,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 628944.2043560599,
+          "percentil_50_5to_anio": 1061530.9335416665,
+          "percentil_90_5to_anio": 2140618.21
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-administracion-de-recursos-humanos-y-personal",
+      "nombre": "Técnico en Administración de Recursos Humanos y Personal",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1136248.7969301834,
+          "empleabilidad_1er_anio_2024": 0.6862244897959183,
+          "empleabilidad_2do_anio_2024": 0.7012345679012346,
+          "retencion_1er_anio": 0.6907216494845361,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 607446.1416666666,
+          "percentil_50_5to_anio": 957174.729375,
+          "percentil_90_5to_anio": 1728551.5625
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1166754.087591252,
+          "empleabilidad_1er_anio_2024": 0.7053291536050157,
+          "empleabilidad_2do_anio_2024": 0.77046783625731,
+          "retencion_1er_anio": 0.6802030456852792,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 638982.8170833333,
+          "percentil_50_5to_anio": 1048343.3016666666,
+          "percentil_90_5to_anio": 1874311.945
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1075866.4783864624,
+          "empleabilidad_1er_anio_2024": 0.6,
+          "empleabilidad_2do_anio_2024": 0.6419753086419753,
+          "retencion_1er_anio": 0.7872340425531915,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 596688.4825,
+          "percentil_50_5to_anio": 1078497.5754166667,
+          "percentil_90_5to_anio": 2076565.4675
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-administracion-de-redes-y-soporte",
+      "nombre": "Técnico en Administración de Redes y Soporte",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1431821.389162393,
+          "empleabilidad_1er_anio_2024": 0.8872549019607843,
+          "empleabilidad_2do_anio_2024": 0.8405797101449275,
+          "retencion_1er_anio": 0.5934426229508196,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 665775.5091666667,
+          "percentil_50_5to_anio": 1073077.68875,
+          "percentil_90_5to_anio": 1998440.4316666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-administracion-en-marketing",
+      "nombre": "Técnico en Administración en Marketing",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-alimentos",
+      "nombre": "Técnico en Alimentos",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.5666666666666667,
+          "empleabilidad_2do_anio_2024": 0.71875,
+          "retencion_1er_anio": 0.7586206896551724,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 555422.5091666667,
+          "percentil_50_5to_anio": 916699.9900568165,
+          "percentil_90_5to_anio": 1401017.4933333332
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.5714285714285714,
+          "empleabilidad_2do_anio_2024": 0.6666666666666666,
+          "retencion_1er_anio": 0.6428571428571429,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 762599.0133333333,
+          "percentil_50_5to_anio": 1074736.2366666666,
+          "percentil_90_5to_anio": 1798800.6716666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-ambientes-e-interiores",
+      "nombre": "Técnico en Ambientes e Interiores",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-bibliotecas-y-centros-de-documentacion",
+      "nombre": "Técnico en Bibliotecas y Centros de Documentación",
+      "area": "Humanidades",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-comercio-exterior",
+      "nombre": "Técnico en Comercio Exterior",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1188366.6119679718,
+          "empleabilidad_1er_anio_2024": 0.729064039408867,
+          "empleabilidad_2do_anio_2024": 0.7558528428093646,
+          "retencion_1er_anio": 0.6741071428571429,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 711503.7808333333,
+          "percentil_50_5to_anio": 1121892.7585416667,
+          "percentil_90_5to_anio": 1987481.0916666666
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1213898.1831009695,
+          "empleabilidad_1er_anio_2024": 0.7578125,
+          "empleabilidad_2do_anio_2024": 0.8,
+          "retencion_1er_anio": 0.712707182320442,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 663181.6158333333,
+          "percentil_50_5to_anio": 1082405.47125,
+          "percentil_90_5to_anio": 1785442.9649999999
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.66,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 633018.72625,
+          "percentil_50_5to_anio": 1063961.5216666667,
+          "percentil_90_5to_anio": 2467166.5574999996
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-computacion-e-informatica",
+      "nombre": "Técnico en Computación e Informática",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1561287.715864797,
+          "empleabilidad_1er_anio_2024": 0.6346749226006192,
+          "empleabilidad_2do_anio_2024": 0.7435622317596566,
+          "retencion_1er_anio": 0.6903300076745971,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 684418.7658333333,
+          "percentil_50_5to_anio": 1446514.5441666665,
+          "percentil_90_5to_anio": 3080814.1649999996
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1662981.8835449724,
+          "empleabilidad_1er_anio_2024": 0.7021276595744681,
+          "empleabilidad_2do_anio_2024": 0.7859618717504333,
+          "retencion_1er_anio": 0.6911925601750547,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 692922.68125,
+          "percentil_50_5to_anio": 1373915.5983333334,
+          "percentil_90_5to_anio": 3031824.0970833334
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1400954.3990917855,
+          "empleabilidad_1er_anio_2024": 0.49,
+          "empleabilidad_2do_anio_2024": 0.5548387096774193,
+          "retencion_1er_anio": 0.7058823529411765,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 781104.5045833333,
+          "percentil_50_5to_anio": 1539281.7491666665,
+          "percentil_90_5to_anio": 2898012.908333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-comunicacion-audiovisual",
+      "nombre": "Técnico en Comunicación Audiovisual",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 973318.8266562372,
+          "empleabilidad_1er_anio_2024": 0.4161490683229814,
+          "empleabilidad_2do_anio_2024": 0.4470588235294118,
+          "retencion_1er_anio": 0.7222222222222222,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 559692.7975,
+          "percentil_50_5to_anio": 805160.4387499999,
+          "percentil_90_5to_anio": 1261850.5091666665
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-construccion-y-obras-civiles",
+      "nombre": "Técnico en Construcción y Obras Civiles",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1265686.0870699186,
+          "empleabilidad_1er_anio_2024": 0.64943032427695,
+          "empleabilidad_2do_anio_2024": 0.6461336828309305,
+          "retencion_1er_anio": 0.6111702127659574,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 612191.6635416666,
+          "percentil_50_5to_anio": 1100178.3089583332,
+          "percentil_90_5to_anio": 2168328.028768933
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1285207.2817694969,
+          "empleabilidad_1er_anio_2024": 0.6425389755011136,
+          "empleabilidad_2do_anio_2024": 0.6646464646464646,
+          "retencion_1er_anio": 0.6081787922016167,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 603211.4595833333,
+          "percentil_50_5to_anio": 1059422.82375,
+          "percentil_90_5to_anio": 2023091.5616666665
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1025369.7877314737,
+          "empleabilidad_1er_anio_2024": 0.5634920634920635,
+          "empleabilidad_2do_anio_2024": 0.545045045045045,
+          "retencion_1er_anio": 0.6654867256637168,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 591691.6068749999,
+          "percentil_50_5to_anio": 1114978.9479166667,
+          "percentil_90_5to_anio": 2045680.4304166667
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-contabilidad-general",
+      "nombre": "Técnico en Contabilidad General",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1214452.1060045543,
+          "empleabilidad_1er_anio_2024": 0.6575716234652115,
+          "empleabilidad_2do_anio_2024": 0.7106842737094838,
+          "retencion_1er_anio": 0.7277657266811279,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 651167.8033333333,
+          "percentil_50_5to_anio": 1118238.9858333333,
+          "percentil_90_5to_anio": 2195138.2362499996
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1329231.2192207114,
+          "empleabilidad_1er_anio_2024": 0.7074324324324325,
+          "empleabilidad_2do_anio_2024": 0.7671402100061766,
+          "retencion_1er_anio": 0.6894658012980529,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 668522.8170833333,
+          "percentil_50_5to_anio": 1143800.3610416667,
+          "percentil_90_5to_anio": 2214721.058333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-contabilidad-tributaria",
+      "nombre": "Técnico en Contabilidad Tributaria",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-deporte-recreacion-y-preparacion-fisica",
+      "nombre": "Técnico en Deporte, Recreación y Preparación Física",
+      "area": "Educación",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 930385.4366817377,
+          "empleabilidad_1er_anio_2024": 0.3919239904988123,
+          "empleabilidad_2do_anio_2024": 0.42729970326409494,
+          "retencion_1er_anio": 0.7423442449841605,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 544796.9008333333,
+          "percentil_50_5to_anio": 841468.5275,
+          "percentil_90_5to_anio": 1361864.3333333333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 920602.8894527717,
+          "empleabilidad_1er_anio_2024": 0.3812405446293495,
+          "empleabilidad_2do_anio_2024": 0.4681139755766621,
+          "retencion_1er_anio": 0.7179000632511069,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 574031.2145833332,
+          "percentil_50_5to_anio": 823740.7910416666,
+          "percentil_90_5to_anio": 1538399.0658333332
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 782298.1513581373,
+          "empleabilidad_1er_anio_2024": 0.29545454545454547,
+          "empleabilidad_2do_anio_2024": 0.39375,
+          "retencion_1er_anio": 0.7129909365558912,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 564380.8658333333,
+          "percentil_50_5to_anio": 778300.3145833333,
+          "percentil_90_5to_anio": 1435079.2233333334
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-dibujo-arquitectonico",
+      "nombre": "Técnico en Dibujo Arquitectónico",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1050227.2060909676,
+          "empleabilidad_1er_anio_2024": 0.5445026178010471,
+          "empleabilidad_2do_anio_2024": 0.676829268292683,
+          "retencion_1er_anio": 0.723404255319149,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 619614.3358333333,
+          "percentil_50_5to_anio": 980245.9968749998,
+          "percentil_90_5to_anio": 2001321.6366666665
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-diseno-grafico",
+      "nombre": "Técnico en Diseño Gráfico",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 906491.1372311468,
+          "empleabilidad_1er_anio_2024": 0.5197368421052632,
+          "empleabilidad_2do_anio_2024": 0.45454545454545453,
+          "retencion_1er_anio": 0.6339468302658486,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 550824.9070833334,
+          "percentil_50_5to_anio": 839647.4216666665,
+          "percentil_90_5to_anio": 1277681.0479166666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-diseno-de-vestuario",
+      "nombre": "Técnico en Diseño de Vestuario",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-electricidad-y-electricidad-industrial",
+      "nombre": "Técnico en Electricidad y Electricidad Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1482024.2550733124,
+          "empleabilidad_1er_anio_2024": 0.7870894677236693,
+          "empleabilidad_2do_anio_2024": 0.8002270147559591,
+          "retencion_1er_anio": 0.680605336519315,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 737404.7341666665,
+          "percentil_50_5to_anio": 1274233.3079166666,
+          "percentil_90_5to_anio": 2596820.255
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1400285.044190514,
+          "empleabilidad_1er_anio_2024": 0.7784653465346535,
+          "empleabilidad_2do_anio_2024": 0.8041349292709467,
+          "retencion_1er_anio": 0.6912871997131589,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 727674.5171212116,
+          "percentil_50_5to_anio": 1314401.7295833332,
+          "percentil_90_5to_anio": 2537631.4141666666
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1987868.77107653,
+          "empleabilidad_1er_anio_2024": 0.7425149700598802,
+          "empleabilidad_2do_anio_2024": 0.7979274611398963,
+          "retencion_1er_anio": 0.6659836065573771,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 856853.3767045449,
+          "percentil_50_5to_anio": 1474970.6195833331,
+          "percentil_90_5to_anio": 3132660.3816666664
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-electromecanica",
+      "nombre": "Técnico en Electromecánica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1420548.0754843652,
+          "empleabilidad_1er_anio_2024": 0.7886178861788617,
+          "empleabilidad_2do_anio_2024": 0.7676056338028169,
+          "retencion_1er_anio": 0.7488584474885844,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 727972.5945833334,
+          "percentil_50_5to_anio": 1202457.7016666667,
+          "percentil_90_5to_anio": 2193883.7533333334
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-electronica-y-electronica-industrial",
+      "nombre": "Técnico en Electrónica y Electrónica Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1243955.6770357066,
+          "empleabilidad_1er_anio_2024": 0.6923076923076923,
+          "empleabilidad_2do_anio_2024": 0.7606837606837606,
+          "retencion_1er_anio": 0.68,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 666781.4516666667,
+          "percentil_50_5to_anio": 1176491.8658333332,
+          "percentil_90_5to_anio": 2092703.2749999997
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.6129032258064516,
+          "empleabilidad_2do_anio_2024": 0.7272727272727273,
+          "retencion_1er_anio": 0.5111111111111111,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 702879.6833333332,
+          "percentil_50_5to_anio": 1465397.2858333334,
+          "percentil_90_5to_anio": 3283524.5904166666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-energia",
+      "nombre": "Técnico en Energía",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.7682119205298014,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 601782.1983333334,
+          "percentil_50_5to_anio": 946800.2549999999,
+          "percentil_90_5to_anio": 2514673.735
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-enfermeria",
+      "nombre": "Técnico en Enfermería",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 925837.8688633144,
+          "empleabilidad_1er_anio_2024": 0.5403726708074534,
+          "empleabilidad_2do_anio_2024": 0.6613706426369457,
+          "retencion_1er_anio": 0.7513323506066447,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 624006.4766666667,
+          "percentil_50_5to_anio": 886788.1625,
+          "percentil_90_5to_anio": 1239402.1312499999
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 901325.9823048696,
+          "empleabilidad_1er_anio_2024": 0.6169003410382721,
+          "empleabilidad_2do_anio_2024": 0.6795964125560539,
+          "retencion_1er_anio": 0.7200818685287744,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 615149.4,
+          "percentil_50_5to_anio": 862324.6027083333,
+          "percentil_90_5to_anio": 1252411.5120833332
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 926450.3644514758,
+          "empleabilidad_1er_anio_2024": 0.5589519650655022,
+          "empleabilidad_2do_anio_2024": 0.6882430647291942,
+          "retencion_1er_anio": 0.6852531181217901,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 627144.9258333333,
+          "percentil_50_5to_anio": 892792.7829166666,
+          "percentil_90_5to_anio": 1187092.6816666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-farmacia",
+      "nombre": "Técnico en Farmacia",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1051364.5540324908,
+          "empleabilidad_1er_anio_2024": 0.8168067226890756,
+          "empleabilidad_2do_anio_2024": 0.8100558659217877,
+          "retencion_1er_anio": 0.6814921090387375,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 689246.1820833333,
+          "percentil_50_5to_anio": 897368.7575,
+          "percentil_90_5to_anio": 1284613.10125
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.7637130801687764,
+          "empleabilidad_2do_anio_2024": 0.7532467532467533,
+          "retencion_1er_anio": 0.7974413646055437,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 657965.6079166667,
+          "percentil_50_5to_anio": 1054384.4075,
+          "percentil_90_5to_anio": 1705510.538333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-fotografia",
+      "nombre": "Técnico en Fotografía",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-gastronomia-y-cocina",
+      "nombre": "Técnico en Gastronomía y Cocina",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 836126.6183654247,
+          "empleabilidad_1er_anio_2024": 0.3943387018057589,
+          "empleabilidad_2do_anio_2024": 0.4711807498601007,
+          "retencion_1er_anio": 0.7715286361763494,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 550266.2845833333,
+          "percentil_50_5to_anio": 766531.2620833333,
+          "percentil_90_5to_anio": 1283830.6429166666
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 794942.9791049267,
+          "empleabilidad_1er_anio_2024": 0.4626038781163435,
+          "empleabilidad_2do_anio_2024": 0.5055555555555555,
+          "retencion_1er_anio": 0.7469135802469136,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 559506.6779166666,
+          "percentil_50_5to_anio": 756784.4247916667,
+          "percentil_90_5to_anio": 1291630.829375
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-geologia",
+      "nombre": "Técnico en Geología",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.46808510638297873,
+          "empleabilidad_2do_anio_2024": 0.6101694915254238,
+          "retencion_1er_anio": 0.8,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 614523.3454166666,
+          "percentil_50_5to_anio": 880335.1670833332,
+          "percentil_90_5to_anio": 1766938.0891666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-geomineria",
+      "nombre": "Técnico en Geominería",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": null,
+          "empleabilidad_2do_anio_2024": null,
+          "retencion_1er_anio": 0.7391304347826086,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 749818.7872916666,
+          "percentil_50_5to_anio": 1137214.699375,
+          "percentil_90_5to_anio": 2086257.5766666664
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-instrumentacion-automatizacion-y-control-industrial",
+      "nombre": "Técnico en Instrumentación, Automatización y Control Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1705845.4637424347,
+          "empleabilidad_1er_anio_2024": 0.794228356336261,
+          "empleabilidad_2do_anio_2024": 0.828125,
+          "retencion_1er_anio": 0.6579925650557621,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 809539.1283333333,
+          "percentil_50_5to_anio": 1463896.9000000001,
+          "percentil_90_5to_anio": 2868622.102916667
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 2764507.849662637,
+          "empleabilidad_1er_anio_2024": 0.9535175879396985,
+          "empleabilidad_2do_anio_2024": 0.9668989547038328,
+          "retencion_1er_anio": 0.5740432612312812,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 739485.9854166666,
+          "percentil_50_5to_anio": 1714117.1404166666,
+          "percentil_90_5to_anio": 4433942.219166666
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1609087.637609666,
+          "empleabilidad_1er_anio_2024": 0.6547619047619048,
+          "empleabilidad_2do_anio_2024": 0.7579617834394905,
+          "retencion_1er_anio": 0.65625,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 717085.0385416667,
+          "percentil_50_5to_anio": 1326020.7083333333,
+          "percentil_90_5to_anio": 3097801.1595833334
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-laboratorio-clinico",
+      "nombre": "Técnico en Laboratorio Clínico",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 858733.8674144581,
+          "empleabilidad_1er_anio_2024": 0.5292740046838408,
+          "empleabilidad_2do_anio_2024": 0.720125786163522,
+          "retencion_1er_anio": 0.7899159663865546,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 609751.1408333333,
+          "percentil_50_5to_anio": 837205.9758333332,
+          "percentil_90_5to_anio": 1182225.4391666667
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 823071.2606799471,
+          "empleabilidad_1er_anio_2024": 0.3392070484581498,
+          "empleabilidad_2do_anio_2024": 0.5968992248062015,
+          "retencion_1er_anio": 0.8201058201058201,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 583739.94,
+          "percentil_50_5to_anio": 811868.12875,
+          "percentil_90_5to_anio": 1139326.94125
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-logistica",
+      "nombre": "Técnico en Logística",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1289232.2334885625,
+          "empleabilidad_1er_anio_2024": 0.7394957983193278,
+          "empleabilidad_2do_anio_2024": 0.7679180887372014,
+          "retencion_1er_anio": 0.6780010303967027,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 688631.7324999999,
+          "percentil_50_5to_anio": 1237673.2939583333,
+          "percentil_90_5to_anio": 2526575.893333333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1313696.9745194805,
+          "empleabilidad_1er_anio_2024": 0.8426707597851113,
+          "empleabilidad_2do_anio_2024": 0.8450261780104712,
+          "retencion_1er_anio": 0.685785536159601,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 738857.0295833332,
+          "percentil_50_5to_anio": 1197354.8425,
+          "percentil_90_5to_anio": 2303201.007083333
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 958279.976113956,
+          "empleabilidad_1er_anio_2024": 0.5229357798165137,
+          "empleabilidad_2do_anio_2024": 0.5638297872340425,
+          "retencion_1er_anio": 0.7805907172995781,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 587137.4795833334,
+          "percentil_50_5to_anio": 867821.768125,
+          "percentil_90_5to_anio": 1935531.133333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-mantenimiento-industrial",
+      "nombre": "Técnico en Mantenimiento Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1598152.6240864147,
+          "empleabilidad_1er_anio_2024": 0.794889502762431,
+          "empleabilidad_2do_anio_2024": 0.8158347676419966,
+          "retencion_1er_anio": 0.713953488372093,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 729498.47625,
+          "percentil_50_5to_anio": 1331286.4770833333,
+          "percentil_90_5to_anio": 2490644.1758333333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1452709.008406359,
+          "empleabilidad_1er_anio_2024": 0.7838983050847458,
+          "empleabilidad_2do_anio_2024": 0.8355555555555556,
+          "retencion_1er_anio": 0.706821480406386,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 655240.455,
+          "percentil_50_5to_anio": 1218683.9533333334,
+          "percentil_90_5to_anio": 2660151.2016666667
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1706924.3334812338,
+          "empleabilidad_1er_anio_2024": 0.7708333333333334,
+          "empleabilidad_2do_anio_2024": 0.8389261744966443,
+          "retencion_1er_anio": 0.6626016260162602,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 969417.2570833332,
+          "percentil_50_5to_anio": 1877042.0652083333,
+          "percentil_90_5to_anio": 4274820.261666667
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-masoterapia",
+      "nombre": "Técnico en Masoterapia",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 973761.6101464609,
+          "empleabilidad_1er_anio_2024": 0.31666666666666665,
+          "empleabilidad_2do_anio_2024": 0.4,
+          "retencion_1er_anio": 0.7094736842105264,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 556765.4362499999,
+          "percentil_50_5to_anio": 802491.2008333333,
+          "percentil_90_5to_anio": 1216246.99125
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-mecatronica",
+      "nombre": "Técnico en Mecatrónica",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-mecanica-automotriz",
+      "nombre": "Técnico en Mecánica Automotriz",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1319516.5688731058,
+          "empleabilidad_1er_anio_2024": 0.7346938775510204,
+          "empleabilidad_2do_anio_2024": 0.7490996398559424,
+          "retencion_1er_anio": 0.6914648212226067,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 643228.8404166667,
+          "percentil_50_5to_anio": 1174128.9295833332,
+          "percentil_90_5to_anio": 2216444.928333333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1204309.7724859326,
+          "empleabilidad_1er_anio_2024": 0.6573770491803279,
+          "empleabilidad_2do_anio_2024": 0.7133058984910837,
+          "retencion_1er_anio": 0.6967247979583157,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 625974.1395833333,
+          "percentil_50_5to_anio": 1037328.2225,
+          "percentil_90_5to_anio": 1783783.6258333332
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.5714285714285714,
+          "empleabilidad_2do_anio_2024": 0.6962025316455697,
+          "retencion_1er_anio": 0.6577181208053692,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 580277.7816666666,
+          "percentil_50_5to_anio": 1175485.7474999998,
+          "percentil_90_5to_anio": 2632228.5166666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-mecanica-industrial",
+      "nombre": "Técnico en Mecánica Industrial",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1783260.7341319385,
+          "empleabilidad_1er_anio_2024": 0.839572192513369,
+          "empleabilidad_2do_anio_2024": 0.8476190476190476,
+          "retencion_1er_anio": 0.6018957345971564,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 696787.0583333332,
+          "percentil_50_5to_anio": 1401514.1665530244,
+          "percentil_90_5to_anio": 2520974.0191666665
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2194235.9793530167,
+          "empleabilidad_1er_anio_2024": 0.8241758241758241,
+          "empleabilidad_2do_anio_2024": 0.7924528301886793,
+          "retencion_1er_anio": 0.5789473684210527,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 793694.17125,
+          "percentil_50_5to_anio": 1797744.5287499998,
+          "percentil_90_5to_anio": 4495916.611666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-medio-ambiente-control-y-gestion",
+      "nombre": "Técnico en Medio Ambiente (Control y Gestión)",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-metalurgia",
+      "nombre": "Técnico en Metalurgia",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": null,
+          "empleabilidad_1er_anio_2024": 0.868421052631579,
+          "empleabilidad_2do_anio_2024": 0.8470588235294118,
+          "retencion_1er_anio": 0.45454545454545453,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 948140.7204166666,
+          "percentil_50_5to_anio": 1615867.4520833332,
+          "percentil_90_5to_anio": 4683389.056666667
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 2344492.5099323518,
+          "empleabilidad_1er_anio_2024": 0.7111111111111111,
+          "empleabilidad_2do_anio_2024": 0.8555555555555555,
+          "retencion_1er_anio": 0.7681159420289855,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 842156.9149999999,
+          "percentil_50_5to_anio": 1634654.4525,
+          "percentil_90_5to_anio": 5823613.363333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-mineria",
+      "nombre": "Técnico en Minería",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 2175082.491846029,
+          "empleabilidad_1er_anio_2024": 0.7771587743732591,
+          "empleabilidad_2do_anio_2024": 0.8280254777070064,
+          "retencion_1er_anio": 0.6432160804020101,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 730698.9783333334,
+          "percentil_50_5to_anio": 1510226.5216666665,
+          "percentil_90_5to_anio": 4413660.723333334
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 2013817.9709343875,
+          "empleabilidad_1er_anio_2024": 0.8528678304239401,
+          "empleabilidad_2do_anio_2024": 0.8203592814371258,
+          "retencion_1er_anio": 0.5993527508090615,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 699640.3937499999,
+          "percentil_50_5to_anio": 1316722.9493749999,
+          "percentil_90_5to_anio": 3812493.59
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1993838.8092013428,
+          "empleabilidad_1er_anio_2024": 0.7235772357723578,
+          "empleabilidad_2do_anio_2024": 0.6893939393939394,
+          "retencion_1er_anio": 0.7205882352941176,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 770562.0654166667,
+          "percentil_50_5to_anio": 1429847.3025,
+          "percentil_90_5to_anio": 4362403.196666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-peluqueria-y-estetica",
+      "nombre": "Técnico en Peluquería y Estética",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 878854.1027713773,
+          "empleabilidad_1er_anio_2024": 0.27373612823674476,
+          "empleabilidad_2do_anio_2024": 0.33967391304347827,
+          "retencion_1er_anio": 0.7035248672139063,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 553094.7835416667,
+          "percentil_50_5to_anio": 783666.3522916666,
+          "percentil_90_5to_anio": 1212101.0610416667
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-podologia",
+      "nombre": "Técnico en Podología",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 906247.6997635592,
+          "empleabilidad_1er_anio_2024": 0.3953488372093023,
+          "empleabilidad_2do_anio_2024": 0.4769874476987448,
+          "retencion_1er_anio": 0.8285714285714286,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 573631.3136363633,
+          "percentil_50_5to_anio": 833471.0120833333,
+          "percentil_90_5to_anio": 1646585.0079166666
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1081263.7050772298,
+          "empleabilidad_1er_anio_2024": 0.6506666666666666,
+          "empleabilidad_2do_anio_2024": 0.6614173228346457,
+          "retencion_1er_anio": 0.8016147635524798,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 647102.7125,
+          "percentil_50_5to_anio": 972687.5372916666,
+          "percentil_90_5to_anio": 1693265.8566666665
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-prevencion-de-riesgos",
+      "nombre": "Técnico en Prevención de Riesgos",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1219124.8487167398,
+          "empleabilidad_1er_anio_2024": 0.7751396648044693,
+          "empleabilidad_2do_anio_2024": 0.7063492063492064,
+          "retencion_1er_anio": 0.5714285714285714,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 636920.5558333333,
+          "percentil_50_5to_anio": 1057908.5910416667,
+          "percentil_90_5to_anio": 2085532.0883333331
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1445322.217969209,
+          "empleabilidad_1er_anio_2024": 0.7406143344709898,
+          "empleabilidad_2do_anio_2024": 0.7926565874730022,
+          "retencion_1er_anio": 0.6035502958579881,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 601385.3424999999,
+          "percentil_50_5to_anio": 1039866.5524999999,
+          "percentil_90_5to_anio": 2195581.248333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-prevencion-y-rehabilitacion",
+      "nombre": "Técnico en Prevención y Rehabilitación",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 850743.5701442304,
+          "empleabilidad_1er_anio_2024": 0.6829268292682927,
+          "empleabilidad_2do_anio_2024": 0.6,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 636120.5141666667,
+          "percentil_50_5to_anio": 884546.6871212082,
+          "percentil_90_5to_anio": 1628361.773125
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-procesos-industriales",
+      "nombre": "Técnico en Procesos Industriales",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-produccion-grafica-y-multimedia",
+      "nombre": "Técnico en Producción Gráfica y Multimedia",
+      "area": "Arte y Arquitectura",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 860279.1639572806,
+          "empleabilidad_1er_anio_2024": 0.43333333333333335,
+          "empleabilidad_2do_anio_2024": 0.4057971014492754,
+          "retencion_1er_anio": null,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 550217.6666666666,
+          "percentil_50_5to_anio": 722821.2933333333,
+          "percentil_90_5to_anio": 1166567.305
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-quimica-analisis-e-industrial",
+      "nombre": "Técnico en Química (Análisis e Industrial)",
+      "area": "Ciencias Básicas",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1125553.0370833331,
+          "empleabilidad_1er_anio_2024": 0.7176470588235294,
+          "empleabilidad_2do_anio_2024": 0.8292682926829268,
+          "retencion_1er_anio": 0.7685185185185185,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 679014.5283333333,
+          "percentil_50_5to_anio": 1031801.6929166666,
+          "percentil_90_5to_anio": 1536969.62875
+        },
+        {
+          "tipo_institucion": "Universidades",
+          "ingreso_4to_anio_2024": 1105071.122775668,
+          "empleabilidad_1er_anio_2024": 0.7021276595744681,
+          "empleabilidad_2do_anio_2024": 0.7283950617283951,
+          "retencion_1er_anio": 0.7142857142857143,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 741178.2054166667,
+          "percentil_50_5to_anio": 1176095.7133333331,
+          "percentil_90_5to_anio": 1722796.3616666666
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-radiologia-y-radioterapia",
+      "nombre": "Técnico en Radiología y Radioterapia",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 895352.0354007138,
+          "empleabilidad_1er_anio_2024": 0.6,
+          "empleabilidad_2do_anio_2024": 0.78,
+          "retencion_1er_anio": 0.6346153846153846,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 639148.1883333334,
+          "percentil_50_5to_anio": 918256.6145833334,
+          "percentil_90_5to_anio": 1215148.7362499998
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 917427.9660595687,
+          "empleabilidad_1er_anio_2024": 0.5333333333333333,
+          "empleabilidad_2do_anio_2024": 0.7480314960629921,
+          "retencion_1er_anio": 0.7989949748743719,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 646691.1705871208,
+          "percentil_50_5to_anio": 866177.4187499998,
+          "percentil_90_5to_anio": 1283702.10875
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-refrigeracion-y-climatizacion",
+      "nombre": "Técnico en Refrigeración y Climatización",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1406269.264824554,
+          "empleabilidad_1er_anio_2024": 0.8160919540229885,
+          "empleabilidad_2do_anio_2024": 0.7758620689655172,
+          "retencion_1er_anio": 0.6666666666666666,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 628621.3104166667,
+          "percentil_50_5to_anio": 1025732.2779166666,
+          "percentil_90_5to_anio": 2175439.188333333
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-relaciones-publicas",
+      "nombre": "Técnico en Relaciones Públicas",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-servicio-social",
+      "nombre": "Técnico en Servicio Social",
+      "area": "Ciencias Sociales",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 853556.7588914233,
+          "empleabilidad_1er_anio_2024": 0.4457831325301205,
+          "empleabilidad_2do_anio_2024": 0.4946524064171123,
+          "retencion_1er_anio": 0.6844405594405595,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 578297.45875,
+          "percentil_50_5to_anio": 806274.5187499999,
+          "percentil_90_5to_anio": 1400988.2170833333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 982550.5830638596,
+          "empleabilidad_1er_anio_2024": 0.5222469410456062,
+          "empleabilidad_2do_anio_2024": 0.5842167255594818,
+          "retencion_1er_anio": 0.6879206517888771,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 587853.12125,
+          "percentil_50_5to_anio": 890574.4695833334,
+          "percentil_90_5to_anio": 1468534.0645833332
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-sonido",
+      "nombre": "Técnico en Sonido",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 945082.6352112204,
+          "empleabilidad_1er_anio_2024": 0.32323232323232326,
+          "empleabilidad_2do_anio_2024": 0.43386243386243384,
+          "retencion_1er_anio": 0.7113636363636363,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 582158.495,
+          "percentil_50_5to_anio": 837429.5479166666,
+          "percentil_90_5to_anio": 1218716.7462499999
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-telecomunicaciones",
+      "nombre": "Técnico en Telecomunicaciones",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1418731.0825468253,
+          "empleabilidad_1er_anio_2024": 0.7468982630272953,
+          "empleabilidad_2do_anio_2024": 0.7874015748031497,
+          "retencion_1er_anio": 0.7048458149779736,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 713352.2287499999,
+          "percentil_50_5to_anio": 1166539.1277083333,
+          "percentil_90_5to_anio": 2306597.8433333333
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1028890.4893513249,
+          "empleabilidad_1er_anio_2024": 0.7329545454545454,
+          "empleabilidad_2do_anio_2024": 0.8211920529801324,
+          "retencion_1er_anio": 0.7095709570957096,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 626501.4477651507,
+          "percentil_50_5to_anio": 1065841.311875,
+          "percentil_90_5to_anio": 1835059.2633333334
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-terapias-naturales-y-naturopatia",
+      "nombre": "Técnico en Terapias Naturales y Naturopatía",
+      "area": "Salud",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-topografia",
+      "nombre": "Técnico en Topografía",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 1223984.1761946392,
+          "empleabilidad_1er_anio_2024": 0.6323529411764706,
+          "empleabilidad_2do_anio_2024": 0.6718266253869969,
+          "retencion_1er_anio": 0.7051546391752578,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 658183.3775,
+          "percentil_50_5to_anio": 1277952.095,
+          "percentil_90_5to_anio": 2268013.68
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1464121.2980630014,
+          "empleabilidad_1er_anio_2024": 0.8292682926829268,
+          "empleabilidad_2do_anio_2024": 0.7806451612903226,
+          "retencion_1er_anio": 0.6757679180887372,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 688012.3595833333,
+          "percentil_50_5to_anio": 1271509.21,
+          "percentil_90_5to_anio": 2321976.93
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-traduccion-e-interpretariado",
+      "nombre": "Técnico en Traducción e Interpretariado",
+      "area": "Humanidades",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 1431433.4461232477,
+          "empleabilidad_1er_anio_2024": 0.2839506172839506,
+          "empleabilidad_2do_anio_2024": 0.44871794871794873,
+          "retencion_1er_anio": 0.5961538461538461,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 591691.475,
+          "percentil_50_5to_anio": 806984.1820833333,
+          "percentil_90_5to_anio": 1112159.9879166665
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-transporte-maritimo-y-puertos",
+      "nombre": "Técnico en Transporte Marítimo y Puertos",
+      "area": "Tecnología",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    },
+    {
+      "slug": "tecnico-en-turismo-y-hoteleria",
+      "nombre": "Técnico en Turismo y Hotelería",
+      "area": "Administración y Comercio",
+      "familia": null,
+      "tiene_benchmark_nacional": true,
+      "benchmarks": [
+        {
+          "tipo_institucion": "Centros de Formación Técnica",
+          "ingreso_4to_anio_2024": 851761.9428579235,
+          "empleabilidad_1er_anio_2024": 0.4088888888888889,
+          "empleabilidad_2do_anio_2024": 0.46688741721854304,
+          "retencion_1er_anio": 0.7183908045977011,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 551173.7604166666,
+          "percentil_50_5to_anio": 786543.6010416667,
+          "percentil_90_5to_anio": 1276618.3991666667
+        },
+        {
+          "tipo_institucion": "Institutos Profesionales",
+          "ingreso_4to_anio_2024": 913367.0812121163,
+          "empleabilidad_1er_anio_2024": 0.41244239631336405,
+          "empleabilidad_2do_anio_2024": 0.5,
+          "retencion_1er_anio": 0.7521739130434782,
+          "retencion_2do_anio": null,
+          "percentil_10_5to_anio": 583162.1516666666,
+          "percentil_50_5to_anio": 885074.5347916665,
+          "percentil_90_5to_anio": 1401388.2379166668
+        }
+      ]
+    },
+    {
+      "slug": "tecnico-en-vitivinicultura-y-o-enologia",
+      "nombre": "Técnico en Vitivinicultura y/o Enología",
+      "area": "Agropecuaria",
+      "familia": null,
+      "tiene_benchmark_nacional": false,
+      "benchmarks": []
+    }
+  ],
+  "diagnostico_cobertura": {
+    "total_carreras_genericas": 190,
+    "carreras_sin_benchmark_nacional": 26,
+    "filas_oferta_sin_carrera_generica": 480,
+    "total_filas_oferta": 9900,
+    "filas_indicadores_con_institucion_colgante": 16,
+    "total_filas_indicadores": 1692
+  },
+  "tipos_institucion": [
+    "Centros de Formación Técnica",
+    "Institutos Profesionales",
+    "Universidades"
+  ]
+}

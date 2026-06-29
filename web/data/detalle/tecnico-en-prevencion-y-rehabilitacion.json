@@ -1,0 +1,196 @@
+{
+  "slug": "tecnico-en-prevencion-y-rehabilitacion",
+  "nombre": "Técnico en Prevención y Rehabilitación",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I113S7C614J4V1",
+      "institucion": {
+        "codigo": 113,
+        "nombre": "Instituto Profesional IPG",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO DE NIVEL SUPERIOR EN REHABILITACION DE DEPENDENCIA DE DROGAS",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "A Distancia",
+      "sede": "SEDE PROVIDENCIA",
+      "arancel_anual_2026": "$ 1.990.000",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I117S1C145J4V1",
+      "institucion": {
+        "codigo": 117,
+        "nombre": "Instituto Profesional IACC",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN PREVENCION Y REHABILITACION DE ADICCIONES",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "A Distancia",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 1.860.000",
+      "vacantes_1er_semestre": 80.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I139S3C31J2V1",
+      "institucion": {
+        "codigo": 139,
+        "nombre": "Instituto Profesional Dr. Virginio Gómez G.",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN PREVENCION Y REHABILITACION EN DROGODEPENDENCIA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Biobío",
+      "jornada": "Vespertina",
+      "sede": "CASA CENTRAL (CONCEPCION)",
+      "arancel_anual_2026": "$ 1.916.800",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I152S10C479J4V1",
+      "institucion": {
+        "codigo": 152,
+        "nombre": "Instituto Profesional Latinoamericano de Comercio Exterior - IPLACEX",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN REHABILITACION DE PERSONAS CON DEPENDENCIA DE DROGAS",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "A Distancia",
+      "sede": "SEDE SANTIAGO",
+      "arancel_anual_2026": "$ 2.019.000",
+      "vacantes_1er_semestre": 420.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I218S1C176J1V1",
+      "institucion": {
+        "codigo": 218,
+        "nombre": "Centro de Formación Técnica de ENAC",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN REHABILITACION POR USO DE DROGAS",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 1.888.000",
+      "vacantes_1er_semestre": 56.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I218S1C176J2V1",
+      "institucion": {
+        "codigo": 218,
+        "nombre": "Centro de Formación Técnica de ENAC",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN REHABILITACION POR USO DE DROGAS",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Vespertina",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 1.888.000",
+      "vacantes_1er_semestre": 80.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 456,
+        "nombre": "Centro de Formación Técnica CEDUC - UCN",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico en Intervención y Rehabilitación Psicosocial",
+      "empleabilidad_1er_anio": 0.3582887700534759,
+      "empleabilidad_2do_anio": 0.375,
+      "retencion_1er_anio": 0.6077348066298343,
+      "continuidad_estudios_pct": 0.15053763440860216,
+      "duracion_real_semestres": 5.831460674157303,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 218,
+        "nombre": "Centro de Formación Técnica de ENAC",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico en Prevención y Rehabilitación de Adicciones",
+      "empleabilidad_1er_anio": 0.5070422535211268,
+      "empleabilidad_2do_anio": 0.484375,
+      "retencion_1er_anio": 0.6271186440677966,
+      "continuidad_estudios_pct": 0.2074074074074074,
+      "duracion_real_semestres": 6.0540540540540535,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "slug": "ingenieria-en-quimica",
+  "nombre": "Ingeniería en Química",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I71S1C201J2V2",
+      "institucion": {
+        "codigo": 71,
+        "nombre": "Universidad de Santiago de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PLAN ESPECIAL INGENIERIA DE EJECUCION EN QUIMICA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Vespertina",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 5.760.000",
+      "vacantes_1er_semestre": 25.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I71S1C30J1V1",
+      "institucion": {
+        "codigo": 71,
+        "nombre": "Universidad de Santiago de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA DE EJECUCION EN QUIMICA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 5.760.000",
+      "vacantes_1er_semestre": 35.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 25.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 10.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I80S1C49J1V1",
+      "institucion": {
+        "codigo": 80,
+        "nombre": "Universidad de Tarapacá",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA QUIMICA AMBIENTAL",
+      "nivel_carrera": "Profesional",
+      "region": "Arica y Parinacota",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (ARICA)",
+      "arancel_anual_2026": "$ 6.350.000",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 5.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I88S3C262J2V1",
+      "institucion": {
+        "codigo": 88,
+        "nombre": "Universidad Técnica Federico Santa María",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA DE EJECUCION QUIMICO MENCION CONTROL",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Vespertina",
+      "sede": "SEDE CONCEPCION - REY BALDUINO DE BELGICA",
+      "arancel_anual_2026": "$ 3.810.000",
+      "vacantes_1er_semestre": 12.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I91S1C522J4V1",
+      "institucion": {
+        "codigo": 91,
+        "nombre": "Universidad Católica del Norte",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PLAN ESPECIAL DE INGENIERIA EN EJECUCION EN PROCESOS QUIMICOS",
+      "nivel_carrera": "Profesional",
+      "region": "Antofagasta",
+      "jornada": "A Distancia",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 3.224.000",
+      "vacantes_1er_semestre": 8.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I116S10C149J1V1",
+      "institucion": {
+        "codigo": 116,
+        "nombre": "Instituto Profesional Santo Tomás",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN QUIMICA INDUSTRIAL",
+      "nivel_carrera": "Profesional",
+      "region": "Antofagasta",
+      "jornada": "Diurna",
+      "sede": "SEDE ANTOFAGASTA",
+      "arancel_anual_2026": "$ 2.954.000",
+      "vacantes_1er_semestre": 35.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I116S11C149J1V1",
+      "institucion": {
+        "codigo": 116,
+        "nombre": "Instituto Profesional Santo Tomás",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA EN QUIMICA INDUSTRIAL",
+      "nivel_carrera": "Profesional",
+      "region": "Coquimbo",
+      "jornada": "Diurna",
+      "sede": "SEDE LA SERENA",
+      "arancel_anual_2026": "$ 3.320.000",
+      "vacantes_1er_semestre": 45.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I139S1C139J2V1",
+      "institucion": {
+        "codigo": 139,
+        "nombre": "Instituto Profesional Dr. Virginio Gómez G.",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "INGENIERIA DE EJECUCION EN QUIMICA Y MEDIO AMBIENTE-PE",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Vespertina",
+      "sede": "SEDE LOS ANGELES",
+      "arancel_anual_2026": "$ 2.519.200",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Química Industrial",
+      "empleabilidad_1er_anio": 0.7991967871485943,
+      "empleabilidad_2do_anio": 0.8358778625954199,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.02875399361022364,
+      "duracion_real_semestres": 11.093749999999986,
+      "ingreso_banda_texto": "De $1 millón 300 mil a $1 millón 400 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 116,
+        "nombre": "Instituto Profesional Santo Tomás",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Química Industrial",
+      "empleabilidad_1er_anio": 0.7301587301587301,
+      "empleabilidad_2do_anio": 0.8918918918918919,
+      "retencion_1er_anio": 0.7605633802816901,
+      "continuidad_estudios_pct": 0.06666666666666667,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 71,
+        "nombre": "Universidad de Santiago de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería de Ejecución en Química",
+      "empleabilidad_1er_anio": 0.8041237113402062,
+      "empleabilidad_2do_anio": 0.9,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.12195121951219512,
+      "duracion_real_semestres": 13.7586206896552,
+      "ingreso_banda_texto": "De $1 millón 500 mil a $1 millón 600 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 85,
+        "nombre": "Universidad Tecnológica Metropolitana",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Química",
+      "empleabilidad_1er_anio": 0.8503401360544217,
+      "empleabilidad_2do_anio": 0.94,
+      "retencion_1er_anio": 0.64,
+      "continuidad_estudios_pct": 0.057803468208092484,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": "De $1 millón 600 mil a $1 millón 700 mil"
+    }
+  ]
+}

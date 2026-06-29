@@ -1,0 +1,108 @@
+{
+  "slug": "tecnico-en-traduccion-e-interpretariado",
+  "nombre": "Técnico en Traducción e Interpretariado",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I137S1C45J1V1",
+      "institucion": {
+        "codigo": 137,
+        "nombre": "Instituto Profesional EATRI",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN INTERPRETACION DE ENLACE INGLES ESPAÑOL",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 1.700.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I137S1C45J4V1",
+      "institucion": {
+        "codigo": 137,
+        "nombre": "Instituto Profesional EATRI",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO EN INTERPRETACION DE ENLACE INGLES ESPAÑOL",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "A Distancia",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 1.700.000",
+      "vacantes_1er_semestre": 116.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 108,
+        "nombre": "Instituto Profesional Chileno Británico de Cultura",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "No Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico en Traducción Inglés-Español",
+      "empleabilidad_1er_anio": 0.31868131868131866,
+      "empleabilidad_2do_anio": 0.4576271186440678,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.09523809523809523,
+      "duracion_real_semestres": 9.366666666666667,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 137,
+        "nombre": "Instituto Profesional EATRI",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico en Interpretación de Enlace Inglés-Castellano, y Técnico en Inglés",
+      "empleabilidad_1er_anio": 0.319672131147541,
+      "empleabilidad_2do_anio": 0.5405405405405406,
+      "retencion_1er_anio": 0.5027624309392266,
+      "continuidad_estudios_pct": 0.12972972972972974,
+      "duracion_real_semestres": 5.891891891891893,
+      "ingreso_banda_texto": "De $800 mil a $900 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 81,
+        "nombre": "Universidad Arturo Prat",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico de Nivel Superior Traductor Bilingüe Inglés-Español",
+      "empleabilidad_1er_anio": 0.40298507462686567,
+      "empleabilidad_2do_anio": 0.4806201550387597,
+      "retencion_1er_anio": 0.6046511627906976,
+      "continuidad_estudios_pct": 0.07751937984496124,
+      "duracion_real_semestres": 6.633333333333334,
+      "ingreso_banda_texto": "De $800 mil a $900 mil"
+    }
+  ]
+}

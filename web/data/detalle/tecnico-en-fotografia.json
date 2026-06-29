@@ -1,0 +1,102 @@
+{
+  "slug": "tecnico-en-fotografia",
+  "nombre": "Técnico en Fotografía",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I382S1C13J1V2",
+      "institucion": {
+        "codigo": 382,
+        "nombre": "Centro de Formación Técnica Alpes",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "FOTOGRAFIA ESPECIALIDADES FOTOGRAFIA PUBLICITARIA Y FOTOGRAFIA PERIODISTICA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 3.441.720",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I382S1C17J1V2",
+      "institucion": {
+        "codigo": 382,
+        "nombre": "Centro de Formación Técnica Alpes",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "FOTOGRAFIA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 3.441.720",
+      "vacantes_1er_semestre": 60.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I382S1C49J4V1",
+      "institucion": {
+        "codigo": 382,
+        "nombre": "Centro de Formación Técnica Alpes",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "FOTOGRAFIA EN MEDIOS DIGITALES",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "A Distancia",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 3.024.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 144,
+        "nombre": "Instituto Profesional ARCOS",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "No Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico de Nivel Superior en Fotografía",
+      "empleabilidad_1er_anio": 0.3090909090909091,
+      "empleabilidad_2do_anio": 0.45588235294117646,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.10679611650485436,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": "De $900 mil a $1 millón"
+    }
+  ]
+}

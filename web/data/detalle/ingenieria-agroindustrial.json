@@ -1,0 +1,50 @@
+{
+  "slug": "ingenieria-agroindustrial",
+  "nombre": "Ingeniería Agroindustrial",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I92S2C242J2V3",
+      "institucion": {
+        "codigo": 92,
+        "nombre": "Universidad Católica del Maule",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PROSECUCION DE ESTUDIOS INGENIERIA EN EJECUCION AGROINDUSTRIAL",
+      "nivel_carrera": "Profesional",
+      "region": "Maule",
+      "jornada": "Vespertina",
+      "sede": "SEDE CURICO",
+      "arancel_anual_2026": "$ 3.464.068",
+      "vacantes_1er_semestre": 50.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 85,
+        "nombre": "Universidad Tecnológica Metropolitana",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Ingeniería en Administración Agroindustrial",
+      "empleabilidad_1er_anio": 0.6,
+      "empleabilidad_2do_anio": 0.734375,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.0,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

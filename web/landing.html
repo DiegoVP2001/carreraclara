@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrera Clara — Elige con datos. Decide con claridad.</title>
+<link rel="icon" type="image/png" href="logo_png_azul-removebg-preview.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="logo_png_azul-removebg-preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ─── Variables ──────────────────────────────────────────────────────── */
+  :root {
+    --color-bg: #f5f6f4;
+    --color-surface: #ffffff;
+    --color-header-bg: #0f2e45;
+    --color-text: #1c2b36;
+    --color-text-muted: #6b7a86;
+    --color-primary: #1a7f64;
+    --color-accent: #e8960a;
+    --color-border: #dde1e7;
+    --font-base: 16px;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Figtree', system-ui, sans-serif;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --radius: 0.5rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 { font-family: var(--font-display); }
+
+  /* ─── Hero (reemplaza al header) ─────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(155deg, #091d2c 0%, #0f2e45 65%);
+    padding: var(--space-4) var(--space-3);
+    text-align: center;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Misma distribución visual que el header: logo + texto en fila */
+  .hero-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-logo {
+    height: 130px;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .hero-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-align: left;
+  }
+
+  .hero-brand-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
+  }
+
+  .hero-brand-slogan {
+    font-family: var(--font-family);
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.68);
+    max-width: 560px;
+    margin: 0 0 var(--space-4);
+    line-height: 1.65;
+  }
+
+  /* ─── CTAs ───────────────────────────────────────────────────────────── */
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius);
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    min-height: 44px;
+    background: #ffffff;
+    color: var(--color-text);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.15s ease, color 0.15s ease, transform 0.13s ease, box-shadow 0.13s ease;
+  }
+
+  .cta:hover {
+    background: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(26, 127, 100, 0.4);
+  }
+
+  .cta:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(26, 127, 100, 0.25);
+  }
+
+  /* ─── Tool hints ─────────────────────────────────────────────────── */
+  .hero-tool-hints {
+    display: flex;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+    flex-wrap: wrap;
+    max-width: 560px;
+  }
+
+  .hint {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+    border-left: 2px solid rgba(255, 255, 255, 0.25);
+    padding-left: 0.75rem;
+  }
+
+  .hint-name {
+    display: block;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.82rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.01em;
+  }
+
+  .hint-desc {
+    display: block;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.55;
+  }
+
+  @media (max-width: 600px) {
+    .hero-logo { height: 75px; }
+    .hero-brand-name { font-size: 2rem; }
+    .hero-brand-slogan { font-size: 0.88rem; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .cta { justify-content: center; }
+    .hero-tool-hints { flex-direction: column; gap: var(--space-2); }
+  }
+
+  /* ─── Main ───────────────────────────────────────────────────────────── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-4) var(--space-3);
+  }
+
+  /* ─── Qué es / Qué no es ─────────────────────────────────────────────── */
+  .que-es {
+    margin-bottom: var(--space-4);
+  }
+
+  .que-es > h2 {
+    font-size: 1.35rem;
+    color: var(--color-text);
+    margin: 0 0 var(--space-3);
+    font-weight: 700;
+  }
+
+  .que-es-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (max-width: 760px) {
+    .que-es-grid { grid-template-columns: 1fr; }
+  }
+
+  .que-col {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .que-col h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 var(--space-2);
+  }
+
+  .que-col.es h3 { color: var(--color-primary); }
+  .que-col.no-es h3 { color: var(--color-text-muted); }
+
+  .que-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .que-col ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    font-size: 0.97rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .que-col ul li .icon {
+    flex-shrink: 0;
+    font-size: 0.95rem;
+    margin-top: 0.12rem;
+  }
+
+  .que-col.es ul li .icon { color: var(--color-primary); }
+  .que-col.no-es ul li .icon { color: var(--color-text-muted); }
+
+  /* ─── Animación de entrada ──────────────────────────────────────────── */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ─── Footer ─────────────────────────────────────────────────────────── */
+  footer.app-footer {
+    background: var(--color-header-bg);
+    padding: var(--space-4) var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .footer-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+
+  .footer-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .footer-logo { height: 48px; width: auto; }
+
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .footer-col p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.62);
+    margin: 0 0 var(--space-2);
+    line-height: 1.6;
+  }
+
+  .footer-attribution {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.78);
+    margin: 0 0 var(--space-2);
+    line-height: 1.5;
+  }
+
+  .footer-attribution a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+
+  .footer-attribution a:hover { color: var(--color-accent); }
+
+  .footer-copyright {
+    font-size: 0.82rem !important;
+    color: rgba(255, 255, 255, 0.45) !important;
+    margin-top: var(--space-2) !important;
+  }
+
+  .footer-copyright a {
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .footer-copyright a:hover { color: #ffffff; }
+
+  .footer-col h3 {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 var(--space-2);
+  }
+
+  ul.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ul.footer-links li a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.72);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  ul.footer-links li a:hover { color: #ffffff; }
+</style>
+</head>
+
+<body>
+
+<!-- Hero: absorbe el rol del header, fondo navy, mismo layout de marca -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <img src="assets/logo-carrera-clara-blanco.png" alt="Logo Carrera Clara" class="hero-logo">
+      <div class="hero-brand-text">
+        <span class="hero-brand-name">Carrera Clara</span>
+        <span class="hero-brand-slogan">Elige con datos. Decide con claridad.</span>
+      </div>
+    </div>
+    <p class="hero-sub">Compara carreras e instituciones de educación superior en Chile con datos oficiales de SIES y MiFuturo.cl, ordenados para que decidas con evidencia.</p>
+    <div class="hero-ctas">
+      <a class="cta" href="index_v2.html">Tipos de carrera →</a>
+      <a class="cta" href="instituciones_v2.html">Carreras por institución →</a>
+    </div>
+    <div class="hero-tool-hints">
+      <div class="hint">
+        <span class="hint-name">Tipos de carrera</span>
+        <span class="hint-desc">Indicadores generales de una carrera —empleabilidad, arancel, duración— según el tipo de institución: Universidad, IP o CFT.</span>
+      </div>
+      <div class="hint">
+        <span class="hint-name">Carreras por institución</span>
+        <span class="hint-desc">Qué instituciones imparten una carrera específica y cómo varían entre ellas en empleabilidad, arancel y acreditación.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section class="que-es reveal">
+    <h2>Qué es (y qué no es) Carrera Clara</h2>
+    <div class="que-es-grid">
+
+      <div class="que-col es">
+        <h3>Qué es</h3>
+        <ul>
+          <li><span class="icon" aria-hidden="true">✓</span> Guía neutral basada en datos oficiales de SIES y MiFuturo.cl</li>
+          <li><span class="icon" aria-hidden="true">✓</span> Ordena información pública que suele estar fragmentada o difícil de leer</li>
+          <li><span class="icon" aria-hidden="true">✓</span> Muestra cobertura y límites de cada dato de forma explícita</li>
+          <li><span class="icon" aria-hidden="true">✓</span> Permite comparar empleabilidad, ingresos, retención y aranceles</li>
+        </ul>
+      </div>
+
+      <div class="que-col no-es">
+        <h3>Qué no es</h3>
+        <ul>
+          <li><span class="icon" aria-hidden="true">✕</span> No es un ranking definitivo de carreras ni de instituciones</li>
+          <li><span class="icon" aria-hidden="true">✕</span> No decide por ti ni reemplaza orientación vocacional</li>
+          <li><span class="icon" aria-hidden="true">✕</span> No recomienda instituciones específicas</li>
+          <li><span class="icon" aria-hidden="true">✕</span> No garantiza ingresos ni resultados laborales</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <div class="footer-grid">
+
+    <div class="footer-col footer-col-brand">
+      <div class="footer-logo-row">
+        <img src="assets/logo-carrera-clara-blanco.png" alt="Carrera Clara" class="footer-logo">
+        <span class="footer-brand-name">Carrera Clara</span>
+      </div>
+      <p>Herramienta independiente de visualización y análisis comparativo para explorar opciones de educación superior en Chile.</p>
+      <p class="footer-attribution">
+        Datos: <a href="https://www.mifuturo.cl" target="_blank" rel="noopener">SIES / MiFuturo.cl</a> — Ministerio de Educación de Chile
+      </p>
+      <p class="footer-copyright">
+        © 2026 Carrera Clara. Todos los derechos reservados.<br>
+        Desarrollado por <a href="https://www.linkedin.com/in/diegovp2001/" target="_blank" rel="noopener">Diego Vargas Palominos</a>.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Bases de datos</h3>
+      <ul class="footer-links">
+        <li><a href="https://www.mifuturo.cl/bases-de-datos-de-matriculados/#" target="_blank" rel="noopener">Bases de datos oficiales SIES</a></li>
+        <li><a href="https://www.mifuturo.cl/" target="_blank" rel="noopener">Mi Futuro</a></li>
+        <li><a href="https://educacionsuperior.mineduc.cl/" target="_blank" rel="noopener">Mineduc</a></li>
+        <li><a href="https://demre.cl/" target="_blank" rel="noopener">DEMRE</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explorar</h3>
+      <ul class="footer-links">
+        <li><a href="landing.html">Inicio</a></li>
+        <li><a href="index_v2.html">Tipos de carrera</a></li>
+        <li><a href="instituciones_v2.html">Carreras por institución</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!reduced) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+})();
+</script>
+<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
+
+</body>
+</html>

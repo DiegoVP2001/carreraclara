@@ -1,0 +1,154 @@
+{
+  "slug": "tecnico-en-procesos-industriales",
+  "nombre": "Técnico en Procesos Industriales",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I77S1C224J2V1",
+      "institucion": {
+        "codigo": 77,
+        "nombre": "Universidad de Magallanes",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO DE NIVEL SUPERIOR EN PROCESOS INDUSTRIALES",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Magallanes",
+      "jornada": "Vespertina",
+      "sede": "CASA CENTRAL (PUNTA ARENAS)",
+      "arancel_anual_2026": "$ 1.991.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I100S19C361J1V1",
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PRODUCCION DE MODA Y TECNOLOGIA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SEDE APOQUINDO",
+      "arancel_anual_2026": "$ 3.566.000",
+      "vacantes_1er_semestre": 90.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I100S19C361J2V1",
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PRODUCCION DE MODA Y TECNOLOGIA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "Vespertina",
+      "sede": "SEDE APOQUINDO",
+      "arancel_anual_2026": "$ 3.566.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I100S30C361J1V1",
+      "institucion": {
+        "codigo": 100,
+        "nombre": "Instituto Profesional INACAP",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "PRODUCCION DE MODA Y TECNOLOGIA",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Coquimbo",
+      "jornada": "Diurna",
+      "sede": "SEDE LA SERENA",
+      "arancel_anual_2026": "$ 3.566.000",
+      "vacantes_1er_semestre": 46.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I113S7C568J4V1",
+      "institucion": {
+        "codigo": 113,
+        "nombre": "Instituto Profesional IPG",
+        "tipo": "Institutos Profesionales",
+        "acreditacion": "Acreditación Extendida",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "TECNICO DE NIVEL SUPERIOR EN PROCESOS INDUSTRIALES",
+      "nivel_carrera": "Técnica de Nivel Superior",
+      "region": "Metropolitana",
+      "jornada": "A Distancia",
+      "sede": "SEDE PROVIDENCIA",
+      "arancel_anual_2026": "$ 1.990.000",
+      "vacantes_1er_semestre": 200.0,
+      "tiene_ponderacion_paes": false,
+      "ponderacion_nem": 0.0,
+      "ponderacion_ranking": 0.0,
+      "ponderacion_lenguaje": 0.0,
+      "ponderacion_matematicas": 0.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 0.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 430,
+        "nombre": "Centro de Formación Técnica INACAP",
+        "tipo": "Centros de Formación Técnica",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Técnico en Fabricación y Montaje Industrial",
+      "empleabilidad_1er_anio": 0.6666666666666666,
+      "empleabilidad_2do_anio": 0.819672131147541,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.1595744680851064,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": "De $1 millón a $1 millón 100 mil"
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "slug": "geografia",
+  "nombre": "Geografía",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I69S1C298J1V1",
+      "institucion": {
+        "codigo": 69,
+        "nombre": "Universidad Alberto Hurtado",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "GEOGRAFIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 4.927.777",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 35.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I70S1C43J1V1",
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "GEOGRAFIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SANTIAGO",
+      "arancel_anual_2026": "$ 5.137.900",
+      "vacantes_1er_semestre": 40.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I83S1C16J1V1",
+      "institucion": {
+        "codigo": 83,
+        "nombre": "Universidad de Playa Ancha de Ciencias de la Educación",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "GEOGRAFIA",
+      "nivel_carrera": "Profesional",
+      "region": "Valparaíso",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (VALPARAISO)",
+      "arancel_anual_2026": "$ 3.800.000",
+      "vacantes_1er_semestre": 15.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 25.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 30.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I86S5C55J1V1",
+      "institucion": {
+        "codigo": 86,
+        "nombre": "Pontificia Universidad Católica de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "GEOGRAFIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CAMPUS SAN JOAQUIN",
+      "arancel_anual_2026": "$ 5.600.000",
+      "vacantes_1er_semestre": 50.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 20.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 15.0,
+      "ponderacion_ciencias": 15.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I87S1C230J1V1",
+      "institucion": {
+        "codigo": 87,
+        "nombre": "Universidad de Concepción",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "GEOGRAFIA",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 5.626.820",
+      "vacantes_1er_semestre": 55.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 25.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I89S1C28J1V1",
+      "institucion": {
+        "codigo": 89,
+        "nombre": "Pontificia Universidad Católica de Valparaíso",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "GEOGRAFIA",
+      "nivel_carrera": "Profesional",
+      "region": "Valparaíso",
+      "jornada": "Diurna",
+      "sede": "VALPARAISO",
+      "arancel_anual_2026": "$ 5.200.000",
+      "vacantes_1er_semestre": 30.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 20.0,
+      "ponderacion_lenguaje": 25.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I90S1C473J1V1",
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "GEOGRAFIA",
+      "nivel_carrera": "Profesional",
+      "region": "Los Ríos",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 5.217.000",
+      "vacantes_1er_semestre": 25.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 40.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 10.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 86,
+        "nombre": "Pontificia Universidad Católica de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Geografía",
+      "empleabilidad_1er_anio": 0.6778523489932886,
+      "empleabilidad_2do_anio": 0.8492063492063492,
+      "retencion_1er_anio": 0.9180327868852459,
+      "continuidad_estudios_pct": 0.05649717514124294,
+      "duracion_real_semestres": 12.6451612903226,
+      "ingreso_banda_texto": "De $1 millón 300 mil a $1 millón 400 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 89,
+        "nombre": "Pontificia Universidad Católica de Valparaíso",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Geografía",
+      "empleabilidad_1er_anio": 0.5955056179775281,
+      "empleabilidad_2do_anio": 0.803921568627451,
+      "retencion_1er_anio": 0.8235294117647058,
+      "continuidad_estudios_pct": 0.04950495049504951,
+      "duracion_real_semestres": 12.5641025641026,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 69,
+        "nombre": "Universidad Alberto Hurtado",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Geografía",
+      "empleabilidad_1er_anio": 0.589041095890411,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.025,
+      "duracion_real_semestres": 12.24,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Geografía",
+      "empleabilidad_1er_anio": 0.38596491228070173,
+      "empleabilidad_2do_anio": null,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.08955223880597014,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Geografía",
+      "empleabilidad_1er_anio": 0.7053571428571429,
+      "empleabilidad_2do_anio": 0.883495145631068,
+      "retencion_1er_anio": 0.926829268292683,
+      "continuidad_estudios_pct": 0.04861111111111111,
+      "duracion_real_semestres": 14.622641509434,
+      "ingreso_banda_texto": "De $1 millón 300 mil a $1 millón 400 mil"
+    },
+    {
+      "institucion": {
+        "codigo": 87,
+        "nombre": "Universidad de Concepción",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Geografía",
+      "empleabilidad_1er_anio": 0.7076923076923077,
+      "empleabilidad_2do_anio": 0.7794117647058824,
+      "retencion_1er_anio": 0.8076923076923077,
+      "continuidad_estudios_pct": 0.11627906976744186,
+      "duracion_real_semestres": 15.147058823529402,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 83,
+        "nombre": "Universidad de Playa Ancha de Ciencias de la Educación",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Geografía",
+      "empleabilidad_1er_anio": 0.7631578947368421,
+      "empleabilidad_2do_anio": 0.875,
+      "retencion_1er_anio": null,
+      "continuidad_estudios_pct": 0.02040816326530612,
+      "duracion_real_semestres": null,
+      "ingreso_banda_texto": null
+    }
+  ]
+}

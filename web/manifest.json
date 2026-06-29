@@ -1,0 +1,25 @@
+{
+  "name": "Carrera Clara",
+  "short_name": "CarreraClara",
+  "description": "Compara carreras universitarias con datos oficiales SIES/MiFuturo.cl",
+  "start_url": "./index_v2.html",
+  "display": "standalone",
+  "theme_color": "#0f2e45",
+  "background_color": "#f5f6f4",
+  "scope": "./",
+  "lang": "es-CL",
+  "icons": [
+    {
+      "src": "logo_png_azul-removebg-preview.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo_png_azul-removebg-preview.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

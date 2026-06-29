@@ -1,0 +1,222 @@
+{
+  "slug": "biologia",
+  "nombre": "Biología",
+  "ofertas": [
+    {
+      "codigo_unico_carrera": "I20S1C486J1V2",
+      "institucion": {
+        "codigo": 20,
+        "nombre": "Universidad Andrés Bello",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL (SANTIAGO)",
+      "arancel_anual_2026": "$ 6.035.000",
+      "vacantes_1er_semestre": 70.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I70S1C5J1V1",
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOLOGIA CON MENCION EN MEDIO AMBIENTE",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SANTIAGO",
+      "arancel_anual_2026": "$ 5.783.900",
+      "vacantes_1er_semestre": 35.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 20.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 10.0,
+      "ponderacion_matematicas_2": 15.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 25.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I70S1C76J1V1",
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "LICENCIATURA EN CIENCIAS CON MENCION EN BIOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "SANTIAGO",
+      "arancel_anual_2026": "$ 5.611.200",
+      "vacantes_1er_semestre": 25.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 20.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 15.0,
+      "ponderacion_matematicas_2": 15.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I86S1C66J1V1",
+      "institucion": {
+        "codigo": 86,
+        "nombre": "Pontificia Universidad Católica de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Metropolitana",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 5.600.000",
+      "vacantes_1er_semestre": 65.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 20.0,
+      "ponderacion_lenguaje": 10.0,
+      "ponderacion_matematicas": 25.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 25.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I87S1C6J1V1",
+      "institucion": {
+        "codigo": 87,
+        "nombre": "Universidad de Concepción",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Biobío",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 7.601.734",
+      "vacantes_1er_semestre": 60.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 15.0,
+      "ponderacion_ranking": 25.0,
+      "ponderacion_lenguaje": 15.0,
+      "ponderacion_matematicas": 35.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 10.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I89S1C398J1V1",
+      "institucion": {
+        "codigo": 89,
+        "nombre": "Pontificia Universidad Católica de Valparaíso",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "LICENCIATURA EN BIOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Valparaíso",
+      "jornada": "Diurna",
+      "sede": "VALPARAISO",
+      "arancel_anual_2026": "$ 4.765.000",
+      "vacantes_1er_semestre": 20.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 20.0,
+      "ponderacion_ranking": 20.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 20.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    },
+    {
+      "codigo_unico_carrera": "I90S1C697J1V1",
+      "institucion": {
+        "codigo": 90,
+        "nombre": "Universidad Austral de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_programa": "BIOLOGIA",
+      "nivel_carrera": "Profesional",
+      "region": "Los Ríos",
+      "jornada": "Diurna",
+      "sede": "CASA CENTRAL",
+      "arancel_anual_2026": "$ 6.825.000",
+      "vacantes_1er_semestre": 50.0,
+      "tiene_ponderacion_paes": true,
+      "ponderacion_nem": 10.0,
+      "ponderacion_ranking": 30.0,
+      "ponderacion_lenguaje": 20.0,
+      "ponderacion_matematicas": 20.0,
+      "ponderacion_matematicas_2": 0.0,
+      "ponderacion_historia": 0.0,
+      "ponderacion_ciencias": 20.0,
+      "ponderacion_otros": 0.0
+    }
+  ],
+  "indicadores": [
+    {
+      "institucion": {
+        "codigo": 86,
+        "nombre": "Pontificia Universidad Católica de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Biología",
+      "empleabilidad_1er_anio": 0.5315315315315315,
+      "empleabilidad_2do_anio": 0.5862068965517241,
+      "retencion_1er_anio": 0.7866666666666666,
+      "continuidad_estudios_pct": 0.1888111888111888,
+      "duracion_real_semestres": 12.936170212766,
+      "ingreso_banda_texto": null
+    },
+    {
+      "institucion": {
+        "codigo": 70,
+        "nombre": "Universidad de Chile",
+        "tipo": "Universidades",
+        "acreditacion": "Acreditada",
+        "tiene_ficha": true
+      },
+      "nombre_carrera_titulo": "Licenciatura en Ciencias mención Biología y Biología con Mención en Medio Ambiente",
+      "empleabilidad_1er_anio": 0.5772357723577236,
+      "empleabilidad_2do_anio": 0.6947368421052632,
+      "retencion_1er_anio": 0.7857142857142857,
+      "continuidad_estudios_pct": 0.4129032258064516,
+      "duracion_real_semestres": 15.704918032786843,
+      "ingreso_banda_texto": null
+    }
+  ]
+}
