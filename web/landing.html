@@ -264,6 +264,126 @@
   .que-col.es ul li .icon { color: var(--color-primary); }
   .que-col.no-es ul li .icon { color: var(--color-text-muted); }
 
+  /* ─── Feedback ──────────────────────────────────────────────────────── */
+  .feedback {
+    max-width: 640px;
+    margin: 0 auto var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .feedback > h2 {
+    font-size: 1.35rem;
+    color: var(--color-text);
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+  }
+
+  .feedback-desc {
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-3);
+    font-size: 0.97rem;
+    line-height: 1.55;
+  }
+
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .fb-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .fb-field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .fb-optional {
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .fb-field select,
+  .fb-field textarea,
+  .fb-field input[type="email"] {
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.6rem 0.85rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+    width: 100%;
+  }
+
+  .fb-field select:focus,
+  .fb-field textarea:focus,
+  .fb-field input[type="email"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 127, 100, 0.12);
+  }
+
+  .fb-field textarea {
+    resize: vertical;
+    min-height: 96px;
+    line-height: 1.55;
+  }
+
+  .fb-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+
+  .fb-btn {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    min-height: 44px;
+    transition: background 0.15s, transform 0.13s, box-shadow 0.13s;
+  }
+
+  .fb-btn:hover:not(:disabled) {
+    background: #15694f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 127, 100, 0.3);
+  }
+
+  .fb-btn:active:not(:disabled) { transform: translateY(0); }
+
+  .fb-btn:disabled {
+    background: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+
+  .fb-status {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .fb-status.success { color: var(--color-primary); font-weight: 600; }
+  .fb-status.error   { color: #c0392b; }
+
   /* ─── Animación de entrada ──────────────────────────────────────────── */
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
@@ -442,6 +562,44 @@
     </div>
   </section>
 
+  <section class="feedback reveal">
+    <h2>¿Tienes algo que decirnos?</h2>
+    <p class="feedback-desc">Si encontraste un error, tienes una idea o simplemente quieres dar una opinión — me sirve mucho para seguir mejorando esto.</p>
+
+    <form class="feedback-form" id="feedbackForm" novalidate>
+      <input type="hidden" name="access_key" value="d7b039f2-65d7-46ba-b873-91a448bc87c2">
+      <input type="hidden" name="subject" value="Nuevo feedback — Carrera Clara">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="fb-field">
+        <label for="fb-tipo">¿Qué tipo de feedback es?</label>
+        <select id="fb-tipo" name="tipo" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Bug (error en la página)">Encontré un error en la página</option>
+          <option value="Sugerencia de funcionalidad">Quiero sugerir algo nuevo</option>
+          <option value="Dato incorrecto o desactualizado">El dato parece incorrecto o desactualizado</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="fb-field">
+        <label for="fb-mensaje">Cuéntame</label>
+        <textarea id="fb-mensaje" name="mensaje" rows="4"
+          placeholder="Describe lo que encontraste o lo que tienes en mente..." required></textarea>
+      </div>
+
+      <div class="fb-field">
+        <label for="fb-email">Tu correo <span class="fb-optional">(opcional, si quieres que te responda)</span></label>
+        <input type="email" id="fb-email" name="email" placeholder="tu@correo.cl">
+      </div>
+
+      <div class="fb-actions">
+        <button type="submit" class="fb-btn" id="fbSubmitBtn">Enviar feedback</button>
+        <span class="fb-status" id="fbStatus" aria-live="polite"></span>
+      </div>
+    </form>
+  </section>
+
 </main>
 
 <footer class="app-footer">
@@ -502,6 +660,45 @@
 
     document.querySelectorAll(".reveal").forEach(function (el) {
       observer.observe(el);
+    });
+  }
+
+  // Feedback form — Web3Forms submission
+  var feedbackForm = document.getElementById("feedbackForm");
+  if (feedbackForm) {
+    feedbackForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var btn    = document.getElementById("fbSubmitBtn");
+      var status = document.getElementById("fbStatus");
+
+      btn.disabled    = true;
+      btn.textContent = "Enviando…";
+      status.className   = "fb-status";
+      status.textContent = "";
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: new FormData(feedbackForm)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json.success) {
+            status.className   = "fb-status success";
+            status.textContent = "¡Gracias! Tu mensaje fue recibido.";
+            feedbackForm.reset();
+          } else {
+            throw new Error(json.message || "Error");
+          }
+        })
+        .catch(function () {
+          status.className   = "fb-status error";
+          status.textContent = "Hubo un problema al enviar. Intenta de nuevo.";
+        })
+        .finally(function () {
+          btn.disabled    = false;
+          btn.textContent = "Enviar feedback";
+        });
     });
   }
 })();

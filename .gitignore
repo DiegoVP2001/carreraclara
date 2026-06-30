@@ -15,9 +15,9 @@ MANUAL_MARCA_CARRERA_CLARA.md
 tarea_8b_exploracion/
 _db_check_out.txt
 
-# ── Imágenes de debugging y logos en raíz ─────────────
-*.png
-*.jpg
+# ── Imágenes de debugging y logos en raíz (solo raíz) ─
+/*.png
+/*.jpg
 
 # ── Archivos de sistema Claude / agentes ──────────────
 .remember/
