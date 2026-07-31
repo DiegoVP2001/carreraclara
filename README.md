@@ -11,23 +11,24 @@ Datos fuente: [SIES / MiFuturo.cl](https://mifuturo.cl) — Servicio de Informac
 ## Correr localmente
 
 ```bash
-# Desde la raíz del repositorio
-python -m http.server 8000 --directory web
+python dev_server.py
 ```
 
 Luego abrir en el navegador:
-- **Inicio:** http://localhost:8000/landing.html
-- **Tipos de carrera:** http://localhost:8000/index_v2.html
-- **Carreras por institución:** http://localhost:8000/instituciones_v2.html
+- **Inicio:** http://localhost:8000/
+- **Tipos de carrera:** http://localhost:8000/tipos-de-carrera
+- **Carreras por institución:** http://localhost:8000/carreras-por-institucion
 
 No hay build step — todo es HTML/CSS/JS vanilla + Chart.js (CDN).
+
+`dev_server.py` sirve `web/` aplicando los mismos rewrites que Vercel usa en producción, leídos de `web/vercel.json`. **Un `python -m http.server` a secas no sirve para revisar el sitio:** las URLs limpias no existirían y `/` devolvería el listado de directorio en vez de la portada, así que los enlaces internos (incluido el logo del header) se verían rotos aunque en producción funcionen.
 
 ## Regenerar los datos JSON
 
 Los archivos en `web/data/` se generan a partir de los datasets SIES con dos scripts Python:
 
 ```bash
-# Datos de tipos de carrera (web/data/carreras.json)
+# Carreras genéricas + benchmarks (web/data/core.json y web/data/detalle/)
 python web/export_json.py
 
 # Datos por institución (web/data/instituciones.json)
@@ -35,6 +36,21 @@ python web/export_instituciones.py
 ```
 
 Requieren los datasets SIES originales en las carpetas `mifuturo/`, `matricula/`, `oferta/`, `titulados/` y `personal/` (no incluidos en este repo por tamaño).
+
+## Estructura del repo
+
+| Ruta | Qué es |
+|---|---|
+| `web/` | La app: 3 HTML autocontenidos, `data/`, `assets/`, `sw.js`, `manifest.json`, `vercel.json` |
+| `dev_server.py` | Server local con los rewrites de producción |
+| `PLAN.md` | Roadmap activo, tarea por tarea |
+| `PLAN_HISTORIAL.md` | Tareas 1–12, arquitectura de datos y decisiones de diseño |
+| `TAREA_N_PROMPT.md` | Prompt de arranque de la sesión siguiente |
+| `CLAUDE.md` | Instrucciones de trabajo para Claude Code |
+| `MANUAL_MARCA_CARRERA_CLARA.md` | Manual de marca |
+| `old/` | Prompts ya ejecutados y respaldos de versiones anteriores |
+
+Los datasets SIES originales (`mifuturo/`, `matricula/`, `oferta/`, `titulados/`, `personal/`) no están versionados por tamaño — se descargan de mifuturo.cl.
 
 ## Fuente de datos
 

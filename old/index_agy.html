@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrera Clara — Elige con datos. Decide con claridad.</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ---------------------------------------------------------------------
+     Sistema de Diseño - Carrera Clara
+     Diseño premium desarrollado por Antigravity
+     --------------------------------------------------------------------- */
+  :root {
+    /* Paleta de colores oficial */
+    --color-bg: #f5f6f4;
+    --color-bg-alt: #eef0ed;
+    --color-surface: #ffffff;
+    --color-header-bg: #0f2e45;
+    --color-text: #1c2b36;
+    --color-text-muted: #6b7a86;
+    --color-primary: #1a7f64;
+    --color-primary-contrast: #ffffff;
+    --color-primary-light: #e6f4f0;
+    --color-accent: #e8960a;
+    --color-accent-light: #fff8e6;
+    --color-danger: #d32f2f;
+    --color-border: #dde1e7;
+    
+    /* Estados de Badges */
+    --color-badge-warning-bg: #fff8e6;
+    --color-badge-warning-text: #92600a;
+    --color-badge-missing-bg: #fde8e8;
+    --color-badge-missing-text: #8b1a1a;
+    
+    /* Tipografía */
+    --font-base: 16px;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Figtree', system-ui, sans-serif;
+    
+    /* Sombras y Elevaciones */
+    --shadow-sm: 0 2px 8px rgba(15, 46, 69, 0.04);
+    --shadow-md: 0 4px 20px rgba(15, 46, 69, 0.06);
+    --shadow-lg: 0 12px 32px rgba(15, 46, 69, 0.09);
+    
+    /* Radios y Espaciados */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1.25rem;
+    --radius-pill: 9999px;
+    
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 3rem;
+    
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- HEADER REDISEÑADO --- */
+  header.app-header {
+    background: var(--color-header-bg);
+    color: #ffffff;
+    padding: var(--space-3) 0;
+    border-bottom: 3px solid var(--color-primary);
+    box-shadow: var(--shadow-md);
+  }
+
+  .header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--space-3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .header-logo {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .header-slogan {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: var(--space-3);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-2);
+    }
+    .header-slogan {
+      border-left: none;
+      padding-left: 0;
+      margin-top: 0.25rem;
+    }
+    .header-brand {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
+
+  nav.tabs {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  nav.tabs a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    transition: all var(--transition-fast);
+  }
+
+  nav.tabs a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  nav.tabs a.activo {
+    color: #ffffff;
+    background: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(26, 127, 100, 0.35);
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-3) var(--space-3) var(--space-4);
+  }
+
+  h1, h2, h3, h4 { 
+    font-family: var(--font-display); 
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  /* --- SECCIÓN SELECTOR (HERO CARD) --- */
+  .hero-selector-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-3);
+  }
+
+  .hero-selector-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--color-text);
+  }
+
+  .selector-intro {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-3);
+    max-width: 760px;
+  }
+
+  .selector-wrap {
+    position: relative;
+    max-width: 580px;
+  }
+
+  .search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0 1rem;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+
+  .search-input-wrapper:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(26, 127, 100, 0.15);
+  }
+
+  .search-icon {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-right: 0.5rem;
+  }
+
+  #carrera-input {
+    width: 100%;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    padding: 0.75rem 2rem 0.75rem 0.25rem;
+    border: none;
+    outline: none;
+    color: var(--color-text);
+  }
+
+  #carrera-input:disabled {
+    background: transparent;
+    cursor: not-allowed;
+  }
+
+  button.combo-arrow {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    transition: background var(--transition-fast);
+  }
+
+  button.combo-arrow:hover {
+    background: rgba(15, 46, 69, 0.05);
+  }
+
+  button.combo-arrow:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  ul#autocomplete-list {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0.25rem;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+  }
+
+  ul#autocomplete-list li {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+  }
+
+  ul#autocomplete-list li:hover,
+  ul#autocomplete-list li:focus {
+    background: var(--color-primary-light);
+    outline: none;
+  }
+
+  ul#autocomplete-list li .meta {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    margin-top: 0.15rem;
+  }
+
+  p.selector-help {
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+    margin: var(--space-1) 0 0;
+    font-weight: 500;
+  }
+
+  /* --- TARJETAS DE CARRERAS SELECCIONADAS --- */
+  ul#selected-list {
+    list-style: none;
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  @media (min-width: 768px) {
+    ul#selected-list {
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    }
+  }
+
+  li.carrera-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  li.carrera-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .carrera-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-bottom: 0.5rem;
+  }
+
+  .carrera-card-nombre {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  li.carrera-card button.remove {
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    transition: all var(--transition-fast);
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  li.carrera-card button.remove:hover {
+    background: var(--color-badge-missing-bg);
+    color: var(--color-danger);
+    border-color: rgba(211, 47, 47, 0.2);
+  }
+
+  /* Chips e íconos */
+  .card-icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.5rem 0;
+    align-items: center;
+  }
+
+  .card-icon-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text);
+    background: var(--color-bg-alt);
+    border: 1px solid rgba(0,0,0,0.03);
+    border-radius: var(--radius-pill);
+    padding: 0.2rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .card-icon-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* Métricas destacadas */
+  .card-metrics-row {
+    display: flex;
+    gap: var(--space-2);
+    margin: 1rem 0;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .card-metric {
+    flex: 1;
+    text-align: center;
+    background: var(--color-bg);
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .card-metric-valor {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1.1;
+  }
+
+  .card-metric-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-top: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Checkboxes */
+  .tipo-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+    font-size: 0.85rem;
+    align-items: center;
+  }
+
+  .tipo-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    padding: 0.25rem 0.65rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+  }
+
+  .tipo-check:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
+  }
+
+  .tipo-check input[type="checkbox"] {
+    margin: 0;
+    width: 0.9rem;
+    height: 0.9rem;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  /* --- AVISOS Y ESTADOS VACÍOS --- */
+  .aviso-usabilidad {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border: 1px solid rgba(26, 127, 100, 0.2);
+    border-radius: var(--radius-md);
+    padding: 0.6rem var(--space-2);
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-top: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .aviso-usabilidad::before {
+    content: "💡";
+  }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-3);
+    text-align: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    color: var(--color-text-muted);
+  }
+
+  .empty-state svg {
+    color: var(--color-primary);
+    opacity: 0.8;
+    margin-bottom: var(--space-1);
+  }
+
+  .empty-state h2 {
+    font-size: 1.35rem;
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .empty-state p {
+    margin: 0;
+    font-size: 0.95rem;
+    max-width: 460px;
+  }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .badge.badge-warning {
+    background: var(--color-badge-warning-bg);
+    color: var(--color-badge-warning-text);
+    border: 1px solid rgba(232, 150, 10, 0.15);
+  }
+
+  .badge.badge-missing {
+    background: var(--color-badge-missing-bg);
+    color: var(--color-badge-missing-text);
+    border: 1px solid rgba(211, 47, 47, 0.15);
+  }
+
+  /* --- ACORDEONES DE GRÁFICOS --- */
+  .charts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-1);
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .charts-header h2 {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+
+  .accordion-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .btn-secondary {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.82rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-bg-alt);
+    border-color: var(--color-text-muted);
+  }
+
+  p.chart-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-3);
+  }
+
+  /* Accordion Layout */
+  .chart-accordion {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-3);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .chart-accordion-summary {
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-bg-alt);
+    user-select: none;
+    transition: background var(--transition-fast);
+  }
+
+  .chart-accordion-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .chart-accordion-summary:hover {
+    background: rgba(15, 46, 69, 0.04);
+  }
+
+  .accordion-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text);
+  }
+
+  .accordion-icon {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-normal);
+  }
+
+  .chart-accordion[open] .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .chart-accordion-content {
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  @media (min-width: 900px) {
+    .charts-grid { 
+      grid-template-columns: 1fr 1fr; 
+      gap: var(--space-3);
+    }
+  }
+
+  figure.chart-card {
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+    box-shadow: var(--shadow-sm);
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+  }
+
+  figure.chart-card figcaption {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text);
+  }
+
+  .chart-canvas-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  /* --- DÓNDE SE IMPARTE --- */
+  section#seccion-detalle {
+    margin-top: var(--space-3);
+  }
+
+  section#seccion-detalle h2 {
+    font-size: 1.35rem;
+    margin-bottom: var(--space-2);
+  }
+
+  details.detalle-carrera {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  details.detalle-carrera summary {
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-alt);
+    transition: background var(--transition-fast);
+  }
+
+  details.detalle-carrera summary:hover {
+    background: rgba(15, 46, 69, 0.04);
+  }
+
+  .detalle-body {
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .detalle-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+    font-size: 0.9rem;
+    background: var(--color-bg);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+  }
+
+  .detalle-filtros label {
+    font-weight: 600;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .detalle-filtros select {
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    background: var(--color-surface);
+    color: var(--color-text);
+    outline: none;
+    cursor: pointer;
+  }
+
+  details.institucion-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    margin-bottom: var(--space-1);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  details.institucion-card summary {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    padding: 0;
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+  }
+
+  .institucion-nombre {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .institucion-resumen {
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+  }
+
+  /* Tablas de Detalle */
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  table.detalle-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    background: var(--color-surface);
+    text-align: left;
+  }
+
+  table.detalle-table caption {
+    text-align: left;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--color-text);
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  table.detalle-table th {
+    background: var(--color-bg);
+    font-weight: 600;
+    color: var(--color-text);
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid var(--color-border);
+    font-family: var(--font-display);
+  }
+
+  table.detalle-table td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.75rem 1rem;
+    color: var(--color-text);
+    vertical-align: middle;
+  }
+
+  table.detalle-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  table.detalle-table tbody tr:hover {
+    background: var(--color-primary-light);
+  }
+
+  .detalle-loading,
+  .detalle-empty {
+    color: var(--color-text-muted);
+    padding: var(--space-2) 0;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  /* Ponderaciones PAES */
+  .pond-cell {
+    min-width: 180px;
+  }
+
+  .pond-bar {
+    display: flex;
+    height: 8px;
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+    background: var(--color-border);
+    margin-bottom: 0.25rem;
+  }
+
+  .pond-seg { display: inline-block; height: 100%; }
+  .pond-nem      { background: #3b82f6; }
+  .pond-ranking  { background: #22c55e; }
+  .pond-lenguaje { background: #f59e0b; }
+  .pond-mat      { background: #ef4444; }
+  .pond-mat2     { background: #a78bfa; }
+  .pond-historia { background: #e879a0; }
+  .pond-ciencias { background: #22d3ee; }
+  .pond-otros    { background: #94a3b8; }
+
+  .pond-label {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    display: block;
+    line-height: 1.3;
+  }
+  
+  .badge-sin-paes {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: var(--color-bg-alt);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 0.15rem 0.4rem;
+  }
+
+  .pond-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    margin: 0.5rem 0 1rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    padding: 0.6rem;
+    border-radius: var(--radius-md);
+  }
+
+  .pond-leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .pond-leyenda-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-pill);
+    flex-shrink: 0;
+  }
+
+  /* --- TRANSPARENCIA Y AUDITORÍA (EXPANDIBLE) --- */
+  .transparency-section {
+    margin: var(--space-4) 0 var(--space-2);
+  }
+
+  .transparency-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+
+  .transparency-summary {
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-bg-alt);
+    user-select: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .transparency-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .summary-toggle-icon {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-normal);
+  }
+
+  .transparency-card[open] .summary-toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .transparency-content {
+    padding: 1.25rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .transparency-content p {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .diagnostico-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+
+  @media (min-width: 640px) {
+    .diagnostico-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .diagnostico-grid li {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  /* --- TOOLTIPS ACCESIBLES --- */
+  .tooltip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: none;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: help;
+    border-radius: var(--radius-pill);
+    padding: 0;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: background var(--transition-fast);
+  }
+  
+  .tooltip-btn:hover,
+  .tooltip-btn:focus-visible {
+    background: var(--color-primary);
+    color: #ffffff;
+    outline: none;
+  }
+  
+  #tooltip-popup {
+    position: fixed;
+    z-index: 500;
+    max-width: 260px;
+    background: var(--color-header-bg);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--radius-md);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  
+  #tooltip-popup.visible { opacity: 1; }
+  
+  #tooltip-popup.arrow-below::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: var(--color-header-bg);
+    transform: rotate(45deg);
+  }
+  
+  #tooltip-popup.arrow-above::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: var(--color-header-bg);
+    transform: rotate(45deg);
+  }
+
+  /* --- FOOTER TRADICIONAL REDISEÑADO --- */
+  footer.app-footer {
+    background: #0d1e2c;
+    color: #cbd5e1;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3rem 0;
+    font-size: 0.85rem;
+  }
+
+  .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 var(--space-3);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-container {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--space-4);
+    }
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .footer-logo-wrap {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-logo {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+
+  .footer-brand-desc {
+    color: #94a3b8;
+    line-height: 1.5;
+    margin: 0 0 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .footer-col h3.footer-title {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    display: inline-block;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-primary-contrast);
+    text-decoration: underline;
+  }
+
+  .copyright {
+    color: #64748b;
+    font-size: 0.8rem;
+    margin-top: auto;
+    line-height: 1.4;
+  }
+
+  .copyright a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+  }
+
+  .copyright a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="header-container">
+    <div class="header-brand">
+      <img src="../logo_png.png" alt="Carrera Clara" class="header-logo">
+      <span class="header-slogan">Elige con datos. Decide con claridad.</span>
+    </div>
+    <nav class="tabs">
+      <a href="index_agy.html" class="activo" aria-current="page">Comparar carreras</a>
+      <a href="instituciones.html">Comparar instituciones</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="seccion-selector" class="hero-selector-card" aria-labelledby="selector-heading">
+    <h2 id="selector-heading">Compara Carreras</h2>
+    <p class="selector-intro">Selecciona y contrasta de 2 a 4 carreras genéricas para analizar sus niveles de empleabilidad al egresar, proyección de sueldos y tasas de retención.</p>
+    <div class="selector-wrap">
+      <div class="search-input-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="carrera-input" autocomplete="off" placeholder="Escribe el nombre de una carrera genérica…">
+        <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar todas las carreras">▾</button>
+      </div>
+      <ul id="autocomplete-list" hidden role="listbox"></ul>
+    </div>
+    <p class="selector-help" id="selector-help">Agrega al menos 2 carreras para comparar.</p>
+    <ul id="selected-list"></ul>
+    <div id="aviso-usabilidad" class="aviso-usabilidad" hidden></div>
+  </section>
+
+  <div id="seccion-vacia">
+    <div class="empty-state">
+      <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
+        <path d="M7 8h2"/><path d="M7 12h5"/><path d="M15 8h2"/><path d="M15 12h2"/>
+      </svg>
+      <h2>Compara carreras lado a lado</h2>
+      <p>Busca una carrera arriba para empezar — puedes comparar las opciones que desees.</p>
+    </div>
+  </div>
+
+  <section id="seccion-charts" hidden aria-labelledby="charts-heading">
+    <div class="charts-header">
+      <h2 id="charts-heading">Gráficos Comparativos</h2>
+      <div class="accordion-controls">
+        <button type="button" id="btn-expand-all" class="btn-secondary">Expandir todo</button>
+        <button type="button" id="btn-collapse-all" class="btn-secondary">Colapsar todo</button>
+      </div>
+    </div>
+    <p class="chart-note" id="nota-charts">Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.</p>
+    
+    <!-- Acordeón 1: Empleabilidad y Retención -->
+    <details class="chart-accordion" open>
+      <summary class="chart-accordion-summary">
+        <span class="accordion-title">Empleabilidad y Retención</span>
+        <span class="accordion-icon">▾</span>
+      </summary>
+      <div class="chart-accordion-content">
+        <div class="charts-grid">
+          <figure class="chart-card">
+            <figcaption>Empleabilidad 1er y 2do año (2024) <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de titulados que trabajaron formalmente al 1er y 2do año después de egresar, según datos del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+            <div class="chart-canvas-wrap"><canvas id="chart-empleabilidad"></canvas></div>
+          </figure>
+          <figure class="chart-card">
+            <figcaption>Retención 1er y 2do año <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de estudiantes que continuaron inscritos en la carrera al 2do y 3er año, respectivamente." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+            <div class="chart-canvas-wrap"><canvas id="chart-retencion"></canvas></div>
+          </figure>
+        </div>
+      </div>
+    </details>
+
+    <!-- Acordeón 2: Proyección de Ingresos -->
+    <details class="chart-accordion" open>
+      <summary class="chart-accordion-summary">
+        <span class="accordion-title">Proyección de Ingresos</span>
+        <span class="accordion-icon">▾</span>
+      </summary>
+      <div class="chart-accordion-content">
+        <div class="charts-grid">
+          <figure class="chart-card">
+            <figcaption>Ingreso al 4° año (2024) <button type="button" class="tooltip-btn" data-tooltip="Sueldo bruto promedio de los titulados a los 4 años de haber egresado, según registros del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+            <div class="chart-canvas-wrap"><canvas id="chart-ingreso"></canvas></div>
+          </figure>
+          <figure class="chart-card">
+            <figcaption>Distribución de ingreso al 5° año (percentiles 10/50/90) <button type="button" class="tooltip-btn" data-tooltip="El percentil 10 es el sueldo que supera solo el 10% más bajo; el percentil 50 es la mediana; el percentil 90 es el que solo supera el 10% más alto. Dato al 5° año post-título." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+            <div class="chart-canvas-wrap"><canvas id="chart-distribucion"></canvas></div>
+          </figure>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section id="seccion-detalle" hidden aria-labelledby="detalle-heading">
+    <h2 id="detalle-heading">Dónde se imparte</h2>
+    <div id="detalle-container"></div>
+  </section>
+
+  <!-- Transparencia de cobertura de datos (Reubicado de forma elegante) -->
+  <section class="transparency-section">
+    <details class="transparency-card">
+      <summary class="transparency-summary">
+        <span>Metodología y Cobertura de Datos</span>
+        <span class="summary-toggle-icon">▾</span>
+      </summary>
+      <div class="transparency-content">
+        <p>Carrera Clara promueve el uso informado de datos públicos chilenos. Esta sección detalla la cobertura actual del comparador según la auditoría de calidad realizada sobre las bases de datos SIES oficiales:</p>
+        <ul id="diagnostico-list" class="diagnostico-grid"></ul>
+      </div>
+    </details>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <div class="footer-container">
+    <div class="footer-col brand-col">
+      <div class="footer-logo-wrap">
+        <img src="../logo_png.png" alt="Carrera Clara" class="footer-logo">
+      </div>
+      <p class="footer-brand-desc">Herramienta independiente de visualización y análisis comparativo para explorar opciones de educación superior en Chile.</p>
+      <p class="copyright">
+        © 2026 Carrera Clara. Todos los derechos reservados.<br>
+        Desarrollado por <a href="https://www.linkedin.com/in/diegovp2001/" target="_blank" rel="noopener noreferrer">Diego Vargas Palominos</a>.
+      </p>
+    </div>
+    
+    <div class="footer-col links-col">
+      <h3 class="footer-title">Bases de Datos</h3>
+      <ul class="footer-links">
+        <li><a href="https://www.mifuturo.cl/bases-de-datos-de-matriculados/#" target="_blank" rel="noopener noreferrer">Fuente de bases de dato</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col contact-col">
+      <h3 class="footer-title">Instituciones Oficiales</h3>
+      <ul class="footer-links">
+        <li><a href="https://www.sies.cl" target="_blank" rel="noopener noreferrer">SIES</a></li>
+        <li><a href="https://www.mifuturo.cl" target="_blank" rel="noopener noreferrer">MiFuturo.cl</a></li>
+        <li><a href="https://www.demre.cl" target="_blank" rel="noopener noreferrer">DEMRE</a></li>
+        <li><a href="https://www.mineduc.cl" target="_blank" rel="noopener noreferrer">Mineduc</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // -------------------------------------------------------------------
+  // Normalizacion y utilidades
+  // -------------------------------------------------------------------
+  function normalizar(texto) {
+    return texto.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  function slugify(nombre) {
+    return normalizar(nombre)
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  const ORDEN_TIPOS = ["Universidades", "Institutos Profesionales", "Centros de Formación Técnica"];
+  const TIPO_CORTO = {
+    "Universidades": "Uni",
+    "Institutos Profesionales": "IP",
+    "Centros de Formación Técnica": "CFT",
+  };
+  const MIN_CARRERAS = 2;
+
+  let coreData = null;
+  let selected = [];
+  const tiposActivosPorCarrera = new Map();
+  const detalleCache = {};
+  const chartInstances = {};
+
+  const el = {
+    input: document.getElementById("carrera-input"),
+    arrow: document.getElementById("carrera-arrow"),
+    autocompleteList: document.getElementById("autocomplete-list"),
+    selectedList: document.getElementById("selected-list"),
+    selectorHelp: document.getElementById("selector-help"),
+    seccionVacia: document.getElementById("seccion-vacia"),
+    seccionCharts: document.getElementById("seccion-charts"),
+    seccionDetalle: document.getElementById("seccion-detalle"),
+    detalleContainer: document.getElementById("detalle-container"),
+    diagnosticoList: document.getElementById("diagnostico-list"),
+    notaCharts: document.getElementById("nota-charts"),
+    avisoUsabilidad: document.getElementById("aviso-usabilidad"),
+  };
+
+  // ---------------------------------------------------------------------
+  // Carga inicial de core.json
+  // ---------------------------------------------------------------------
+  async function init() {
+    // Configurar fuentes predeterminadas de Chart.js si está cargado
+    if (typeof Chart !== 'undefined') {
+      Chart.defaults.font.family = "'Inter', system-ui, -apple-system, sans-serif";
+      Chart.defaults.font.size = 12;
+      Chart.defaults.color = "#6b7a86";
+      Chart.defaults.plugins.tooltip.titleFont = { family: "'Figtree', sans-serif", weight: 'bold', size: 13 };
+      Chart.defaults.plugins.tooltip.bodyFont = { family: "'Inter', sans-serif", size: 12 };
+      Chart.defaults.plugins.tooltip.backgroundColor = "#0f2e45";
+      Chart.defaults.plugins.tooltip.padding = 10;
+      Chart.defaults.plugins.tooltip.cornerRadius = 6;
+    }
+
+    const resp = await fetch("data/core.json");
+    coreData = await resp.json();
+
+    renderDiagnostico(coreData.diagnostico_cobertura);
+    renderSelected();
+    renderEmptyState();
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+    }[c]));
+  }
+
+  function infoIcon(texto) {
+    return `<button type="button" class="tooltip-btn" data-tooltip="${escapeHtml(texto)}" aria-label="Información" tabindex="0">ℹ</button>`;
+  }
+
+  function renderDiagnostico(d) {
+    el.diagnosticoList.innerHTML = `
+      <li><strong>${d.total_carreras_genericas}</strong> carreras genéricas mapeadas</li>
+      <li><strong>${d.carreras_sin_benchmark_nacional}</strong> carreras sin benchmark de comparación nacional</li>
+      <li><strong>${d.filas_oferta_sin_carrera_generica} de ${d.total_filas_oferta}</strong> filas académicas sin carrera genérica asociada</li>
+      <li><strong>${d.filas_indicadores_con_institucion_colgante} de ${d.total_filas_indicadores}</strong> indicadores con institución no fichada</li>
+    `;
+  }
+
+  // Controles de Acordeones de Gráficos
+  document.getElementById("btn-expand-all")?.addEventListener("click", () => {
+    document.querySelectorAll(".chart-accordion").forEach((details) => {
+      details.open = true;
+    });
+  });
+
+  document.getElementById("btn-collapse-all")?.addEventListener("click", () => {
+    document.querySelectorAll(".chart-accordion").forEach((details) => {
+      details.open = false;
+    });
+  });
+
+  // ---------------------------------------------------------------------
+  // Selector autocomplete
+  // ---------------------------------------------------------------------
+  function carrerasDisponibles(filtro) {
+    const yaSeleccionadas = new Set(selected.map((c) => c.slug));
+    const q = normalizar(filtro || "");
+    return coreData.carreras.filter(
+      (c) => !yaSeleccionadas.has(c.slug) && (q === "" || normalizar(c.nombre).includes(q))
+    );
+  }
+
+  function mostrarLista(filtro) {
+    const resultados = carrerasDisponibles(filtro);
+    if (resultados.length === 0) {
+      el.autocompleteList.innerHTML = '<li class="meta">Sin resultados (o ya agregaste todas las que coinciden).</li>';
+      el.autocompleteList.hidden = false;
+      return;
+    }
+    el.autocompleteList.innerHTML = resultados
+      .map(
+        (c) => `<li role="option" data-slug="${c.slug}">${escapeHtml(c.nombre)}
+          <span class="meta">${escapeHtml(c.area || "Área sin clasificar")}${c.tiene_benchmark_nacional ? "" : " · sin comparación nacional"}</span>
+        </li>`
+      )
+      .join("");
+    el.autocompleteList.hidden = false;
+  }
+
+  function ocultarLista() {
+    el.autocompleteList.hidden = true;
+  }
+
+  el.input.addEventListener("input", () => mostrarLista(el.input.value));
+  el.input.addEventListener("focus", () => mostrarLista(el.input.value));
+  el.input.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") ocultarLista();
+  });
+
+  el.arrow.addEventListener("click", () => {
+    if (el.autocompleteList.hidden) {
+      mostrarLista(el.input.value);
+      el.input.focus();
+    } else {
+      ocultarLista();
+    }
+  });
+
+  el.autocompleteList.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li[data-slug]");
+    if (!li) return;
+    const carrera = coreData.carreras.find((c) => c.slug === li.dataset.slug);
+    if (carrera) addCarrera(carrera);
+    el.input.value = "";
+    ocultarLista();
+  });
+
+  document.addEventListener("click", (ev) => {
+    if (!el.autocompleteList.contains(ev.target) && ev.target !== el.input && ev.target !== el.arrow) {
+      ocultarLista();
+    }
+  });
+
+  function addCarrera(carrera) {
+    if (selected.some((c) => c.slug === carrera.slug)) return;
+    selected.push(carrera);
+    tiposActivosPorCarrera.set(carrera.slug, new Set(carrera.benchmarks.map((b) => b.tipo_institucion)));
+    afterSelectionChange();
+  }
+
+  function removeCarrera(slug) {
+    selected = selected.filter((c) => c.slug !== slug);
+    tiposActivosPorCarrera.delete(slug);
+    afterSelectionChange();
+  }
+
+  function afterSelectionChange() {
+    renderSelected();
+    renderEmptyState();
+    renderCharts();
+    renderDetallePanels();
+  }
+
+  const CAMPOS_BENCHMARK = [
+    ["ingreso_4to_anio_2024", "sin ingreso 4° año"],
+    ["empleabilidad_1er_anio_2024", "sin empleabilidad 1er año"],
+    ["empleabilidad_2do_anio_2024", "sin empleabilidad 2do año"],
+    ["retencion_1er_anio", "sin retención 1er año"],
+    ["retencion_2do_anio", "sin retención 2do año"],
+  ];
+
+  function badgesFaltantesBenchmark(b) {
+    return CAMPOS_BENCHMARK.filter(([campo]) => b[campo] === null)
+      .map(([, etiqueta]) => `<span class="badge badge-warning">${etiqueta}</span>`)
+      .join(" ");
+  }
+
+  // Emojis institucionales
+  const TIPO_EMOJI = {
+    "Universidades": "🏛",
+    "Institutos Profesionales": "🏢",
+    "Centros de Formación Técnica": "🏫",
+  };
+
+  const AVISO_UMBRAL = 7;
+
+  function iconChip(emoji, etiqueta, tooltipTexto) {
+    const btn = tooltipTexto ? " " + infoIcon(tooltipTexto) : "";
+    return `<span class="card-icon-chip">${emoji} ${escapeHtml(String(etiqueta || "—"))}${btn}</span>`;
+  }
+
+  function headlineMetricsCarrera(carrera) {
+    const ref = ORDEN_TIPOS
+      .map((t) => carrera.benchmarks.find((b) => b.tipo_institucion === t))
+      .find(Boolean);
+    if (!ref) return "";
+    const tipoLabel = TIPO_CORTO[ref.tipo_institucion] || ref.tipo_institucion;
+    const emp = ref.empleabilidad_1er_anio_2024;
+    const ing = ref.ingreso_4to_anio_2024;
+    if (emp === null && ing === null) return "";
+    const metricas = [];
+    if (emp !== null) {
+      const pct = Math.round(emp * 100) + "%";
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor">${pct}</span>` +
+        `<span class="card-metric-label">Emp. 1er año ` +
+        infoIcon("Empleabilidad al 1er año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
+        `</span></div>`
+      );
+    }
+    if (ing !== null) {
+      const ingStr = ing >= 1000000
+        ? "$" + (ing / 1000000).toFixed(1) + "M"
+        : "$" + Math.round(ing / 1000) + "k";
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor">${ingStr}</span>` +
+        `<span class="card-metric-label">Ingreso 4° año ` +
+        infoIcon("Ingreso promedio al 4° año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
+        `</span></div>`
+      );
+    }
+    return `<div class="card-metrics-row">${metricas.join("")}</div>`;
+  }
+
+  function iconRowCarrera(carrera) {
+    const partes = [];
+    if (carrera.area) partes.push(iconChip("🎓", carrera.area, "Área de conocimiento según clasificación SIES."));
+    const tiposDisponibles = ORDEN_TIPOS.filter((t) => carrera.benchmarks.some((b) => b.tipo_institucion === t));
+    if (tiposDisponibles.length) {
+      const tipoChips = tiposDisponibles.map((t) => iconChip(TIPO_EMOJI[t], TIPO_CORTO[t], t)).join("");
+      partes.push(`<span class="card-icon-label">Tipos:</span>${tipoChips}`);
+    }
+    if (!carrera.tiene_benchmark_nacional) partes.push(iconChip("📊", "sin benchmark", "Esta carrera no tiene datos de comparación nacional en SIES."));
+    return partes.length ? `<div class="card-icon-row">${partes.join("")}</div>` : "";
+  }
+
+  function actualizarAvisoUsabilidad() {
+    const n = selected.length;
+    if (n >= AVISO_UMBRAL) {
+      el.avisoUsabilidad.textContent = `Estás comparando ${n} carreras — con muchas tarjetas la lectura puede ser más difícil.`;
+      el.avisoUsabilidad.hidden = false;
+    } else {
+      el.avisoUsabilidad.hidden = true;
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Tarjetas de carreras seleccionadas
+  // ---------------------------------------------------------------------
+  function renderSelected() {
+    el.selectedList.innerHTML = selected
+      .map((c) => {
+        const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
+        const tiposDisponibles = ORDEN_TIPOS.filter((t) => c.benchmarks.some((b) => b.tipo_institucion === t));
+        const checkboxes = tiposDisponibles.length
+          ? `<div class="tipo-checks"><span class="card-icon-label">Graficar:</span>${tiposDisponibles
+              .map((t) => {
+                const benchmark = c.benchmarks.find((b) => b.tipo_institucion === t);
+                const faltantes = badgesFaltantesBenchmark(benchmark);
+                return `<label class="tipo-check">
+                  <input type="checkbox" data-slug="${c.slug}" data-tipo="${escapeHtml(t)}" ${activos.has(t) ? "checked" : ""}>
+                  ${escapeHtml(TIPO_CORTO[t] || t)}
+                </label>${faltantes}`;
+              })
+              .join("")}</div>`
+          : `<div class="tipo-checks"><span class="badge badge-warning">sin comparación nacional</span>${infoIcon("Esta carrera no tiene datos de benchmark nacional en SIES. Solo 26 de 190 carreras genéricas están en este estado.")}</div>`;
+
+        return `<li class="carrera-card" data-slug="${c.slug}">
+          <div class="carrera-card-header">
+            <span class="carrera-card-nombre">${escapeHtml(c.nombre)}</span>
+            <button type="button" class="remove" aria-label="Quitar ${escapeHtml(c.nombre)}" data-slug="${c.slug}">×</button>
+          </div>
+          ${iconRowCarrera(c)}
+          ${headlineMetricsCarrera(c)}
+          ${checkboxes}
+        </li>`;
+      })
+      .join("");
+
+    el.selectedList.querySelectorAll("button.remove").forEach((btn) => {
+      btn.addEventListener("click", () => removeCarrera(btn.dataset.slug));
+    });
+
+    el.selectedList.querySelectorAll('input[type="checkbox"]').forEach((chk) => {
+      chk.addEventListener("change", () => {
+        const set = tiposActivosPorCarrera.get(chk.dataset.slug);
+        if (!set) return;
+        if (chk.checked) set.add(chk.dataset.tipo);
+        else set.delete(chk.dataset.tipo);
+        renderCharts();
+      });
+    });
+
+    actualizarAvisoUsabilidad();
+
+    el.selectorHelp.textContent = selected.length < MIN_CARRERAS
+      ? `Agrega al menos 2 carreras para comparar (llevas ${selected.length}).`
+      : `Comparando ${selected.length} carrera(s).`;
+  }
+
+  function renderEmptyState() {
+    const mostrarVacio = selected.length < MIN_CARRERAS;
+    el.seccionVacia.hidden = !mostrarVacio;
+    el.seccionCharts.hidden = mostrarVacio;
+    el.seccionDetalle.hidden = mostrarVacio;
+  }
+
+  // ---------------------------------------------------------------------
+  // Gráficos Chart.js v4
+  // ---------------------------------------------------------------------
+  const COLORES_TIPO = {
+    "Universidades": "#1a7f64",
+    "Institutos Profesionales": "#e8960a",
+    "Centros de Formación Técnica": "#3b82f6",
+  };
+
+  const ABREVIATURAS = [
+    [/Ingeniería/gi, "Ing."],
+    [/Tecnología/gi, "Tec."],
+    [/Tecnólogo/gi, "Tec."],
+    [/Administración/gi, "Adm."],
+    [/Licenciatura/gi, "Lic."],
+    [/Pedagogía/gi, "Ped."],
+  ];
+
+  function abreviarNombre(nombre) {
+    return ABREVIATURAS.reduce((acc, [re, rep]) => acc.replace(re, rep), nombre);
+  }
+
+  function truncar(texto, max) {
+    return texto.length > max ? `${texto.slice(0, max - 1)}…` : texto;
+  }
+
+  function etiquetaEjeCorta(carrera, tipo) {
+    return truncar(`${abreviarNombre(carrera.nombre)} (${TIPO_CORTO[tipo] || tipo})`, 26);
+  }
+
+  function entradasActuales() {
+    const entradas = [];
+    selected.forEach((c) => {
+      const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
+      ORDEN_TIPOS.forEach((tipo) => {
+        if (!activos.has(tipo)) return;
+        const b = c.benchmarks.find((bb) => bb.tipo_institucion === tipo);
+        if (b) entradas.push({ carrera: c, tipo, benchmark: b });
+      });
+    });
+    return entradas;
+  }
+
+  function destruirChart(id) {
+    if (chartInstances[id]) {
+      chartInstances[id].destroy();
+      delete chartInstances[id];
+    }
+  }
+
+  function altoCanvas(nFilas) {
+    return Math.max(180, nFilas * 38 + 75);
+  }
+
+  function opcionesEjeY(entradas) {
+    return {
+      autoSkip: false,
+      font: { family: "'Figtree', sans-serif", weight: '600', size: 11 },
+      color: '#1c2b36',
+      callback: (value, index) => {
+        if (entradas[index]) {
+          return etiquetaEjeCorta(entradas[index].carrera, entradas[index].tipo);
+        }
+        return '';
+      },
+    };
+  }
+
+  function dibujarChart(id, entradas, config) {
+    destruirChart(id);
+    const canvas = document.getElementById(id);
+    if (!canvas) return;
+    canvas.parentElement.style.height = `${altoCanvas(entradas.length)}px`;
+    const ctx = canvas.getContext("2d");
+    chartInstances[id] = new Chart(ctx, config);
+  }
+
+  function datasetUnaMetrica(entradas, extractor) {
+    return {
+      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+      datasets: [
+        {
+          label: "Valor",
+          backgroundColor: entradas.map((e) => COLORES_TIPO[e.tipo] || "#999"),
+          data: entradas.map((e) => extractor(e.benchmark)),
+          borderRadius: 4
+        },
+      ],
+    };
+  }
+
+  // ---------------------------------------------------------------------
+  // Gráficos de dos métricas y su renderizado
+  // ---------------------------------------------------------------------
+  function datasetDosMetricas(entradas, extractor1, etiqueta1, color1, extractor2, etiqueta2, color2) {
+    return {
+      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+      datasets: [
+        { label: etiqueta1, backgroundColor: color1, data: entradas.map((e) => extractor1(e.benchmark)), borderRadius: 4 },
+        { label: etiqueta2, backgroundColor: color2, data: entradas.map((e) => extractor2(e.benchmark)), borderRadius: 4 },
+      ],
+    };
+  }
+
+  function renderCharts() {
+    if (selected.length < MIN_CARRERAS) return;
+    const entradas = entradasActuales();
+
+    const carrerasSinBarra = selected.filter((c) => !entradas.some((e) => e.carrera.slug === c.slug));
+    el.notaCharts.textContent = carrerasSinBarra.length
+      ? `${carrerasSinBarra.length} carrera(s) sin ninguna barra graficada (sin tipo marcado o sin benchmark): ${carrerasSinBarra.map((c) => c.nombre).join(", ")}.`
+      : "Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.";
+
+    if (entradas.length === 0) {
+      ["chart-ingreso", "chart-empleabilidad", "chart-retencion", "chart-distribucion"].forEach((id) => {
+        destruirChart(id);
+        const canvas = document.getElementById(id);
+        if (canvas) canvas.parentElement.style.height = "80px";
+      });
+      return;
+    }
+
+    const ejeY = { ticks: opcionesEjeY(entradas) };
+
+    // 1. Ingreso al 4to año
+    dibujarChart("chart-ingreso", entradas, {
+      type: "bar",
+      data: datasetUnaMetrica(entradas, (b) => b.ingreso_4to_anio_2024),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, title: { display: true, text: "Pesos Chilenos (CLP)", font: { family: "'Inter', sans-serif", weight: '600' } } }, y: ejeY },
+      },
+    });
+
+    // 2. Empleabilidad 1er/2do año
+    dibujarChart("chart-empleabilidad", entradas, {
+      type: "bar",
+      data: datasetDosMetricas(
+        entradas,
+        (b) => b.empleabilidad_1er_anio_2024, "1er año", "#1a7f64",
+        (b) => b.empleabilidad_2do_anio_2024, "2do año", "#84ccb6"
+      ),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    // 3. Retencion 1er/2do año
+    dibujarChart("chart-retencion", entradas, {
+      type: "bar",
+      data: datasetDosMetricas(
+        entradas,
+        (b) => b.retencion_1er_anio, "1er año", "#e8960a",
+        (b) => b.retencion_2do_anio, "2do año", "#fcd28c"
+      ),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    // 4. Distribucion de ingreso (percentiles 10/50/90 al 5to año)
+    dibujarChart("chart-distribucion", entradas, {
+      type: "bar",
+      data: {
+        labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+        datasets: [
+          { label: "Percentil 10", backgroundColor: "#fca5a5", data: entradas.map((e) => e.benchmark.percentil_10_5to_anio), borderRadius: 3 },
+          { label: "Mediana (P50)", backgroundColor: "#1a7f64", data: entradas.map((e) => e.benchmark.percentil_50_5to_anio), borderRadius: 3 },
+          { label: "Percentil 90", backgroundColor: "#3b82f6", data: entradas.map((e) => e.benchmark.percentil_90_5to_anio), borderRadius: 3 },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, title: { display: true, text: "Pesos Chilenos (CLP)", font: { family: "'Inter', sans-serif", weight: '600' } } }, y: ejeY },
+      },
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Panel "donde se imparte" (lazy-load)
+  // ---------------------------------------------------------------------
+  function renderDetallePanels() {
+    el.detalleContainer.innerHTML = selected
+      .map(
+        (c) => `<details class="detalle-carrera" data-slug="${c.slug}">
+          <summary>${escapeHtml(c.nombre)}</summary>
+          <div class="detalle-body" data-slug="${c.slug}"><p class="detalle-loading">Abre para cargar la oferta…</p></div>
+        </details>`
+      )
+      .join("");
+
+    el.detalleContainer.querySelectorAll("details.detalle-carrera").forEach((details) => {
+      details.addEventListener("toggle", async () => {
+        if (!details.open) return;
+        const slug = details.dataset.slug;
+        const body = details.querySelector(".detalle-body");
+        if (detalleCache[slug]) {
+          renderDetalleBody(body, detalleCache[slug]);
+          return;
+        }
+        body.innerHTML = '<p class="detalle-loading">Cargando oferta y aranceles…</p>';
+        try {
+          const resp = await fetch(`data/detalle/${slug}.json`);
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const detalle = await resp.json();
+          detalleCache[slug] = detalle;
+          renderDetalleBody(body, detalle);
+        } catch (err) {
+          body.innerHTML = `<p class="detalle-empty">No se pudo cargar el detalle de instituciones (${escapeHtml(err.message)}).</p>`;
+        }
+      });
+    });
+  }
+
+  function badgeInstitucion(institucion) {
+    if (institucion.tiene_ficha) return escapeHtml(institucion.nombre);
+    return `<span class="badge badge-missing">Sin Ficha</span> (Código ${institucion.codigo ?? "?"}) ${escapeHtml(institucion.nombre)}`;
+  }
+
+  function formatPct(v) {
+    return v === null || v === undefined ? "—" : `${Math.round(v * 100)}%`;
+  }
+
+  function parseArancel(texto) {
+    if (!texto) return null;
+    const digitos = texto.replace(/[^\d]/g, "");
+    return digitos ? parseInt(digitos, 10) : null;
+  }
+
+  function formatCLP(valor) {
+    return valor === null ? "—" : `$${valor.toLocaleString("es-CL")}`;
+  }
+
+  function rangoArancel(ofertas) {
+    const valores = ofertas.map((o) => parseArancel(o.arancel_anual_2026)).filter((v) => v !== null);
+    if (!valores.length) return "—";
+    const min = Math.min(...valores);
+    const max = Math.max(...valores);
+    return min === max ? formatCLP(min) : `${formatCLP(min)} – ${formatCLP(max)}`;
+  }
+
+  function renderPonderacionBar(oferta) {
+    const sinPaesHtml = `<span class="badge-sin-paes">Sin ponderación PAES</span>${infoIcon("Esta sede/jornada no reporta ponderaciones PAES. Común en IPs y CFTs con admisión especial sin PAES.")}`;
+    if (!oferta.tiene_ponderacion_paes) {
+      return sinPaesHtml;
+    }
+    const suma = POND_COMPS.reduce((acc, c) => acc + (oferta[c.key] || 0), 0);
+    if (suma === 0) return sinPaesHtml;
+
+    const segs = POND_COMPS
+      .filter((c) => (oferta[c.key] || 0) > 0)
+      .map((c) => {
+        const pct = ((oferta[c.key] || 0) / suma * 100).toFixed(1);
+        return `<span class="pond-seg ${c.clase}" style="width:${pct}%" title="${c.etiqueta} ${oferta[c.key]}%"></span>`;
+      })
+      .join("");
+
+    const partes = [];
+    const indiv = ["ponderacion_nem","ponderacion_ranking","ponderacion_lenguaje",
+                   "ponderacion_matematicas","ponderacion_matematicas_2","ponderacion_otros"];
+    POND_COMPS.filter((c) => indiv.includes(c.key) && (oferta[c.key] || 0) > 0)
+              .forEach((c) => partes.push(`${c.etiqueta} ${oferta[c.key]}%`));
+    const hist = oferta.ponderacion_historia || 0;
+    const cien = oferta.ponderacion_ciencias || 0;
+    if (hist > 0 && cien > 0) {
+      partes.push(hist === cien ? `Hist./Ciencias ${hist}%` : `Hist./Ciencias ${hist}%/${cien}%`);
+    } else if (hist > 0) {
+      partes.push(`Hist. ${hist}%`);
+    } else if (cien > 0) {
+      partes.push(`Ciencias ${cien}%`);
+    }
+
+    const texto = partes.join(" · ");
+    return `<div class="pond-bar" title="${texto}">${segs}</div>
+            <span class="pond-label">${texto}</span>`;
+  }
+
+  function opcionesSelect(valores, todasLabel) {
+    return `<option value="">${escapeHtml(todasLabel)}</option>${valores
+      .map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`)
+      .join("")}`;
+  }
+
+  function filtrosDisponibles(detalle) {
+    const regiones = new Set();
+    const jornadas = new Set();
+    const tipos = new Set();
+    detalle.ofertas.forEach((o) => {
+      if (o.region) regiones.add(o.region);
+      if (o.jornada) jornadas.add(o.jornada);
+      if (o.institucion.tipo) tipos.add(o.institucion.tipo);
+    });
+    return { regiones: [...regiones].sort(), jornadas: [...jornadas].sort(), tipos: [...tipos].sort() };
+  }
+
+  function agruparPorInstitucion(detalle, filtros) {
+    const grupos = new Map();
+    const claveDe = (institucion) => institucion.codigo ?? `sin-codigo-${institucion.nombre || "?"}`;
+
+    detalle.ofertas.forEach((o) => {
+      if (filtros.region && o.region !== filtros.region) return;
+      if (filtros.jornada && o.jornada !== filtros.jornada) return;
+      if (filtros.tipo && o.institucion.tipo !== filtros.tipo) return;
+      const key = claveDe(o.institucion);
+      if (!grupos.has(key)) grupos.set(key, { institucion: o.institucion, ofertas: [], indicadores: [] });
+      grupos.get(key).ofertas.push(o);
+    });
+
+    detalle.indicadores.forEach((ind) => {
+      if (filtros.tipo && ind.institucion.tipo !== filtros.tipo) return;
+      const key = claveDe(ind.institucion);
+      if (!grupos.has(key)) {
+        if (filtros.region || filtros.jornada) return;
+        grupos.set(key, { institucion: ind.institucion, ofertas: [], indicadores: [] });
+      }
+      grupos.get(key).indicadores.push(ind);
+    });
+
+    return [...grupos.values()].sort((a, b) => b.ofertas.length - a.ofertas.length);
+  }
+
+  function renderGrupoInstitucion(grupo) {
+    const regiones = [...new Set(grupo.ofertas.map((o) => o.region).filter(Boolean))];
+    const filasOferta = grupo.ofertas
+      .map(
+        (o) => `<tr>
+          <td><strong>${escapeHtml(o.jornada || "—")}</strong></td>
+          <td>${escapeHtml(o.sede || "—")}</td>
+          <td>${escapeHtml(o.region || "—")}</td>
+          <td><span class="badge badge-warning" style="font-size:0.68rem; padding:0.1rem 0.4rem;">${escapeHtml(o.nivel_carrera || "—")}</span></td>
+          <td><strong>${escapeHtml(o.arancel_anual_2026 || "—")}</strong></td>
+          <td>${o.vacantes_1er_semestre ?? "—"}</td>
+          <td class="pond-cell">${renderPonderacionBar(o)}</td>
+        </tr>`
+      )
+      .join("");
+    const filasIndicadores = grupo.indicadores
+      .map(
+        (i) => `<tr>
+          <td>${escapeHtml(i.nombre_carrera_titulo || "—")}</td>
+          <td><strong>${formatPct(i.empleabilidad_1er_anio)}</strong></td>
+          <td>${formatPct(i.empleabilidad_2do_anio)}</td>
+          <td><strong>${formatPct(i.retencion_1er_anio)}</strong></td>
+          <td>${formatPct(i.continuidad_estudios_pct)}</td>
+          <td>${i.duracion_real_semestres ?? "—"} sem</td>
+          <td><strong>${escapeHtml(i.ingreso_banda_texto || "—")}</strong></td>
+        </tr>`
+      )
+      .join("");
+
+    const resumenPartes = [];
+    if (grupo.institucion.tipo) resumenPartes.push(escapeHtml(grupo.institucion.tipo));
+    if (grupo.ofertas.length) resumenPartes.push(`${grupo.ofertas.length} sedes`);
+    if (regiones.length) resumenPartes.push(escapeHtml(regiones.join(", ")));
+    if (grupo.ofertas.length) resumenPartes.push(`Arancel ${rangoArancel(grupo.ofertas)}`);
+    if (grupo.institucion.acreditacion) resumenPartes.push(`Acred. ${escapeHtml(grupo.institucion.acreditacion)}`);
+
+    return `<details class="institucion-card">
+      <summary>
+        <span class="institucion-nombre">${badgeInstitucion(grupo.institucion)}</span>
+        <span class="institucion-resumen">${resumenPartes.join(" · ")}</span>
+      </summary>
+      
+      ${grupo.ofertas.length ? `
+      <div class="table-responsive">
+        <table class="detalle-table">
+          <caption>Oferta Académica (${grupo.ofertas.length} sede/jornada)</caption>
+          <thead>
+            <tr>
+              <th>Jornada</th>
+              <th>Sede</th>
+              <th>Región</th>
+              <th>Nivel</th>
+              <th>Arancel 2026 ${infoIcon("Costo anual de la carrera en esta sede/jornada, según SIES 2026.")}</th>
+              <th>Vacantes ${infoIcon("Cupos disponibles para primer año en el primer semestre, según SIES.")}</th>
+              <th>Ponderación PAES ${infoIcon("Ponderación de NEM, Ranking, Competencia Lectora, Matemáticas, Ciencias e Historia (admisión universitaria).")}</th>
+            </tr>
+          </thead>
+          <tbody>${filasOferta}</tbody>
+        </table>
+      </div>` : ""}
+      
+      ${grupo.indicadores.length ? `
+      <div class="table-responsive">
+        <table class="detalle-table">
+          <caption>Desempeño e Empleabilidad por Título (${grupo.indicadores.length})</caption>
+          <thead>
+            <tr>
+              <th>Título Oficial</th>
+              <th>Emp. 1° ${infoIcon("% de titulados que registran empleo formal al 1er año de egreso según el SII.")}</th>
+              <th>Emp. 2°</th>
+              <th>Retención 1° ${infoIcon("% de alumnos de primer año que continuaron en la carrera al segundo año.")}</th>
+              <th>Continuidad ${infoIcon("% de titulados que continuaron otros estudios de educación superior al egresar.")}</th>
+              <th>Duración Real ${infoIcon("Duración real promedio expresada en semestres hasta la titulación oficial.")}</th>
+              <th>Banda de Ingreso ${infoIcon("Tramo de ingresos brutos mensuales al 4° año de titulado según SIES.")}</th>
+            </tr>
+          </thead>
+          <tbody>${filasIndicadores}</tbody>
+        </table>
+      </div>` : ""}
+    </details>`;
+  }
+
+  function renderDetalleBody(body, detalle) {
+    const filtros = filtrosDisponibles(detalle);
+    const estado = { region: "", jornada: "", tipo: "" };
+
+    function dibujarInstituciones() {
+      const grupos = agruparPorInstitucion(detalle, estado);
+      const listaEl = body.querySelector(".instituciones-lista");
+      listaEl.innerHTML = grupos.length
+        ? grupos.map(renderGrupoInstitucion).join("")
+        : '<p class="detalle-empty">Ninguna institución coincide con los filtros aplicados.</p>';
+    }
+
+    const leyendaPAES = POND_COMPS.map((c) => {
+      return `<span class="pond-leyenda-item">
+        <span class="pond-leyenda-dot ${c.clase}"></span>${c.etiqueta}
+      </span>`;
+    }).join("");
+    body.innerHTML = `
+      <div class="detalle-filtros">
+        <label>Región: <select class="filtro-region">${opcionesSelect(filtros.regiones, "Todas")}</select></label>
+        <label>Jornada: <select class="filtro-jornada">${opcionesSelect(filtros.jornadas, "Todas")}</select></label>
+        <label>Tipo de Institución: <select class="filtro-tipo-inst">${opcionesSelect(filtros.tipos, "Todos")}</select></label>
+      </div>
+      <div class="pond-leyenda">${leyendaPAES}</div>
+      <div class="instituciones-lista"></div>
+    `;
+    body.querySelector(".filtro-region").addEventListener("change", (e) => { estado.region = e.target.value; dibujarInstituciones(); });
+    body.querySelector(".filtro-jornada").addEventListener("change", (e) => { estado.jornada = e.target.value; dibujarInstituciones(); });
+    body.querySelector(".filtro-tipo-inst").addEventListener("change", (e) => { estado.tipo = e.target.value; dibujarInstituciones(); });
+
+    dibujarInstituciones();
+  }
+
+  // Tooltips
+  function initTooltip() {
+    const popup = document.createElement("div");
+    popup.id = "tooltip-popup";
+    popup.setAttribute("role", "tooltip");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.appendChild(popup);
+
+    let hideTimer = null;
+    let activeTrigger = null;
+
+    function show(trigger) {
+      clearTimeout(hideTimer);
+      const texto = trigger.dataset.tooltip || "";
+      if (!texto) return;
+      activeTrigger = trigger;
+      popup.textContent = texto;
+      popup.classList.remove("visible", "arrow-above", "arrow-below");
+      popup.style.left = "-9999px";
+      popup.style.top = "-9999px";
+      popup.classList.add("visible");
+      popup.removeAttribute("aria-hidden");
+      trigger.setAttribute("aria-describedby", "tooltip-popup");
+
+      const rect = trigger.getBoundingClientRect();
+      const pw = popup.offsetWidth;
+      const ph = popup.offsetHeight;
+      const margin = 8;
+      const vw = window.innerWidth;
+
+      let left = rect.left + rect.width / 2 - pw / 2;
+      left = Math.max(margin, Math.min(vw - pw - margin, left));
+      const arrowLeft = rect.left + rect.width / 2 - left;
+      popup.style.setProperty("--tp-arrow-left", `${Math.max(8, Math.min(pw - 16, arrowLeft))}px`);
+
+      let top;
+      if (rect.top - ph - 6 >= margin) {
+        top = rect.top - ph - 6;
+        popup.classList.add("arrow-below");
+      } else {
+        top = rect.bottom + 6;
+        popup.classList.add("arrow-above");
+      }
+      popup.style.left = `${left}px`;
+      popup.style.top = `${top}px`;
+    }
+
+    function hide(trigger) {
+      hideTimer = setTimeout(() => {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        if (trigger) trigger.removeAttribute("aria-describedby");
+        activeTrigger = null;
+      }, 80);
+    }
+
+    document.addEventListener("mouseover", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("mouseout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t && !t.contains(ev.relatedTarget)) hide(t);
+    });
+    document.addEventListener("focusin", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("focusout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) hide(t);
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && activeTrigger) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+    document.addEventListener("click", (ev) => {
+      if (activeTrigger && !ev.target.closest("[data-tooltip]")) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+  }
+
+  initTooltip();
+  init();
+})();
+</script>
+
+</body>
+</html>

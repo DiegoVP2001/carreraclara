@@ -6,18 +6,17 @@ titulados/
 personal/
 
 # ── Archivos de trabajo del proyecto ──────────────────
-PLAN.md
-PLAN_HISTORIAL.md
-TAREA_*.md
-old/
-CLAUDE.md
-MANUAL_MARCA_CARRERA_CLARA.md
+# PLAN.md, PLAN_HISTORIAL.md, TAREA_*.md, CLAUDE.md, el manual de marca y
+# old/ SÍ se versionan: son la memoria del proyecto y solo existían local.
 tarea_8b_exploracion/
 _db_check_out.txt
 
-# ── Imágenes de debugging y logos en raíz (solo raíz) ─
+# ── Capturas de debugging ─────────────────────────────
+# Descartables: se sacaron para revisar un fix puntual y ya cumplieron.
 /*.png
 /*.jpg
+old/*.png
+old/*.jpg
 
 # ── Archivos de sistema Claude / agentes ──────────────
 .remember/

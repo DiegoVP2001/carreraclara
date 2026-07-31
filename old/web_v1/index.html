@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador de carreras — MVP</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ---------------------------------------------------------------------
+     Variables CSS: toda la paleta/spacing vive aqui para que la Sesion 3
+     (rediseno visual) pueda repintar sin tocar el HTML/JS de abajo.
+     --------------------------------------------------------------------- */
+  :root {
+    --color-bg: #f5f6f4;
+    --color-bg-alt: #f4f5f7;
+    --color-surface: #ffffff;
+    --color-header-bg: #0f2e45;
+    --color-text: #1c2b36;
+    --color-text-muted: #6b7a86;
+    --color-primary: #1a7f64;
+    --color-primary-contrast: #ffffff;
+    --color-primary-light: #e6f4f0;
+    --color-accent: #e8960a;
+    --color-danger: #c0392b;
+    --color-border: #dde1e7;
+    --color-badge-warning-bg: #fff8e6;
+    --color-badge-warning-text: #92600a;
+    --color-badge-missing-bg: #fde8e8;
+    --color-badge-missing-text: #8b1a1a;
+    --color-chart-1: #1a7f64;
+    --color-chart-2: #e8960a;
+    --color-chart-3: #3b82f6;
+    --font-base: 16px;
+    --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-display: 'Figtree', system-ui, sans-serif;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --radius: 0.5rem;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-base);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.5;
+  }
+
+  header.app-header {
+    padding: var(--space-3) var(--space-3) var(--space-2);
+    background: var(--color-header-bg);
+    color: #ffffff;
+  }
+
+  header.app-header h1 {
+    margin: 0 0 var(--space-1);
+    font-size: 1.75rem;
+    font-family: var(--font-display);
+    color: #ffffff;
+  }
+
+  header.app-header p.subtitle {
+    margin: 0 0 var(--space-2);
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  nav.tabs {
+    display: flex;
+    gap: var(--space-2);
+    font-size: 0.95rem;
+  }
+
+  nav.tabs a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius);
+  }
+
+  nav.tabs a.activo {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 600;
+    font-family: var(--font-display);
+  }
+
+  h1, h2, h3 { font-family: var(--font-display); }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--space-3);
+  }
+
+  section {
+    margin-bottom: var(--space-4);
+  }
+
+  section > h2 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-2);
+  }
+
+  /* --- Selector / combobox --- */
+  .selector-wrap {
+    position: relative;
+    max-width: 480px;
+  }
+
+  #carrera-input {
+    width: 100%;
+    font-size: var(--font-base);
+    padding: var(--space-1) 2.25rem var(--space-1) var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  #carrera-input:disabled {
+    background: var(--color-bg-alt);
+    cursor: not-allowed;
+  }
+
+  button.combo-arrow {
+    position: absolute;
+    right: 0.4rem;
+    top: 1.85rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: none;
+    background: none;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
+  button.combo-arrow:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  ul#autocomplete-list {
+    list-style: none;
+    margin: var(--space-1) 0 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-height: 280px;
+    overflow-y: auto;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  ul#autocomplete-list li {
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+
+  ul#autocomplete-list li:hover,
+  ul#autocomplete-list li:focus {
+    background: var(--color-bg-alt);
+  }
+
+  ul#autocomplete-list li .meta {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  p.selector-help {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin: var(--space-1) 0 0;
+  }
+
+  /* --- Tarjetas de carreras seleccionadas (con checkboxes de tipo) --- */
+  ul#selected-list {
+    list-style: none;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  li.carrera-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 0.6rem var(--space-2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  }
+
+  .carrera-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-1);
+  }
+
+  .carrera-card-nombre {
+    font-weight: 600;
+  }
+
+  li.carrera-card button.remove {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+  }
+
+  .tipo-checks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .tipo-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+  }
+
+  /* --- Fila de íconos (Tarea 11) --- */
+  .card-icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.4rem;
+  }
+
+  .card-icon-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    padding: 0.1rem 0.5rem;
+    white-space: nowrap;
+  }
+
+  .card-icon-label {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  /* --- Métricas titulares (Tarea 11) --- */
+  .card-metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: 0.5rem;
+    padding: 0.4rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .card-metric {
+    text-align: center;
+    min-width: 64px;
+  }
+
+  .card-metric-valor {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.2;
+  }
+
+  .card-metric-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-top: 0.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* --- Aviso de usabilidad (backlog item 7) --- */
+  .aviso-usabilidad {
+    background: var(--color-primary-light);
+    color: #0d5c47;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: 0.45rem var(--space-2);
+    font-size: 0.88rem;
+    margin-top: var(--space-1);
+  }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-3);
+    text-align: center;
+    color: var(--color-text-muted);
+  }
+
+  .empty-state svg { opacity: 0.35; }
+  .empty-state h2 { font-family: var(--font-display); color: var(--color-text); margin: 0; }
+  .empty-state p { margin: 0; font-size: 0.95rem; }
+
+  /* --- Badges de estado explicito --- */
+  .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+  }
+
+  .badge.badge-warning {
+    background: var(--color-badge-warning-bg);
+    color: var(--color-badge-warning-text);
+  }
+
+  .badge.badge-missing {
+    background: var(--color-badge-missing-bg);
+    color: var(--color-badge-missing-text);
+  }
+
+  /* --- Graficos --- */
+  p.chart-note {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-2);
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  @media (max-width: 900px) {
+    .charts-grid { grid-template-columns: 1fr; }
+  }
+
+  figure.chart-card {
+    margin: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: var(--space-2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    background: var(--color-surface);
+  }
+
+  figure.chart-card figcaption {
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+
+  .chart-canvas-wrap {
+    position: relative;
+    width: 100%;
+  }
+
+  /* --- Panel "donde se imparte" --- */
+  details.detalle-carrera {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-2);
+    padding: var(--space-2);
+  }
+
+  details.detalle-carrera summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .detalle-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-2) 0;
+    font-size: 0.9rem;
+  }
+
+  .detalle-filtros select {
+    margin-left: 0.3rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  details.institucion-card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.5rem 0.75rem;
+    margin-bottom: var(--space-1);
+    background: var(--color-bg);
+  }
+
+  details.institucion-card summary {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .institucion-nombre {
+    font-weight: 600;
+  }
+
+  .institucion-resumen {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  table.detalle-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-2);
+    font-size: 0.85rem;
+  }
+
+  table.detalle-table caption {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: var(--space-1);
+  }
+
+  table.detalle-table th,
+  table.detalle-table td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.35rem 0.5rem;
+    text-align: left;
+  }
+
+  table.detalle-table tbody tr:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .detalle-loading,
+  .detalle-empty {
+    color: var(--color-text-muted);
+    padding: var(--space-1) 0;
+  }
+
+  /* --- Ponderaciones PAES: mini barra apilada en panel "donde se imparte" --- */
+  .pond-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+    min-width: 80px;
+    background: var(--color-border);
+  }
+
+  .pond-seg { display: inline-block; height: 100%; }
+  .pond-nem      { background: #3b82f6; }
+  .pond-ranking  { background: #22c55e; }
+  .pond-lenguaje { background: #f59e0b; }
+  .pond-mat      { background: #ef4444; }
+  .pond-mat2     { background: #a78bfa; }
+  .pond-historia { background: #e879a0; }
+  .pond-ciencias { background: #e879a0; }
+  .pond-otros    { background: #94a3b8; }
+
+  .pond-label {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+  .badge-sin-paes {
+    display: inline-block;
+    font-size: 0.72rem;
+    background: var(--color-bg-alt);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  /* Leyenda de colores PAES */
+  .pond-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: var(--space-1) 0 var(--space-2);
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .pond-leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .pond-leyenda-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* --- Tooltip inline simple (ícono ℹ junto a nombres de métricas) --- */
+  .tooltip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    background: none;
+    color: var(--color-primary);
+    font-size: 0.82rem;
+    cursor: help;
+    border-radius: 50%;
+    padding: 0;
+    vertical-align: middle;
+    margin-left: 0.2em;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .tooltip-btn:hover,
+  .tooltip-btn:focus-visible {
+    background: rgba(26, 127, 100, 0.12);
+    outline: none;
+  }
+  #tooltip-popup {
+    position: fixed;
+    z-index: 500;
+    max-width: 240px;
+    background: #1f2937;
+    color: #f9fafb;
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.45;
+    padding: 0.45rem 0.65rem;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  #tooltip-popup.visible { opacity: 1; }
+  #tooltip-popup.arrow-below::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: #1f2937;
+    transform: rotate(45deg);
+  }
+  #tooltip-popup.arrow-above::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: var(--tp-arrow-left, 50%);
+    width: 8px;
+    height: 8px;
+    background: #1f2937;
+    transform: rotate(45deg);
+  }
+
+  /* --- Footer / diagnostico --- */
+  footer.app-footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  footer.app-footer ul {
+    list-style: none;
+    margin: var(--space-1) 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <h1>Comparador de carreras</h1>
+  <p class="subtitle">Datos públicos SIES / MiFuturo.cl — compara 2 a 4 carreras genéricas por empleabilidad, ingreso y retención.</p>
+  <nav class="tabs">
+    <a href="index.html" class="activo" aria-current="page">Comparar carreras</a>
+    <a href="instituciones.html">Comparar instituciones</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="seccion-selector" aria-labelledby="selector-heading">
+    <h2 id="selector-heading">Carreras a comparar</h2>
+    <div class="selector-wrap">
+      <label for="carrera-input">Agregar carrera (2 a 4)</label>
+      <input type="text" id="carrera-input" autocomplete="off" placeholder="Escribe el nombre de una carrera genérica… (sin tilde también sirve)">
+      <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar todas las carreras">▾</button>
+      <ul id="autocomplete-list" hidden role="listbox"></ul>
+    </div>
+    <p class="selector-help" id="selector-help">Agrega al menos 2 carreras para comparar.</p>
+    <ul id="selected-list"></ul>
+    <div id="aviso-usabilidad" class="aviso-usabilidad" hidden></div>
+  </section>
+
+  <div id="seccion-vacia">
+    <div class="empty-state">
+      <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
+        <path d="M7 8h2"/><path d="M7 12h5"/><path d="M15 8h2"/><path d="M15 12h2"/>
+      </svg>
+      <h2>Compara carreras lado a lado</h2>
+      <p>Busca una carrera arriba para empezar — puedes comparar las que quieras.</p>
+    </div>
+  </div>
+
+  <section id="seccion-charts" hidden aria-labelledby="charts-heading">
+    <h2 id="charts-heading">Gráficos comparativos</h2>
+    <p class="chart-note" id="nota-charts">Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.</p>
+    <div class="charts-grid">
+      <figure class="chart-card">
+        <figcaption>Ingreso al 4° año (2024) <button type="button" class="tooltip-btn" data-tooltip="Sueldo bruto promedio de los titulados a los 4 años de haber egresado, según registros del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-ingreso"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Empleabilidad 1er y 2do año (2024) <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de titulados que trabajaron formalmente al 1er y 2do año después de egresar, según datos del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-empleabilidad"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Retención 1er y 2do año <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de estudiantes que continuaron inscritos en la carrera al 2do y 3er año, respectivamente." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-retencion"></canvas></div>
+      </figure>
+      <figure class="chart-card">
+        <figcaption>Distribución de ingreso al 5° año (percentiles 10/50/90) <button type="button" class="tooltip-btn" data-tooltip="El percentil 10 es el sueldo que supera solo el 10% más bajo; el percentil 50 es la mediana; el percentil 90 es el que solo supera el 10% más alto. Dato al 5° año post-título." aria-label="Información" tabindex="0">ℹ</button></figcaption>
+        <div class="chart-canvas-wrap"><canvas id="chart-distribucion"></canvas></div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="seccion-detalle" hidden aria-labelledby="detalle-heading">
+    <h2 id="detalle-heading">Dónde se imparte</h2>
+    <div id="detalle-container"></div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <p>Transparencia de cobertura de datos (SIES, según auditoría de calidad):</p>
+  <ul id="diagnostico-list"></ul>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // -------------------------------------------------------------------
+  // Normalizacion: quita tildes/diacriticos y pasa a minusculas. Se usa
+  // tanto para el slug (contrato con web/export_json.py) como para el
+  // filtro del selector (para que "ingenieria" matchee "Ingeniería").
+  // -------------------------------------------------------------------
+  function normalizar(texto) {
+    return texto.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  // Slug: DEBE coincidir exactamente con `slugify()` de web/export_json.py.
+  // Es el contrato que permite pedir `data/detalle/<slug>.json` sin listar
+  // los 190 slugs de antemano.
+  function slugify(nombre) {
+    return normalizar(nombre)
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  const ORDEN_TIPOS = ["Universidades", "Institutos Profesionales", "Centros de Formación Técnica"];
+  const TIPO_CORTO = {
+    "Universidades": "Uni",
+    "Institutos Profesionales": "IP",
+    "Centros de Formación Técnica": "CFT",
+  };
+  const MIN_CARRERAS = 2; // sin tope maximo: el layout (cards + graficos) ya escala con la cantidad
+
+  let coreData = null;
+  let selected = []; // carrera objects de core.json, en orden de agregado
+  const tiposActivosPorCarrera = new Map(); // slug -> Set<tipo_institucion> marcados
+  const detalleCache = {}; // slug -> detalle JSON (lazy, una sola carga por carrera)
+  const chartInstances = {}; // canvasId -> instancia Chart.js, para destruir antes de redibujar
+
+  const el = {
+    input: document.getElementById("carrera-input"),
+    arrow: document.getElementById("carrera-arrow"),
+    autocompleteList: document.getElementById("autocomplete-list"),
+    selectedList: document.getElementById("selected-list"),
+    selectorHelp: document.getElementById("selector-help"),
+    seccionVacia: document.getElementById("seccion-vacia"),
+    seccionCharts: document.getElementById("seccion-charts"),
+    seccionDetalle: document.getElementById("seccion-detalle"),
+    detalleContainer: document.getElementById("detalle-container"),
+    diagnosticoList: document.getElementById("diagnostico-list"),
+    notaCharts: document.getElementById("nota-charts"),
+    avisoUsabilidad: document.getElementById("aviso-usabilidad"),
+  };
+
+  // ---------------------------------------------------------------------
+  // Carga inicial de core.json
+  // ---------------------------------------------------------------------
+  async function init() {
+    const resp = await fetch("data/core.json");
+    coreData = await resp.json();
+
+    renderDiagnostico(coreData.diagnostico_cobertura);
+    renderSelected();
+    renderEmptyState();
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+    }[c]));
+  }
+
+  function infoIcon(texto) {
+    return `<button type="button" class="tooltip-btn" data-tooltip="${escapeHtml(texto)}" aria-label="Información" tabindex="0">ℹ</button>`;
+  }
+
+  function renderDiagnostico(d) {
+    el.diagnosticoList.innerHTML = `
+      <li>${d.total_carreras_genericas} carreras genéricas en total</li>
+      <li>${d.carreras_sin_benchmark_nacional} sin comparación nacional</li>
+      <li>${d.filas_oferta_sin_carrera_generica} / ${d.total_filas_oferta} filas de oferta sin carrera genérica asociada</li>
+      <li>${d.filas_indicadores_con_institucion_colgante} / ${d.total_filas_indicadores} filas de indicadores con institución sin ficha</li>
+    `;
+  }
+
+  // ---------------------------------------------------------------------
+  // Selector: combobox con flecha + filtro sin tildes
+  // ---------------------------------------------------------------------
+  function carrerasDisponibles(filtro) {
+    const yaSeleccionadas = new Set(selected.map((c) => c.slug));
+    const q = normalizar(filtro || "");
+    return coreData.carreras.filter(
+      (c) => !yaSeleccionadas.has(c.slug) && (q === "" || normalizar(c.nombre).includes(q))
+    );
+  }
+
+  function mostrarLista(filtro) {
+    // Sin tope: las 190 carreras genericas caben de sobra en la lista con
+    // scroll (max-height + overflow-y en CSS) - el tope anterior (12) era
+    // una decision arbitraria de la Sesion 2, no una limitacion tecnica.
+    const resultados = carrerasDisponibles(filtro);
+    if (resultados.length === 0) {
+      el.autocompleteList.innerHTML = '<li class="meta">Sin resultados (o ya agregaste todas las que coinciden).</li>';
+      el.autocompleteList.hidden = false;
+      return;
+    }
+    el.autocompleteList.innerHTML = resultados
+      .map(
+        (c) => `<li role="option" data-slug="${c.slug}">${escapeHtml(c.nombre)}
+          <span class="meta">${escapeHtml(c.area || "Área sin clasificar")}${c.tiene_benchmark_nacional ? "" : " · sin comparación nacional"}</span>
+        </li>`
+      )
+      .join("");
+    el.autocompleteList.hidden = false;
+  }
+
+  function ocultarLista() {
+    el.autocompleteList.hidden = true;
+  }
+
+  el.input.addEventListener("input", () => mostrarLista(el.input.value));
+  el.input.addEventListener("focus", () => mostrarLista(el.input.value));
+  el.input.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") ocultarLista();
+  });
+
+  el.arrow.addEventListener("click", () => {
+    if (el.autocompleteList.hidden) {
+      mostrarLista(el.input.value);
+      el.input.focus();
+    } else {
+      ocultarLista();
+    }
+  });
+
+  el.autocompleteList.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li[data-slug]");
+    if (!li) return;
+    const carrera = coreData.carreras.find((c) => c.slug === li.dataset.slug);
+    if (carrera) addCarrera(carrera);
+    el.input.value = "";
+    ocultarLista();
+  });
+
+  document.addEventListener("click", (ev) => {
+    if (!el.autocompleteList.contains(ev.target) && ev.target !== el.input && ev.target !== el.arrow) {
+      ocultarLista();
+    }
+  });
+
+  function addCarrera(carrera) {
+    if (selected.some((c) => c.slug === carrera.slug)) return;
+    selected.push(carrera);
+    tiposActivosPorCarrera.set(carrera.slug, new Set(carrera.benchmarks.map((b) => b.tipo_institucion)));
+    afterSelectionChange();
+  }
+
+  function removeCarrera(slug) {
+    selected = selected.filter((c) => c.slug !== slug);
+    tiposActivosPorCarrera.delete(slug);
+    afterSelectionChange();
+  }
+
+  function afterSelectionChange() {
+    renderSelected();
+    renderEmptyState();
+    renderCharts();
+    renderDetallePanels();
+  }
+
+  // Etiquetas de cada campo de benchmark que puede venir nulo, para avisar
+  // explicitamente en la tarjeta en vez de dejar el hueco silencioso en el
+  // grafico (mismo criterio de "no ocultar estado explicito" de toda la
+  // app). Cubre los campos que de verdad se ven nulos en el dataset real
+  // (ver auditoria_tarea4_output.txt): retencion_2do_anio (45.8%),
+  // ingreso_4to_anio_2024 (13.5%), empleabilidad 1er/2do (~6%); se incluyen
+  // todos los campos del benchmark por consistencia, sin asumir que un
+  // campo hoy completo se mantendra asi con datos SIES futuros.
+  const CAMPOS_BENCHMARK = [
+    ["ingreso_4to_anio_2024", "sin ingreso 4° año"],
+    ["empleabilidad_1er_anio_2024", "sin empleabilidad 1er año"],
+    ["empleabilidad_2do_anio_2024", "sin empleabilidad 2do año"],
+    ["retencion_1er_anio", "sin retención 1er año"],
+    ["retencion_2do_anio", "sin retención 2do año"],
+  ];
+
+  function badgesFaltantesBenchmark(b) {
+    return CAMPOS_BENCHMARK.filter(([campo]) => b[campo] === null)
+      .map(([, etiqueta]) => `<span class="badge badge-warning">${etiqueta}</span>`)
+      .join(" ");
+  }
+
+  // ---------------------------------------------------------------------
+  // Tarea 11 — Íconos, métricas titulares y aviso de usabilidad
+  // ---------------------------------------------------------------------
+  const TIPO_EMOJI = {
+    "Universidades": "🏛",
+    "Institutos Profesionales": "🏢",
+    "Centros de Formación Técnica": "🏫",
+  };
+
+  const AVISO_UMBRAL = 7;
+
+  function iconChip(emoji, etiqueta, tooltipTexto) {
+    const btn = tooltipTexto ? " " + infoIcon(tooltipTexto) : "";
+    return `<span class="card-icon-chip">${emoji} ${escapeHtml(String(etiqueta || "—"))}${btn}</span>`;
+  }
+
+  function headlineMetricsCarrera(carrera) {
+    const ref = ORDEN_TIPOS
+      .map((t) => carrera.benchmarks.find((b) => b.tipo_institucion === t))
+      .find(Boolean);
+    if (!ref) return "";
+    const tipoLabel = TIPO_CORTO[ref.tipo_institucion] || ref.tipo_institucion;
+    const emp = ref.empleabilidad_1er_anio_2024;
+    const ing = ref.ingreso_4to_anio_2024;
+    if (emp === null && ing === null) return "";
+    const metricas = [];
+    if (emp !== null) {
+      const pct = Math.round(emp * 100) + "%";
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor">${pct}</span>` +
+        `<span class="card-metric-label">Emp. 1er año ` +
+        infoIcon("Empleabilidad al 1er año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
+        `</span></div>`
+      );
+    }
+    if (ing !== null) {
+      const ingStr = ing >= 1000000
+        ? "$" + (ing / 1000000).toFixed(1) + "M"
+        : "$" + Math.round(ing / 1000) + "k";
+      metricas.push(
+        `<div class="card-metric">` +
+        `<span class="card-metric-valor">${ingStr}</span>` +
+        `<span class="card-metric-label">Ingreso 4° año ` +
+        infoIcon("Ingreso promedio al 4° año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
+        `</span></div>`
+      );
+    }
+    return `<div class="card-metrics-row">${metricas.join("")}</div>`;
+  }
+
+  function iconRowCarrera(carrera) {
+    const partes = [];
+    if (carrera.area) partes.push(iconChip("🎓", carrera.area, "Área de conocimiento según clasificación SIES."));
+    const tiposDisponibles = ORDEN_TIPOS.filter((t) => carrera.benchmarks.some((b) => b.tipo_institucion === t));
+    if (tiposDisponibles.length) {
+      const tipoChips = tiposDisponibles.map((t) => iconChip(TIPO_EMOJI[t], TIPO_CORTO[t], t)).join("");
+      partes.push(`<span class="card-icon-label">Dónde se imparte:</span>${tipoChips}`);
+    }
+    if (!carrera.tiene_benchmark_nacional) partes.push(iconChip("📊", "sin benchmark", "Esta carrera no tiene datos de comparación nacional en SIES."));
+    return partes.length ? `<div class="card-icon-row">${partes.join("")}</div>` : "";
+  }
+
+  function actualizarAvisoUsabilidad() {
+    const n = selected.length;
+    if (n >= AVISO_UMBRAL) {
+      el.avisoUsabilidad.textContent = `Estás comparando ${n} carreras — con muchas tarjetas la lectura puede ser más difícil.`;
+      el.avisoUsabilidad.hidden = false;
+    } else {
+      el.avisoUsabilidad.hidden = true;
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Tarjetas de carreras seleccionadas, con checkbox por tipo disponible
+  // ---------------------------------------------------------------------
+  function renderSelected() {
+    el.selectedList.innerHTML = selected
+      .map((c) => {
+        const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
+        const tiposDisponibles = ORDEN_TIPOS.filter((t) => c.benchmarks.some((b) => b.tipo_institucion === t));
+        const checkboxes = tiposDisponibles.length
+          ? `<div class="tipo-checks"><span class="card-icon-label">Dónde se imparte:</span>${tiposDisponibles
+              .map((t) => {
+                const benchmark = c.benchmarks.find((b) => b.tipo_institucion === t);
+                const faltantes = badgesFaltantesBenchmark(benchmark);
+                return `<label class="tipo-check">
+                  <input type="checkbox" data-slug="${c.slug}" data-tipo="${escapeHtml(t)}" ${activos.has(t) ? "checked" : ""}>
+                  ${escapeHtml(TIPO_CORTO[t] || t)}
+                </label>${faltantes}`;
+              })
+              .join("")}</div>`
+          : `<div class="tipo-checks"><span class="badge badge-warning">sin comparación nacional</span>${infoIcon("Esta carrera no tiene datos de benchmark nacional en SIES. Solo 26 de 190 carreras genéricas están en este estado.")}</div>`;
+
+        return `<li class="carrera-card" data-slug="${c.slug}">
+          <div class="carrera-card-header">
+            <span class="carrera-card-nombre">${escapeHtml(c.nombre)}</span>
+            <button type="button" class="remove" aria-label="Quitar ${escapeHtml(c.nombre)}" data-slug="${c.slug}">×</button>
+          </div>
+          ${iconRowCarrera(c)}
+          ${headlineMetricsCarrera(c)}
+          ${checkboxes}
+        </li>`;
+      })
+      .join("");
+
+    el.selectedList.querySelectorAll("button.remove").forEach((btn) => {
+      btn.addEventListener("click", () => removeCarrera(btn.dataset.slug));
+    });
+
+    el.selectedList.querySelectorAll('input[type="checkbox"]').forEach((chk) => {
+      chk.addEventListener("change", () => {
+        const set = tiposActivosPorCarrera.get(chk.dataset.slug);
+        if (!set) return;
+        if (chk.checked) set.add(chk.dataset.tipo);
+        else set.delete(chk.dataset.tipo);
+        renderCharts();
+      });
+    });
+
+    actualizarAvisoUsabilidad();
+
+    el.selectorHelp.textContent = selected.length < MIN_CARRERAS
+      ? `Agrega al menos 2 carreras para comparar (llevas ${selected.length}).`
+      : `Comparando ${selected.length} carrera(s).`;
+  }
+
+  function renderEmptyState() {
+    const mostrarVacio = selected.length < MIN_CARRERAS;
+    el.seccionVacia.hidden = !mostrarVacio;
+    el.seccionCharts.hidden = mostrarVacio;
+    el.seccionDetalle.hidden = mostrarVacio;
+  }
+
+  // ---------------------------------------------------------------------
+  // Graficos Chart.js v4 — barras horizontales, una fila por combo
+  // (carrera, tipo de institucion) que el usuario dejo marcado con su
+  // checkbox. Reemplaza los 3 toggles globales de la v1: ahora la
+  // comparacion es exactamente lo que el usuario marco, sin modos.
+  // ---------------------------------------------------------------------
+  const COLORES_TIPO = {
+    "Universidades": "#1a7f64",
+    "Institutos Profesionales": "#e8960a",
+    "Centros de Formación Técnica": "#3b82f6",
+  };
+
+  const ABREVIATURAS = [
+    [/Ingeniería/gi, "Ing."],
+    [/Tecnología/gi, "Tec."],
+    [/Tecnólogo/gi, "Tec."],
+    [/Administración/gi, "Adm."],
+    [/Licenciatura/gi, "Lic."],
+    [/Pedagogía/gi, "Ped."],
+  ];
+
+  function abreviarNombre(nombre) {
+    return ABREVIATURAS.reduce((acc, [re, rep]) => acc.replace(re, rep), nombre);
+  }
+
+  function truncar(texto, max) {
+    return texto.length > max ? `${texto.slice(0, max - 1)}…` : texto;
+  }
+
+  // Etiqueta corta para el eje (abreviada + truncada); el tooltip sigue
+  // mostrando el nombre completo porque usa `data.labels` sin pasar por
+  // este callback (Chart.js solo aplica ticks.callback al eje, no al
+  // tooltip por defecto).
+  function etiquetaEjeCorta(carrera, tipo) {
+    return truncar(`${abreviarNombre(carrera.nombre)} (${TIPO_CORTO[tipo] || tipo})`, 26);
+  }
+
+  // Combos (carrera, tipo) marcados, en orden de seleccion y de tipo fijo
+  // (Uni, IP, CFT) para que los 4 graficos siempre muestren las mismas
+  // filas en el mismo orden.
+  function entradasActuales() {
+    const entradas = [];
+    selected.forEach((c) => {
+      const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
+      ORDEN_TIPOS.forEach((tipo) => {
+        if (!activos.has(tipo)) return;
+        const b = c.benchmarks.find((bb) => bb.tipo_institucion === tipo);
+        if (b) entradas.push({ carrera: c, tipo, benchmark: b });
+      });
+    });
+    return entradas;
+  }
+
+  function destruirChart(id) {
+    if (chartInstances[id]) {
+      chartInstances[id].destroy();
+      delete chartInstances[id];
+    }
+  }
+
+  function altoCanvas(nFilas) {
+    return Math.max(180, nFilas * 36 + 70);
+  }
+
+  function opcionesEjeY(entradas) {
+    return {
+      autoSkip: false,
+      callback: (value, index) => etiquetaEjeCorta(entradas[index].carrera, entradas[index].tipo),
+    };
+  }
+
+  function dibujarChart(id, entradas, config) {
+    destruirChart(id);
+    const canvas = document.getElementById(id);
+    canvas.parentElement.style.height = `${altoCanvas(entradas.length)}px`;
+    const ctx = canvas.getContext("2d");
+    chartInstances[id] = new Chart(ctx, config);
+  }
+
+  function datasetUnaMetrica(entradas, extractor) {
+    return {
+      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+      datasets: [
+        {
+          label: "Valor",
+          backgroundColor: entradas.map((e) => COLORES_TIPO[e.tipo] || "#999"),
+          data: entradas.map((e) => extractor(e.benchmark)),
+        },
+      ],
+    };
+  }
+
+  function datasetDosMetricas(entradas, extractor1, etiqueta1, color1, extractor2, etiqueta2, color2) {
+    return {
+      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+      datasets: [
+        { label: etiqueta1, backgroundColor: color1, data: entradas.map((e) => extractor1(e.benchmark)) },
+        { label: etiqueta2, backgroundColor: color2, data: entradas.map((e) => extractor2(e.benchmark)) },
+      ],
+    };
+  }
+
+  function renderCharts() {
+    if (selected.length < MIN_CARRERAS) return;
+    const entradas = entradasActuales();
+
+    const carrerasSinBarra = selected.filter((c) => !entradas.some((e) => e.carrera.slug === c.slug));
+    el.notaCharts.textContent = carrerasSinBarra.length
+      ? `${carrerasSinBarra.length} carrera(s) sin ninguna barra en estos gráficos (sin comparación nacional o sin tipo marcado): ${carrerasSinBarra.map((c) => c.nombre).join(", ")}.`
+      : "Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.";
+
+    if (entradas.length === 0) {
+      ["chart-ingreso", "chart-empleabilidad", "chart-retencion", "chart-distribucion"].forEach((id) => {
+        destruirChart(id);
+        document.getElementById(id).parentElement.style.height = "80px";
+      });
+      return;
+    }
+
+    const ejeY = { ticks: opcionesEjeY(entradas) };
+
+    // 1. Ingreso al 4to año
+    dibujarChart("chart-ingreso", entradas, {
+      type: "bar",
+      data: datasetUnaMetrica(entradas, (b) => b.ingreso_4to_anio_2024),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, title: { display: true, text: "CLP" } }, y: ejeY },
+      },
+    });
+
+    // 2. Empleabilidad 1er/2do año
+    dibujarChart("chart-empleabilidad", entradas, {
+      type: "bar",
+      data: datasetDosMetricas(
+        entradas,
+        (b) => b.empleabilidad_1er_anio_2024, "1er año", "#1a7f64",
+        (b) => b.empleabilidad_2do_anio_2024, "2do año", "#a7d9cd"
+      ),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    // 3. Retencion 1er/2do año
+    dibujarChart("chart-retencion", entradas, {
+      type: "bar",
+      data: datasetDosMetricas(
+        entradas,
+        (b) => b.retencion_1er_anio, "1er año", "#e8960a",
+        (b) => b.retencion_2do_anio, "2do año", "#fcd28c"
+      ),
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
+      },
+    });
+
+    // 4. Distribucion de ingreso (percentiles 10/50/90 al 5to año)
+    dibujarChart("chart-distribucion", entradas, {
+      type: "bar",
+      data: {
+        labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
+        datasets: [
+          { label: "Percentil 10", backgroundColor: "#fca5a5", data: entradas.map((e) => e.benchmark.percentil_10_5to_anio) },
+          { label: "Percentil 50 (mediana)", backgroundColor: "#1a7f64", data: entradas.map((e) => e.benchmark.percentil_50_5to_anio) },
+          { label: "Percentil 90", backgroundColor: "#3b82f6", data: entradas.map((e) => e.benchmark.percentil_90_5to_anio) },
+        ],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { x: { beginAtZero: true, title: { display: true, text: "CLP" } }, y: ejeY },
+      },
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Panel "donde se imparte" (lazy-load de detalle/<slug>.json)
+  // ---------------------------------------------------------------------
+  function renderDetallePanels() {
+    el.detalleContainer.innerHTML = selected
+      .map(
+        (c) => `<details class="detalle-carrera" data-slug="${c.slug}">
+          <summary>${escapeHtml(c.nombre)}</summary>
+          <div class="detalle-body" data-slug="${c.slug}"><p class="detalle-loading">Abre para cargar la oferta…</p></div>
+        </details>`
+      )
+      .join("");
+
+    el.detalleContainer.querySelectorAll("details.detalle-carrera").forEach((details) => {
+      details.addEventListener("toggle", async () => {
+        if (!details.open) return;
+        const slug = details.dataset.slug;
+        const body = details.querySelector(".detalle-body");
+        if (detalleCache[slug]) {
+          renderDetalleBody(body, detalleCache[slug]);
+          return;
+        }
+        body.innerHTML = '<p class="detalle-loading">Cargando…</p>';
+        try {
+          const resp = await fetch(`data/detalle/${slug}.json`);
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const detalle = await resp.json();
+          detalleCache[slug] = detalle;
+          renderDetalleBody(body, detalle);
+        } catch (err) {
+          body.innerHTML = `<p class="detalle-empty">No se pudo cargar el detalle (${escapeHtml(err.message)}).</p>`;
+        }
+      });
+    });
+  }
+
+  function badgeInstitucion(institucion) {
+    if (institucion.tiene_ficha) return escapeHtml(institucion.nombre);
+    return `<span class="badge badge-missing">institución sin ficha</span> (código ${institucion.codigo ?? "?"})`;
+  }
+
+  function formatPct(v) {
+    return v === null || v === undefined ? "—" : `${Math.round(v * 100)}%`;
+  }
+
+  function parseArancel(texto) {
+    if (!texto) return null;
+    const digitos = texto.replace(/[^\d]/g, "");
+    return digitos ? parseInt(digitos, 10) : null;
+  }
+
+  function formatCLP(valor) {
+    return valor === null ? "—" : `$${valor.toLocaleString("es-CL")}`;
+  }
+
+  function rangoArancel(ofertas) {
+    const valores = ofertas.map((o) => parseArancel(o.arancel_anual_2026)).filter((v) => v !== null);
+    if (!valores.length) return "—";
+    const min = Math.min(...valores);
+    const max = Math.max(...valores);
+    return min === max ? formatCLP(min) : `${formatCLP(min)} – ${formatCLP(max)}`;
+  }
+
+  // Devuelve el HTML del mini bar chart de ponderaciones PAES de una oferta.
+  // Si la oferta no tiene ponderacion (IPs/CFTs), devuelve el badge "Sin PAES".
+  // La barra se normaliza por la suma real (puede ser > 100 en el sistema
+  // chileno cuando se agregan pruebas electivas sobre el 100% base).
+  const POND_COMPS = [
+    { key: "ponderacion_nem",           clase: "pond-nem",      etiqueta: "NEM" },
+    { key: "ponderacion_ranking",       clase: "pond-ranking",  etiqueta: "Ranking" },
+    { key: "ponderacion_lenguaje",      clase: "pond-lenguaje", etiqueta: "C. Lectora" },
+    { key: "ponderacion_matematicas",   clase: "pond-mat",      etiqueta: "M1" },
+    { key: "ponderacion_matematicas_2", clase: "pond-mat2",     etiqueta: "M2" },
+    { key: "ponderacion_historia",      clase: "pond-historia", etiqueta: "Hist." },
+    { key: "ponderacion_ciencias",      clase: "pond-ciencias", etiqueta: "Ciencias" },
+    { key: "ponderacion_otros",         clase: "pond-otros",    etiqueta: "Otros" },
+  ];
+
+  function renderPonderacionBar(oferta) {
+    const sinPaesHtml = `<span class="badge-sin-paes">Sin ponderación PAES</span>${infoIcon("Esta sede/jornada no reporta ponderaciones PAES. Común en IPs y CFTs con admisión especial sin PAES.")}`;
+    if (!oferta.tiene_ponderacion_paes) {
+      return sinPaesHtml;
+    }
+    const suma = POND_COMPS.reduce((acc, c) => acc + (oferta[c.key] || 0), 0);
+    if (suma === 0) return sinPaesHtml;
+
+    // Segmentos de la barra (todos los componentes activos, proporcionales a suma real)
+    const segs = POND_COMPS
+      .filter((c) => (oferta[c.key] || 0) > 0)
+      .map((c) => {
+        const pct = ((oferta[c.key] || 0) / suma * 100).toFixed(1);
+        return `<span class="pond-seg ${c.clase}" style="width:${pct}%" title="${c.etiqueta} ${oferta[c.key]}%"></span>`;
+      })
+      .join("");
+
+    // Texto compacto: Hist. y Ciencias agrupados como electivos alternativos
+    const partes = [];
+    const indiv = ["ponderacion_nem","ponderacion_ranking","ponderacion_lenguaje",
+                   "ponderacion_matematicas","ponderacion_matematicas_2","ponderacion_otros"];
+    POND_COMPS.filter((c) => indiv.includes(c.key) && (oferta[c.key] || 0) > 0)
+              .forEach((c) => partes.push(`${c.etiqueta} ${oferta[c.key]}%`));
+    const hist = oferta.ponderacion_historia || 0;
+    const cien = oferta.ponderacion_ciencias || 0;
+    if (hist > 0 && cien > 0) {
+      partes.push(hist === cien ? `Hist./Ciencias ${hist}%` : `Hist./Ciencias ${hist}%/${cien}%`);
+    } else if (hist > 0) {
+      partes.push(`Hist. ${hist}%`);
+    } else if (cien > 0) {
+      partes.push(`Ciencias ${cien}%`);
+    }
+
+    const texto = partes.join(" · ");
+    return `<div class="pond-bar" title="${texto}">${segs}</div>
+            <span class="pond-label">${texto}</span>`;
+  }
+
+  function opcionesSelect(valores, todasLabel) {
+    return `<option value="">${escapeHtml(todasLabel)}</option>${valores
+      .map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`)
+      .join("")}`;
+  }
+
+  function filtrosDisponibles(detalle) {
+    const regiones = new Set();
+    const jornadas = new Set();
+    const tipos = new Set();
+    detalle.ofertas.forEach((o) => {
+      if (o.region) regiones.add(o.region);
+      if (o.jornada) jornadas.add(o.jornada);
+      if (o.institucion.tipo) tipos.add(o.institucion.tipo);
+    });
+    return { regiones: [...regiones].sort(), jornadas: [...jornadas].sort(), tipos: [...tipos].sort() };
+  }
+
+  // Agrupa ofertas + indicadores de un detalle por institucion (codigo),
+  // para que el panel muestre 1 acordeon por institucion en vez de 1 fila
+  // plana por sede/jornada (que era ilegible para instituciones con muchas
+  // sedes, ej. INACAP). Los filtros de region/jornada/tipo se aplican
+  // sobre las filas de oferta antes de agrupar; el filtro de tipo tambien
+  // aplica a indicadores (que no tienen region/jornada propios).
+  function agruparPorInstitucion(detalle, filtros) {
+    const grupos = new Map();
+    const claveDe = (institucion) => institucion.codigo ?? `sin-codigo-${institucion.nombre || "?"}`;
+
+    detalle.ofertas.forEach((o) => {
+      if (filtros.region && o.region !== filtros.region) return;
+      if (filtros.jornada && o.jornada !== filtros.jornada) return;
+      if (filtros.tipo && o.institucion.tipo !== filtros.tipo) return;
+      const key = claveDe(o.institucion);
+      if (!grupos.has(key)) grupos.set(key, { institucion: o.institucion, ofertas: [], indicadores: [] });
+      grupos.get(key).ofertas.push(o);
+    });
+
+    detalle.indicadores.forEach((ind) => {
+      if (filtros.tipo && ind.institucion.tipo !== filtros.tipo) return;
+      const key = claveDe(ind.institucion);
+      if (!grupos.has(key)) {
+        // Indicadores no tiene region/jornada propios para filtrar; si hay
+        // un filtro de esos activo y la institucion no calzo por oferta, no
+        // la agregamos solo por sus indicadores (evita resultados que
+        // ignoran silenciosamente el filtro que el usuario eligio).
+        if (filtros.region || filtros.jornada) return;
+        grupos.set(key, { institucion: ind.institucion, ofertas: [], indicadores: [] });
+      }
+      grupos.get(key).indicadores.push(ind);
+    });
+
+    return [...grupos.values()].sort((a, b) => b.ofertas.length - a.ofertas.length);
+  }
+
+  function renderGrupoInstitucion(grupo) {
+    const regiones = [...new Set(grupo.ofertas.map((o) => o.region).filter(Boolean))];
+    const filasOferta = grupo.ofertas
+      .map(
+        (o) => `<tr>
+          <td>${escapeHtml(o.jornada || "—")}</td>
+          <td>${escapeHtml(o.sede || "—")}</td>
+          <td>${escapeHtml(o.region || "—")}</td>
+          <td>${escapeHtml(o.nivel_carrera || "—")}</td>
+          <td>${escapeHtml(o.arancel_anual_2026 || "—")}</td>
+          <td>${o.vacantes_1er_semestre ?? "—"}</td>
+          <td class="pond-cell">${renderPonderacionBar(o)}</td>
+        </tr>`
+      )
+      .join("");
+    const filasIndicadores = grupo.indicadores
+      .map(
+        (i) => `<tr>
+          <td>${escapeHtml(i.nombre_carrera_titulo || "—")}</td>
+          <td>${formatPct(i.empleabilidad_1er_anio)}</td>
+          <td>${formatPct(i.empleabilidad_2do_anio)}</td>
+          <td>${formatPct(i.retencion_1er_anio)}</td>
+          <td>${formatPct(i.continuidad_estudios_pct)}</td>
+          <td>${i.duracion_real_semestres ?? "—"}</td>
+          <td>${escapeHtml(i.ingreso_banda_texto || "—")}</td>
+        </tr>`
+      )
+      .join("");
+
+    const resumenPartes = [];
+    if (grupo.institucion.tipo) resumenPartes.push(escapeHtml(grupo.institucion.tipo));
+    if (grupo.ofertas.length) resumenPartes.push(`${grupo.ofertas.length} sede(s)/jornada(s)`);
+    if (regiones.length) resumenPartes.push(escapeHtml(regiones.join(", ")));
+    if (grupo.ofertas.length) resumenPartes.push(`arancel ${rangoArancel(grupo.ofertas)}`);
+    if (grupo.institucion.acreditacion) resumenPartes.push(`acreditación ${escapeHtml(grupo.institucion.acreditacion)}`);
+
+    return `<details class="institucion-card">
+      <summary>
+        <span class="institucion-nombre">${badgeInstitucion(grupo.institucion)}</span>
+        <span class="institucion-resumen">${resumenPartes.join(" · ")}</span>
+      </summary>
+      ${grupo.ofertas.length ? `<table class="detalle-table">
+        <caption>Sedes / jornadas (${grupo.ofertas.length})</caption>
+        <thead><tr><th>Jornada</th><th>Sede</th><th>Región</th><th>Nivel</th><th>Arancel 2026 ${infoIcon("Costo anual de la carrera en esta sede/jornada, según datos oficiales SIES 2026.")}</th><th>Vacantes 1er sem. ${infoIcon("Cupos disponibles para primer año en el primer semestre, según SIES.")}</th><th>Ponderaciones PAES ${infoIcon("Pesos asignados a cada prueba al calcular el puntaje ponderado de postulación (NEM, Ranking, Lenguaje, Matemáticas, etc.).")}</th></tr></thead>
+        <tbody>${filasOferta}</tbody>
+      </table>` : ""}
+      ${grupo.indicadores.length ? `<table class="detalle-table">
+        <caption>Indicadores propios por título (${grupo.indicadores.length})</caption>
+        <thead><tr><th>Carrera (título)</th><th>Empleab. 1° ${infoIcon("% de titulados que trabajaron formalmente al 1er año post-título, según el SII.")}</th><th>Empleab. 2° ${infoIcon("% de titulados que trabajaron formalmente al 2do año post-título.")}</th><th>Retención 1° ${infoIcon("% de estudiantes que continuaron inscritos en la carrera al 2do año.")}</th><th>Continuidad ${infoIcon("% de titulados que siguieron estudiando otra carrera o posgrado después de titularse.")}</th><th>Duración real (sem.) ${infoIcon("Semestres que tardaron realmente los titulados en completar la carrera. Puede ser mayor que la duración formal del plan.")}</th><th>Banda de ingreso ${infoIcon("Tramo de ingresos al 4° año de titulado reportado por SIES (rango de texto, no valor exacto).")}</th></tr></thead>
+        <tbody>${filasIndicadores}</tbody>
+      </table>` : ""}
+    </details>`;
+  }
+
+  function renderDetalleBody(body, detalle) {
+    const filtros = filtrosDisponibles(detalle);
+    const estado = { region: "", jornada: "", tipo: "" };
+
+    function dibujarInstituciones() {
+      const grupos = agruparPorInstitucion(detalle, estado);
+      const listaEl = body.querySelector(".instituciones-lista");
+      listaEl.innerHTML = grupos.length
+        ? grupos.map(renderGrupoInstitucion).join("")
+        : '<p class="detalle-empty">Ninguna institución calza con estos filtros.</p>';
+    }
+
+    const leyendaPAES = POND_COMPS.map((c) => {
+      return `<span class="pond-leyenda-item">
+        <span class="pond-leyenda-dot ${c.clase}"></span>${c.etiqueta}
+      </span>`;
+    }).join("");
+    body.innerHTML = `
+      <div class="detalle-filtros">
+        <label>Región <select class="filtro-region">${opcionesSelect(filtros.regiones, "Todas")}</select></label>
+        <label>Jornada <select class="filtro-jornada">${opcionesSelect(filtros.jornadas, "Todas")}</select></label>
+        <label>Tipo de institución <select class="filtro-tipo-inst">${opcionesSelect(filtros.tipos, "Todos")}</select></label>
+      </div>
+      <div class="pond-leyenda">${leyendaPAES}</div>
+      <div class="instituciones-lista"></div>
+    `;
+    body.querySelector(".filtro-region").addEventListener("change", (e) => { estado.region = e.target.value; dibujarInstituciones(); });
+    body.querySelector(".filtro-jornada").addEventListener("change", (e) => { estado.jornada = e.target.value; dibujarInstituciones(); });
+    body.querySelector(".filtro-tipo-inst").addEventListener("change", (e) => { estado.tipo = e.target.value; dibujarInstituciones(); });
+
+    dibujarInstituciones();
+  }
+
+  // Componente tooltip: muestra un popup contextual para cualquier elemento
+  // con atributo data-tooltip. Accesible (role=tooltip, aria-describedby,
+  // cierra con Escape o clic fuera). Mismo bloque en instituciones.html.
+  function initTooltip() {
+    const popup = document.createElement("div");
+    popup.id = "tooltip-popup";
+    popup.setAttribute("role", "tooltip");
+    popup.setAttribute("aria-hidden", "true");
+    document.body.appendChild(popup);
+
+    let hideTimer = null;
+    let activeTrigger = null;
+
+    function show(trigger) {
+      clearTimeout(hideTimer);
+      const texto = trigger.dataset.tooltip || "";
+      if (!texto) return;
+      activeTrigger = trigger;
+      popup.textContent = texto;
+      popup.classList.remove("visible", "arrow-above", "arrow-below");
+      popup.style.left = "-9999px";
+      popup.style.top = "-9999px";
+      popup.classList.add("visible");
+      popup.removeAttribute("aria-hidden");
+      trigger.setAttribute("aria-describedby", "tooltip-popup");
+
+      const rect = trigger.getBoundingClientRect();
+      const pw = popup.offsetWidth;
+      const ph = popup.offsetHeight;
+      const margin = 8;
+      const vw = window.innerWidth;
+
+      let left = rect.left + rect.width / 2 - pw / 2;
+      left = Math.max(margin, Math.min(vw - pw - margin, left));
+      const arrowLeft = rect.left + rect.width / 2 - left;
+      popup.style.setProperty("--tp-arrow-left", `${Math.max(8, Math.min(pw - 16, arrowLeft))}px`);
+
+      let top;
+      if (rect.top - ph - 6 >= margin) {
+        top = rect.top - ph - 6;
+        popup.classList.add("arrow-below");
+      } else {
+        top = rect.bottom + 6;
+        popup.classList.add("arrow-above");
+      }
+      popup.style.left = `${left}px`;
+      popup.style.top = `${top}px`;
+    }
+
+    function hide(trigger) {
+      hideTimer = setTimeout(() => {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        if (trigger) trigger.removeAttribute("aria-describedby");
+        activeTrigger = null;
+      }, 80);
+    }
+
+    document.addEventListener("mouseover", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("mouseout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t && !t.contains(ev.relatedTarget)) hide(t);
+    });
+    document.addEventListener("focusin", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) show(t);
+    });
+    document.addEventListener("focusout", (ev) => {
+      const t = ev.target.closest("[data-tooltip]");
+      if (t) hide(t);
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && activeTrigger) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+    document.addEventListener("click", (ev) => {
+      if (activeTrigger && !ev.target.closest("[data-tooltip]")) {
+        popup.classList.remove("visible", "arrow-above", "arrow-below");
+        popup.setAttribute("aria-hidden", "true");
+        activeTrigger = null;
+      }
+    });
+  }
+
+  initTooltip();
+  init();
+})();
+</script>
+
+</body>
+</html>
