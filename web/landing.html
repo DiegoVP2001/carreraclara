@@ -384,6 +384,66 @@
   .fb-status.success { color: var(--color-primary); font-weight: 600; }
   .fb-status.error   { color: #c0392b; }
 
+  /* ─── T23c: botón flotante de feedback ───────────────────────────────── */
+  .fab-feedback {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 450;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.7rem 1.2rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(9, 29, 44, 0.28);
+    transition: background 0.15s, transform 0.13s, box-shadow 0.13s, opacity 0.2s ease;
+  }
+
+  .fab-feedback:hover {
+    background: #15694f;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(9, 29, 44, 0.34);
+  }
+
+  .fab-feedback:active { transform: translateY(0); }
+
+  .fab-feedback:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(26, 127, 100, 0.5);
+  }
+
+  .fab-feedback .fab-icon { font-size: 1.1rem; line-height: 1; }
+
+  /* Se oculta cuando la sección de feedback ya está a la vista */
+  .fab-feedback.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px) scale(0.92);
+  }
+
+  @media (max-width: 600px) {
+    .fab-feedback {
+      right: 1rem;
+      bottom: 1rem;
+      width: 52px;
+      height: 52px;
+      padding: 0;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .fab-feedback .fab-label { display: none; }
+    .fab-feedback .fab-icon { font-size: 1.35rem; }
+  }
+
   /* ─── Animación de entrada ──────────────────────────────────────────── */
   @media (prefers-reduced-motion: no-preference) {
     .reveal {
@@ -562,13 +622,14 @@
     </div>
   </section>
 
-  <section class="feedback reveal">
+  <section class="feedback reveal" id="feedback">
     <h2>¿Tienes algo que decirnos?</h2>
     <p class="feedback-desc">Si encontraste un error, tienes una idea o simplemente quieres dar una opinión — me sirve mucho para seguir mejorando esto.</p>
 
     <form class="feedback-form" id="feedbackForm" novalidate>
       <input type="hidden" name="access_key" value="d7b039f2-65d7-46ba-b873-91a448bc87c2">
-      <input type="hidden" name="subject" value="Nuevo feedback — Carrera Clara">
+      <input type="hidden" name="subject" value="Nuevo feedback — Carrera Clara (Portada)">
+      <input type="hidden" name="pagina" value="Portada">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
       <div class="fb-field">
@@ -642,6 +703,12 @@
   </div>
 </footer>
 
+<!-- T23c: botón flotante de feedback (baja a la sección que ya está en esta página) -->
+<button type="button" class="fab-feedback" id="fabFeedback">
+  <span class="fab-icon" aria-hidden="true">💬</span>
+  <span class="fab-label">Feedback</span>
+</button>
+
 <script>
 (function () {
   "use strict";
@@ -663,6 +730,43 @@
     });
   }
 
+  // T23c: botón flotante → baja a la sección de feedback de esta misma página
+  var fab       = document.getElementById("fabFeedback");
+  var fbSection = document.getElementById("feedback");
+
+  function revealFeedback() {
+    if (fbSection) fbSection.classList.add("is-visible");
+  }
+
+  if (fab && fbSection) {
+    fab.addEventListener("click", function () {
+      revealFeedback();
+      fbSection.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+      // Sin preventScroll: si el scroll suave no llegara a correr, el foco
+      // igual deja el campo a la vista.
+      var firstField = document.getElementById("fb-tipo");
+      if (firstField) {
+        setTimeout(function () { firstField.focus(); }, reduced ? 0 : 550);
+      }
+    });
+
+    // Ocultar el botón cuando la sección ya está a la vista (sería redundante)
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        fab.classList.toggle("is-hidden", entry.isIntersecting);
+      });
+    }, { threshold: 0.25 }).observe(fbSection);
+  }
+
+  // Deep-link /#feedback: la sección arranca en opacity 0 por .reveal,
+  // así que hay que revelarla a mano antes de que el ancla salte.
+  if (location.hash === "#feedback") {
+    revealFeedback();
+    requestAnimationFrame(function () {
+      if (fbSection) fbSection.scrollIntoView({ block: "start" });
+    });
+  }
+
   // Feedback form — Web3Forms submission
   var feedbackForm = document.getElementById("feedbackForm");
   if (feedbackForm) {
@@ -671,6 +775,14 @@
 
       var btn    = document.getElementById("fbSubmitBtn");
       var status = document.getElementById("fbStatus");
+
+      if (!feedbackForm.checkValidity()) {
+        status.className   = "fb-status error";
+        status.textContent = "Elige un tipo y escribe tu mensaje antes de enviar.";
+        var invalid = feedbackForm.querySelector(":invalid");
+        if (invalid) invalid.focus();
+        return;
+      }
 
       btn.disabled    = true;
       btn.textContent = "Enviando…";

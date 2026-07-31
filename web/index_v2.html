@@ -74,12 +74,25 @@
     align-items: center;
     gap: var(--space-2);
     margin-bottom: var(--space-2);
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--radius);
+    transition: opacity 0.15s ease;
+  }
+
+  .header-brand:hover { opacity: 0.88; }
+  .header-brand:hover .header-logo { transform: translateY(-2px); }
+
+  .header-brand:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 4px;
   }
 
   .header-logo {
     height: 70px;
     width: auto;
     flex-shrink: 0;
+    transition: transform 0.15s ease;
   }
 
   .header-brand-text {
@@ -1190,19 +1203,248 @@
   .tooltip-btn {
     transition: background 0.12s;
   }
+
+  /* ─── T23c: botón flotante de feedback ───────────────────────────────── */
+  .fab-feedback {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 450;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.7rem 1.2rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(9, 29, 44, 0.28);
+    transition: background 0.15s, transform 0.13s, box-shadow 0.13s;
+  }
+
+  .fab-feedback:hover {
+    background: #15694f;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 22px rgba(9, 29, 44, 0.34);
+  }
+
+  .fab-feedback:active { transform: translateY(0); }
+
+  .fab-feedback:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(26, 127, 100, 0.5);
+  }
+
+  .fab-feedback .fab-icon { font-size: 1.1rem; line-height: 1; }
+
+  @media (max-width: 600px) {
+    .fab-feedback {
+      right: 1rem;
+      bottom: 1rem;
+      width: 52px;
+      height: 52px;
+      padding: 0;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .fab-feedback .fab-label { display: none; }
+    .fab-feedback .fab-icon { font-size: 1.35rem; }
+  }
+
+  /* ─── T23c: modal de feedback ────────────────────────────────────────── */
+  body.fb-modal-open { overflow: hidden; }
+
+  .fb-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2);
+    background: rgba(9, 29, 44, 0.55);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .fb-modal-overlay[hidden] { display: none; }
+  .fb-modal-overlay.is-open { opacity: 1; }
+
+  .fb-modal {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border-top: 3px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    box-shadow: 0 18px 44px rgba(9, 29, 44, 0.32);
+    transform: translateY(14px) scale(0.985);
+    transition: transform 0.22s ease;
+  }
+
+  .fb-modal-overlay.is-open .fb-modal { transform: translateY(0) scale(1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fb-modal-overlay,
+    .fb-modal { transition: none; }
+  }
+
+  .fb-modal h2 {
+    font-size: 1.3rem;
+    color: var(--color-text);
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+    padding-right: 2.5rem;
+  }
+
+  .fb-modal-desc {
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-3);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .fb-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .fb-close:hover { background: var(--color-bg-alt); color: var(--color-text); }
+
+  .fb-close:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+  }
+
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .fb-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .fb-field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .fb-optional {
+    font-weight: 400;
+    color: var(--color-text-muted);
+  }
+
+  .fb-field select,
+  .fb-field textarea,
+  .fb-field input[type="email"] {
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.6rem 0.85rem;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    outline: none;
+    width: 100%;
+  }
+
+  .fb-field select:focus,
+  .fb-field textarea:focus,
+  .fb-field input[type="email"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 127, 100, 0.12);
+  }
+
+  .fb-field textarea {
+    resize: vertical;
+    min-height: 96px;
+    line-height: 1.55;
+  }
+
+  .fb-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+
+  .fb-btn {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    min-height: 44px;
+    transition: background 0.15s, transform 0.13s, box-shadow 0.13s;
+  }
+
+  .fb-btn:hover:not(:disabled) {
+    background: #15694f;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 127, 100, 0.3);
+  }
+
+  .fb-btn:active:not(:disabled) { transform: translateY(0); }
+
+  .fb-btn:disabled {
+    background: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+
+  .fb-status {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .fb-status.success { color: var(--color-primary); font-weight: 600; }
+  .fb-status.error   { color: var(--color-danger); }
 </style>
 </head>
 <body>
 
 <header class="app-header">
   <div class="header-inner">
-    <div class="header-brand">
+    <a class="header-brand" href="/" aria-label="Carrera Clara — volver al inicio">
       <img src="assets/logo-carrera-clara-blanco.png" alt="Logo Carrera Clara" class="header-logo">
       <div class="header-brand-text">
         <span class="header-brand-name">Carrera Clara</span>
         <span class="header-brand-slogan">Elige con datos. Decide con claridad.</span>
       </div>
-    </div>
+    </a>
     <nav class="tabs">
       <a href="/">Inicio</a>
       <a href="/tipos-de-carrera" class="activo" aria-current="page">Tipos de carrera</a>
@@ -1320,6 +1562,56 @@
 
 <!-- Elemento oculto para compatibilidad con el JS (renderDiagnostico) -->
 <ul id="diagnostico-list" hidden></ul>
+
+<!-- T23c: botón flotante de feedback -->
+<button type="button" class="fab-feedback" id="fabFeedback" aria-haspopup="dialog" aria-controls="fbModalOverlay">
+  <span class="fab-icon" aria-hidden="true">💬</span>
+  <span class="fab-label">Feedback</span>
+</button>
+
+<!-- T23c: modal de feedback (mismo formulario Web3Forms de la portada) -->
+<div class="fb-modal-overlay" id="fbModalOverlay" hidden>
+  <div class="fb-modal" role="dialog" aria-modal="true" aria-labelledby="fbModalTitle">
+    <button type="button" class="fb-close" id="fbModalClose" aria-label="Cerrar">✕</button>
+
+    <h2 id="fbModalTitle">¿Tienes algo que decirnos?</h2>
+    <p class="fb-modal-desc">Si encontraste un error, tienes una idea o simplemente quieres dar una opinión — me sirve mucho para seguir mejorando esto.</p>
+
+    <form class="feedback-form" id="feedbackForm" novalidate>
+      <input type="hidden" name="access_key" value="d7b039f2-65d7-46ba-b873-91a448bc87c2">
+      <input type="hidden" name="subject" value="Nuevo feedback — Carrera Clara (Tipos de carrera)">
+      <input type="hidden" name="pagina" id="fbPagina" value="">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="fb-field">
+        <label for="fb-tipo">¿Qué tipo de feedback es?</label>
+        <select id="fb-tipo" name="tipo" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Bug (error en la página)">Encontré un error en la página</option>
+          <option value="Sugerencia de funcionalidad">Quiero sugerir algo nuevo</option>
+          <option value="Dato incorrecto o desactualizado">El dato parece incorrecto o desactualizado</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="fb-field">
+        <label for="fb-mensaje">Cuéntame</label>
+        <textarea id="fb-mensaje" name="mensaje" rows="4"
+          placeholder="Describe lo que encontraste o lo que tienes en mente..." required></textarea>
+      </div>
+
+      <div class="fb-field">
+        <label for="fb-email">Tu correo <span class="fb-optional">(opcional, si quieres que te responda)</span></label>
+        <input type="email" id="fb-email" name="email" placeholder="tu@correo.cl">
+      </div>
+
+      <div class="fb-actions">
+        <button type="submit" class="fb-btn" id="fbSubmitBtn">Enviar feedback</button>
+        <span class="fb-status" id="fbStatus" aria-live="polite"></span>
+      </div>
+    </form>
+  </div>
+</div>
 
 <script>
 (function () {
@@ -2395,6 +2687,129 @@
 
   initTooltip();
   init();
+})();
+</script>
+<script>
+/* ─── T23c: modal de feedback ─────────────────────────────────────────── */
+(function () {
+  "use strict";
+
+  var fab      = document.getElementById("fabFeedback");
+  var overlay  = document.getElementById("fbModalOverlay");
+  var form     = document.getElementById("feedbackForm");
+  if (!fab || !overlay || !form) return;
+
+  var modal     = overlay.querySelector(".fb-modal");
+  var closeBtn  = document.getElementById("fbModalClose");
+  var submitBtn = document.getElementById("fbSubmitBtn");
+  var statusEl  = document.getElementById("fbStatus");
+  var paginaEl  = document.getElementById("fbPagina");
+  var hideTimer = null;
+  var downOnOverlay = false;
+
+  function focusables() {
+    return Array.prototype.filter.call(
+      modal.querySelectorAll('button, select, textarea, input[type="email"], a[href]'),
+      function (elem) { return !elem.disabled && elem.offsetParent !== null; }
+    );
+  }
+
+  function onKeydown(e) {
+    if (e.key === "Escape") { closeModal(); return; }
+    if (e.key !== "Tab") return;
+
+    var items = focusables();
+    if (!items.length) return;
+    var first = items[0];
+    var last  = items[items.length - 1];
+
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
+  function openModal() {
+    if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+
+    // Guarda desde qué página y con qué comparación abierta se envió el feedback
+    paginaEl.value = "Tipos de carrera — " + location.pathname + location.search + location.hash;
+
+    overlay.hidden = false;
+    document.body.classList.add("fb-modal-open");
+    void overlay.offsetWidth; // fuerza reflow para que corra la transición de entrada
+    overlay.classList.add("is-open");
+    document.addEventListener("keydown", onKeydown);
+
+    var firstField = document.getElementById("fb-tipo");
+    if (firstField) firstField.focus();
+  }
+
+  function closeModal() {
+    overlay.classList.remove("is-open");
+    document.removeEventListener("keydown", onKeydown);
+    document.body.classList.remove("fb-modal-open");
+    hideTimer = setTimeout(function () {
+      overlay.hidden = true;
+      hideTimer = null;
+    }, 220);
+    fab.focus();
+  }
+
+  fab.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  // Cerrar al hacer clic fuera, sin cerrarse al arrastrar texto desde adentro
+  overlay.addEventListener("mousedown", function (e) { downOnOverlay = (e.target === overlay); });
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay && downOnOverlay) closeModal();
+    downOnOverlay = false;
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      statusEl.className   = "fb-status error";
+      statusEl.textContent = "Elige un tipo y escribe tu mensaje antes de enviar.";
+      var invalid = form.querySelector(":invalid");
+      if (invalid) invalid.focus();
+      return;
+    }
+
+    submitBtn.disabled    = true;
+    submitBtn.textContent = "Enviando…";
+    statusEl.className    = "fb-status";
+    statusEl.textContent  = "";
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(form)
+    })
+      .then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (!json.success) throw new Error(json.message || "Error");
+        statusEl.className   = "fb-status success";
+        statusEl.textContent = "¡Gracias! Tu mensaje fue recibido.";
+        form.reset();
+        setTimeout(function () {
+          closeModal();
+          statusEl.className   = "fb-status";
+          statusEl.textContent = "";
+        }, 1800);
+      })
+      .catch(function () {
+        statusEl.className   = "fb-status error";
+        statusEl.textContent = "Hubo un problema al enviar. Intenta de nuevo.";
+      })
+      .finally(function () {
+        submitBtn.disabled    = false;
+        submitBtn.textContent = "Enviar feedback";
+      });
+  });
 })();
 </script>
 <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');</script>
