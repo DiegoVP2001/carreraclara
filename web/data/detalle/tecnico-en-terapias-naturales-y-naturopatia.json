@@ -26,7 +26,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.55818181818182,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I123S2C193J2V1",
@@ -52,7 +54,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.36333333333333,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I152S10C390J3V1",
@@ -78,7 +82,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.67,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I152S10C507J3V1",
@@ -104,7 +110,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I155S2C107J1V1",
@@ -130,7 +138,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I218S1C114J1V2",
@@ -156,7 +166,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.644,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I218S1C114J2V2",
@@ -182,7 +194,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.6037037037037,
+      "promedio_paes_2025": null
     }
   ],
   "indicadores": [

@@ -116,6 +116,19 @@ def main() -> None:
         carreras = listar_carreras_genericas(conn)
         diagnostico = diagnostico_cobertura(conn)
 
+        # instituciones_nem.json (Tarea 25, "Que NEM necesito"): institucion ->
+        # carreras genericas que efectivamente imparte segun hecho_oferta.
+        # No se reusa data/instituciones.json (grano institucion+titulo via
+        # hecho_indicadores, Tarea 7) porque ese grano NO es superset del de
+        # hecho_oferta - hay 1183 combos institucion+generica con NEM/PAES
+        # real (ej. "Ingenieria Civil, plan comun..." de la PUC) que no tienen
+        # fila equivalente en hecho_indicadores, asi que quedaban invisibles
+        # en el selector de nem.html. Este indice se construye directo desde
+        # las mismas ofertas que ya se exportan a detalle/<slug>.json, asi que
+        # toda carrera listada aqui esta garantizado que tiene NEM/PAES para
+        # mostrar (no necesita el flag tiene_oferta_nem de instituciones.json).
+        instituciones_index: dict[int, dict] = {}
+
         tipos_institucion = sorted(
             {b.tipo_institucion for c in carreras for b in c.benchmarks if b.tipo_institucion}
         )
@@ -142,6 +155,16 @@ def main() -> None:
             detalle = detalle_carrera_generica(conn, c.nombre_carrera_generica)
             assert detalle is not None  # viene de listar_carreras_genericas, existe por construccion
 
+            for o in detalle.ofertas:
+                codigo = o.institucion.codigo_institucion
+                if codigo is None:
+                    continue  # institucion sin codigo no es seleccionable en el Paso 1
+                entry = instituciones_index.setdefault(
+                    codigo,
+                    {"institucion": institucion_a_dict(o.institucion), "carreras": set()},
+                )
+                entry["carreras"].add(c.nombre_carrera_generica)
+
             detalle_dict = {
                 "slug": slug,
                 "nombre": detalle.resumen.nombre_carrera_generica,
@@ -165,6 +188,8 @@ def main() -> None:
                         "ponderacion_historia": o.ponderacion_historia,
                         "ponderacion_ciencias": o.ponderacion_ciencias,
                         "ponderacion_otros": o.ponderacion_otros,
+                        "promedio_nem_2025": o.promedio_nem_2025,
+                        "promedio_paes_2025": o.promedio_paes_2025,
                     }
                     for o in detalle.ofertas
                 ],
@@ -186,9 +211,31 @@ def main() -> None:
                 json.dumps(detalle_dict, ensure_ascii=False, indent=2), encoding="utf-8"
             )
 
+        def etiqueta_institucion(inst: dict) -> str:
+            if inst["tiene_ficha"]:
+                return inst["nombre"]
+            return f"Institución sin ficha (código {inst['codigo']})"
+
+        instituciones_nem = {
+            "instituciones": [
+                {**entry["institucion"], "carreras": sorted(entry["carreras"])}
+                for entry in sorted(
+                    instituciones_index.values(),
+                    key=lambda e: etiqueta_institucion(e["institucion"]),
+                )
+            ]
+        }
+        (DATA_DIR / "instituciones_nem.json").write_text(
+            json.dumps(instituciones_nem, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+
         print(f"OK: {len(carreras)} carreras genericas exportadas a {DATA_DIR / 'core.json'}")
         print(f"OK: {len(slugs_vistos)} archivos de detalle exportados a {DETALLE_DIR}")
         print(f"Sin benchmark nacional: {diagnostico.carreras_sin_benchmark_nacional}")
+        print(
+            f"OK: {len(instituciones_nem['instituciones'])} instituciones con oferta real "
+            f"exportadas a {DATA_DIR / 'instituciones_nem.json'}"
+        )
     finally:
         conn.close()
 

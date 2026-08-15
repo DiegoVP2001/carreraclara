@@ -26,7 +26,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.83379549393414,
+      "promedio_paes_2025": 561.857142857143
     },
     {
       "codigo_unico_carrera": "I1S1C12J2V4",
@@ -52,7 +54,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.78636363636364,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I1S1C12J4V4",
@@ -78,7 +82,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.77525150905433,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I2S1C306J1V1",
@@ -104,7 +110,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.40223752151463,
+      "promedio_paes_2025": 644.100840336134
     },
     {
       "codigo_unico_carrera": "I3S1C12J1V1",
@@ -130,7 +138,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.50936729663106,
+      "promedio_paes_2025": 800.239336492891
     },
     {
       "codigo_unico_carrera": "I4S1C6J2V1",
@@ -156,7 +166,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.6654255319149,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I4S7C6J1V1",
@@ -182,7 +194,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.28928121059268,
+      "promedio_paes_2025": 634.128048780488
     },
     {
       "codigo_unico_carrera": "I4S7C6J2V1",
@@ -208,7 +222,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.72275862068965,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I4S9C6J1V1",
@@ -234,7 +250,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.13937153419594,
+      "promedio_paes_2025": 607.144680851064
     },
     {
       "codigo_unico_carrera": "I9S1C7J1V1",
@@ -260,7 +278,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.7530303030303,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I9S1C7J2V1",
@@ -286,7 +306,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.50677966101695,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I9S1C7J4V2",
@@ -312,7 +334,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.60978043912175,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I9S2C7J1V1",
@@ -338,7 +362,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.84328358208955,
+      "promedio_paes_2025": 527.330357142857
     },
     {
       "codigo_unico_carrera": "I9S2C7J2V1",
@@ -364,7 +390,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.59423076923077,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I9S8C7J1V1",
@@ -390,7 +418,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.78604651162791,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I9S8C7J2V1",
@@ -416,7 +446,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.644,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I9S9C7J1V1",
@@ -442,7 +474,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.94368421052632,
+      "promedio_paes_2025": 567.86
     },
     {
       "codigo_unico_carrera": "I9S9C7J2V1",
@@ -468,7 +502,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.56190476190476,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I10S4C31J1V1",
@@ -494,7 +530,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.16244019138756,
+      "promedio_paes_2025": 665.189024390244
     },
     {
       "codigo_unico_carrera": "I10S7C31J1V1",
@@ -520,7 +558,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I10S7C31J3V1",
@@ -546,7 +586,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I11S1C279J2V1",
@@ -572,7 +614,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.9575,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I11S1C7J1V1",
@@ -598,7 +642,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 20.0,
       "ponderacion_ciencias": 20.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.04267515923567,
+      "promedio_paes_2025": 578.5
     },
     {
       "codigo_unico_carrera": "I11S1C7J2V1",
@@ -624,7 +670,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.6169696969697,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I13S10C6J1V1",
@@ -650,7 +698,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.89907407407407,
+      "promedio_paes_2025": 622.521276595745
     },
     {
       "codigo_unico_carrera": "I13S10C6J2V1",
@@ -676,7 +726,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.58062015503876,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I13S11C6J1V1",
@@ -702,7 +754,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.01541850220264,
+      "promedio_paes_2025": 611.688888888889
     },
     {
       "codigo_unico_carrera": "I13S11C6J2V1",
@@ -728,7 +782,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.63333333333333,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I13S16C6J1V1",
@@ -754,7 +810,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.20698924731183,
+      "promedio_paes_2025": 645.036585365854
     },
     {
       "codigo_unico_carrera": "I13S17C6J1V1",
@@ -780,7 +838,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.14166666666666,
+      "promedio_paes_2025": 610.860465116279
     },
     {
       "codigo_unico_carrera": "I13S17C6J2V1",
@@ -806,7 +866,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.6152380952381,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I13S1C6J1V1",
@@ -832,7 +894,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.06586921850079,
+      "promedio_paes_2025": 649.946721311475
     },
     {
       "codigo_unico_carrera": "I13S2C6J1V1",
@@ -858,7 +922,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.10765306122449,
+      "promedio_paes_2025": 581.475609756098
     },
     {
       "codigo_unico_carrera": "I13S2C6J2V1",
@@ -884,7 +950,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.66504065040651,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I13S3C6J1V1",
@@ -910,7 +978,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.09858156028369,
+      "promedio_paes_2025": 561.212765957447
     },
     {
       "codigo_unico_carrera": "I13S3C6J2V1",
@@ -936,7 +1006,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.79142857142857,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I13S4C6J1V1",
@@ -962,7 +1034,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.0097619047619,
+      "promedio_paes_2025": 612.747191011236
     },
     {
       "codigo_unico_carrera": "I13S5C6J1V1",
@@ -988,7 +1062,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.18948655256723,
+      "promedio_paes_2025": 662.263736263736
     },
     {
       "codigo_unico_carrera": "I13S6C6J1V1",
@@ -1014,7 +1090,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.14761904761905,
+      "promedio_paes_2025": 650.052631578947
     },
     {
       "codigo_unico_carrera": "I13S7C6J1V1",
@@ -1040,7 +1118,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.09254143646409,
+      "promedio_paes_2025": 617.388157894737
     },
     {
       "codigo_unico_carrera": "I13S9C6J1V1",
@@ -1066,7 +1146,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.23970149253732,
+      "promedio_paes_2025": 649.705479452055
     },
     {
       "codigo_unico_carrera": "I17S2C23J1V1",
@@ -1092,7 +1174,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.62291666666667,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I17S2C23J4V1",
@@ -1118,7 +1202,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.52933333333333,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I17S2C23J4V2",
@@ -1144,7 +1230,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.60173611111111,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I19S1C9J1V1",
@@ -1170,7 +1258,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.98244972577696,
+      "promedio_paes_2025": 585.976351351351
     },
     {
       "codigo_unico_carrera": "I19S1C9J3V2",
@@ -1196,7 +1286,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 100.0
+      "ponderacion_otros": 100.0,
+      "promedio_nem_2025": 5.40185185185185,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I19S2C9J1V1",
@@ -1222,7 +1314,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.95656324582339,
+      "promedio_paes_2025": 573.322314049587
     },
     {
       "codigo_unico_carrera": "I19S2C9J3V2",
@@ -1248,7 +1342,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 100.0
+      "ponderacion_otros": 100.0,
+      "promedio_nem_2025": 5.46440677966102,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I19S3C9J1V1",
@@ -1274,7 +1370,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.89969418960245,
+      "promedio_paes_2025": 549.604545454545
     },
     {
       "codigo_unico_carrera": "I19S3C9J3V2",
@@ -1300,7 +1398,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 100.0
+      "ponderacion_otros": 100.0,
+      "promedio_nem_2025": 5.38378378378378,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I19S4C9J1V1",
@@ -1326,7 +1426,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.98608169440242,
+      "promedio_paes_2025": 566.682989690722
     },
     {
       "codigo_unico_carrera": "I19S4C9J3V2",
@@ -1352,7 +1454,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 100.0
+      "ponderacion_otros": 100.0,
+      "promedio_nem_2025": 5.54705882352941,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I19S5C9J1V1",
@@ -1378,7 +1482,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.09285714285715,
+      "promedio_paes_2025": 588.264462809917
     },
     {
       "codigo_unico_carrera": "I19S5C9J3V2",
@@ -1404,7 +1510,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 100.0
+      "ponderacion_otros": 100.0,
+      "promedio_nem_2025": 5.55281690140845,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I19S6C9J1V1",
@@ -1430,7 +1538,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.18411910669975,
+      "promedio_paes_2025": 593.742990654206
     },
     {
       "codigo_unico_carrera": "I19S6C9J3V2",
@@ -1456,7 +1566,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 100.0
+      "ponderacion_otros": 100.0,
+      "promedio_nem_2025": 5.59591836734694,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I20S1C7J2V1",
@@ -1482,7 +1594,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.72909698996655,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I20S1C7J3V3",
@@ -1508,7 +1622,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.79392971246006,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I20S2C7J1V2",
@@ -1534,7 +1650,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 20.0,
       "ponderacion_ciencias": 20.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.13987616099071,
+      "promedio_paes_2025": 633.704871060172
     },
     {
       "codigo_unico_carrera": "I20S3C7J1V2",
@@ -1560,7 +1678,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 20.0,
       "ponderacion_ciencias": 20.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.14876237623762,
+      "promedio_paes_2025": 603.048913043478
     },
     {
       "codigo_unico_carrera": "I20S3C7J2V1",
@@ -1586,7 +1706,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.72559523809524,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I20S3C7J3V3",
@@ -1612,7 +1734,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.84713656387666,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I20S4C7J1V2",
@@ -1638,7 +1762,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 20.0,
       "ponderacion_ciencias": 20.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.07622377622377,
+      "promedio_paes_2025": 596.065789473684
     },
     {
       "codigo_unico_carrera": "I20S4C7J2V1",
@@ -1664,7 +1790,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.72039473684211,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I20S4C7J3V3",
@@ -1690,7 +1818,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.80595238095238,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I22S1C18J1V1",
@@ -1716,7 +1846,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.87865497076024,
+      "promedio_paes_2025": 547.847107438017
     },
     {
       "codigo_unico_carrera": "I22S1C18J3V1",
@@ -1742,7 +1874,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.64705882352941,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I23S1C42J1V1",
@@ -1768,7 +1902,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.50833333333333,
+      "promedio_paes_2025": 704.818181818182
     },
     {
       "codigo_unico_carrera": "I23S2C42J1V1",
@@ -1794,7 +1930,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.52755555555556,
+      "promedio_paes_2025": 763.935897435897
     },
     {
       "codigo_unico_carrera": "I26S1C84J1V2",
@@ -1820,7 +1958,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.72976190476191,
+      "promedio_paes_2025": 547.636363636364
     },
     {
       "codigo_unico_carrera": "I26S1C84J2V2",
@@ -1846,7 +1986,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.56716417910448,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I26S1C84J3V2",
@@ -1872,7 +2014,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.60918836140888,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I31S1C12J1V1",
@@ -1898,7 +2042,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.20574162679425,
+      "promedio_paes_2025": 633.640909090909
     },
     {
       "codigo_unico_carrera": "I31S1C12J2V1",
@@ -1924,7 +2070,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.58439716312057,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I31S2C12J1V1",
@@ -1950,7 +2098,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.25342465753425,
+      "promedio_paes_2025": 646.573770491803
     },
     {
       "codigo_unico_carrera": "I31S2C12J2V1",
@@ -1976,7 +2126,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.69852941176471,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I31S3C12J1V1",
@@ -2002,7 +2154,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.20702781844803,
+      "promedio_paes_2025": 642.286290322581
     },
     {
       "codigo_unico_carrera": "I31S3C12J2V1",
@@ -2028,7 +2182,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.63071065989848,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I31S4C12J1V1",
@@ -2054,7 +2210,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.32947510094213,
+      "promedio_paes_2025": 670.306201550388
     },
     {
       "codigo_unico_carrera": "I31S4C12J2V1",
@@ -2080,7 +2238,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.67630922693267,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I34S1C10J1V2",
@@ -2106,7 +2266,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 15.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.58476821192053,
+      "promedio_paes_2025": 817.598837209302
     },
     {
       "codigo_unico_carrera": "I34S1C246J1V2",
@@ -2132,7 +2294,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 15.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.3725,
+      "promedio_paes_2025": 715.210526315789
     },
     {
       "codigo_unico_carrera": "I38S1C113J1V1",
@@ -2158,7 +2322,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.06682027649769,
+      "promedio_paes_2025": 589.964285714286
     },
     {
       "codigo_unico_carrera": "I39S2C2J1V1",
@@ -2184,7 +2350,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.18797610156833,
+      "promedio_paes_2025": 598.462121212121
     },
     {
       "codigo_unico_carrera": "I39S2C2J3V1",
@@ -2210,7 +2378,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I39S6C2J1V1",
@@ -2236,7 +2406,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.09083119108826,
+      "promedio_paes_2025": 592.828205128205
     },
     {
       "codigo_unico_carrera": "I39S6C2J3V1",
@@ -2262,7 +2434,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I39S7C2J1V1",
@@ -2288,7 +2462,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.07581903276131,
+      "promedio_paes_2025": 582.663636363636
     },
     {
       "codigo_unico_carrera": "I39S7C2J3V1",
@@ -2314,7 +2490,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I39S8C2J1V1",
@@ -2340,7 +2518,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.05076586433261,
+      "promedio_paes_2025": 608.091836734694
     },
     {
       "codigo_unico_carrera": "I39S8C2J3V1",
@@ -2366,7 +2546,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I42S1C20J1V1",
@@ -2392,7 +2574,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.24144144144145,
+      "promedio_paes_2025": 571.805668016194
     },
     {
       "codigo_unico_carrera": "I42S1C20J4V2",
@@ -2418,7 +2602,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I45S1C17J1V2",
@@ -2444,7 +2630,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.35709677419356,
+      "promedio_paes_2025": 674.473282442748
     },
     {
       "codigo_unico_carrera": "I45S4C17J1V2",
@@ -2470,7 +2658,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.31654135338346,
+      "promedio_paes_2025": 764.61875
     },
     {
       "codigo_unico_carrera": "I45S4C757J1V1",
@@ -2496,7 +2686,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.08130841121495,
+      "promedio_paes_2025": 643.090909090909
     },
     {
       "codigo_unico_carrera": "I46S12C132J1V1",
@@ -2522,7 +2714,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I46S12C132J2V1",
@@ -2548,7 +2742,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I46S19C132J1V1",
@@ -2574,7 +2770,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.07452229299363,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I46S19C132J2V1",
@@ -2600,7 +2798,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.82647058823529,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I46S9C132J1V1",
@@ -2626,7 +2826,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.84597701149425,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I46S9C132J2V1",
@@ -2652,7 +2854,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.81136363636364,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I50S2C23J1V1",
@@ -2678,7 +2882,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.21403846153845,
+      "promedio_paes_2025": 632.404494382022
     },
     {
       "codigo_unico_carrera": "I50S2C23J2V1",
@@ -2704,7 +2910,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.80714285714285,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I68S1C11J1V1",
@@ -2730,7 +2938,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.75619047619048,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I68S1C11J2V1",
@@ -2756,7 +2966,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.43813559322034,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I69S1C12J1V1",
@@ -2782,7 +2994,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.35927654609102,
+      "promedio_paes_2025": 707.211055276382
     },
     {
       "codigo_unico_carrera": "I70S1C174J1V2",
@@ -2808,7 +3022,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 15.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.69512195121952,
+      "promedio_paes_2025": 778.738532110092
     },
     {
       "codigo_unico_carrera": "I71S1C71J1V1",
@@ -2834,7 +3050,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.66672862453533,
+      "promedio_paes_2025": 742.826086956522
     },
     {
       "codigo_unico_carrera": "I72S1C75J1V1",
@@ -2860,7 +3078,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.57926829268294,
+      "promedio_paes_2025": 710.754098360656
     },
     {
       "codigo_unico_carrera": "I73S2C216J1V1",
@@ -2886,7 +3106,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.40541666666667,
+      "promedio_paes_2025": 600.922222222222
     },
     {
       "codigo_unico_carrera": "I74S1C58J1V1",
@@ -2912,7 +3134,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 15.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.62869565217391,
+      "promedio_paes_2025": 724.115384615385
     },
     {
       "codigo_unico_carrera": "I75S2C55J1V1",
@@ -2938,7 +3162,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.61604584527221,
+      "promedio_paes_2025": 661.923529411765
     },
     {
       "codigo_unico_carrera": "I76S1C29J1V1",
@@ -2964,7 +3190,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.52990196078431,
+      "promedio_paes_2025": 695.821917808219
     },
     {
       "codigo_unico_carrera": "I77S1C69J1V1",
@@ -2990,7 +3218,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.44234693877551,
+      "promedio_paes_2025": 649.416666666667
     },
     {
       "codigo_unico_carrera": "I78S1C14J1V1",
@@ -3016,7 +3246,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.64393442622952,
+      "promedio_paes_2025": 689.222602739726
     },
     {
       "codigo_unico_carrera": "I79S1C174J1V1",
@@ -3042,7 +3274,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.31865443425076,
+      "promedio_paes_2025": 626.912162162162
     },
     {
       "codigo_unico_carrera": "I80S1C27J1V2",
@@ -3068,7 +3302,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.41650717703349,
+      "promedio_paes_2025": 608.444444444444
     },
     {
       "codigo_unico_carrera": "I80S2C27J1V3",
@@ -3094,7 +3330,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.33734439834025,
+      "promedio_paes_2025": 602.172727272727
     },
     {
       "codigo_unico_carrera": "I81S1C61J1V1",
@@ -3120,7 +3358,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.35524861878453,
+      "promedio_paes_2025": 618.420454545455
     },
     {
       "codigo_unico_carrera": "I81S3C61J1V1",
@@ -3146,7 +3386,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.18695652173913,
+      "promedio_paes_2025": 549.289473684211
     },
     {
       "codigo_unico_carrera": "I82S1C264J1V1",
@@ -3172,7 +3414,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.26410256410256,
+      "promedio_paes_2025": 613.203703703704
     },
     {
       "codigo_unico_carrera": "I83S1C303J1V1",
@@ -3198,7 +3442,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.38135245901639,
+      "promedio_paes_2025": 634.591954022988
     },
     {
       "codigo_unico_carrera": "I84S1C406J1V1",
@@ -3224,7 +3470,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.18090737240075,
+      "promedio_paes_2025": 612.145833333333
     },
     {
       "codigo_unico_carrera": "I84S2C406J1V1",
@@ -3250,7 +3498,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.96865284974094,
+      "promedio_paes_2025": 554.654320987654
     },
     {
       "codigo_unico_carrera": "I84S6C406J1V1",
@@ -3276,7 +3526,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.0945945945946,
+      "promedio_paes_2025": 568.050847457627
     },
     {
       "codigo_unico_carrera": "I85S1C526J1V1",
@@ -3302,7 +3554,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 20.0,
       "ponderacion_ciencias": 20.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.04452054794521,
+      "promedio_paes_2025": 601.937853107345
     },
     {
       "codigo_unico_carrera": "I86S5C200J1V1",
@@ -3328,7 +3582,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 20.0,
       "ponderacion_ciencias": 20.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.78098591549295,
+      "promedio_paes_2025": 855.453020134228
     },
     {
       "codigo_unico_carrera": "I87S1C144J1V2",
@@ -3354,7 +3610,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.70796019900498,
+      "promedio_paes_2025": 802.413793103448
     },
     {
       "codigo_unico_carrera": "I89S3C84J1V1",
@@ -3380,7 +3638,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.72869822485208,
+      "promedio_paes_2025": 749.235294117647
     },
     {
       "codigo_unico_carrera": "I90S1C130J1V1",
@@ -3406,7 +3666,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.61174698795181,
+      "promedio_paes_2025": 676.157142857143
     },
     {
       "codigo_unico_carrera": "I90S2C130J1V1",
@@ -3432,7 +3694,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.38364116094987,
+      "promedio_paes_2025": 635.886363636364
     },
     {
       "codigo_unico_carrera": "I91S1C57J1V1",
@@ -3458,7 +3722,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.55783475783475,
+      "promedio_paes_2025": 667.783783783784
     },
     {
       "codigo_unico_carrera": "I92S1C38J1V1",
@@ -3484,7 +3750,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.56659292035398,
+      "promedio_paes_2025": 647.775510204082
     },
     {
       "codigo_unico_carrera": "I92S2C38J1V1",
@@ -3510,7 +3778,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.5635838150289,
+      "promedio_paes_2025": 639.650943396226
     },
     {
       "codigo_unico_carrera": "I93S1C386J1V1",
@@ -3536,7 +3806,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.66666666666668,
+      "promedio_paes_2025": 675.488805970149
     },
     {
       "codigo_unico_carrera": "I93S1C386J3V2",
@@ -3562,7 +3834,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 0.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.92058823529412,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I94S1C185J1V1",
@@ -3588,7 +3862,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 20.0,
       "ponderacion_ciencias": 20.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.31626016260163,
+      "promedio_paes_2025": 621.14375
     },
     {
       "codigo_unico_carrera": "I895S1C20J1V1",
@@ -3614,7 +3890,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.4811320754717,
+      "promedio_paes_2025": 664.814814814815
     },
     {
       "codigo_unico_carrera": "I896S1C10J1V1",
@@ -3640,7 +3918,9 @@
       "ponderacion_matematicas_2": 0.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.04963503649635,
+      "promedio_paes_2025": 561.840425531915
     }
   ],
   "indicadores": [

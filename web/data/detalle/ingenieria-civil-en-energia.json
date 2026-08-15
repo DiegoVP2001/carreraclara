@@ -26,7 +26,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.26734693877551,
+      "promedio_paes_2025": 628.25
     },
     {
       "codigo_unico_carrera": "I896S1C32J1V1",
@@ -52,7 +54,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": null,
+      "promedio_paes_2025": null
     }
   ],
   "indicadores": [

@@ -1,11 +1,13 @@
-const CACHE_VERSION = 'carreraclara-v3';
+const CACHE_VERSION = 'carreraclara-v8';
 
 const PRECACHE_URLS = [
   './index_v2.html',
   './instituciones_v2.html',
   './landing.html',
+  './nem.html',
   './data/core.json',
   './data/instituciones.json',
+  './data/instituciones_nem.json',
   './logo_png_azul-removebg-preview.png',
   './assets/logo-carrera-clara-transparent.png',
   './assets/logo-carrera-clara-blanco.png',

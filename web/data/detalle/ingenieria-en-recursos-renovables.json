@@ -26,7 +26,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.4535637149028,
+      "promedio_paes_2025": 659.466216216216
     },
     {
       "codigo_unico_carrera": "I75S2C158J1V1",
@@ -52,7 +54,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 10.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.02727272727273,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I76S1C89J1V1",
@@ -78,7 +82,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.068,
+      "promedio_paes_2025": 611.921875
     },
     {
       "codigo_unico_carrera": "I86S5C1294J1V1",
@@ -104,7 +110,9 @@
       "ponderacion_matematicas_2": 10.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.64609053497943,
+      "promedio_paes_2025": 772.598837209302
     },
     {
       "codigo_unico_carrera": "I87S1C414J1V1",
@@ -130,7 +138,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 10.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.28855721393035,
+      "promedio_paes_2025": 677.4
     },
     {
       "codigo_unico_carrera": "I90S1C534J1V1",
@@ -156,7 +166,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.16042402826855,
+      "promedio_paes_2025": 616.552631578947
     },
     {
       "codigo_unico_carrera": "I92S2C350J1V1",
@@ -182,7 +194,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 0.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 6.05961538461538,
+      "promedio_paes_2025": null
     },
     {
       "codigo_unico_carrera": "I94S1C91J1V1",
@@ -208,7 +222,9 @@
       "ponderacion_matematicas_2": 5.0,
       "ponderacion_historia": 15.0,
       "ponderacion_ciencias": 15.0,
-      "ponderacion_otros": 0.0
+      "ponderacion_otros": 0.0,
+      "promedio_nem_2025": 5.96614173228346,
+      "promedio_paes_2025": null
     }
   ],
   "indicadores": [

@@ -46,8 +46,13 @@ class RewriteHandler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
 
-class Server(socketserver.TCPServer):
+class Server(socketserver.ThreadingMixIn, http.server.HTTPServer):
+    """Threaded: un solo hilo (TCPServer liso) hace que fetch() concurrentes
+    (ej. el service worker cacheando en segundo plano + un click en "Agregar")
+    se encolen y uno quede esperando indefinidamente al otro."""
+
     allow_reuse_address = True
+    daemon_threads = True
 
 
 if __name__ == "__main__":

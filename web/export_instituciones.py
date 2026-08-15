@@ -280,6 +280,28 @@ def resolver_ponderaciones(cur, codigo_institucion: int, nombre_carrera_generica
     return {"tiene_ponderacion_paes": True, "ponderacion_varia": varia, **primer_perfil}
 
 
+def resolver_tiene_oferta_nem(cur, codigo_institucion: int, nombre_carrera_generica: str) -> bool:
+    """True si el combo institucion+generica tiene al menos 1 fila en hecho_oferta.
+
+    Mismo join institucion+generica de resolver_arancel/resolver_ponderaciones
+    (Tarea 7). Existe porque hecho_indicadores (fuente de este export, grano
+    institucion+titulo) y hecho_oferta (fuente de promedio_nem_2025/promedio_paes_2025
+    en export_json.py, grano institucion+generica+sede+jornada) no siempre
+    coinciden: el caso mas comun es admision por "plan comun" (ej. Universidad
+    de Chile admite a "Ingenieria" como plan comun en hecho_oferta, pero
+    hecho_indicadores ya reporta titulados por especialidad como "Ingenieria
+    Civil Industrial") - Tarea 25, 13.1% de los 1690 combos reales (221)
+    caen en este caso. `web/nem.html` usa este flag para no ofrecer en su
+    selector una combinacion que despues no tendria NEM/PAES que mostrar.
+    """
+    cur.execute(
+        "SELECT 1 FROM hecho_oferta WHERE codigo_institucion = ?"
+        " AND nombre_carrera_generica = ? LIMIT 1",
+        (codigo_institucion, nombre_carrera_generica),
+    )
+    return cur.fetchone() is not None
+
+
 def institucion_a_dict(i: InstitucionInfo) -> dict:
     return {
         "codigo": i.codigo_institucion,
@@ -336,6 +358,7 @@ def main() -> None:
     try:
         cur_arancel = conn.cursor()
         cur_pond = conn.cursor()
+        cur_oferta_nem = conn.cursor()
         genericas = listar_carreras_genericas(conn)
 
         combos: list[dict] = []
@@ -363,6 +386,9 @@ def main() -> None:
                 )
                 combo.update(resolver_arancel(cur_arancel, codigo, generica.nombre_carrera_generica))
                 combo.update(resolver_ponderaciones(cur_pond, codigo, generica.nombre_carrera_generica))
+                combo["tiene_oferta_nem"] = resolver_tiene_oferta_nem(
+                    cur_oferta_nem, codigo, generica.nombre_carrera_generica
+                )
                 clave = (codigo, indicador.nombre_carrera_titulo or "")
                 if combo["id"] in ids_vistos and ids_vistos[combo["id"]] != clave:
                     raise ValueError(
@@ -379,6 +405,7 @@ def main() -> None:
         arancel_aproximado = sum(1 for c in combos if c["arancel_aproximado"])
         con_ponderacion = sum(1 for c in combos if c["tiene_ponderacion_paes"])
         ponderacion_varia = sum(1 for c in combos if c.get("ponderacion_varia"))
+        con_oferta_nem = sum(1 for c in combos if c["tiene_oferta_nem"])
 
         # Ningun combo puede quedar sin clasificar entre exacto/aproximado/sin-dato.
         if sin_arancel + arancel_exacto + arancel_aproximado != len(combos):
@@ -437,6 +464,8 @@ def main() -> None:
                 "combos_con_ponderacion_paes": con_ponderacion,
                 "combos_sin_ponderacion_paes": len(combos) - con_ponderacion,
                 "combos_ponderacion_varia_por_sede": ponderacion_varia,
+                "combos_con_oferta_nem": con_oferta_nem,
+                "combos_sin_oferta_nem": len(combos) - con_oferta_nem,
             },
         }
 
@@ -455,6 +484,8 @@ def main() -> None:
         print(f"  con ponderacion PAES (al menos 1 componente > 0): {con_ponderacion}")
         print(f"  sin ponderacion PAES reportada: {len(combos) - con_ponderacion}")
         print(f"  ponderacion varia por sede/jornada: {ponderacion_varia}")
+        print(f"  con oferta en hecho_oferta (usable en Tarea 25 'Que NEM necesito'): {con_oferta_nem}")
+        print(f"  sin oferta en hecho_oferta (ej. admision por plan comun): {len(combos) - con_oferta_nem}")
     finally:
         conn.close()
 

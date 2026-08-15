@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carrera Clara — Tipos de carrera</title>
+<title>Carrera Clara — Qué NEM necesito</title>
+<meta name="description" content="Elige una carrera y revisa el NEM y PAES promedio real de matrícula 2025 por institución, sede y jornada.">
 <link rel="icon" type="image/png" href="logo_png_azul-removebg-preview.png">
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="logo_png_azul-removebg-preview.png">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1432,6 +1432,178 @@
 
   .fb-status.success { color: var(--color-primary); font-weight: 600; }
   .fb-status.error   { color: var(--color-danger); }
+
+  /* ─── Tarea 24: "Qué NEM necesito" ────────────────────────────────────── */
+  p.selector-intro {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    max-width: 68ch;
+    margin: 0 0 var(--space-2);
+  }
+
+  /* --- Selector en 2 pasos + botón Agregar (mismo patrón que instituciones_v2.html) --- */
+  .selector-pasos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .selector-paso {
+    flex: 1 1 280px;
+    min-width: 240px;
+  }
+
+  .selector-paso label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+
+  .selector-wrap {
+    position: relative;
+    max-width: none;
+  }
+
+  .selector-wrap input[type="text"] {
+    width: 100%;
+    font-size: var(--font-base);
+    padding: var(--space-1) 2.25rem var(--space-1) var(--space-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+
+  .selector-wrap input[type="text"]:disabled {
+    background: var(--color-bg-alt);
+    cursor: not-allowed;
+  }
+
+  .selector-wrap button.combo-arrow {
+    top: 0.45rem;
+  }
+
+  ul.autocomplete-list {
+    list-style: none;
+    margin: var(--space-1) 0 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-height: 320px;
+    overflow-y: auto;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: opacity 0.13s ease, transform 0.13s ease;
+  }
+  ul.autocomplete-list.is-fade-entering { opacity: 0; transform: translateY(-5px); }
+
+  ul.autocomplete-list li {
+    padding: var(--space-1) var(--space-2);
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-bg-alt);
+  }
+
+  ul.autocomplete-list li:hover,
+  ul.autocomplete-list li:focus { background: var(--color-bg-alt); }
+
+  ul.autocomplete-list li .meta {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .chip-elegido {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    transition: opacity 0.18s ease;
+  }
+  .chip-elegido.is-fade-entering { opacity: 0; }
+
+  .chip-elegido button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+  }
+
+  .selector-paso-agregar {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 1.8rem;
+  }
+
+  button#btn-agregar {
+    font-size: var(--font-base);
+    font-weight: 600;
+    padding: 0.55rem 1.2rem;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  button#btn-agregar:not(:disabled):hover { opacity: 0.9; }
+  button#btn-agregar:disabled {
+    background: var(--color-border);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+  }
+
+  .quitar-grupo {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+    padding: 0.1rem 0.35rem;
+  }
+  .quitar-grupo:hover { color: var(--color-danger); }
+
+  p.agregar-error {
+    color: var(--color-danger);
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+  }
+
+  p.tabla-help {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin: 0 0 var(--space-2);
+  }
+
+  table.sort-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s ease;
+  }
+  table.sort-table th.sortable:hover { color: var(--color-primary); }
+  table.sort-table th.sortable.active { color: var(--color-primary); }
+
+  .sort-arrow {
+    display: inline-block;
+    margin-left: 0.3rem;
+    font-size: 0.7em;
+    opacity: 0.35;
+  }
+  table.sort-table th.sortable.active .sort-arrow { opacity: 1; }
+
+  .inst-nombre { font-weight: 600; }
+  .inst-meta { color: var(--color-text-muted); font-size: 0.82rem; margin-top: 0.1rem; }
+  .num { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -1447,9 +1619,9 @@
     </a>
     <nav class="tabs">
       <a href="/">Inicio</a>
-      <a href="/tipos-de-carrera" class="activo" aria-current="page">Tipos de carrera</a>
+      <a href="/tipos-de-carrera">Tipos de carrera</a>
       <a href="/carreras-por-institucion">Carreras por institución</a>
-      <a href="/que-nem-necesito">Qué NEM necesito</a>
+      <a href="/que-nem-necesito" class="activo" aria-current="page">Qué NEM necesito</a>
     </nav>
   </div>
 </header>
@@ -1457,25 +1629,34 @@
 <main>
 
   <section id="seccion-selector" aria-labelledby="selector-heading">
-    <h2 id="selector-heading">Carreras a comparar</h2>
-    <div class="selector-filters">
-      <label for="filtro-area">Área: <select id="filtro-area"><option value="">Todas las áreas</option></select></label>
+    <h2 id="selector-heading">¿Qué NEM necesito?</h2>
+    <p class="selector-intro">Elige institución + carrera y arma tu propia comparación de <strong>NEM y PAES promedio real</strong> de los estudiantes matriculados en 2025. No es un requisito oficial de admisión — SIES no publica notas de corte — es el promedio de quienes efectivamente entraron, una referencia de qué tan competitivo es ese puntaje en la práctica.</p>
+    <div class="selector-pasos">
+      <div class="selector-paso">
+        <label for="institucion-input">1. Institución</label>
+        <div class="selector-wrap">
+          <input type="text" id="institucion-input" autocomplete="off" placeholder="Escribe el nombre de una institución">
+          <button type="button" class="combo-arrow" id="institucion-arrow" aria-label="Mostrar todas las instituciones">▾</button>
+          <ul class="autocomplete-list" id="institucion-list" hidden role="listbox"></ul>
+        </div>
+        <div id="institucion-chip"></div>
+      </div>
+      <div class="selector-paso">
+        <label for="carrera-input">2. Carrera que imparte</label>
+        <div class="selector-wrap">
+          <input type="text" id="carrera-input" autocomplete="off" placeholder="Primero elige una institución…" disabled>
+          <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar todas las carreras de esa institución" disabled>▾</button>
+          <ul class="autocomplete-list" id="carrera-list" hidden role="listbox"></ul>
+        </div>
+        <div id="carrera-chip"></div>
+      </div>
+      <div class="selector-paso-agregar">
+        <button type="button" id="btn-agregar" disabled>Agregar</button>
+      </div>
     </div>
-    <div class="selector-wrap">
-      <label for="carrera-input">Agregar carrera (2 a 4)</label>
-      <input type="text" id="carrera-input" autocomplete="off" placeholder="Escribe el nombre de una carrera genérica… (sin tilde también sirve)">
-      <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar todas las carreras">▾</button>
-      <ul id="autocomplete-list" hidden role="listbox"></ul>
-    </div>
-    <p class="selector-help" id="selector-help">Agrega al menos 2 carreras para comparar.</p>
-    <ul id="selected-list"></ul>
-    <div id="aviso-usabilidad" class="aviso-usabilidad" hidden></div>
-    <div id="share-bar" class="share-bar" hidden>
-      <span>Comparte esta comparación</span>
-      <button type="button" id="btn-compartir" class="btn-compartir">🔗 Copiar enlace</button>
-    </div>
+    <p class="agregar-error" id="agregar-error" hidden></p>
+    <p class="selector-help" id="selector-help">Agrega institución + carrera para ver su NEM y PAES por sede/jornada. Repite para comparar más de una.</p>
   </section>
-  <div id="share-toast"></div>
 
   <div id="seccion-vacia">
     <div class="empty-state">
@@ -1483,37 +1664,15 @@
         <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/>
         <path d="M7 8h2"/><path d="M7 12h5"/><path d="M15 8h2"/><path d="M15 12h2"/>
       </svg>
-      <h2>Compara carreras lado a lado</h2>
-      <p>Busca una carrera arriba para empezar — puedes comparar las que quieras.</p>
+      <h2>Arma tu comparación</h2>
+      <p>Elige una institución y una carrera arriba para ver su NEM y PAES promedio real de matrícula 2025.</p>
     </div>
   </div>
 
-  <section id="seccion-charts" hidden aria-labelledby="charts-heading">
-    <h2 id="charts-heading">Gráficos comparativos</h2>
-    <p class="chart-note" id="nota-charts">Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.</p>
-    <div class="charts-grid">
-      <figure class="chart-card">
-        <figcaption>Ingreso al 4° año (2024) <button type="button" class="tooltip-btn" data-tooltip="Sueldo bruto promedio de los titulados a los 4 años de haber egresado, según registros del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
-        <div class="chart-canvas-wrap"><canvas id="chart-ingreso"></canvas></div>
-      </figure>
-      <figure class="chart-card">
-        <figcaption>Empleabilidad 1er y 2do año (2024) <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de titulados que trabajaron formalmente al 1er y 2do año después de egresar, según datos del SII." aria-label="Información" tabindex="0">ℹ</button></figcaption>
-        <div class="chart-canvas-wrap"><canvas id="chart-empleabilidad"></canvas></div>
-      </figure>
-      <figure class="chart-card">
-        <figcaption>Retención 1er y 2do año <button type="button" class="tooltip-btn" data-tooltip="Porcentaje de estudiantes que continuaron inscritos en la carrera al 2do y 3er año, respectivamente." aria-label="Información" tabindex="0">ℹ</button></figcaption>
-        <div class="chart-canvas-wrap"><canvas id="chart-retencion"></canvas></div>
-      </figure>
-      <figure class="chart-card">
-        <figcaption>Distribución de ingreso al 5° año (percentiles 10/50/90) <button type="button" class="tooltip-btn" data-tooltip="El percentil 10 es el sueldo que supera solo el 10% más bajo; el percentil 50 es la mediana; el percentil 90 es el que solo supera el 10% más alto. Dato al 5° año post-título." aria-label="Información" tabindex="0">ℹ</button></figcaption>
-        <div class="chart-canvas-wrap"><canvas id="chart-distribucion"></canvas></div>
-      </figure>
-    </div>
-  </section>
-
-  <section id="seccion-detalle" hidden aria-labelledby="detalle-heading">
-    <h2 id="detalle-heading">Dónde se imparte</h2>
-    <div id="detalle-container"></div>
+  <section id="seccion-tabla" hidden aria-labelledby="tabla-heading">
+    <h2 id="tabla-heading">Tu comparación — NEM y PAES promedio de matrícula 2025</h2>
+    <p class="tabla-help">Click en un encabezado para ordenar (mayor→menor, menor→mayor, y de vuelta al orden por defecto). Ordenado por NEM promedio, mayor a menor.</p>
+    <div id="tabla-container"></div>
   </section>
 
 </main>
@@ -1562,9 +1721,6 @@
   </div>
 </footer>
 
-<!-- Elemento oculto para compatibilidad con el JS (renderDiagnostico) -->
-<ul id="diagnostico-list" hidden></ul>
-
 <!-- T23c: botón flotante de feedback -->
 <button type="button" class="fab-feedback" id="fabFeedback" aria-haspopup="dialog" aria-controls="fbModalOverlay">
   <span class="fab-icon" aria-hidden="true">💬</span>
@@ -1581,7 +1737,7 @@
 
     <form class="feedback-form" id="feedbackForm" novalidate>
       <input type="hidden" name="access_key" value="d7b039f2-65d7-46ba-b873-91a448bc87c2">
-      <input type="hidden" name="subject" value="Nuevo feedback — Carrera Clara (Tipos de carrera)">
+      <input type="hidden" name="subject" value="Nuevo feedback — Carrera Clara (Qué NEM necesito)">
       <input type="hidden" name="pagina" id="fbPagina" value="">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -1629,57 +1785,6 @@
       .replace(/^-+|-+$/g, "");
   }
 
-  const ORDEN_TIPOS = ["Universidades", "Institutos Profesionales", "Centros de Formación Técnica"];
-  const TIPO_CORTO = {
-    "Universidades": "Uni",
-    "Institutos Profesionales": "IP",
-    "Centros de Formación Técnica": "CFT",
-  };
-  const MIN_CARRERAS = 2;
-
-  let coreData = null;
-  let selected = [];
-  let _renderedSlugs = new Set();
-  const tiposActivosPorCarrera = new Map();
-  const detalleCache = {};
-  const chartInstances = {};
-
-  const el = {
-    input: document.getElementById("carrera-input"),
-    arrow: document.getElementById("carrera-arrow"),
-    autocompleteList: document.getElementById("autocomplete-list"),
-    selectedList: document.getElementById("selected-list"),
-    filtroArea: document.getElementById("filtro-area"),
-    selectorHelp: document.getElementById("selector-help"),
-    seccionVacia: document.getElementById("seccion-vacia"),
-    seccionCharts: document.getElementById("seccion-charts"),
-    seccionDetalle: document.getElementById("seccion-detalle"),
-    detalleContainer: document.getElementById("detalle-container"),
-    diagnosticoList: document.getElementById("diagnostico-list"),
-    notaCharts: document.getElementById("nota-charts"),
-    avisoUsabilidad: document.getElementById("aviso-usabilidad"),
-    shareBar: document.getElementById("share-bar"),
-    btnCompartir: document.getElementById("btn-compartir"),
-  };
-
-  async function init() {
-    const resp = await fetch("data/core.json");
-    coreData = await resp.json();
-
-    renderDiagnostico(coreData.diagnostico_cobertura);
-    const areas = [...new Set(coreData.carreras.map((c) => c.area).filter(Boolean))].sort();
-    areas.forEach((a) => {
-      const opt = document.createElement("option");
-      opt.value = a;
-      opt.textContent = a;
-      el.filtroArea.appendChild(opt);
-    });
-    buildCustomSelect(el.filtroArea);
-    restoreFromURL();
-    renderSelected();
-    renderEmptyState();
-  }
-
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -1690,526 +1795,10 @@
     return `<button type="button" class="tooltip-btn" data-tooltip="${escapeHtml(texto)}" aria-label="Información" tabindex="0">ℹ</button>`;
   }
 
-  function renderDiagnostico(d) {
-    el.diagnosticoList.innerHTML = `
-      <li>${d.total_carreras_genericas} carreras genéricas en total</li>
-      <li>${d.carreras_sin_benchmark_nacional} sin comparación nacional</li>
-      <li>${d.filas_oferta_sin_carrera_generica} / ${d.total_filas_oferta} filas de oferta sin carrera genérica asociada</li>
-      <li>${d.filas_indicadores_con_institucion_colgante} / ${d.total_filas_indicadores} filas de indicadores con institución sin ficha</li>
-    `;
-  }
-
-  function carrerasDisponibles(filtro) {
-    const yaSeleccionadas = new Set(selected.map((c) => c.slug));
-    const q = normalizar(filtro || "");
-    const areaFiltro = el.filtroArea.value;
-    return coreData.carreras.filter(
-      (c) => !yaSeleccionadas.has(c.slug) &&
-             (q === "" || normalizar(c.nombre).includes(q)) &&
-             (areaFiltro === "" || c.area === areaFiltro)
-    );
-  }
-
-  function mostrarLista(filtro) {
-    const resultados = carrerasDisponibles(filtro);
-    const wasHidden = el.autocompleteList.hidden;
-    if (resultados.length === 0) {
-      el.autocompleteList.innerHTML = '<li class="meta">Sin resultados (o ya agregaste todas las que coinciden).</li>';
-      if (wasHidden) fadeIn(el.autocompleteList);
-      return;
-    }
-    el.autocompleteList.innerHTML = resultados
-      .map(
-        (c) => `<li role="option" data-slug="${c.slug}">${escapeHtml(c.nombre)}
-          <span class="meta">${escapeHtml(c.area || "Área sin clasificar")}${c.tiene_benchmark_nacional ? "" : " · sin comparación nacional"}</span>
-        </li>`
-      )
-      .join("");
-    if (wasHidden) fadeIn(el.autocompleteList);
-  }
-
-  function ocultarLista() {
-    el.autocompleteList.hidden = true;
-  }
-
-  el.filtroArea.addEventListener("change", () => { el.autocompleteList.hidden = true; mostrarLista(el.input.value); });
-  el.input.addEventListener("input", () => mostrarLista(el.input.value));
-  el.input.addEventListener("focus", () => mostrarLista(el.input.value));
-  el.input.addEventListener("keydown", (ev) => {
-    if (ev.key === "Escape") ocultarLista();
-  });
-
-  el.arrow.addEventListener("click", () => {
-    if (el.autocompleteList.hidden) {
-      mostrarLista(el.input.value);
-      el.input.focus();
-    } else {
-      ocultarLista();
-    }
-  });
-
-  el.autocompleteList.addEventListener("click", (ev) => {
-    const li = ev.target.closest("li[data-slug]");
-    if (!li) return;
-    const carrera = coreData.carreras.find((c) => c.slug === li.dataset.slug);
-    if (carrera) addCarrera(carrera);
-    el.input.value = "";
-    ocultarLista();
-  });
-
-  document.addEventListener("click", (ev) => {
-    customSelects.forEach(cs => cs.close());
-    if (!el.autocompleteList.contains(ev.target) && ev.target !== el.input && ev.target !== el.arrow) {
-      ocultarLista();
-    }
-  });
-
-  function addCarrera(carrera) {
-    if (selected.some((c) => c.slug === carrera.slug)) return;
-    selected.push(carrera);
-    tiposActivosPorCarrera.set(carrera.slug, new Set(carrera.benchmarks.map((b) => b.tipo_institucion)));
-    afterSelectionChange();
-  }
-
-  function removeCarrera(slug) {
-    selected = selected.filter((c) => c.slug !== slug);
-    tiposActivosPorCarrera.delete(slug);
-    afterSelectionChange();
-  }
-
-  function afterSelectionChange() {
-    renderSelected();
-    renderEmptyState();
-    renderCharts();
-    renderDetallePanels();
-    updateURL();
-  }
-
-  function updateURL() {
-    if (selected.length === 0) {
-      history.replaceState(null, "", window.location.pathname + window.location.search);
-    } else {
-      history.replaceState(null, "", "#c=" + selected.map((c) => c.slug).join(","));
-    }
-  }
-
-  function restoreFromURL() {
-    const hash = window.location.hash.slice(1);
-    if (!hash) return;
-    const params = new URLSearchParams(hash);
-    const slugList = params.get("c");
-    if (!slugList) return;
-    slugList.split(",").forEach((slug) => {
-      const carrera = coreData.carreras.find((c) => c.slug === slug);
-      if (carrera) addCarrera(carrera);
-    });
-  }
-
-  function showToast(msg) {
-    const toast = document.getElementById("share-toast");
-    toast.textContent = msg;
-    toast.classList.add("visible");
-    clearTimeout(toast._timer);
-    toast._timer = setTimeout(() => toast.classList.remove("visible"), 2200);
-  }
-
-  el.btnCompartir.addEventListener("click", () => {
-    const url = window.location.href;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(() => showToast("¡Enlace copiado!"));
-    } else {
-      const inp = document.createElement("input");
-      inp.value = url;
-      document.body.appendChild(inp);
-      inp.select();
-      document.execCommand("copy");
-      document.body.removeChild(inp);
-      showToast("¡Enlace copiado!");
-    }
-  });
-
-  const CAMPOS_BENCHMARK = [
-    ["ingreso_4to_anio_2024", "sin ingreso 4° año"],
-    ["empleabilidad_1er_anio_2024", "sin empleabilidad 1er año"],
-    ["empleabilidad_2do_anio_2024", "sin empleabilidad 2do año"],
-    ["retencion_1er_anio", "sin retención 1er año"],
-    ["retencion_2do_anio", "sin retención 2do año"],
-  ];
-
-  function badgesFaltantesBenchmark(b) {
-    return CAMPOS_BENCHMARK.filter(([campo]) => b[campo] === null)
-      .map(([, etiqueta]) => `<span class="badge badge-warning">${etiqueta}</span>`)
-      .join(" ");
-  }
-
-  const TIPO_EMOJI = {
-    "Universidades": "🏛",
-    "Institutos Profesionales": "🏢",
-    "Centros de Formación Técnica": "🏫",
-  };
-
-  const AVISO_UMBRAL = 7;
-
-  function iconChip(emoji, etiqueta, tooltipTexto) {
-    const btn = tooltipTexto ? " " + infoIcon(tooltipTexto) : "";
-    return `<span class="card-icon-chip">${emoji} ${escapeHtml(String(etiqueta || "—"))}${btn}</span>`;
-  }
-
-  function headlineMetricsCarrera(carrera) {
-    const ref = ORDEN_TIPOS
-      .map((t) => carrera.benchmarks.find((b) => b.tipo_institucion === t))
-      .find(Boolean);
-    if (!ref) return "";
-    const tipoLabel = TIPO_CORTO[ref.tipo_institucion] || ref.tipo_institucion;
-    const emp = ref.empleabilidad_1er_anio_2024;
-    const ing = ref.ingreso_4to_anio_2024;
-    if (emp === null && ing === null) return "";
-    const metricas = [];
-    if (emp !== null) {
-      const pct = Math.round(emp * 100) + "%";
-      metricas.push(
-        `<div class="card-metric">` +
-        `<span class="card-metric-valor">${pct}</span>` +
-        `<span class="card-metric-label">Emp. 1er año ` +
-        infoIcon("Empleabilidad al 1er año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
-        `</span></div>`
-      );
-    }
-    if (ing !== null) {
-      const ingStr = ing >= 1000000
-        ? "$" + (ing / 1000000).toFixed(1) + "M"
-        : "$" + Math.round(ing / 1000) + "k";
-      metricas.push(
-        `<div class="card-metric">` +
-        `<span class="card-metric-valor">${ingStr}</span>` +
-        `<span class="card-metric-label">Ingreso 4° año ` +
-        infoIcon("Ingreso promedio al 4° año de titulado. Referencia: benchmark nacional " + tipoLabel + " (SIES).") +
-        `</span></div>`
-      );
-    }
-    return `<div class="card-metrics-row">${metricas.join("")}</div>`;
-  }
-
-  function iconRowCarrera(carrera) {
-    const partes = [];
-    if (carrera.area) partes.push(iconChip("🎓", carrera.area, "Área de conocimiento según clasificación SIES."));
-    const tiposDisponibles = ORDEN_TIPOS.filter((t) => carrera.benchmarks.some((b) => b.tipo_institucion === t));
-    if (tiposDisponibles.length) {
-      const tipoChips = tiposDisponibles.map((t) => iconChip(TIPO_EMOJI[t], TIPO_CORTO[t], t)).join("");
-      partes.push(`<span class="card-icon-label">Dónde se imparte:</span>${tipoChips}`);
-    }
-    if (!carrera.tiene_benchmark_nacional) partes.push(iconChip("📊", "sin benchmark", "Esta carrera no tiene datos de comparación nacional en SIES."));
-    return partes.length ? `<div class="card-icon-row">${partes.join("")}</div>` : "";
-  }
-
-  function actualizarAvisoUsabilidad() {
-    const n = selected.length;
-    if (n >= AVISO_UMBRAL) {
-      el.avisoUsabilidad.textContent = `Estás comparando ${n} carreras — con muchas tarjetas la lectura puede ser más difícil.`;
-      if (el.avisoUsabilidad.hidden) fadeIn(el.avisoUsabilidad);
-    } else {
-      el.avisoUsabilidad.hidden = true;
-    }
-  }
-
-  function renderSelected() {
-    const prevSlugs = new Set(_renderedSlugs);
-    _renderedSlugs = new Set(selected.map((c) => c.slug));
-
-    el.selectedList.innerHTML = selected
-      .map((c) => {
-        const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
-        const tiposDisponibles = ORDEN_TIPOS.filter((t) => c.benchmarks.some((b) => b.tipo_institucion === t));
-        const checkboxes = tiposDisponibles.length
-          ? `<div class="tipo-checks"><span class="card-icon-label">Dónde se imparte:</span>${tiposDisponibles
-              .map((t) => {
-                const benchmark = c.benchmarks.find((b) => b.tipo_institucion === t);
-                const faltantes = badgesFaltantesBenchmark(benchmark);
-                return `<label class="tipo-check">
-                  <input type="checkbox" data-slug="${c.slug}" data-tipo="${escapeHtml(t)}" ${activos.has(t) ? "checked" : ""}>
-                  ${escapeHtml(TIPO_CORTO[t] || t)}
-                </label>${faltantes}`;
-              })
-              .join("")}</div>`
-          : `<div class="tipo-checks"><span class="badge badge-warning">sin comparación nacional</span>${infoIcon("Esta carrera no tiene datos de benchmark nacional en SIES. Solo 26 de 190 carreras genéricas están en este estado.")}</div>`;
-
-        return `<li class="carrera-card" data-slug="${c.slug}">
-          <div class="carrera-card-header">
-            <span class="carrera-card-nombre">${escapeHtml(c.nombre)}</span>
-            <button type="button" class="remove" aria-label="Quitar ${escapeHtml(c.nombre)}" data-slug="${c.slug}">×</button>
-          </div>
-          ${iconRowCarrera(c)}
-          ${headlineMetricsCarrera(c)}
-          ${checkboxes}
-        </li>`;
-      })
-      .join("");
-
-    el.selectedList.querySelectorAll("li.carrera-card").forEach((li) => {
-      if (!prevSlugs.has(li.dataset.slug)) {
-        li.classList.add("is-entering");
-        requestAnimationFrame(() => requestAnimationFrame(() => li.classList.remove("is-entering")));
-      }
-    });
-
-    el.selectedList.querySelectorAll("button.remove").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const li = btn.closest("li.carrera-card");
-        if (!li || li.classList.contains("is-removing")) return;
-        li.classList.add("is-removing");
-        li.addEventListener("transitionend", () => removeCarrera(btn.dataset.slug), { once: true });
-      });
-    });
-
-    el.selectedList.querySelectorAll('input[type="checkbox"]').forEach((chk) => {
-      chk.addEventListener("change", () => {
-        const set = tiposActivosPorCarrera.get(chk.dataset.slug);
-        if (!set) return;
-        if (chk.checked) set.add(chk.dataset.tipo);
-        else set.delete(chk.dataset.tipo);
-        renderCharts();
-      });
-    });
-
-    actualizarAvisoUsabilidad();
-
-    const puedeCompartir = selected.length >= MIN_CARRERAS;
-    if (puedeCompartir && el.shareBar.hidden) fadeIn(el.shareBar);
-    else if (!puedeCompartir) el.shareBar.hidden = true;
-
-    el.selectorHelp.textContent = selected.length < MIN_CARRERAS
-      ? `Agrega al menos 2 carreras para comparar (llevas ${selected.length}).`
-      : `Comparando ${selected.length} carrera(s).`;
-  }
-
-  function renderEmptyState() {
-    const mostrarVacio = selected.length < MIN_CARRERAS;
-    if (mostrarVacio) {
-      if (el.seccionVacia.hidden) fadeIn(el.seccionVacia);
-      el.seccionCharts.hidden = true;
-      el.seccionDetalle.hidden = true;
-    } else {
-      el.seccionVacia.hidden = true;
-      if (el.seccionCharts.hidden) fadeIn(el.seccionCharts);
-      if (el.seccionDetalle.hidden) fadeIn(el.seccionDetalle);
-    }
-  }
-
-  const COLORES_TIPO = {
-    "Universidades": "#1a7f64",
-    "Institutos Profesionales": "#e8960a",
-    "Centros de Formación Técnica": "#3b82f6",
-  };
-
-  const ABREVIATURAS = [
-    [/Ingeniería/gi, "Ing."],
-    [/Tecnología/gi, "Tec."],
-    [/Tecnólogo/gi, "Tec."],
-    [/Administración/gi, "Adm."],
-    [/Licenciatura/gi, "Lic."],
-    [/Pedagogía/gi, "Ped."],
-  ];
-
-  function abreviarNombre(nombre) {
-    return ABREVIATURAS.reduce((acc, [re, rep]) => acc.replace(re, rep), nombre);
-  }
-
-  function truncar(texto, max) {
-    return texto.length > max ? `${texto.slice(0, max - 1)}…` : texto;
-  }
-
-  function etiquetaEjeCorta(carrera, tipo) {
-    return truncar(`${abreviarNombre(carrera.nombre)} (${TIPO_CORTO[tipo] || tipo})`, 26);
-  }
-
-  function entradasActuales() {
-    const entradas = [];
-    selected.forEach((c) => {
-      const activos = tiposActivosPorCarrera.get(c.slug) || new Set();
-      ORDEN_TIPOS.forEach((tipo) => {
-        if (!activos.has(tipo)) return;
-        const b = c.benchmarks.find((bb) => bb.tipo_institucion === tipo);
-        if (b) entradas.push({ carrera: c, tipo, benchmark: b });
-      });
-    });
-    return entradas;
-  }
-
-  function destruirChart(id) {
-    if (chartInstances[id]) {
-      chartInstances[id].destroy();
-      delete chartInstances[id];
-    }
-  }
-
-  function altoCanvas(nFilas) {
-    return Math.max(180, nFilas * 36 + 70);
-  }
-
-  function opcionesEjeY(entradas) {
-    return {
-      autoSkip: false,
-      callback: (value, index) => etiquetaEjeCorta(entradas[index].carrera, entradas[index].tipo),
-    };
-  }
-
-  function dibujarChart(id, entradas, config) {
-    destruirChart(id);
-    const canvas = document.getElementById(id);
-    canvas.parentElement.style.height = `${altoCanvas(entradas.length)}px`;
-    const ctx = canvas.getContext("2d");
-    chartInstances[id] = new Chart(ctx, config);
-  }
-
-  function datasetUnaMetrica(entradas, extractor) {
-    return {
-      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
-      datasets: [
-        {
-          label: "Valor",
-          backgroundColor: entradas.map((e) => COLORES_TIPO[e.tipo] || "#999"),
-          data: entradas.map((e) => extractor(e.benchmark)),
-        },
-      ],
-    };
-  }
-
-  function datasetDosMetricas(entradas, extractor1, etiqueta1, color1, extractor2, etiqueta2, color2) {
-    return {
-      labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
-      datasets: [
-        { label: etiqueta1, backgroundColor: color1, data: entradas.map((e) => extractor1(e.benchmark)) },
-        { label: etiqueta2, backgroundColor: color2, data: entradas.map((e) => extractor2(e.benchmark)) },
-      ],
-    };
-  }
-
-  function renderCharts() {
-    if (selected.length < MIN_CARRERAS) return;
-    const entradas = entradasActuales();
-
-    const carrerasSinBarra = selected.filter((c) => !entradas.some((e) => e.carrera.slug === c.slug));
-    el.notaCharts.textContent = carrerasSinBarra.length
-      ? `${carrerasSinBarra.length} carrera(s) sin ninguna barra en estos gráficos (sin comparación nacional o sin tipo marcado): ${carrerasSinBarra.map((c) => c.nombre).join(", ")}.`
-      : "Marca o desmarca Universidad / Instituto Profesional / CFT en cada carrera arriba para elegir qué barras se grafican.";
-
-    if (entradas.length === 0) {
-      ["chart-ingreso", "chart-empleabilidad", "chart-retencion", "chart-distribucion"].forEach((id) => {
-        destruirChart(id);
-        document.getElementById(id).parentElement.style.height = "80px";
-      });
-      return;
-    }
-
-    const ejeY = { ticks: opcionesEjeY(entradas) };
-
-    dibujarChart("chart-ingreso", entradas, {
-      type: "bar",
-      data: datasetUnaMetrica(entradas, (b) => b.ingreso_4to_anio_2024),
-      options: {
-        indexAxis: "y",
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: { x: { beginAtZero: true, title: { display: true, text: "CLP" } }, y: ejeY },
-      },
-    });
-
-    dibujarChart("chart-empleabilidad", entradas, {
-      type: "bar",
-      data: datasetDosMetricas(
-        entradas,
-        (b) => b.empleabilidad_1er_anio_2024, "1er año", "#1a7f64",
-        (b) => b.empleabilidad_2do_anio_2024, "2do año", "#a7d9cd"
-      ),
-      options: {
-        indexAxis: "y",
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
-      },
-    });
-
-    dibujarChart("chart-retencion", entradas, {
-      type: "bar",
-      data: datasetDosMetricas(
-        entradas,
-        (b) => b.retencion_1er_anio, "1er año", "#e8960a",
-        (b) => b.retencion_2do_anio, "2do año", "#fcd28c"
-      ),
-      options: {
-        indexAxis: "y",
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: { x: { beginAtZero: true, max: 1, ticks: { callback: (v) => `${Math.round(v * 100)}%` } }, y: ejeY },
-      },
-    });
-
-    dibujarChart("chart-distribucion", entradas, {
-      type: "bar",
-      data: {
-        labels: entradas.map((e) => `${e.carrera.nombre} (${e.tipo})`),
-        datasets: [
-          { label: "Percentil 10", backgroundColor: "#fca5a5", data: entradas.map((e) => e.benchmark.percentil_10_5to_anio) },
-          { label: "Percentil 50 (mediana)", backgroundColor: "#1a7f64", data: entradas.map((e) => e.benchmark.percentil_50_5to_anio) },
-          { label: "Percentil 90", backgroundColor: "#3b82f6", data: entradas.map((e) => e.benchmark.percentil_90_5to_anio) },
-        ],
-      },
-      options: {
-        indexAxis: "y",
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: { x: { beginAtZero: true, title: { display: true, text: "CLP" } }, y: ejeY },
-      },
-    });
-  }
-
-  function renderDetallePanels() {
-    el.detalleContainer.innerHTML = selected
-      .map(
-        (c) => `<details class="detalle-carrera" data-slug="${c.slug}">
-          <summary><span class="detalle-arrow" aria-hidden="true">▾</span>${escapeHtml(c.nombre)}</summary>
-          <div class="detalle-body" data-slug="${c.slug}"><p class="detalle-loading">Abre para cargar la oferta…</p></div>
-        </details>`
-      )
-      .join("");
-
-    el.detalleContainer.querySelectorAll("details.detalle-carrera").forEach((details) => {
-      const summary = details.querySelector("summary");
-      const body = details.querySelector(".detalle-body");
-
-      // animated close: intercept click while open to run exit animation first
-      summary.addEventListener("click", (e) => {
-        if (!details.open) return;
-        if (body.classList.contains("is-closing")) return;
-        e.preventDefault();
-        body.classList.add("is-closing");
-        body.addEventListener("animationend", () => {
-          details.removeAttribute("open");
-          body.classList.remove("is-closing");
-        }, { once: true });
-      });
-
-      // data loading: fires on native toggle (opening only)
-      details.addEventListener("toggle", async () => {
-        if (!details.open) return;
-        const slug = details.dataset.slug;
-        if (detalleCache[slug]) {
-          renderDetalleBody(body, detalleCache[slug]);
-          return;
-        }
-        body.innerHTML = '<p class="detalle-loading">Cargando…</p>';
-        try {
-          const resp = await fetch(`data/detalle/${slug}.json`);
-          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-          const detalle = await resp.json();
-          detalleCache[slug] = detalle;
-          renderDetalleBody(body, detalle);
-        } catch (err) {
-          body.innerHTML = `<p class="detalle-empty">No se pudo cargar el detalle (${escapeHtml(err.message)}).</p>`;
-        }
-      });
-    });
+  function fadeIn(elx) {
+    elx.hidden = false;
+    elx.classList.add("is-fade-entering");
+    requestAnimationFrame(() => requestAnimationFrame(() => elx.classList.remove("is-fade-entering")));
   }
 
   function badgeInstitucion(institucion) {
@@ -2217,26 +1806,9 @@
     return `<span class="badge badge-missing">institución sin ficha</span> (código ${institucion.codigo ?? "?"})`;
   }
 
-  function formatPct(v) {
-    return v === null || v === undefined ? "—" : `${Math.round(v * 100)}%`;
-  }
-
-  function parseArancel(texto) {
-    if (!texto) return null;
-    const digitos = texto.replace(/[^\d]/g, "");
-    return digitos ? parseInt(digitos, 10) : null;
-  }
-
-  function formatCLP(valor) {
-    return valor === null ? "—" : `$${valor.toLocaleString("es-CL")}`;
-  }
-
-  function rangoArancel(ofertas) {
-    const valores = ofertas.map((o) => parseArancel(o.arancel_anual_2026)).filter((v) => v !== null);
-    if (!valores.length) return "—";
-    const min = Math.min(...valores);
-    const max = Math.max(...valores);
-    return min === max ? formatCLP(min) : `${formatCLP(min)} – ${formatCLP(max)}`;
+  function etiquetaInstitucion(institucion) {
+    if (institucion.tiene_ficha) return institucion.nombre;
+    return `Institución sin ficha (código ${institucion.codigo ?? "?"})`;
   }
 
   const POND_COMPS = [
@@ -2284,246 +1856,444 @@
             <span class="pond-label">${texto}</span>`;
   }
 
-  function opcionesSelect(valores, todasLabel) {
-    return `<option value="">${escapeHtml(todasLabel)}</option>${valores
-      .map((v) => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`)
-      .join("")}`;
+  const el = {
+    institucionInput: document.getElementById("institucion-input"),
+    institucionArrow: document.getElementById("institucion-arrow"),
+    institucionList: document.getElementById("institucion-list"),
+    institucionChip: document.getElementById("institucion-chip"),
+    carreraInput: document.getElementById("carrera-input"),
+    carreraArrow: document.getElementById("carrera-arrow"),
+    carreraList: document.getElementById("carrera-list"),
+    carreraChip: document.getElementById("carrera-chip"),
+    btnAgregar: document.getElementById("btn-agregar"),
+    agregarError: document.getElementById("agregar-error"),
+    seccionVacia: document.getElementById("seccion-vacia"),
+    seccionTabla: document.getElementById("seccion-tabla"),
+    tablaContainer: document.getElementById("tabla-container"),
+  };
+
+  let instData = null;
+  let areaPorCarrera = {};
+  let institucionElegida = null;
+  let carreraElegida = null;
+  let selected = [];
+  const detalleCache = {};
+  const DEFAULT_SORT = { col: "nem", dir: "desc" };
+  let sortState = { col: DEFAULT_SORT.col, dir: DEFAULT_SORT.dir };
+
+  async function init() {
+    const [respInst, respCore] = await Promise.all([
+      fetch("data/instituciones_nem.json"),
+      fetch("data/core.json"),
+    ]);
+    instData = await respInst.json();
+    const core = await respCore.json();
+    core.carreras.forEach((c) => { areaPorCarrera[c.nombre] = c.area; });
   }
 
-  function filtrosDisponibles(detalle) {
-    const regiones = new Set();
-    const jornadas = new Set();
-    const tipos = new Set();
-    detalle.ofertas.forEach((o) => {
-      if (o.region) regiones.add(o.region);
-      if (o.jornada) jornadas.add(o.jornada);
-      if (o.institucion.tipo) tipos.add(o.institucion.tipo);
-    });
-    return { regiones: [...regiones].sort(), jornadas: [...jornadas].sort(), tipos: [...tipos].sort() };
+  // ---------------------------------------------------------------------
+  // Paso 1: instituciones con oferta real (data/instituciones_nem.json, ya
+  // viene deduplicada por institución — construida directo desde
+  // hecho_oferta en export_json.py, no desde hecho_indicadores como
+  // data/instituciones.json de "Carreras por institución").
+  // ---------------------------------------------------------------------
+  function institucionesUnicas() {
+    return instData.instituciones
+      .slice()
+      .sort((a, b) => etiquetaInstitucion(a).localeCompare(etiquetaInstitucion(b), "es"));
   }
 
-  function agruparPorInstitucion(detalle, filtros) {
-    const grupos = new Map();
-    const claveDe = (institucion) => institucion.codigo ?? `sin-codigo-${institucion.nombre || "?"}`;
+  function textoBusquedaInstitucion(institucion) {
+    return normalizar(`${etiquetaInstitucion(institucion)} ${institucion.codigo}`);
+  }
 
-    detalle.ofertas.forEach((o) => {
-      if (filtros.region && o.region !== filtros.region) return;
-      if (filtros.jornada && o.jornada !== filtros.jornada) return;
-      if (filtros.tipo && o.institucion.tipo !== filtros.tipo) return;
-      const key = claveDe(o.institucion);
-      if (!grupos.has(key)) grupos.set(key, { institucion: o.institucion, ofertas: [], indicadores: [] });
-      grupos.get(key).ofertas.push(o);
-    });
+  function mostrarListaInstituciones(filtro) {
+    const q = normalizar(filtro || "");
+    const resultados = institucionesUnicas().filter(
+      (i) => q === "" || textoBusquedaInstitucion(i).includes(q)
+    );
+    const wasHidden = el.institucionList.hidden;
+    if (resultados.length === 0) {
+      el.institucionList.innerHTML = '<li class="meta">Sin resultados.</li>';
+      if (wasHidden) fadeIn(el.institucionList);
+      return;
+    }
+    el.institucionList.innerHTML = resultados
+      .map(
+        (i) => `<li role="option" data-codigo="${i.codigo}">${badgeInstitucion(i)}
+          <span class="meta">${escapeHtml(i.tipo || "Tipo sin clasificar")}</span>
+        </li>`
+      )
+      .join("");
+    if (wasHidden) fadeIn(el.institucionList);
+  }
 
-    detalle.indicadores.forEach((ind) => {
-      if (filtros.tipo && ind.institucion.tipo !== filtros.tipo) return;
-      const key = claveDe(ind.institucion);
-      if (!grupos.has(key)) {
-        if (filtros.region || filtros.jornada) return;
-        grupos.set(key, { institucion: ind.institucion, ofertas: [], indicadores: [] });
+  function ocultarListaInstituciones() { el.institucionList.hidden = true; }
+
+  el.institucionInput.addEventListener("input", () => mostrarListaInstituciones(el.institucionInput.value));
+  el.institucionInput.addEventListener("focus", () => mostrarListaInstituciones(el.institucionInput.value));
+  el.institucionInput.addEventListener("keydown", (ev) => { if (ev.key === "Escape") ocultarListaInstituciones(); });
+
+  el.institucionArrow.addEventListener("click", () => {
+    if (el.institucionList.hidden) {
+      mostrarListaInstituciones(el.institucionInput.value);
+      el.institucionInput.focus();
+    } else {
+      ocultarListaInstituciones();
+    }
+  });
+
+  el.institucionList.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li[data-codigo]");
+    if (!li) return;
+    const codigo = Number(li.dataset.codigo);
+    const institucion = institucionesUnicas().find((i) => i.codigo === codigo);
+    if (institucion) elegirInstitucion(institucion);
+    el.institucionInput.value = "";
+    ocultarListaInstituciones();
+  });
+
+  document.addEventListener("click", (ev) => {
+    if (!el.institucionList.contains(ev.target) && ev.target !== el.institucionInput && ev.target !== el.institucionArrow) {
+      ocultarListaInstituciones();
+    }
+    if (!el.carreraList.contains(ev.target) && ev.target !== el.carreraInput && ev.target !== el.carreraArrow) {
+      ocultarListaCarreras();
+    }
+  });
+
+  function elegirInstitucion(institucion) {
+    institucionElegida = institucion;
+    carreraElegida = null;
+    ocultarError();
+    renderPaso1();
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function limpiarInstitucion() {
+    institucionElegida = null;
+    carreraElegida = null;
+    ocultarError();
+    renderPaso1();
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function renderPaso1() {
+    if (institucionElegida) {
+      el.institucionInput.value = "";
+      el.institucionInput.disabled = true;
+      el.institucionArrow.disabled = true;
+      el.institucionChip.innerHTML = `<span class="chip-elegido is-fade-entering">${badgeInstitucion(institucionElegida)}
+        <button type="button" id="btn-cambiar-institucion" aria-label="Cambiar institución">×</button></span>`;
+      document.getElementById("btn-cambiar-institucion").addEventListener("click", limpiarInstitucion);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const chip = el.institucionChip.querySelector(".chip-elegido");
+        if (chip) chip.classList.remove("is-fade-entering");
+      }));
+    } else {
+      el.institucionInput.disabled = false;
+      el.institucionArrow.disabled = false;
+      el.institucionChip.innerHTML = "";
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Paso 2: carreras genéricas que imparte la institución elegida, según
+  // data/instituciones_nem.json — construido directo desde hecho_oferta
+  // (mismas filas que ya se muestran en la tabla), así que toda carrera
+  // listada aquí está garantizado que tiene NEM/PAES para mostrar.
+  // ---------------------------------------------------------------------
+  function carrerasDeInstitucionElegida() {
+    if (!institucionElegida) return [];
+    return institucionElegida.carreras
+      .map((nombre) => ({ nombre, area: areaPorCarrera[nombre] || null }))
+      .sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+  }
+
+  function mostrarListaCarreras(filtro) {
+    const q = normalizar(filtro || "");
+    const resultados = carrerasDeInstitucionElegida().filter(
+      (c) => q === "" || normalizar(`${c.nombre} ${c.area || ""}`).includes(q)
+    );
+    const wasHidden = el.carreraList.hidden;
+    if (resultados.length === 0) {
+      el.carreraList.innerHTML = '<li class="meta">Sin resultados.</li>';
+      if (wasHidden) fadeIn(el.carreraList);
+      return;
+    }
+    el.carreraList.innerHTML = resultados
+      .map(
+        (c) => `<li role="option" data-nombre="${escapeHtml(c.nombre)}">${escapeHtml(c.nombre)}
+          <span class="meta">${escapeHtml(c.area || "Área sin clasificar")}</span>
+        </li>`
+      )
+      .join("");
+    if (wasHidden) fadeIn(el.carreraList);
+  }
+
+  function ocultarListaCarreras() { el.carreraList.hidden = true; }
+
+  el.carreraInput.addEventListener("input", () => mostrarListaCarreras(el.carreraInput.value));
+  el.carreraInput.addEventListener("focus", () => { if (institucionElegida) mostrarListaCarreras(el.carreraInput.value); });
+  el.carreraInput.addEventListener("keydown", (ev) => { if (ev.key === "Escape") ocultarListaCarreras(); });
+
+  el.carreraArrow.addEventListener("click", () => {
+    if (!institucionElegida) return;
+    if (el.carreraList.hidden) {
+      mostrarListaCarreras(el.carreraInput.value);
+      el.carreraInput.focus();
+    } else {
+      ocultarListaCarreras();
+    }
+  });
+
+  el.carreraList.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li[data-nombre]");
+    if (!li) return;
+    const carrera = carrerasDeInstitucionElegida().find((c) => c.nombre === li.dataset.nombre);
+    if (carrera) elegirCarrera(carrera);
+    el.carreraInput.value = "";
+    ocultarListaCarreras();
+  });
+
+  function elegirCarrera(carrera) {
+    carreraElegida = carrera;
+    ocultarError();
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function limpiarCarrera() {
+    carreraElegida = null;
+    ocultarError();
+    renderPaso2();
+    renderBotonAgregar();
+  }
+
+  function renderPaso2() {
+    if (!institucionElegida) {
+      el.carreraInput.disabled = true;
+      el.carreraArrow.disabled = true;
+      el.carreraInput.value = "";
+      el.carreraInput.placeholder = "Primero elige una institución…";
+      el.carreraChip.innerHTML = "";
+      return;
+    }
+    if (carreraElegida) {
+      el.carreraInput.value = "";
+      el.carreraInput.disabled = true;
+      el.carreraArrow.disabled = true;
+      el.carreraChip.innerHTML = `<span class="chip-elegido is-fade-entering">${escapeHtml(carreraElegida.nombre)}
+        <button type="button" id="btn-cambiar-carrera" aria-label="Cambiar carrera">×</button></span>`;
+      document.getElementById("btn-cambiar-carrera").addEventListener("click", limpiarCarrera);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const chip = el.carreraChip.querySelector(".chip-elegido");
+        if (chip) chip.classList.remove("is-fade-entering");
+      }));
+    } else {
+      el.carreraInput.disabled = false;
+      el.carreraArrow.disabled = false;
+      el.carreraInput.placeholder = "Escribe una carrera";
+      el.carreraChip.innerHTML = "";
+    }
+  }
+
+  // ---------------------------------------------------------------------
+  // Botón Agregar: trae data/detalle/<slug>.json de la carrera elegida y
+  // suma al comparador solo las filas (sede/jornada) de la institución
+  // elegida. Resetea ambos pasos para que el siguiente agregado empiece de
+  // cero, igual que instituciones_v2.html.
+  // ---------------------------------------------------------------------
+  function renderBotonAgregar() {
+    el.btnAgregar.disabled = !(institucionElegida && carreraElegida);
+  }
+
+  function mostrarError(msg) {
+    el.agregarError.textContent = msg;
+    el.agregarError.hidden = false;
+  }
+
+  function ocultarError() {
+    el.agregarError.hidden = true;
+    el.agregarError.textContent = "";
+  }
+
+  el.btnAgregar.addEventListener("click", async () => {
+    if (!institucionElegida || !carreraElegida) return;
+    const institucion = institucionElegida;
+    const carrera = carreraElegida;
+
+    el.btnAgregar.disabled = true;
+    el.btnAgregar.textContent = "Agregando…";
+    ocultarError();
+
+    const slug = slugify(carrera.nombre);
+    const groupKey = `${institucion.codigo}--${slug}`;
+
+    if (selected.some((o) => o._groupKey === groupKey)) {
+      el.btnAgregar.textContent = "Agregar";
+      renderBotonAgregar();
+      return;
+    }
+
+    let detalle = detalleCache[slug];
+    if (!detalle) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000);
+        const resp = await fetch(`data/detalle/${slug}.json`, { signal: controller.signal });
+        clearTimeout(timeoutId);
+        detalle = await resp.json();
+        detalleCache[slug] = detalle;
+      } catch (err) {
+        el.btnAgregar.textContent = "Agregar";
+        mostrarError("No se pudo cargar la oferta de esta carrera. Intenta de nuevo.");
+        renderBotonAgregar();
+        return;
       }
-      grupos.get(key).indicadores.push(ind);
-    });
-
-    return [...grupos.values()].sort((a, b) => b.ofertas.length - a.ofertas.length);
-  }
-
-  function tipoBadge(tipo) {
-    if (!tipo) return "";
-    const t = tipo.toLowerCase();
-    const cls = t.includes("universidad") ? "inst-tipo-univ"
-              : (t.includes("instituto") || t === "ips") ? "inst-tipo-ip"
-              : "inst-tipo-cft";
-    return `<span class="inst-tipo-badge ${cls}">${escapeHtml(tipo)}</span>`;
-  }
-
-  function acredBadge(acred) {
-    if (!acred) return "";
-    const cls = acred.includes("Extendida") ? "acred-extendida"
-              : acred === "Acreditada" ? "acred-si"
-              : "acred-no";
-    return `<span class="acred-badge ${cls}">${escapeHtml(acred)}</span>`;
-  }
-
-  function minArancel(ofertas) {
-    const vals = ofertas.map(o => parseArancel(o.arancel_anual_2026)).filter(v => v !== null);
-    return vals.length ? Math.min(...vals) : null;
-  }
-
-  function totalVacantes(ofertas) {
-    return ofertas.reduce((acc, o) => acc + (o.vacantes_1er_semestre || 0), 0);
-  }
-
-  function sortGrupos(grupos, sortBy) {
-    const copy = [...grupos];
-    switch (sortBy) {
-      case "arancel-asc":
-        return copy.sort((a, b) => {
-          const av = minArancel(a.ofertas), bv = minArancel(b.ofertas);
-          if (av === null) return 1; if (bv === null) return -1;
-          return av - bv;
-        });
-      case "arancel-desc":
-        return copy.sort((a, b) => {
-          const av = minArancel(a.ofertas), bv = minArancel(b.ofertas);
-          if (av === null) return 1; if (bv === null) return -1;
-          return bv - av;
-        });
-      case "vacantes-desc":
-        return copy.sort((a, b) => totalVacantes(b.ofertas) - totalVacantes(a.ofertas));
-      default:
-        return copy;
     }
+
+    const filas = detalle.ofertas
+      .filter((o) => o.institucion.codigo === institucion.codigo)
+      .map((o) => Object.assign({}, o, { _groupKey: groupKey, _carreraGenerica: carrera.nombre }));
+
+    el.btnAgregar.textContent = "Agregar";
+
+    if (!filas.length) {
+      // No debería pasar (el Paso 2 solo ofrece carreras que ya tienen
+      // oferta real, ver carrerasDeInstitucionElegida) — queda como red de
+      // seguridad ante un dato inconsistente entre datasets.
+      mostrarError(`Hubo un problema al cargar "${carrera.nombre}" en ${etiquetaInstitucion(institucion)}. Intenta de nuevo.`);
+      renderBotonAgregar();
+      return;
+    }
+
+    selected = selected.concat(filas);
+    institucionElegida = null;
+    carreraElegida = null;
+    renderPaso1();
+    renderPaso2();
+    renderBotonAgregar();
+    afterSelectionChange();
+  });
+
+  function quitarGrupo(groupKey) {
+    selected = selected.filter((o) => o._groupKey !== groupKey);
+    afterSelectionChange();
   }
 
-  function buildStatsBar(grupos) {
-    const regiones = new Set();
-    const aranceles = [];
-    grupos.forEach(g => {
-      g.ofertas.forEach(o => {
-        if (o.region) regiones.add(o.region);
-        const v = parseArancel(o.arancel_anual_2026);
-        if (v) aranceles.push(v);
-      });
-    });
-    const minA = aranceles.length ? Math.min(...aranceles) : null;
-    const maxA = aranceles.length ? Math.max(...aranceles) : null;
-    const arancelHtml = minA === null ? "—"
-      : minA === maxA ? formatCLP(minA)
-      : `${formatCLP(minA)} – ${formatCLP(maxA)}`;
-    return `<div class="detalle-stats-bar">
-      <div><span class="detalle-stat-val">${grupos.length}</span><span class="detalle-stat-label">instituciones</span></div>
-      <div><span class="detalle-stat-val">${regiones.size}</span><span class="detalle-stat-label">regiones</span></div>
-      ${minA !== null ? `<div><span class="detalle-stat-val">${arancelHtml}</span><span class="detalle-stat-label">rango arancel</span></div>` : ""}
-    </div>`;
+  function afterSelectionChange() {
+    renderEmptyState();
+    renderTabla();
   }
 
-  function renderGrupoInstitucion(grupo) {
-    const regiones = [...new Set(grupo.ofertas.map((o) => o.region).filter(Boolean))];
-    const filasOferta = grupo.ofertas
-      .map(
-        (o) => `<tr>
-          <td>${escapeHtml(o.jornada || "—")}</td>
-          <td>${escapeHtml(o.sede || "—")}</td>
-          <td>${escapeHtml(o.region || "—")}</td>
-          <td>${escapeHtml(o.nivel_carrera || "—")}</td>
-          <td>${escapeHtml(o.arancel_anual_2026 || "—")}</td>
-          <td>${o.vacantes_1er_semestre ?? "—"}</td>
+  function renderEmptyState() {
+    const hayDatos = selected.length > 0;
+    el.seccionVacia.hidden = hayDatos;
+    el.seccionTabla.hidden = !hayDatos;
+  }
+
+  // ---------------------------------------------------------------------
+  // Tabla ordenable (Institución / Carrera / NEM / PAES ordenables con
+  // ciclo de 3 clicks; Ponderaciones solo se muestra, no se ordena).
+  // ---------------------------------------------------------------------
+  function getSortValue(row, col) {
+    if (col === "institucion") return etiquetaInstitucion(row.institucion);
+    if (col === "carrera") return row._carreraGenerica;
+    if (col === "nem") return row.promedio_nem_2025;
+    if (col === "paes") return row.promedio_paes_2025;
+    return null;
+  }
+
+  function compareRows(a, b, col, dir) {
+    const va = getSortValue(a, col);
+    const vb = getSortValue(b, col);
+    const aNull = va === null || va === undefined;
+    const bNull = vb === null || vb === undefined;
+    if (aNull && bNull) return 0;
+    if (aNull) return 1;
+    if (bNull) return -1;
+    const cmp = (col === "institucion" || col === "carrera")
+      ? String(va).localeCompare(String(vb), "es")
+      : va - vb;
+    return dir === "asc" ? cmp : -cmp;
+  }
+
+  function onHeaderClick(col) {
+    if (sortState.col !== col) {
+      sortState = { col, dir: "desc" };
+    } else if (sortState.dir === "desc") {
+      sortState = { col, dir: "asc" };
+    } else {
+      sortState = { col: DEFAULT_SORT.col, dir: DEFAULT_SORT.dir };
+    }
+    renderTabla();
+  }
+
+  const COLUMNAS = [
+    { key: "institucion", label: "Institución", sortable: true },
+    { key: "carrera", label: "Carrera", sortable: true },
+    { key: "nem", label: "NEM promedio 2025", sortable: true },
+    { key: "paes", label: "PAES promedio 2025", sortable: true },
+    { key: "pond", label: "Ponderaciones PAES", sortable: false },
+    { key: "quitar", label: "", sortable: false },
+  ];
+
+  function renderTabla() {
+    if (!selected.length) {
+      el.tablaContainer.innerHTML = "";
+      return;
+    }
+    const sorted = selected.slice().sort((a, b) => compareRows(a, b, sortState.col, sortState.dir));
+
+    const theadHtml = COLUMNAS
+      .map((c) => {
+        const active = sortState.col === c.key;
+        const cls = c.sortable ? `sortable${active ? " active" : ""}` : "";
+        const arrow = c.sortable
+          ? `<span class="sort-arrow">${active ? (sortState.dir === "desc" ? "▼" : "▲") : "▼"}</span>`
+          : "";
+        const extra = c.key === "nem"
+          ? infoIcon("Promedio real del NEM de los estudiantes matriculados en 2025 en esta sede/jornada — no es un puntaje de corte oficial, SIES no publica esa cifra.")
+          : c.key === "paes"
+            ? infoIcon("Promedio real del puntaje PAES de los estudiantes matriculados en 1er año 2025 en esta sede/jornada.")
+            : "";
+        return `<th class="${cls}" ${c.sortable ? `data-col="${c.key}"` : ""}>${escapeHtml(c.label)}${extra}${arrow}</th>`;
+      })
+      .join("");
+
+    const rowsHtml = sorted
+      .map((o) => {
+        const nemHtml = o.promedio_nem_2025 == null
+          ? '<span class="badge badge-missing">sin dato</span>'
+          : `<span class="num">${o.promedio_nem_2025.toFixed(1)}</span>`;
+        const paesHtml = o.promedio_paes_2025 == null
+          ? '<span class="badge badge-missing">sin dato</span>'
+          : `<span class="num">${Math.round(o.promedio_paes_2025)}</span>`;
+        return `<tr>
+          <td><div class="inst-nombre">${badgeInstitucion(o.institucion)}</div><div class="inst-meta">${escapeHtml(o.sede || "—")} · ${escapeHtml(o.jornada || "—")}</div></td>
+          <td>${escapeHtml(o._carreraGenerica)}</td>
+          <td>${nemHtml}</td>
+          <td>${paesHtml}</td>
           <td class="pond-cell">${renderPonderacionBar(o)}</td>
-        </tr>`
-      )
-      .join("");
-    const filasIndicadores = grupo.indicadores
-      .map(
-        (i) => `<tr>
-          <td>${escapeHtml(i.nombre_carrera_titulo || "—")}</td>
-          <td>${formatPct(i.empleabilidad_1er_anio)}</td>
-          <td>${formatPct(i.empleabilidad_2do_anio)}</td>
-          <td>${formatPct(i.retencion_1er_anio)}</td>
-          <td>${formatPct(i.continuidad_estudios_pct)}</td>
-          <td>${i.duracion_real_semestres != null ? Number(i.duracion_real_semestres).toFixed(1) : "—"}</td>
-          <td>${escapeHtml(i.ingreso_banda_texto || "—")}</td>
-        </tr>`
-      )
+          <td><button type="button" class="quitar-grupo" data-group="${escapeHtml(o._groupKey)}" aria-label="Quitar ${escapeHtml(o._carreraGenerica)} en ${escapeHtml(etiquetaInstitucion(o.institucion))}">×</button></td>
+        </tr>`;
+      })
       .join("");
 
-    const resumenPartes = [];
-    if (grupo.ofertas.length) resumenPartes.push(`${grupo.ofertas.length} ${grupo.ofertas.length === 1 ? "sede" : "sedes"}`);
-    if (regiones.length <= 3) resumenPartes.push(escapeHtml(regiones.join(", ")));
-    else resumenPartes.push(`${regiones.length} regiones`);
-    if (grupo.ofertas.length) resumenPartes.push(`arancel ${rangoArancel(grupo.ofertas)}`);
-    const ind0 = grupo.indicadores[0];
-    if (ind0 && ind0.empleabilidad_1er_anio != null) {
-      resumenPartes.push(`emp. 1er año ${formatPct(ind0.empleabilidad_1er_anio)}`);
-    }
+    el.tablaContainer.innerHTML = `<div class="detalle-table-wrap"><table class="detalle-table sort-table">
+      <thead><tr>${theadHtml}</tr></thead>
+      <tbody>${rowsHtml}</tbody>
+    </table></div>`;
 
-    return `<details class="institucion-card">
-      <summary>
-        <span class="inst-arrow" aria-hidden="true">▾</span>
-        <span class="institucion-nombre">${badgeInstitucion(grupo.institucion)}</span>
-        ${tipoBadge(grupo.institucion.tipo)}
-        ${acredBadge(grupo.institucion.acreditacion)}
-        <span class="institucion-resumen">${resumenPartes.join(" · ")}</span>
-      </summary>
-      <div class="inst-card-body">
-        ${grupo.ofertas.length ? `<div class="detalle-table-wrap"><table class="detalle-table">
-          <caption>Sedes / jornadas (${grupo.ofertas.length})</caption>
-          <thead><tr><th>Jornada</th><th>Sede</th><th>Región</th><th>Nivel</th><th>Arancel 2026 ${infoIcon("Costo anual de la carrera en esta sede/jornada, según datos oficiales SIES 2026.")}</th><th>Vacantes 1er sem. ${infoIcon("Cupos disponibles para primer año en el primer semestre, según SIES.")}</th><th>Ponderaciones PAES ${infoIcon("Pesos asignados a cada prueba al calcular el puntaje ponderado de postulación (NEM, Ranking, Lenguaje, Matemáticas, etc.).")}</th></tr></thead>
-          <tbody>${filasOferta}</tbody>
-        </table></div>` : ""}
-        ${grupo.indicadores.length ? `<div class="detalle-table-wrap"><table class="detalle-table">
-          <caption>Indicadores propios por título (${grupo.indicadores.length})</caption>
-          <thead><tr><th>Carrera (título)</th><th>Empleab. 1° ${infoIcon("% de titulados que trabajaron formalmente al 1er año post-título, según el SII.")}</th><th>Empleab. 2° ${infoIcon("% de titulados que trabajaron formalmente al 2do año post-título.")}</th><th>Retención 1° ${infoIcon("% de estudiantes que continuaron inscritos en la carrera al 2do año.")}</th><th>Continuidad ${infoIcon("% de titulados que siguieron estudiando otra carrera o posgrado después de titularse.")}</th><th>Duración real (sem.) ${infoIcon("Semestres que tardaron realmente los titulados en completar la carrera. Puede ser mayor que la duración formal del plan.")}</th><th>Banda de ingreso ${infoIcon("Tramo de ingresos al 4° año de titulado reportado por SIES (rango de texto, no valor exacto).")}</th></tr></thead>
-          <tbody>${filasIndicadores}</tbody>
-        </table></div>` : ""}
-      </div>
-    </details>`;
-  }
-
-  function renderDetalleBody(body, detalle) {
-    const filtros = filtrosDisponibles(detalle);
-    const estado = { region: "", jornada: "", tipo: "" };
-    const totalInst = agruparPorInstitucion(detalle, {}).length;
-
-    function dibujarInstituciones() {
-      const grupos = agruparPorInstitucion(detalle, estado);
-      const statsWrap = body.querySelector(".detalle-stats-wrap");
-      const countEl = body.querySelector(".detalle-count");
-      const listaEl = body.querySelector(".instituciones-lista");
-
-      statsWrap.innerHTML = grupos.length ? buildStatsBar(grupos) : "";
-      const filtrando = estado.region || estado.jornada || estado.tipo;
-      countEl.textContent = filtrando ? `Mostrando ${grupos.length} de ${totalInst} instituciones` : "";
-
-      listaEl.innerHTML = grupos.length
-        ? grupos.map(renderGrupoInstitucion).join("")
-        : '<p class="detalle-empty">Ninguna institución calza con estos filtros.</p>';
-
-      listaEl.querySelectorAll("details.institucion-card").forEach((card) => {
-        const sum = card.querySelector("summary");
-        const cardBody = card.querySelector(".inst-card-body");
-        sum.addEventListener("click", (e) => {
-          if (!card.open) return;
-          if (cardBody.classList.contains("is-closing")) return;
-          e.preventDefault();
-          cardBody.classList.add("is-closing");
-          cardBody.addEventListener("animationend", () => {
-            card.removeAttribute("open");
-            cardBody.classList.remove("is-closing");
-          }, { once: true });
-        });
-      });
-    }
-
-    const leyendaPAES = POND_COMPS.map((c) => {
-      return `<span class="pond-leyenda-item">
-        <span class="pond-leyenda-dot ${c.clase}"></span>${c.etiqueta}
-      </span>`;
-    }).join("");
-    body.innerHTML = `
-      <div class="detalle-filtros">
-        <label>Región <select class="filtro-region">${opcionesSelect(filtros.regiones, "Todas")}</select></label>
-        <label>Jornada <select class="filtro-jornada">${opcionesSelect(filtros.jornadas, "Todas")}</select></label>
-        <label>Tipo de institución <select class="filtro-tipo-inst">${opcionesSelect(filtros.tipos, "Todos")}</select></label>
-      </div>
-      <div class="pond-leyenda">${leyendaPAES}</div>
-      <div class="detalle-stats-wrap"></div>
-      <p class="detalle-count"></p>
-      <div class="instituciones-lista"></div>
-    `;
-    const selRegion = body.querySelector(".filtro-region");
-    const selJornada = body.querySelector(".filtro-jornada");
-    const selTipo = body.querySelector(".filtro-tipo-inst");
-
-    selRegion.addEventListener("change", (e) => { estado.region = e.target.value; dibujarInstituciones(); });
-    selJornada.addEventListener("change", (e) => { estado.jornada = e.target.value; dibujarInstituciones(); });
-    selTipo.addEventListener("change", (e) => { estado.tipo = e.target.value; dibujarInstituciones(); });
-
-    buildCustomSelect(selRegion);
-    buildCustomSelect(selJornada);
-    buildCustomSelect(selTipo);
-
-    dibujarInstituciones();
+    el.tablaContainer.querySelectorAll("th.sortable").forEach((th) => {
+      th.addEventListener("click", () => onHeaderClick(th.dataset.col));
+    });
+    el.tablaContainer.querySelectorAll(".quitar-grupo").forEach((btn) => {
+      btn.addEventListener("click", () => quitarGrupo(btn.dataset.group));
+    });
   }
 
   function initTooltip() {
@@ -2613,80 +2383,6 @@
     });
   }
 
-  const customSelects = [];
-
-  function buildCustomSelect(nativeSelect) {
-    nativeSelect.hidden = true;
-    const wrap = document.createElement('div');
-    wrap.className = 'custom-select';
-
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'custom-select-btn';
-    btn.setAttribute('aria-haspopup', 'listbox');
-    btn.setAttribute('aria-expanded', 'false');
-
-    const valueLabel = document.createElement('span');
-    valueLabel.className = 'custom-select-value';
-    valueLabel.textContent = nativeSelect.options[0]?.textContent || '';
-
-    const chevron = document.createElement('span');
-    chevron.className = 'custom-select-chevron';
-    chevron.setAttribute('aria-hidden', 'true');
-    chevron.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-
-    btn.append(valueLabel, chevron);
-
-    const list = document.createElement('ul');
-    list.className = 'custom-select-list';
-    list.setAttribute('role', 'listbox');
-    list.hidden = true;
-
-    wrap.append(btn, list);
-    nativeSelect.parentNode.insertBefore(wrap, nativeSelect.nextSibling);
-
-    function openList() {
-      list.innerHTML = '';
-      Array.from(nativeSelect.options).forEach(opt => {
-        const li = document.createElement('li');
-        li.setAttribute('role', 'option');
-        li.dataset.value = opt.value;
-        li.textContent = opt.textContent;
-        if (opt.value === nativeSelect.value) li.classList.add('cs-selected');
-        li.addEventListener('click', e => {
-          e.stopPropagation();
-          nativeSelect.value = opt.value;
-          valueLabel.textContent = opt.textContent;
-          nativeSelect.dispatchEvent(new Event('change'));
-          closeList();
-        });
-        list.appendChild(li);
-      });
-      fadeIn(list);
-      btn.setAttribute('aria-expanded', 'true');
-      chevron.classList.add('open');
-    }
-
-    function closeList() {
-      list.hidden = true;
-      btn.setAttribute('aria-expanded', 'false');
-      chevron.classList.remove('open');
-    }
-
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      list.hidden ? openList() : closeList();
-    });
-
-    customSelects.push({ close: closeList });
-  }
-
-  function fadeIn(el) {
-    el.hidden = false;
-    el.classList.add('is-fade-entering');
-    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove('is-fade-entering')));
-  }
-
   initTooltip();
   init();
 })();
@@ -2738,7 +2434,7 @@
     if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
 
     // Guarda desde qué página y con qué comparación abierta se envió el feedback
-    paginaEl.value = "Tipos de carrera — " + location.pathname + location.search + location.hash;
+    paginaEl.value = "Qué NEM necesito — " + location.pathname + location.search + location.hash;
 
     overlay.hidden = false;
     document.body.classList.add("fb-modal-open");

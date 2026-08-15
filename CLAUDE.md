@@ -17,10 +17,11 @@ Static site, **no build step**: three self-contained HTML files with inline CSS 
 | Portada | `web/landing.html` | `/` |
 | Tipos de carrera | `web/index_v2.html` | `/tipos-de-carrera` |
 | Carreras por institución | `web/instituciones_v2.html` | `/carreras-por-institucion` |
+| Qué NEM necesito | `web/nem.html` | `/que-nem-necesito` |
 
 Clean URLs come from `rewrites` in `web/vercel.json` — **any new route needs its rewrite there.** `web/sw.js` caches HTML with a Cache First strategy, so **bump `CACHE_VERSION` whenever an HTML file changes** or returning visitors keep the old version.
 
-Data is precomputed into JSON by `web/export_json.py` (→ `data/core.json` + `data/detalle/<slug>.json`) and `web/export_instituciones.py` (→ `data/instituciones.json`), both reading from `mifuturo/processed/comparador.db`. The datasets below are the upstream source for that DB.
+Data is precomputed into JSON by `web/export_json.py` (→ `data/core.json` + `data/detalle/<slug>.json` + `data/instituciones_nem.json`) and `web/export_instituciones.py` (→ `data/instituciones.json`), both reading from `mifuturo/processed/comparador.db`. The datasets below are the upstream source for that DB. **Note:** `instituciones.json` (grain: institución×carrera-título, from `hecho_indicadores`) and `instituciones_nem.json` (grain: institución×carrera-genérica, from `hecho_oferta`) are deliberately separate exports — one is not a superset of the other (confirmed in T24: 1183 institución+carrera combos have real oferta data but no matching título row). Don't assume you can derive one from the other client-side.
 
 Since these are single-file pages, header, footer, share bar and form styles are **deliberately duplicated** across them — match the existing copy when adding a shared element rather than introducing a build step.
 
@@ -65,7 +66,7 @@ Cada tarea tiene — o debe tener — un archivo `TAREA_N_PROMPT.md` en la raíz
 - Contiene: contexto mínimo para retomar en frío, archivos a tocar, decisiones ya tomadas y criterio de "tarea completa".
 - **No adelanta código ni implementación** — es un prompt de arranque.
 
-Prompt activo: `TAREA_24_PROMPT.md` (Ficha de institución, Post-MVP). Todas las tareas hasta T23c completadas.
+Prompt activo: `TAREA_25_PROMPT.md` (auditoría de datos no considerados por error). Todas las tareas hasta T24 completadas ("Qué NEM necesito" en producción); `TAREA_26_PROMPT.md` (brainstorm con toda la data disponible) queda en cola detrás de esta.
 
 ## Conventions inherited from the parent workspace
 
