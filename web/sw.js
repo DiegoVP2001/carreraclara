@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'carreraclara-v8';
+const CACHE_VERSION = 'carreraclara-v9';
 
 const PRECACHE_URLS = [
   './index_v2.html',
