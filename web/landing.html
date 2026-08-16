@@ -169,14 +169,14 @@
     display: block;
     font-weight: 600;
     color: #ffffff;
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     margin-bottom: 0.3rem;
     letter-spacing: 0.01em;
   }
 
   .hint-desc {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.55;
   }
@@ -324,6 +324,7 @@
     border: 1.5px solid var(--color-border);
     border-radius: var(--radius);
     padding: 0.6rem 0.85rem;
+    min-height: 44px;
     transition: border-color 0.15s, box-shadow 0.15s;
     outline: none;
     width: 100%;
@@ -525,7 +526,7 @@
   .footer-attribution a:hover { color: var(--color-accent); }
 
   .footer-copyright {
-    font-size: 0.82rem !important;
+    font-size: 0.85rem !important;
     color: rgba(255, 255, 255, 0.45) !important;
     margin-top: var(--space-2) !important;
   }
@@ -540,7 +541,7 @@
 
   .footer-col h3 {
     font-family: var(--font-display);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.45);
     text-transform: uppercase;
@@ -554,10 +555,12 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
   }
 
   ul.footer-links li a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
@@ -677,7 +680,7 @@
 
 </main>
 
-<footer class="app-footer">
+<footer class="app-footer" id="siteFooter">
   <div class="footer-grid">
 
     <div class="footer-col footer-col-brand">
@@ -746,8 +749,9 @@
   }
 
   // T23c: botón flotante → baja a la sección de feedback de esta misma página
-  var fab       = document.getElementById("fabFeedback");
-  var fbSection = document.getElementById("feedback");
+  var fab        = document.getElementById("fabFeedback");
+  var fbSection  = document.getElementById("feedback");
+  var siteFooter = document.getElementById("siteFooter");
 
   function revealFeedback() {
     if (fbSection) fbSection.classList.add("is-visible");
@@ -765,12 +769,31 @@
       }
     });
 
-    // Ocultar el botón cuando la sección ya está a la vista (sería redundante)
+    // Ocultar el botón cuando la sección de feedback o el footer ya están a la
+    // vista: en móvil el footer se apila a 1 columna y "Qué NEM necesito" (el
+    // último link) puede terminar justo bajo el FAB si no se oculta antes.
+    var fbVisible     = false;
+    var footerVisible = false;
+
+    function syncFabVisibility() {
+      fab.classList.toggle("is-hidden", fbVisible || footerVisible);
+    }
+
     new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        fab.classList.toggle("is-hidden", entry.isIntersecting);
+        fbVisible = entry.isIntersecting;
+        syncFabVisibility();
       });
     }, { threshold: 0.25 }).observe(fbSection);
+
+    if (siteFooter) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          footerVisible = entry.isIntersecting;
+          syncFabVisibility();
+        });
+      }, { threshold: 0.01 }).observe(siteFooter);
+    }
   }
 
   // Deep-link /#feedback: la sección arranca en opacity 0 por .reveal,
