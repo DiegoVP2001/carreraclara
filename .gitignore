@@ -17,6 +17,7 @@ _db_check_out.txt
 /*.jpg
 old/*.png
 old/*.jpg
+/capturas_debug/
 
 # ── Archivos de sistema Claude / agentes ──────────────
 .remember/

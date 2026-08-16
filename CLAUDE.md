@@ -66,7 +66,7 @@ Cada tarea tiene — o debe tener — un archivo `TAREA_N_PROMPT.md` en la raíz
 - Contiene: contexto mínimo para retomar en frío, archivos a tocar, decisiones ya tomadas y criterio de "tarea completa".
 - **No adelanta código ni implementación** — es un prompt de arranque.
 
-Prompt activo: `TAREA_25_PROMPT.md` (auditoría de datos no considerados por error). Todas las tareas hasta T24 completadas ("Qué NEM necesito" en producción); `TAREA_26_PROMPT.md` (brainstorm con toda la data disponible) queda en cola detrás de esta.
+Prompt activo: `TAREA_26b_PROMPT.md` — continuación de T26: sesión de conversación con Diego para discutir `BRAINSTORM_T26.md` (ideas de datos internos T25 + investigación externa de 8 subagentes sobre comparadores similares) y decidir qué dirección priorizar. `TAREA_26_PROMPT.md` (brainstorm original) ya generó su entregable (`BRAINSTORM_T26.md`) pero T26 sigue sin marcarse ✅ hasta que esta conversación cierre con una dirección elegida. T25 (auditoría de datos) y T25b (decisión de no ampliar cobertura en "Carreras por institución", documentada en `GUIA_FUENTES_DE_DATOS.md`) completadas y aprobadas. T26c (compartir comparación — reubicar el botón, sin prompt file propio, pedido directo de Diego fuera de la cola T26/T26b) completada y en producción 2026-08-16. `TAREA_27_PROMPT.md` (Ficha de institución, post-MVP) ya está redactado y en cola desde antes de T26 — puede seguir siendo la prioridad, o T26b puede reordenarla; no se prejuzga.
 
 ## Conventions inherited from the parent workspace
 
