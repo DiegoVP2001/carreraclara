@@ -186,7 +186,7 @@
   p.selector-help {
     color: var(--color-text-muted);
     font-size: 0.9rem;
-    margin: var(--space-2) 0 0;
+    margin: 0;
   }
 
   /* ─── Filtros del selector ───────────────────────────────────────────── */
@@ -425,20 +425,15 @@
   /* ensure [hidden] is never overridden by display properties in this file */
   [hidden] { display: none !important; }
 
-  /* ─── Share bar ─────────────────────────────────────────────────────── */
-  .share-bar {
+  /* ─── Compartir (píldora inline en la fila de ayuda) ──────────────────── */
+  .selector-help-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    background: #eef7f4;
-    border: 1px solid #b6ddd4;
-    border-radius: var(--radius);
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    margin-top: var(--space-1);
+    justify-content: space-between;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: var(--space-2);
   }
-  .share-bar span { flex: 1; }
   .btn-compartir {
     display: inline-flex;
     align-items: center;
@@ -447,12 +442,14 @@
     background: var(--color-primary);
     color: #fff;
     border: none;
-    border-radius: var(--radius);
-    font-size: 0.875rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
     font-family: var(--font-family);
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
+    box-shadow: 0 3px 10px rgba(9, 29, 44, 0.18);
+    flex-shrink: 0;
   }
   .btn-compartir:hover { opacity: 0.88; }
 
@@ -477,7 +474,6 @@
   }
 
   /* ─── T19b: fade-in transitions ──────────────────────────────────────── */
-  .share-bar,
   .aviso-usabilidad { transition: opacity 0.22s ease; }
 
   #seccion-vacia,
@@ -1151,9 +1147,8 @@
     ul.autocomplete-list li { padding: 0.75rem var(--space-2); }
     .chip-elegido button { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
 
-    /* Share bar: wrap cuando no cabe en línea */
-    .share-bar { flex-wrap: wrap; gap: 0.5rem; }
-    .btn-compartir { width: 100%; justify-content: center; }
+    /* Compartir: alto táctil mínimo en móvil (WCAG 2.5.5) */
+    .btn-compartir { min-height: 44px; }
 
     /* Canvas: alto mínimo para legibilidad */
     .chart-canvas-wrap canvas { min-height: 200px; }
@@ -1611,13 +1606,12 @@
         <button type="button" id="btn-agregar" disabled>Agregar</button>
       </div>
     </div>
-    <p class="selector-help" id="selector-help">Agrega al menos 2 combinaciones para comparar.</p>
+    <div class="selector-help-row">
+      <p class="selector-help" id="selector-help">Agrega al menos 2 combinaciones para comparar.</p>
+      <button type="button" id="btn-compartir" class="btn-compartir" hidden>🔗 Compartir</button>
+    </div>
     <ul id="selected-list"></ul>
     <div id="aviso-usabilidad" class="aviso-usabilidad" hidden></div>
-    <div id="share-bar" class="share-bar" hidden>
-      <span>Comparte esta comparación</span>
-      <button type="button" id="btn-compartir" class="btn-compartir">🔗 Copiar enlace</button>
-    </div>
   </section>
   <div id="share-toast"></div>
 
@@ -1826,7 +1820,6 @@
     panelInstitucionGrid: document.getElementById("panel-instituciones-grid"),
     diagnosticoList: document.getElementById("diagnostico-list"),
     avisoUsabilidad: document.getElementById("aviso-usabilidad"),
-    shareBar: document.getElementById("share-bar"),
     btnCompartir: document.getElementById("btn-compartir"),
   };
 
@@ -2273,11 +2266,18 @@
     const params = new URLSearchParams(hash);
     const idList = params.get("i");
     if (!idList) return;
+    let faltantes = 0;
     idList.split(",").forEach((rawId) => {
       const id = decodeURIComponent(rawId);
       const combo = data.combos.find((c) => c.id === id);
       if (combo) addCombo(combo);
+      else faltantes++;
     });
+    if (faltantes > 0) {
+      showToast(faltantes === 1
+        ? "1 combinación de este enlace ya no está disponible."
+        : `${faltantes} combinaciones de este enlace ya no están disponibles.`);
+    }
   }
 
   function showToast(msg) {
@@ -2436,8 +2436,8 @@
       ? `Agrega al menos 2 combinaciones para comparar (llevas ${selected.length}).`
       : `Comparando ${selected.length} combinación(es).`;
 
-    if (selected.length >= MIN_COMBOS && el.shareBar.hidden) fadeIn(el.shareBar);
-    else if (selected.length < MIN_COMBOS) el.shareBar.hidden = true;
+    if (selected.length >= MIN_COMBOS && el.btnCompartir.hidden) fadeIn(el.btnCompartir);
+    else if (selected.length < MIN_COMBOS) el.btnCompartir.hidden = true;
 
     actualizarAvisoUsabilidad();
   }

@@ -473,20 +473,15 @@
   /* ensure [hidden] is never overridden by display properties in this file */
   [hidden] { display: none !important; }
 
-  /* ─── Share bar ─────────────────────────────────────────────────────── */
-  .share-bar {
+  /* ─── Compartir (píldora inline en la fila de ayuda) ──────────────────── */
+  .selector-help-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    background: #eef7f4;
-    border: 1px solid #b6ddd4;
-    border-radius: var(--radius);
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
+    justify-content: space-between;
+    gap: 0.6rem;
+    flex-wrap: wrap;
     margin-top: var(--space-1);
   }
-  .share-bar span { flex: 1; }
   .btn-compartir {
     display: inline-flex;
     align-items: center;
@@ -495,12 +490,14 @@
     background: var(--color-primary);
     color: #fff;
     border: none;
-    border-radius: var(--radius);
-    font-size: 0.875rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
     font-family: var(--font-family);
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
+    box-shadow: 0 3px 10px rgba(9, 29, 44, 0.18);
+    flex-shrink: 0;
   }
   .btn-compartir:hover { opacity: 0.88; }
 
@@ -525,7 +522,6 @@
   }
 
   /* ─── T19b: fade-in transitions ──────────────────────────────────────── */
-  .share-bar,
   .aviso-usabilidad { transition: opacity 0.22s ease; }
 
   #seccion-vacia,
@@ -1075,9 +1071,8 @@
     nav.tabs a { min-height: 44px; display: inline-flex; align-items: center; }
     ul#autocomplete-list li { padding: 0.75rem var(--space-2); }
 
-    /* Share bar: wrap cuando no cabe en línea */
-    .share-bar { flex-wrap: wrap; gap: 0.5rem; }
-    .btn-compartir { width: 100%; justify-content: center; }
+    /* Compartir: alto táctil mínimo en móvil (WCAG 2.5.5) */
+    .btn-compartir { min-height: 44px; }
 
     /* Canvas: alto mínimo para legibilidad */
     .chart-canvas-wrap canvas { min-height: 200px; }
@@ -1653,8 +1648,12 @@
       </div>
     </div>
     <p class="agregar-error" id="agregar-error" hidden></p>
-    <p class="selector-help" id="selector-help">Agrega institución + carrera para ver su NEM y PAES por sede/jornada. Repite para comparar más de una.</p>
+    <div class="selector-help-row">
+      <p class="selector-help" id="selector-help">Agrega institución + carrera para ver su NEM y PAES por sede/jornada. Repite para comparar más de una.</p>
+      <button type="button" id="btn-compartir" class="btn-compartir" hidden>🔗 Compartir</button>
+    </div>
   </section>
+  <div id="share-toast"></div>
 
   <div id="seccion-vacia">
     <div class="empty-state">
@@ -1871,6 +1870,7 @@
     seccionVacia: document.getElementById("seccion-vacia"),
     seccionTabla: document.getElementById("seccion-tabla"),
     tablaContainer: document.getElementById("tabla-container"),
+    btnCompartir: document.getElementById("btn-compartir"),
   };
 
   let instData = null;
@@ -1890,6 +1890,7 @@
     instData = await respInst.json();
     const core = await respCore.json();
     core.carreras.forEach((c) => { areaPorCarrera[c.nombre] = c.area; });
+    await restoreFromURL();
   }
 
   // ---------------------------------------------------------------------
@@ -2188,7 +2189,108 @@
   function afterSelectionChange() {
     renderEmptyState();
     renderTabla();
+    updateURL();
+    const puedeCompartir = selected.length > 0;
+    if (puedeCompartir && el.btnCompartir.hidden) fadeIn(el.btnCompartir);
+    else if (!puedeCompartir) el.btnCompartir.hidden = true;
   }
+
+  // ---------------------------------------------------------------------
+  // Compartir por enlace: el hash guarda los groupKey (codigo--slugCarrera)
+  // distintos ya agregados. Al restaurar, cada groupKey se resuelve contra
+  // instData (institución vigente + carrera que efectivamente imparte) y
+  // se reconstruye igual que el flujo normal de "Agregar" — si el código o
+  // la carrera ya no existen en el dataset actual, se cuenta como faltante
+  // y se avisa en vez de omitirlo en silencio.
+  // ---------------------------------------------------------------------
+  function updateURL() {
+    if (selected.length === 0) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+      return;
+    }
+    const groupKeys = [];
+    selected.forEach((o) => {
+      if (!groupKeys.includes(o._groupKey)) groupKeys.push(o._groupKey);
+    });
+    history.replaceState(null, "", "#n=" + groupKeys.map(encodeURIComponent).join(","));
+  }
+
+  async function restoreGrupoSilencioso(codigo, slugCarrera) {
+    const institucion = instData.instituciones.find((i) => i.codigo === codigo);
+    if (!institucion) return false;
+    const carreraNombre = institucion.carreras.find((nombre) => slugify(nombre) === slugCarrera);
+    if (!carreraNombre) return false;
+
+    const groupKey = `${codigo}--${slugCarrera}`;
+    if (selected.some((o) => o._groupKey === groupKey)) return true;
+
+    let detalle = detalleCache[slugCarrera];
+    if (!detalle) {
+      try {
+        const resp = await fetch(`data/detalle/${slugCarrera}.json`);
+        detalle = await resp.json();
+        detalleCache[slugCarrera] = detalle;
+      } catch (err) {
+        return false;
+      }
+    }
+
+    const filas = detalle.ofertas
+      .filter((o) => o.institucion.codigo === codigo)
+      .map((o) => Object.assign({}, o, { _groupKey: groupKey, _carreraGenerica: carreraNombre }));
+    if (!filas.length) return false;
+
+    selected = selected.concat(filas);
+    return true;
+  }
+
+  async function restoreFromURL() {
+    const hash = window.location.hash.slice(1);
+    if (!hash) return;
+    const params = new URLSearchParams(hash);
+    const list = params.get("n");
+    if (!list) return;
+
+    const groupKeys = list.split(",").map(decodeURIComponent);
+    let faltantes = 0;
+    for (const gk of groupKeys) {
+      const sep = gk.indexOf("--");
+      if (sep === -1) { faltantes++; continue; }
+      const codigo = Number(gk.slice(0, sep));
+      const slugCarrera = gk.slice(sep + 2);
+      const ok = await restoreGrupoSilencioso(codigo, slugCarrera);
+      if (!ok) faltantes++;
+    }
+    afterSelectionChange();
+    if (faltantes > 0) {
+      showToast(faltantes === 1
+        ? "1 ítem de este enlace ya no está disponible."
+        : `${faltantes} ítems de este enlace ya no están disponibles.`);
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById("share-toast");
+    toast.textContent = msg;
+    toast.classList.add("visible");
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove("visible"), 2200);
+  }
+
+  el.btnCompartir.addEventListener("click", () => {
+    const url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(() => showToast("¡Enlace copiado!"));
+    } else {
+      const inp = document.createElement("input");
+      inp.value = url;
+      document.body.appendChild(inp);
+      inp.select();
+      document.execCommand("copy");
+      document.body.removeChild(inp);
+      showToast("¡Enlace copiado!");
+    }
+  });
 
   function renderEmptyState() {
     const hayDatos = selected.length > 0;
