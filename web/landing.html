@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <style>
   /* ─── Variables ──────────────────────────────────────────────────────── */
   :root {
@@ -341,6 +342,10 @@
     line-height: 1.55;
   }
 
+  .fb-captcha {
+    min-height: 78px;
+  }
+
   .fb-actions {
     display: flex;
     align-items: center;
@@ -659,6 +664,10 @@
         <input type="email" id="fb-email" name="email" placeholder="tu@correo.cl">
       </div>
 
+      <div class="fb-captcha">
+        <div class="h-captcha" data-captcha="true" data-theme="light"></div>
+      </div>
+
       <div class="fb-actions">
         <button type="submit" class="fb-btn" id="fbSubmitBtn">Enviar feedback</button>
         <span class="fb-status" id="fbStatus" aria-live="polite"></span>
@@ -790,6 +799,13 @@
         return;
       }
 
+      var captchaToken = feedbackForm.querySelector('[name="h-captcha-response"]');
+      if (!captchaToken || !captchaToken.value) {
+        status.className   = "fb-status error";
+        status.textContent = "Completa la verificación de seguridad antes de enviar.";
+        return;
+      }
+
       btn.disabled    = true;
       btn.textContent = "Enviando…";
       status.className   = "fb-status";
@@ -816,6 +832,7 @@
         .finally(function () {
           btn.disabled    = false;
           btn.textContent = "Enviar feedback";
+          if (window.hcaptcha) hcaptcha.reset();
         });
     });
   }

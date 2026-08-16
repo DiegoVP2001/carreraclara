@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <style>
   :root {
     --color-bg: #f5f6f4;
@@ -1466,6 +1467,10 @@
     line-height: 1.55;
   }
 
+  .fb-captcha {
+    min-height: 78px;
+  }
+
   .fb-actions {
     display: flex;
     align-items: center;
@@ -1597,7 +1602,7 @@
         <label for="carrera-input">2. Carrera que imparte</label>
         <div class="selector-wrap">
           <input type="text" id="carrera-input" autocomplete="off" placeholder="Primero elige una institución…" disabled>
-          <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar todas las carreras de esa institución" disabled>▾</button>
+          <button type="button" class="combo-arrow" id="carrera-arrow" aria-label="Mostrar las carreras con datos disponibles de esa institución" disabled>▾</button>
           <ul class="autocomplete-list" id="carrera-list" hidden role="listbox"></ul>
         </div>
         <div id="carrera-chip"></div>
@@ -1755,6 +1760,10 @@
       <div class="fb-field">
         <label for="fb-email">Tu correo <span class="fb-optional">(opcional, si quieres que te responda)</span></label>
         <input type="email" id="fb-email" name="email" placeholder="tu@correo.cl">
+      </div>
+
+      <div class="fb-captcha">
+        <div class="h-captcha" data-captcha="true" data-theme="light"></div>
       </div>
 
       <div class="fb-actions">
@@ -3089,6 +3098,13 @@
       return;
     }
 
+    var captchaToken = form.querySelector('[name="h-captcha-response"]');
+    if (!captchaToken || !captchaToken.value) {
+      statusEl.className   = "fb-status error";
+      statusEl.textContent = "Completa la verificación de seguridad antes de enviar.";
+      return;
+    }
+
     submitBtn.disabled    = true;
     submitBtn.textContent = "Enviando…";
     statusEl.className    = "fb-status";
@@ -3117,6 +3133,7 @@
       .finally(function () {
         submitBtn.disabled    = false;
         submitBtn.textContent = "Enviar feedback";
+        if (window.hcaptcha) hcaptcha.reset();
       });
   });
 })();
